@@ -148,7 +148,10 @@ const FilterBar = ({ onFilter }) => {
   return (
     <div>
       <div className="filter-bar block sm:flex">
-        <div ref={dropdownRef} className="dropdowns flex flex-wrap w-fit gap-2 items-center justify-start p-4">
+        <div
+          ref={dropdownRef}
+          className="dropdowns flex flex-wrap w-fit gap-2 items-center justify-start p-4"
+        >
           {renderDropdown(
             "Filter by town",
             "towns",
@@ -165,10 +168,10 @@ const FilterBar = ({ onFilter }) => {
             setSelectedTimes
           )}
         </div>
-        <div className="buttons flex flex-wrap w-fit gap-4 items-center justify-start p-0 sm:p-4 m-auto sm:m-0">
+        <div className="buttons flex flex-wrap w-fit gap-4 items-center justify-start pb-4 sm:p-4 m-auto sm:m-0">
           <button
             onClick={handleSearch}
-            className="bg-blue-600 text-white px-8 py-2 rounded-md text-sm hover:bg-blue-700 transition"
+            className="bg-[#2f55c4] text-white px-8 py-2 rounded-md text-sm hover:bg-[#b4e255] transition"
           >
             Search
           </button>
@@ -177,7 +180,7 @@ const FilterBar = ({ onFilter }) => {
             appliedFilters.times.length > 0) && (
             <button
               onClick={clearAllFilters}
-              className="bg-white text-[#2f55c4] px-4 py-2 rounded-md text-sm border border-gray-200 hover:bg-blue-700 transition"
+              className="bg-white text-[#2f55c4] px-4 py-2 rounded-md text-sm border border-gray-200 hover:bg-[#b4e255] transition"
             >
               Clear All
             </button>

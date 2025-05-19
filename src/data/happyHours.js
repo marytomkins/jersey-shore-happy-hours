@@ -37,4 +37,14 @@ export const happyHours = [
     description: "",
     link: "https://www.ssgpub.com/",
   },
+  {
+    name: "",
+    town: "",
+    dayText: "",
+    dayFilter: [""],
+    timeText: "",
+    timeFilter: [""],
+    description: "",
+    link: "",
+  },
 ];
