@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import { happyHours } from "../data/happyHours";
+import React from "react";
 import Card from "./Card";
 
-const Content = () => {
+const Content = ({ data }) => {
   return (
-    <div className="cards p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {happyHours.map((bar, index) => 
-      <Card bar={bar} index={index} />
-        )}
+    <div className="cards p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+      {data.map((item, index) => (
+        <Card bar={item} index={index} />
+      ))}
     </div>
   );
 };
