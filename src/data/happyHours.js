@@ -38,7 +38,7 @@ export const happyHours = [
     link: "https://www.ssgpub.com/",
   },
   {
-    name: "",
+    name: "Fake Name",
     town: "",
     dayText: "",
     dayFilter: [""],
