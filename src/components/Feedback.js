@@ -38,7 +38,8 @@ const Feedback = () => {
       <div className="text-2xl font-semibold text-center">Submit Feedback</div>
       <div className="text-sm mb-4 px-4 text-center">
         If there are any mistakes or I am missing any restaurants/bars, please
-        let me know below!
+        let me know below!{<br />}
+        Any additional feedback is welcomed as well.
       </div>
       <form className="space-y-4">
         <textarea

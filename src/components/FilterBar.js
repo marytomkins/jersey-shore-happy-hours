@@ -10,6 +10,7 @@ const towns = [
   "Spring Lake",
   "Sea Girt",
   "Manasquan",
+  "Brielle",
   "Point Pleasant",
 ];
 const days = [
@@ -23,6 +24,9 @@ const days = [
 ];
 const times = [
   "All Day",
+  "12:00PM",
+  "1:00PM",
+  "2:00PM",
   "3:00PM",
   "4:00PM",
   "5:00PM",

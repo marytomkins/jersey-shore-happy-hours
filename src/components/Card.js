@@ -42,7 +42,7 @@ const Card = ({ bar, index }) => {
         </div>
         <div className="text-[.9rem] font-medium">
           {dayText}
-          {`, `}
+          {timeText ? ", ": ""}
           {timeText}
         </div>
         <div className="text-sm">{description}</div>
