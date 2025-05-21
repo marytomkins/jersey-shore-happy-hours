@@ -11,7 +11,7 @@ function App() {
   const [filteredData, setFilteredData] = useState(happyHours);
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
 
-  const handleFilter = (filters) => {
+  const handleFilter = (filters, searchTerm = "") => {
     const { towns, days, times } = filters || [];
     const result = happyHours.filter((item) => {
       const matchTown = towns?.length === 0 || towns?.includes(item.town);
@@ -21,7 +21,10 @@ function App() {
       const matchTime =
         times?.length === 0 ||
         item.timeFilter?.some((time) => times?.includes(time));
-      return matchTown && matchDay && matchTime;
+      const matchSearch =
+        !searchTerm ||
+        item.name.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchTown && matchDay && matchTime && matchSearch;
     });
     setFilteredData(result);
   };

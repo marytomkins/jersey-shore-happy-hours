@@ -18,7 +18,7 @@ const data = [
     ],
   },
   {
-    name: "Bar A",
+    name: "Bar Anticipation",
     town: "Belmar",
     dayText: "Monday All Day",
     dayFilter: ["Monday", "Tuesday"],
@@ -533,7 +533,7 @@ const data = [
       "Discounted beer, $5 house drinks, $5 house wines, $6 plain bar pie",
   },
   {
-    name: "B2 Bistro",
+    name: "B2 Bistro & Bar",
     town: "Point Pleasant",
     link: "https://www.b2bistro.com/point-pleasant-beach-menus.html",
     dayText: "Monday - Friday 4:00PM - 7:00PM",
