@@ -10,6 +10,7 @@ const towns = [
   "Spring Lake",
   "Sea Girt",
   "Manasquan",
+  "Brielle",
   "Point Pleasant",
 ];
 const days = [
@@ -23,6 +24,9 @@ const days = [
 ];
 const times = [
   "All Day",
+  "12:00PM",
+  "1:00PM",
+  "2:00PM",
   "3:00PM",
   "4:00PM",
   "5:00PM",
@@ -34,12 +38,21 @@ const times = [
   "11:00PM",
   "12:00AM",
 ];
+const sortBy = [
+  "Restaurant A to Z",
+  "Restaurant Z to A",
+  "Town A to Z",
+  "Town Z to A",
+];
 
-const FilterBar = ({ onFilter }) => {
+const FilterBar = ({ onFilter, onSort }) => {
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedTowns, setSelectedTowns] = useState([]);
   const [selectedDays, setSelectedDays] = useState([]);
   const [selectedTimes, setSelectedTimes] = useState([]);
+  const [selectedSort, setSelectedSort] = useState("Sort by");
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [showClearAll, setClearAllState] = useState(false);
   const [appliedFilters, setAppliedFilters] = useState({
     towns: [],
     days: [],
@@ -53,7 +66,6 @@ const FilterBar = ({ onFilter }) => {
         setOpenDropdown(null);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -69,17 +81,27 @@ const FilterBar = ({ onFilter }) => {
   };
 
   const handleSearch = () => {
+    setOpenDropdown(null);
     const newFilters = {
       towns: selectedTowns,
       days: selectedDays,
       times: selectedTimes,
     };
     setAppliedFilters(newFilters);
-    onFilter({
-      towns: selectedTowns,
-      days: selectedDays,
-      times: selectedTimes,
-    });
+    onFilter(
+      {
+        towns: selectedTowns,
+        days: selectedDays,
+        times: selectedTimes,
+      },
+      searchTerm
+    );
+    setClearAllState(
+      searchTerm.length > 0 ||
+        selectedTowns.length > 0 ||
+        selectedDays.length > 0 ||
+        selectedTimes.length > 0
+    );
   };
 
   const removeFilter = (category, value) => {
@@ -91,48 +113,67 @@ const FilterBar = ({ onFilter }) => {
     if (category === "towns") setSelectedTowns(updated.towns);
     if (category === "days") setSelectedDays(updated.days);
     if (category === "times") setSelectedTimes(updated.times);
+    onFilter(updated, searchTerm);
+  };
 
-    onFilter(updated);
+  const setSortBy = (option) => {
+    setOpenDropdown(false);
+    setSelectedSort(option);
+    onSort(option);
   };
 
   const clearAllFilters = () => {
+    setSearchTerm("");
     setSelectedTowns([]);
     setSelectedDays([]);
     setSelectedTimes([]);
     setAppliedFilters({ towns: [], days: [], times: [] });
     onFilter({ towns: [], days: [], times: [] });
+    setClearAllState(false);
   };
 
-  const renderDropdown = (label, key, options, selected, setSelected) => (
-    <div className="relative group">
-      <button
-        className="flex items-center bg-white border border-gray-300 rounded-md px-4 py-2 text-sm shadow-sm hover:bg-gray-100"
-        onClick={() => setOpenDropdown(openDropdown === key ? null : key)}
-      >
-        <span className="mr-2">{label}</span>
-        <ChevronDownIcon className="h-4 w-4 text-gray-500" />
-      </button>
+  const renderDropdown = (label, key, options, selected, setSelected) => {
+    let isSortBy = key === "sortBy";
+    return (
+      <div className="relative group">
+        <button
+          className="flex items-center bg-white border border-gray-300 rounded-md px-4 py-2 text-sm shadow-sm hover:bg-gray-100"
+          onClick={() => setOpenDropdown(openDropdown === key ? null : key)}
+        >
+          <span className="mr-2">{label}</span>
+          <ChevronDownIcon className="h-4 w-4 text-gray-500" />
+        </button>
 
-      {openDropdown === key && (
-        <div className="absolute z-10 bg-white border border-gray-200 shadow-md rounded-md mt-2 p-2 w-40">
-          {options.map((option) => (
-            <label
-              key={option}
-              className="flex items-center space-x-2 py-1 text-sm"
-            >
-              <input
-                type="checkbox"
-                checked={selected.includes(option)}
-                onChange={() => toggleSelection(option, selected, setSelected)}
-                className="accent-blue-600"
-              />
-              <span>{option}</span>
-            </label>
-          ))}
-        </div>
-      )}
-    </div>
-  );
+        {openDropdown === key && (
+          <div
+            className={`absolute z-10 bg-white border border-gray-200 shadow-md rounded-md mt-2 p-2 w-40 ${
+              isSortBy ? "right-0" : ""
+            }`}
+          >
+            {options.map((option) => (
+              <label
+                key={option}
+                className="flex items-center space-x-2 py-1 text-sm hover:text-gray-500 cursor-pointer"
+                onClick={() => (isSortBy ? setSortBy(option) : null)}
+              >
+                {!isSortBy && (
+                  <input
+                    type="checkbox"
+                    checked={selected.includes(option)}
+                    onChange={() =>
+                      toggleSelection(option, selected, setSelected)
+                    }
+                    className="accent-blue-600"
+                  />
+                )}
+                <span>{option}</span>
+              </label>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
 
   const renderSelectedFilters = (category, filters) =>
     filters.map((item) => (
@@ -147,50 +188,76 @@ const FilterBar = ({ onFilter }) => {
 
   return (
     <div>
-      <div className="filter-bar block sm:flex">
-        <div
-          ref={dropdownRef}
-          className="dropdowns flex flex-wrap w-fit gap-2 items-center justify-start p-4"
-        >
-          {renderDropdown(
-            "Filter by town",
-            "towns",
-            towns,
-            selectedTowns,
-            setSelectedTowns
-          )}
-          {renderDropdown("Days", "days", days, selectedDays, setSelectedDays)}
-          {renderDropdown(
-            "Times",
-            "times",
-            times,
-            selectedTimes,
-            setSelectedTimes
-          )}
+      <div className="filter-bar block sm:flex" ref={dropdownRef}>
+        <div className="left-filters flex px-4 sm:px-8">
+          <div className="search-filters flex  justify-center sm:justify-start flex-wrap items-center gap-2 py-4">
+            <div>
+              <input
+                type="text"
+                placeholder="Search by restaurant"
+                className="cursor-pointer hover:bg-gray-100 bg-white border border-gray-300 rounded-md px-4 py-2 text-sm shadow-sm focus:outline-none"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleSearch();
+                }}
+              />
+            </div>
+            <div className="dropdowns flex flex-wrap w-fit gap-2 items-center">
+              {renderDropdown(
+                "Filter by town",
+                "towns",
+                towns,
+                selectedTowns,
+                setSelectedTowns
+              )}
+              {renderDropdown(
+                "Days",
+                "days",
+                days,
+                selectedDays,
+                setSelectedDays
+              )}
+              {renderDropdown(
+                "Times",
+                "times",
+                times,
+                selectedTimes,
+                setSelectedTimes
+              )}
+            </div>
+          </div>
         </div>
-        <div className="buttons flex flex-wrap w-fit gap-4 items-center justify-start pb-4 sm:p-4 m-auto sm:m-0">
-          <button
-            onClick={handleSearch}
-            className="bg-[#2f55c4] text-white px-8 py-2 rounded-md text-sm hover:bg-[#b4e255] transition"
-          >
-            Search
-          </button>
-          {(appliedFilters.towns.length > 0 ||
-            appliedFilters.days.length > 0 ||
-            appliedFilters.times.length > 0) && (
+        <div className="right-filters flex flex-wrap justify-center sm:justify-between grow pl-8 pr-8 sm:pl-0 py-4 gap-4">
+          <div className="buttons flex w-fit gap-4">
             <button
-              onClick={clearAllFilters}
-              className="bg-white text-[#2f55c4] px-4 py-2 rounded-md text-sm border border-gray-200 hover:bg-[#b4e255] transition"
+              onClick={handleSearch}
+              className="bg-[#2f55c4] text-white px-8 py-2 rounded-md text-sm hover:bg-[#b4e255] transition"
             >
-              Clear All
+              Search
             </button>
+            {showClearAll && (
+              <button
+                onClick={clearAllFilters}
+                className="bg-white min-w-[6rem] text-[#2f55c4] px-4 py-2 rounded-md text-sm border border-gray-200 hover:bg-[#b4e255] transition"
+              >
+                Clear All
+              </button>
+            )}
+          </div>
+          {renderDropdown(
+            selectedSort,
+            "sortBy",
+            sortBy,
+            selectedSort,
+            setSelectedSort
           )}
         </div>
       </div>
       <div className="selected-filters flex flex-wrap px-4">
         {renderSelectedFilters("towns", appliedFilters.towns)}
         {renderSelectedFilters("days", appliedFilters.days)}
-        {renderSelectedFilters("towns", appliedFilters.times)}
+        {renderSelectedFilters("times", appliedFilters.times)}
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ const Header = () => {
         src={isHovered ? hoverLogo : logo}
         alt="Jersey Shore Happy Hours"
         className="h-full object-contain transition-transform duration-300 ease-in-out cursor-pointer"
+        onClick={() => window.location.reload()}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       />
