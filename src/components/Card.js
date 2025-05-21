@@ -12,7 +12,7 @@ const Card = ({ bar, index }) => {
     if (contentRef.current) {
       setShowToggle(contentRef.current.scrollHeight > 105);
     }
-  }, []);
+  }, [bar]);
 
   return (
     <div

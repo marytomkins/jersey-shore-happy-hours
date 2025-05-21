@@ -26,22 +26,44 @@ function App() {
     setFilteredData(result);
   };
 
+  const handleSort = (sortBy) => {
+    let sortedData = [...filteredData];
+    switch (sortBy) {
+      case "Restaurant A to Z":
+        sortedData = sortedData.sort((a, b) => a.name.localeCompare(b.name));
+        break;
+      case "Restaurant Z to A":
+        sortedData = sortedData.sort((a, b) => b.name.localeCompare(a.name));
+        break;
+      case "Town A to Z":
+        sortedData = sortedData.sort((a, b) => a.town.localeCompare(b.town));
+        break;
+      case "Town Z to A":
+        sortedData = sortedData.sort((a, b) => b.town.localeCompare(a.town));
+        break;
+    }
+    setFilteredData(sortedData);
+  };
+
   return (
     <div className="App h-max flex flex-col">
-      <div onClick={() => window.location.reload()}>
+      <div>
         <Header />
       </div>
       <div className="main-content flex-grow">
-      {showFeedbackForm ? (
-        <Feedback />
-      ) : (
-        <>
-          <FilterBar onFilter={handleFilter} />
-          <Content data={filteredData} />
-        </>
-      )}
+        {showFeedbackForm ? (
+          <Feedback />
+        ) : (
+          <>
+            <FilterBar onFilter={handleFilter} onSort={handleSort} />
+            <Content data={filteredData} />
+          </>
+        )}
       </div>
-      <Footer onClick={() => setShowFeedbackForm(!showFeedbackForm)} showFeedbackForm={showFeedbackForm}/>
+      <Footer
+        onClick={() => setShowFeedbackForm(!showFeedbackForm)}
+        showFeedbackForm={showFeedbackForm}
+      />
     </div>
   );
 }
