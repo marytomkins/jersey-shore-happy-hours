@@ -13,7 +13,7 @@ function App() {
 
   const handleFilter = (filters, searchTerm = "") => {
     const { towns, days, times } = filters || [];
-    const result = happyHours.filter((item) => {
+    const result = filteredData.filter((item) => {
       const matchTown = towns?.length === 0 || towns?.includes(item.town);
       const matchDay =
         days?.length === 0 ||
