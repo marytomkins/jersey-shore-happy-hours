@@ -97,7 +97,10 @@ const FilterBar = ({ onFilter, onSort }) => {
       searchTerm
     );
     setClearAllState(
-      searchTerm || selectedTowns || selectedDays || selectedTimes
+      searchTerm.length > 0 ||
+        selectedTowns.length > 0 ||
+        selectedDays.length > 0 ||
+        selectedTimes.length > 0
     );
   };
 
