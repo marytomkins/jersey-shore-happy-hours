@@ -10,7 +10,7 @@ const Footer = ({ onClick, showFeedbackForm }) => {
         {showFeedbackForm ? "Home Page" : "Feedback Form"}
       </div>
       <div className="mt-2">
-        Jersey Shore Happy Hours © Developed by MT 2025
+        Jersey Shore Happy Hours © Developed by AMT 2025
       </div>
     </div>
   );
