@@ -4,7 +4,7 @@ const data = [
     town: "Asbury Park",
     dayText: "Thursdays",
     timeText: "5:00PM - 11:00PM",
-    description: "Discounted food, $10 specialty cocktails, $8 draft beer",
+    description: "Discounted Food, $10 Specialty Cocktails, $8 Draft Beer",
     link: "https://menu.thesafemenu.com/watermark/menus/happy-hour/",
     dayFilter: ["Thursday"],
     timeFilter: [
@@ -22,10 +22,10 @@ const data = [
     town: "Belmar",
     dayText: "Monday All Day",
     dayFilter: ["Monday", "Tuesday"],
-    timeText: "Tuesday 8:00PM - close",
+    timeText: "Tuesday: 8:00PM - Close",
     timeFilter: ["All Day"],
     description:
-      "Monday: Buy One Burger, Get One 1/2 Off; Tuesday: Beat the clock - Drafts start at 50 cents at 8 pm and increase 25 cents every hour",
+      "Monday: Buy One Burger, Get One 1/2 Off; Tuesday: Beat the Clock! - Drafts start at 50 cents at 8PM and increase 25 cents by the hour",
     link: "https://bar-a.com/dining/main-menu/",
   },
   {
@@ -45,7 +45,7 @@ const data = [
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeText: "3:00PM - 6:00PM",
     timeFilter: ["3:00PM", "4:00PM", "5:00PM", "6:00PM"],
-    description: "$8 Cocktails, $4-5 Beer, $8 Wine, Food specials",
+    description: "$8 Cocktails, $4-5 Beer, $8 Wine, Food Specials",
     link: "https://cdn.mcloones.com/pdf/ap-rooftop/Menus/2025/AP_RT_HappyHour_021025.pdf",
   },
   {
@@ -72,10 +72,10 @@ const data = [
     town: "Asbury Park",
     dayText: "Monday-Friday 4:00PM - 6:00PM",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    timeText: "Tuesdays all night",
+    timeText: "Tuesday: All Night",
     timeFilter: ["All Day", "4:00PM", "5:00PM", "6:00PM"],
     description:
-      "50% off alcohol, discounted food, 2 for $30 burgers on Wednesdays",
+      "50% Off Alcohol, Discounted Food | Wednesday: 2 for $30 Burgers",
     link: "https://www.theblackswanap.com/happy-hour",
   },
   {
@@ -83,10 +83,10 @@ const data = [
     town: "Asbury Park",
     dayText: "Wednesday - Thursday 4:00PM - 7:00PM",
     dayFilter: ["Sunday", "Wednesday", "Thursday"],
-    timeText: "Sundays all day",
+    timeText: "Sunday: All Day",
     timeFilter: ["All Day", "4:00PM", "5:00PM", "6:00PM", "7:00PM"],
     description:
-      "$10 martinis, $7 wine, $5 beer, discounted food, 2 for $12 sliders",
+      "$10 Martinis, $7 Wine, $5 Beer, Discounted Food, 2 for $12 Sliders",
     link: "https://www.instagram.com/p/DGisnGGOenT/?img_index=1",
   },
   {
@@ -96,7 +96,7 @@ const data = [
     dayFilter: ["Wednesday", "Thursday"],
     timeText: "4:00PM - 9:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM", "7:00PM", "8:00PM", "9:00PM"],
-    description: "$4 drafts, $6 house wine, $7 well drinks, discounted food",
+    description: "$4 Drafts, $6 House Wine, $7 Well Drinks, Discounted Food",
     link: "https://www.instagram.com/p/DAooSt1vXAX/?img_index=1",
   },
   {
@@ -106,7 +106,7 @@ const data = [
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeText: "4:00PM - 6:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
-    description: "50% off alcohol, $8 bar snacks",
+    description: "50% Off Alcohol, $8 Bar Snacks",
     link: "https://static1.squarespace.com/static/600b85e76c455e4aedf86f82/t/67fec7aa81eb1c49314ae371/1744750506572/Happy+Hour+Menu+Online.pdf",
   },
   {
@@ -116,7 +116,7 @@ const data = [
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday"],
     timeText: "4:00PM - 6:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
-    description: "$6 wine & drafts, $8 spritz, $10 classic martinis",
+    description: "$6 Wine & Drafts, $8 Spritz, $10 Classic Martinis",
     link: "https://drive.google.com/file/d/1hlD9e80jfOQ9--nEkp8vDeVFnhJ5zqrW/view?pli=1",
   },
   {
@@ -126,7 +126,7 @@ const data = [
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeText: "2:00PM - 6:00PM",
     timeFilter: ["2:00PM", "3:00PM", "4:00PM", "5:00PM", "6:00PM"],
-    description: "$3 off drafts, $4 wine glasses, $5 off cocktails, discounted small plates",
+    description: "$3 Off Drafts, $4 Wine Glasses, $5 Off Cocktails, Discounted Small Plates",
     link: "https://cdn.mcloones.com/pdf/iron-whale/menus/2025/IW_HappyHour_2025.pdf",
   },
   {
@@ -137,7 +137,7 @@ const data = [
     timeText: "4:00PM - 6:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
     description:
-      "$5 local drafts, $6 house wine & sangria, $7 house mixed drinks, discounted food",
+      "$5 Local Drafts, $6 House Wine & Sangria, $7 House Mixed Drinks, Discounted Food",
     link: "https://www.kimmarieseatndrinkaway.com/menus/#happy",
   },
   {
@@ -145,7 +145,7 @@ const data = [
     town: "Asbury Park",
     dayText: "Tuesday",
     dayFilter: ["Tuesday"],
-    timeText: "All day",
+    timeText: "All Day",
     timeFilter: [
       "All Day",
       "12:00PM",
@@ -159,7 +159,7 @@ const data = [
       "8:00PM",
       "9:00PM",
     ],
-    description: "$2 off tacos, 5 for $10 Dos Equis buckets",
+    description: "$2 Off Tacos, $10 Dos Equis Buckets",
     link: "https://www.instagram.com/p/DHV6Py-RKgI/",
   },
   {
@@ -169,7 +169,7 @@ const data = [
     dayFilter: ["Thursday", "Friday", "Saturday"],
     timeText: "4:00PM - 6:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
-    description: "$5 beers, $6 sangria, $12 specialty cocktails",
+    description: "$5 Beers, $6 Sangria, $12 Specialty Cocktails",
     link: "https://drive.google.com/file/d/1iSMr1NMMdsYgxGLZj4GLc8oFNIlpWjM9/view",
   },
   {
@@ -179,7 +179,7 @@ const data = [
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeText: "4:00PM - 6:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
-    description: "50% off alcohol",
+    description: "50% Off Alcohol",
     link: "https://www.instagram.com/p/DHq9TjyudAZ",
   },
   {
@@ -197,7 +197,7 @@ const data = [
     ],
     timeText: "",
     timeFilter: [],
-    description: "$7 wine, $9 cocktails, 50% off martinis all day Thursday",
+    description: "$7 Wine, $9 Cocktails | Thursday: 50% Off Martinis",
     link: "https://www.heyreyla.com/drink",
   },
   {
@@ -208,7 +208,7 @@ const data = [
     timeText: "4:00 PM - 6:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
     description:
-      "Half off appetizers, $4 draft beer, $7 wine, discounted cocktails",
+      "Half Off Appetizers, $4 Draft Beer, $7 Wine, Discounted Cocktails",
     link: "https://cdn.mcloones.com/pdf/robinson-ale-house-asbury-park/menus/2025/R_AP_HappyHour_042525.pdf",
   },
   {
@@ -224,7 +224,7 @@ const data = [
       "Thursday",
       "Friday",
     ],
-    timeText: "Mon - Fri 3:00 PM - 6:00PM, Sat 12:00PM - 3:00PM, Sun All day",
+    timeText: "Monday - Friday: 3:00 PM - 6:00PM, Saturday: 12:00PM - 3:00PM, Sunday: All Day",
     timeFilter: [
       "All Day",
       "12:00PM",
@@ -241,7 +241,7 @@ const data = [
   {
     name: "Talula's",
     town: "Asbury Park",
-    dayText: "Every day",
+    dayText: "Every Day",
     dayFilter: [
       "Sunday",
       "Saturday",
@@ -252,7 +252,7 @@ const data = [
       "Friday",
     ],
     timeText:
-      "Mon - Thurs 4:30 PM - 6:30PM, Tues All Day, Sat & Sun 10:00 AM - 1:00 PM",
+      "Monday - Thursday: 4:30 PM - 6:30PM, Tuesday: All Day, Saturday - Sunday: 10:00 AM - 1:00 PM",
     timeFilter: [
       "All Day",
       "12:00PM",
@@ -264,7 +264,7 @@ const data = [
       "6:00PM",
     ],
     description:
-      "$10 Gin & jams, $5 House wines, $5 Draft beer, Discounts on select pizzas and bar snacks",
+      "$10 Gin & Jams, $5 House Wines, $5 Draft Beer, Discounts on Select Pizzas and Bar Snacks",
     link: "https://talulaspizza.com/blogs/events/happy-hour-at-the-bar",
   },
   {
@@ -275,7 +275,7 @@ const data = [
     timeText: "4:00 PM - 6:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
     description:
-      "Discounted appetizers, $5 select beers, $10 specialty cocktails, half priced select wine bottles on Wednesday",
+      "Discounted Appetizers, $5 Select Beers, $10 Specialty Cocktails | Wednesday: Half Priced Select Wine Bottles",
     link: "https://drive.google.com/file/d/1hkb6nShKusEjDDgTMO_dYGYh2FE-zSRg/view",
   },
   {
@@ -291,12 +291,12 @@ const data = [
   {
     name: "Pascal & Sabine",
     town: "Asbury Park",
-    dayText: "Every Day, Tuesday All Day, Monday - Thursday 5:00 PM - 7:00 PM",
+    dayText: "Every Day, Tuesday: All Day, Monday - Thursday: 5:00 PM - 7:00 PM",
     dayFilter: ["Friday", "Monday", "Tuesday", "Wednesday", "Thursday"],
-    timeText: "Friday - Sunday 4:00 PM - 6:00 PM",
+    timeText: "Friday - Sunday: 4:00 PM - 6:00 PM",
     timeFilter: ["All Day", "7:00PM", "4:00PM", "5:00PM", "6:00PM"],
     description:
-      "$12 cocktails, $10 martinis, $8 wine, $6 beer, Discounted food",
+      "$12 Cocktails, $10 Martinis, $8 Wine, $6 Beer, Discounted Food",
     link: "https://drive.google.com/file/d/10jvEcMT_0ycgqw5Wt-15wESgEODPR985/view",
   },
   {
@@ -306,7 +306,7 @@ const data = [
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeText: "3:30 PM - 7:00 PM",
     timeFilter: ["3:00PM", "7:00PM", "4:00PM", "5:00PM", "6:00PM"],
-    description: "Discounted drinks and food",
+    description: "Discounted Drinks and Food",
     link: "https://theseacrab.com/discover-menu/",
   },
   {
@@ -316,7 +316,7 @@ const data = [
     dayText: "Monday & Wednesday",
     timeText: "All Day",
     description:
-      "Monday - 1/2 Price Spaghetti & Meatballs and 1/2 Price Pizza; Wednesday - Burger night",
+      "Monday: 1/2 Price Spaghetti & Meatballs and 1/2 Price Pizza | Wednesday: Burger Night",
     dayFilter: ["Monday", "Wednesday"],
     timeFilter: [
       "All Day",
@@ -339,7 +339,7 @@ const data = [
     link: "https://static1.squarespace.com/static/59a4cdeaf14aa16afb1ebe38/t/6674df7105dae94cdaed0faa/1718935409569/hatchhappyhpur+%5BRecovered%5D.pdf",
     dayText: "Monday - Thursday",
     timeText: "8:00 AM - 10:00 AM",
-    description: "$5 starters, $5 coffee/teas",
+    description: "$5 Starters, $5 Coffee/Teas",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday"],
     timeFilter: [],
   },
@@ -347,8 +347,8 @@ const data = [
     name: "Pagano's Uva Ristorante",
     town: "Bradley Beach",
     link: "https://www.uvaonmain.com/menus/",
-    dayText: "Tuesday - Friday 12:00PM - 7:00PM",
-    timeText: "Saturday 12:00PM - 6:00PM, All Day Sunday",
+    dayText: "Tuesday - Friday: 12:00PM - 7:00PM",
+    timeText: "Saturday: 12:00PM - 6:00PM, Sunday: All Day",
     description: "",
     dayFilter: [
       "Tuesday",
@@ -375,8 +375,8 @@ const data = [
     town: "Bradley Beach",
     link: "https://elbowroomnj.com/menu/",
     dayText: "Every Day",
-    timeText: "until 6:00PM",
-    description: "$6 drinks, $8 apps",
+    timeText: "Until 6:00PM",
+    description: "$6 Drinks, $8 Appetizers",
     dayFilter: [
       "Monday",
       "Tuesday",
@@ -420,7 +420,7 @@ const data = [
     link: "https://www.rodstavernnj.com/menu",
     dayText: "Every Day",
     timeText: "12:00PM - 5:00PM",
-    description: "Discounted bites, sliders, and drinks; $4 domestic beers",
+    description: "$4 Domestic Beers, Discounted Bites, Sliders, and Drinks",
     dayFilter: [
       "Monday",
       "Tuesday",
@@ -439,7 +439,7 @@ const data = [
     dayText: "Monday - Friday",
     timeText: "3:00PM - 5:30PM",
     description:
-      "$3 Miller lites, $5 house wines and well drinks; discounted apps and sliders",
+      "$3 Miller Lites, $5 House Wines and Well Drinks, Discounted Appetizers and Sliders",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeFilter: ["3:00PM", "4:00PM", "5:00PM"],
   },
@@ -450,7 +450,7 @@ const data = [
     dayText: "Monday - Friday",
     timeText: "3:00PM - 5:30PM",
     description:
-      "$3.50 Domestic bottles,  $6 House wines, $9 Martinis or Manhattans",
+      "$3.50 Domestic Bottles,  $6 House Wines, $9 Martinis or Manhattans",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeFilter: ["3:00PM", "4:00PM", "5:00PM"],
   },
@@ -461,7 +461,7 @@ const data = [
     dayText: "Monday - Friday 11:00AM - 6:00PM",
     timeText: "Thursday All Day",
     description:
-      "Daily specials, $2 Miller high lifes, Discounted beers, $5 house drinks, $5 wine, 25% off apps 3-5pm",
+      "3:00PM - 5:00PM: 25% Appetizers | Daily Specials, $2 Miller High Lifes, Discounted Beers, $5 House Drinks, $5 Wine",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeFilter: [
       "12:00PM",
@@ -481,7 +481,7 @@ const data = [
     timeText:
       "Mon–Fri: 3:00PM - 5:30PM, Fri–Sat: 9:00PM - 10:30PM, Sat–Sun: 12:00PM - 3:00PM",
     description:
-      "Discounted drinks and food; daily specials; Monday 50% off apps; Thursday Happy Hour all day",
+      "Monday: 50% Off Appetizers | Thursday: Happy Hour All Day | Discounted Drinks and Food; Daily Specials",
     dayFilter: [
       "Monday",
       "Tuesday",
@@ -509,7 +509,7 @@ const data = [
     link: "https://www.thepigandparrot.com/brielle",
     dayText: "Monday - Friday",
     timeText: "3:00PM - 6:00PM",
-    description: "Discounted drinks, wine, frozens",
+    description: "Discounted Drinks, Wine, Frozens",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeFilter: ["3:00PM", "4:00PM", "5:00PM", "6:00PM"],
   },
@@ -530,15 +530,15 @@ const data = [
       "6:00PM",
     ],
     description:
-      "Discounted beer, $5 house drinks, $5 house wines, $6 plain bar pie",
+      "Discounted Beer, $5 House Drinks, $5 House Wines, $6 Plain Bar Pie",
   },
   {
     name: "B2 Bistro & Bar",
     town: "Point Pleasant",
     link: "https://www.b2bistro.com/point-pleasant-beach-menus.html",
     dayText: "Monday - Friday 4:00PM - 7:00PM",
-    timeText: "All Day Sunday",
-    description: "Discounted food, $7 cocktails, $7 wine, $2 off beers",
+    timeText: "Sunday: All Day",
+    description: "Discounted Food, $7 Cocktails, $7 Wine, $2 Off Beers",
     dayFilter: [
       "Monday",
       "Tuesday",
@@ -553,9 +553,9 @@ const data = [
     name: "Frankie's",
     town: "Point Pleasant",
     link: "https://www.frankiesnj.com/happy-hour",
-    dayText: "Every day",
+    dayText: "Every Day",
     timeText: "12:00PM - 6:00PM",
-    description: "Discounted apps and drinks",
+    description: "Discounted Apps and Drinks",
     dayFilter: [
       "Monday",
       "Tuesday",
@@ -579,9 +579,9 @@ const data = [
     name: "Wharfside Seafood and Patio Bar",
     town: "Point Pleasant",
     link: "https://www.wharfsidenj.com/happy-hour",
-    dayText: "Monday - Friday 12:00PM - 6:00PM",
-    timeText: "Saturday - Sunday 12:00PM - 4:00PM",
-    description: "$2 raw bar, discounted food & beer, $2 off cocktails",
+    dayText: "Monday - Friday: 12:00PM - 6:00PM",
+    timeText: "Saturday - Sunday: 12:00PM - 4:00PM",
+    description: "$2 Raw Bar, Discounted Food & Beer, $2 Off Cocktails",
     dayFilter: [
       "Monday",
       "Tuesday",
@@ -607,7 +607,7 @@ const data = [
     link: "https://ladolcevitanj.com/happy-hour/",
     dayText: "Sunday - Friday",
     timeText: "12:00PM - 6:00PM",
-    description: "$4 beer, $5 wine, $7 martinis, food specials",
+    description: "$4 Beer, $5 Wine, $7 Martinis, Food Specials",
     dayFilter: [
       "Sunday",
       "Monday",
@@ -630,7 +630,7 @@ const data = [
     name: "Flames Brazilian Steakhouse",
     town: "Belmar",
     link: "https://www.flamesbraziliansteakhouse.com/menu",
-    dayText: "Monday - Friday 4:00PM - 7:00PM",
+    dayText: "Monday - Friday: 4:00PM - 7:00PM",
     timeText: "All Day Sunday",
     description: "",
     dayFilter: [
@@ -649,7 +649,7 @@ const data = [
     link: "https://kleinsfish.com/happy-hour/",
     dayText: "Wednesday - Friday",
     timeText: "3:00PM - 6:00PM",
-    description: "$3.50 beers, $5 wine and well drinks, discounted food",
+    description: "$3.50 Beers, $5 Wine and Well Drinks, Discounted Food",
     dayFilter: ["Wednesday", "Thursday", "Friday"],
     timeFilter: ["3:00PM", "4:00PM", "5:00PM", "6:00PM"],
   },
@@ -657,9 +657,9 @@ const data = [
     name: "Anchor Tavern",
     town: "Belmar",
     link: "https://www.anchortavernnj.com/happy-hour",
-    dayText: "Monday - Friday 11:30AM - 5:00PM",
-    timeText: "Saturday - Sunday 1:00PM - 5:00PM",
-    description: "$3.50 drafts, discounted food and cocktails",
+    dayText: "Monday - Friday: 11:30AM - 5:00PM",
+    timeText: "Saturday - Sunday: 1:00PM - 5:00PM",
+    description: "$3.50 Drafts, Discounted Food and Cocktails",
     dayFilter: [
       "Monday",
       "Tuesday",
@@ -675,10 +675,10 @@ const data = [
     name: "10th Ave Burrito",
     town: "Belmar",
     link: "https://tenthaveburrito.com/specials/",
-    dayText: "Monday - Friday 11:00AM - 5:00PM",
-    timeText: "Wednesday All Day",
+    dayText: "Monday - Friday: 11:00AM - 5:00PM",
+    timeText: "Wednesday: All Day",
     description:
-      "$3 beers, $5 wine & well drinks, discounted drinks and food; Daily specials: Margarita Monday 1/2 price burritos, Tuesday $10 all you can eat tacos, etc.",
+      "$3 Beers, $5 Wine & Well Drinks, Discounted Drinks and Food | Monday: Margartia and 1/2 Price Burritos | Tuesday: $10 All You Can Eat Tacos, etc.",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeFilter: [
       "All Day",
@@ -696,7 +696,7 @@ const data = [
     link: "https://www.boathousebelmar.com/food-menu",
     dayText: "Monday - Friday",
     timeText: "4:00PM - 7:00PM",
-    description: "$2 off drafts, $5 wine & well drinks, discounted food",
+    description: "$2 Off Drafts, $5 Wine & Well drinks, Discounted Food",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeFilter: ["4:00PM", "5:00PM", "6:00PM", "7:00PM"],
   },
@@ -707,7 +707,7 @@ const data = [
     dayText: "Monday - Friday",
     timeText: "1:00PM - 4:00PM",
     description:
-      "$5 wine & well drinks, $3 drafts, $2 off premium drafts, BOGO 1/2 off appetizers",
+      "$5 Wine & Well Drinks, $3 Drafts, $2 Off Premium Drafts, BOGO 1/2 Off Appetizers",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeFilter: ["1:00PM", "2:00PM", "3:00PM", "4:00PM"],
   },
@@ -717,7 +717,7 @@ const data = [
     link: "http://www.mccannstavernnj.com/happy-hour.html",
     dayText: "Monday - Friday",
     timeText: "12:00PM - 6:00PM",
-    description: "Discounted food, $6 well drinks & wine, $3.50 drafts",
+    description: "Discounted Food, $6 Well Drinks & Wine, $3.50 Drafts",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeFilter: [
       "12:00PM",
@@ -733,9 +733,9 @@ const data = [
     name: "Joe's Surf Shack",
     town: "Belmar",
     link: "https://www.jss.surf/",
-    dayText: "Mon - Fri 12:00PM - 6:00PM",
+    dayText: "Monday - Friday: 12:00PM - 6:00PM",
     timeText: "Wednesday All Day",
-    description: "Tuesday 8-close $2 drafts",
+    description: "Tuesday 8PM - Close: $2 Drafts",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeFilter: [
       "All Day",
@@ -759,7 +759,7 @@ const data = [
     link: "https://www.heights27.com/",
     dayText: "Monday - Friday",
     timeText: "12:00PM - 6:00PM",
-    description: "$2.50 drafts, $5.50 well drinks, $6 house wine, 25% off select appetizers",
+    description: "$2.50 Drafts, $5.50 Well Drinks, $6 House Wine, 25% Off Select Appetizers",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeFilter: [
       "12:00PM",
