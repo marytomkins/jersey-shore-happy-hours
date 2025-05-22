@@ -264,7 +264,7 @@ const data = [
       "6:00PM",
     ],
     description:
-      "$10 Gin & Jams, $5 House wWnes, $5 Draft Beer, Discounts on Select Pizzas and Bar Snacks",
+      "$10 Gin & Jams, $5 House Wines, $5 Draft Beer, Discounts on Select Pizzas and Bar Snacks",
     link: "https://talulaspizza.com/blogs/events/happy-hour-at-the-bar",
   },
   {
