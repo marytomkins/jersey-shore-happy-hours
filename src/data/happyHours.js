@@ -734,8 +734,8 @@ const data = [
     town: "Belmar",
     link: "https://www.jss.surf/",
     dayText: "Monday - Friday: 12:00PM - 6:00PM",
-    timeText: "Wednesday All Day",
-    description: "Tuesday 8PM - Close: $2 Drafts",
+    timeText: "Wednesday: All Day",
+    description: "Monday 8PM - Close: $5 High Noons | Tuesday 8PM - Close: $2 Millers & Coors",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeFilter: [
       "All Day",
