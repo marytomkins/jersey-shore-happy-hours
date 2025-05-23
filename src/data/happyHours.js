@@ -339,7 +339,7 @@ const data = [
     link: "https://static1.squarespace.com/static/59a4cdeaf14aa16afb1ebe38/t/6674df7105dae94cdaed0faa/1718935409569/hatchhappyhpur+%5BRecovered%5D.pdf",
     dayText: "Monday - Thursday",
     timeText: "8:00 AM - 10:00 AM",
-    description: "$5 Starters, $5 Coffee/Teas",
+    description: "$5 Starters, $5 Coffee/Teas, 2 For $20 Entrees",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday"],
     timeFilter: [],
   },
