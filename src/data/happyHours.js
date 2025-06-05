@@ -790,7 +790,7 @@ const data = [
   {
     name: "La Sierra Restaurant",
     town: "Belmar",
-    link: "https://jenksclub.com/happenings/golden-hour-with-jsoul/?event_rdate=20250606160000,20250606200000",
+    link: "https://www.instagram.com/lasierrarestaurant/?hl=en",
     dayText: "Monday - Friday: 1:00PM - 4:00PM",
     timeText: "Thursday: All Day",
     description: "Discounted Food, $4 Beers | Thursday: $9.99 House Margarita",
