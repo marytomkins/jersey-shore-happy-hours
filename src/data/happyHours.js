@@ -771,6 +771,22 @@ const data = [
       "6:00PM",
     ],
   },
+  {
+    name: "Jenks Club",
+    town: "Point Pleasant",
+    link: "https://jenksclub.com/happenings/golden-hour-with-jsoul/?event_rdate=20250606160000,20250606200000",
+    dayText: "Friday",
+    timeText: "4:00PM - 8:00PM",
+    description: "$3.50 16oz Millers, $6 Mojitos, $1.50 Raw Bar, $3 Shrimp Salad Sliders",
+    dayFilter: ["Friday"],
+    timeFilter: [
+      "4:00PM",
+      "5:00PM",
+      "6:00PM",
+      "7:00PM",
+      "8:00PM",
+    ],
+  },
 ];
 
 export const happyHours = data.sort((a, b) => a.name.localeCompare(b.name))
