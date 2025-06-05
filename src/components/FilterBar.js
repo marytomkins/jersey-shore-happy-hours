@@ -114,6 +114,12 @@ const FilterBar = ({ onFilter, onSort }) => {
     if (category === "days") setSelectedDays(updated.days);
     if (category === "times") setSelectedTimes(updated.times);
     onFilter(updated, searchTerm);
+    setClearAllState(
+      searchTerm.length > 0 ||
+        updated.towns?.length > 0 ||
+        updated.days?.length > 0 ||
+        updated.times?.length > 0
+    );
   };
 
   const setSortBy = (option) => {

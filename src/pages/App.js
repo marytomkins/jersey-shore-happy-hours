@@ -6,14 +6,14 @@ import Content from "../components/Content";
 import Feedback from "../components/Feedback";
 import Footer from "../components/Footer";
 import { happyHours } from "../data/happyHours";
-
 function App() {
   const [filteredData, setFilteredData] = useState(happyHours);
   const [showFeedbackForm, setShowFeedbackForm] = useState(false);
+  const [sortByState, setSortByState] = useState("");
 
   const handleFilter = (filters, searchTerm = "") => {
     const { towns, days, times } = filters || [];
-    const result = filteredData.filter((item) => {
+    const result = happyHours.filter((item) => {
       const matchTown = towns?.length === 0 || towns?.includes(item.town);
       const matchDay =
         days?.length === 0 ||
@@ -26,11 +26,13 @@ function App() {
         item.name.toLowerCase().includes(searchTerm.toLowerCase());
       return matchTown && matchDay && matchTime && matchSearch;
     });
-    setFilteredData(result);
+    if (sortByState) handleSort(sortByState, result);
+    else setFilteredData(result);
   };
 
-  const handleSort = (sortBy) => {
-    let sortedData = [...filteredData];
+  const handleSort = (sortBy, data = []) => {
+    setSortByState(sortBy);
+    let sortedData = data.length > 0 ? [...data] : [...filteredData];
     switch (sortBy) {
       case "Restaurant A to Z":
         sortedData = sortedData.sort((a, b) => a.name.localeCompare(b.name));
