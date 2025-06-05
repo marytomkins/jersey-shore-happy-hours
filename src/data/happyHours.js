@@ -675,8 +675,8 @@ const data = [
     name: "10th Ave Burrito",
     town: "Belmar",
     link: "https://tenthaveburrito.com/specials/",
-    dayText: "Monday - Friday: 11:00AM - 5:00PM / On The Patio: Sunday - Thursday: 2:00PM - 6:00PM",
-    timeText: "Wednesday: All Day",
+    dayText: "Monday - Friday: 11:00AM - 5:00PM, Wednesday: All Day",
+    timeText: "On The Patio Sunday - Thursday: 2:00PM - 6:00PM",
     description:
       "$3 Beers, $5 Wine & Well Drinks, Discounted Drinks and Food | Monday: Margartia and 1/2 Price Burritos | Tuesday: $10 All You Can Eat Tacos, etc. | On The Patio: $7 Street Tacos, $8 Modelito Buckets ",
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
