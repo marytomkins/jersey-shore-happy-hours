@@ -26,7 +26,7 @@ const data = [
     timeFilter: ["All Day"],
     description:
       "Monday: Buy One Burger, Get One 1/2 Off; Tuesday: Beat the Clock! - Drafts start at 50 cents at 8PM and increase 25 cents by the hour",
-    link: "https://bar-a.com/dining/main-menu/",
+    link: "https://bar-a.com",
   },
   {
     name: "St Stephen's Green Publick House",
@@ -97,7 +97,7 @@ const data = [
     timeText: "4:00PM - 9:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM", "7:00PM", "8:00PM", "9:00PM"],
     description: "$4 Drafts, $6 House Wine, $7 Well Drinks, Discounted Food",
-    link: "https://www.instagram.com/p/DAooSt1vXAX/?img_index=1",
+    link: "https://www.instagram.com/p/DKaWtFaPJBf/?img_index=1",
   },
   {
     name: "Deal Lake Bar & Co",
@@ -106,7 +106,7 @@ const data = [
     dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeText: "4:00PM - 6:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
-    description: "50% Off Alcohol, $8 Bar Snacks",
+    description: "50% Off All Beer, Wine & Alcohol, $8 Bar Snacks",
     link: "https://static1.squarespace.com/static/600b85e76c455e4aedf86f82/t/67fec7aa81eb1c49314ae371/1744750506572/Happy+Hour+Menu+Online.pdf",
   },
   {
@@ -224,7 +224,7 @@ const data = [
       "Thursday",
       "Friday",
     ],
-    timeText: "Monday - Friday: 3:00 PM - 6:00PM, Saturday: 12:00PM - 3:00PM, Sunday: All Day",
+    timeText: "Monday - Friday: 12:00 PM - 6:00PM, Saturday - Sunday: 12:00PM - 4:00PM",
     timeFilter: [
       "All Day",
       "12:00PM",
@@ -286,18 +286,18 @@ const data = [
     timeText: "4:00 PM - 6:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
     description: "",
-    link: "https://www.itsrbar.com/drink",
+    link: "https://www.itsrbar.com/home",
   },
   {
     name: "Pascal & Sabine",
     town: "Asbury Park",
-    dayText: "Every Day, Tuesday: All Day, Monday - Thursday: 5:00 PM - 7:00 PM",
-    dayFilter: ["Friday", "Monday", "Tuesday", "Wednesday", "Thursday"],
-    timeText: "Friday - Sunday: 4:00 PM - 6:00 PM",
-    timeFilter: ["All Day", "7:00PM", "4:00PM", "5:00PM", "6:00PM"],
+    dayText: "Sunday - Thursday",
+    dayFilter: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+    timeText: "4:00 PM - 6:00 PM",
+    timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
     description:
-      "$12 Cocktails, $10 Martinis, $8 Wine, $6 Beer, Discounted Food",
-    link: "https://drive.google.com/file/d/10jvEcMT_0ycgqw5Wt-15wESgEODPR985/view",
+      "$12 Cocktails, $8 Wine, $6 Beer, Discounted Food",
+    link: "https://drive.google.com/file/d/1zmQRNdeSxlOy929WXGYUiTIoIwpD1h4h/view",
   },
   {
     name: "Seacrab",
@@ -457,7 +457,7 @@ const data = [
   {
     name: "Reef & Barrel",
     town: "Manasquan",
-    link: "https://www.reefandbarrel.com/menus",
+    link: "https://www.reefandbarrel.com/menu",
     dayText: "Monday - Friday 11:00AM - 6:00PM",
     timeText: "Thursday All Day",
     description:
