@@ -1,10 +1,11 @@
 import "../App.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "../components/Header";
 import FilterBar from "../components/FilterBar";
 import Content from "../components/Content";
 import Feedback from "../components/Feedback";
 import Footer from "../components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 import { happyHours } from "../data/happyHours";
 function App() {
   const [filteredData, setFilteredData] = useState(happyHours);
@@ -52,6 +53,7 @@ function App() {
 
   return (
     <div className="App h-max flex flex-col">
+      <Analytics />
       <div>
         <Header />
       </div>
