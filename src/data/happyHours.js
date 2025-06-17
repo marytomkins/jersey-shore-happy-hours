@@ -798,13 +798,13 @@ const data = [
     ],
   },
   {
-    name: "Swim Crush",
+    name: "Swimcrush AP",
     town: "Asbury Park",
     link: "https://static1.squarespace.com/static/649c49e6ec092440cd13e4c9/t/6827a4a8bb3dff16d32808b9/1747428520646/Swimcrush+Food+Menu+-+2025+Website.pdf",
     dayText: "Monday - Friday",
     timeText: "3:00PM - 5:00PM",
     description: "Bar Only",
-    dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+    dayFilter: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     timeFilter: [
       "3:00PM",
       "4:00PM",
