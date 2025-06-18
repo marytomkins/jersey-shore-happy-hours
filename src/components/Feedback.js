@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 
 const Feedback = () => {
   const [formText, setFormText] = useState("");

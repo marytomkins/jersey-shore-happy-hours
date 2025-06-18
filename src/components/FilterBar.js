@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { useState, useEffect, useRef } from "react";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 
 const towns = [
   "Asbury Park",
@@ -45,7 +45,7 @@ const sortBy = [
   "Town Z to A",
 ];
 
-const FilterBar = ({ onFilter, onSort }) => {
+const FilterBar = ({ onFilter, onSort, getCurrent }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTowns, setSelectedTowns] = useState([]);
   const [selectedDays, setSelectedDays] = useState([]);
@@ -53,6 +53,7 @@ const FilterBar = ({ onFilter, onSort }) => {
   const [selectedSort, setSelectedSort] = useState("Sort by");
   const [openDropdown, setOpenDropdown] = useState(null);
   const [showClearAll, setClearAllState] = useState(false);
+  const [happeningNow, setHappeningNow] = useState(false);
   const [appliedFilters, setAppliedFilters] = useState({
     towns: [],
     days: [],
@@ -94,13 +95,28 @@ const FilterBar = ({ onFilter, onSort }) => {
         days: selectedDays,
         times: selectedTimes,
       },
-      searchTerm
+      searchTerm,
+      happeningNow
     );
     setClearAllState(
       searchTerm.length > 0 ||
         selectedTowns.length > 0 ||
         selectedDays.length > 0 ||
         selectedTimes.length > 0
+    );
+  };
+
+  const getCurrentDateTime = (getCurrentDateTime) => {
+    setHappeningNow(getCurrentDateTime);
+    setClearAllState(getCurrentDateTime);
+    onFilter(
+      {
+        towns: selectedTowns,
+        days: selectedDays,
+        times: selectedTimes,
+      },
+      searchTerm,
+      getCurrentDateTime
     );
   };
 
@@ -113,7 +129,7 @@ const FilterBar = ({ onFilter, onSort }) => {
     if (category === "towns") setSelectedTowns(updated.towns);
     if (category === "days") setSelectedDays(updated.days);
     if (category === "times") setSelectedTimes(updated.times);
-    onFilter(updated, searchTerm);
+    onFilter(updated, searchTerm, happeningNow);
     setClearAllState(
       searchTerm.length > 0 ||
         updated.towns?.length > 0 ||
@@ -135,19 +151,28 @@ const FilterBar = ({ onFilter, onSort }) => {
     setSelectedTimes([]);
     setAppliedFilters({ towns: [], days: [], times: [] });
     onFilter({ towns: [], days: [], times: [] });
+    setHappeningNow(false);
     setClearAllState(false);
   };
 
   const renderDropdown = (label, key, options, selected, setSelected) => {
     let isSortBy = key === "sortBy";
+    let disabled = (key === "times" || key === "days") && happeningNow;
     return (
       <div className="relative group">
         <button
-          className="flex items-center bg-white border border-gray-300 rounded-md px-4 py-2 text-sm shadow-sm hover:bg-gray-100"
+          className={`flex items-center border border-gray-300 rounded-md px-4 py-2 text-sm shadow-sm hover:bg-gray-100 ${
+            disabled ? "bg-gray-100" : "bg-white"
+          }`}
           onClick={() => setOpenDropdown(openDropdown === key ? null : key)}
+          disabled={disabled}
         >
           <span className="mr-2">{label}</span>
-          <ChevronDownIcon className="h-4 w-4 text-gray-500" />
+          {openDropdown === key ? (
+            <ChevronUpIcon className="h-4 w-4 text-gray-500" />
+          ) : (
+            <ChevronDownIcon className="h-4 w-4 text-gray-500" />
+          )}
         </button>
 
         {openDropdown === key && (
@@ -188,20 +213,39 @@ const FilterBar = ({ onFilter, onSort }) => {
         className="flex items-center bg-white text-sm px-2 py-1 mr-2 mb-2 rounded-full text-[#2f55c4] cursor-pointer hover:text-black"
       >
         <span className="mr-2 capitalize">{item}</span>
-        <button onClick={() => removeFilter(category, item)}>×</button>
+        <div onClick={() => removeFilter(category, item)}>×</div>
       </div>
     ));
 
   return (
-    <div>
-      <div className="filter-bar block sm:flex" ref={dropdownRef}>
+    <div className="filter-bar">
+      <div
+        className="happening-now cursor-pointer flex justify-center w-fit m-auto items-center h-10 py-1 text-sm font-medium"
+        onClick={() => {
+          getCurrentDateTime(!happeningNow);
+        }}
+      >
+        <button
+          className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${
+            happeningNow ? "bg-[#b4e255]" : "bg-gray-300"
+          }`}
+        >
+          <span
+            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${
+              happeningNow ? "translate-x-6" : "translate-x-1"
+            }`}
+          />
+        </button>
+        Happening Now
+      </div>
+      <div className="block sm:flex" ref={dropdownRef}>
         <div className="left-filters flex px-4 sm:px-8">
           <div className="search-filters flex  justify-center sm:justify-start flex-wrap items-center gap-2 py-4">
             <div>
               <input
                 type="text"
                 placeholder="Search by restaurant"
-                className="cursor-pointer hover:bg-gray-100 bg-white border border-gray-300 rounded-md px-4 py-2 text-sm shadow-sm focus:outline-none"
+                className="cursor-pointer h-10 hover:bg-gray-100 bg-white border border-gray-300 rounded-md px-4 py-2 text-sm shadow-sm focus:outline-none"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 onKeyDown={(e) => {
