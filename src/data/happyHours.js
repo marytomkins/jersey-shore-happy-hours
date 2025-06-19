@@ -19,7 +19,10 @@ const data = [
     name: "Bar Anticipation",
     town: "Belmar",
     dayText: "Monday & Tuesday",
-    dayFilter: { Monday: ["12:00PM", "10:00PM"], Tuesday: ["5:00PM", "11:59PM"] },
+    dayFilter: {
+      Monday: ["12:00PM", "10:00PM"],
+      Tuesday: ["5:00PM", "11:59PM"],
+    },
     timeText: "All Day",
     timeFilter: ["All Day"],
     description:
@@ -323,7 +326,8 @@ const data = [
     },
     timeText: "Thursday - Friday: 4:00PM - 7:00PM",
     timeFilter: [],
-    description: "$7 Wine, $9 Cocktails, Discounted food | Thursday: 50% Off Martinis",
+    description:
+      "$7 Wine, $9 Cocktails, Discounted food | Thursday: 50% Off Martinis",
     link: "https://www.heyreyla.com/drink",
   },
   {
@@ -958,7 +962,7 @@ const data = [
     link: "https://www.instagram.com/lasierrarestaurant/?hl=en",
     dayText: "Monday - Friday: 1:00PM - 4:00PM",
     timeText: "Thursday: All Day",
-    description: "Discounted Food, $4 Beers | Thursday: $9.99 House Margarita",
+    description: "Discounted Food, $4 Beers | Thursdays: $9.99 House Margarita",
     dayFilter: {
       Monday: ["1:00PM", "4:00PM"],
       Tuesday: ["1:00PM", "4:00PM"],
@@ -983,6 +987,23 @@ const data = [
       Friday: ["3:00PM", "5:00PM"],
     },
     timeFilter: ["3:00PM", "4:00PM", "5:00PM"],
+  },
+  {
+    name: "Tommy's Tavern & Tap",
+    town: "Sea Girt",
+    link: "https://www.tommystavernandtap.com/seagirtnj",
+    dayText: "Monday - Friday",
+    timeText: "3:00PM - 6:00PM",
+    description:
+      "$2 off Drafts, $6 House Wines, $2 off All Cocktails, $7 Sangria | Mondays 4PM - Close: Half Price Cocktails | Wednesdays 4PM - Close: Half Price Sangria",
+    dayFilter: {
+      Monday: ["3:00PM", "6:00PM"],
+      Tuesday: ["3:00PM", "6:00PM"],
+      Wednesday: ["3:00PM", "6:00PM"],
+      Thursday: ["3:00PM", "6:00PM"],
+      Friday: ["3:00PM", "6:00PM"],
+    },
+    timeFilter: ["3:00PM", "4:00PM", "5:00PM", "6:00PM"],
   },
 ];
 
