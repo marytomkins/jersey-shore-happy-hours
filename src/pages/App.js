@@ -34,12 +34,12 @@ function App() {
         const current = parseTimeString(currentTime);
         const startMinutes = parseTimeString(start);
         const endMinutes = parseTimeString(end);
-
         return current >= startMinutes && current <= endMinutes;
       }
+      return false;
     });
     setCurrentHappyHours(result);
-  }, [happyHours]);
+  }, []);
 
   const handleFilter = (filters, searchTerm = "", happeningNow = false) => {
     const { towns, days, times } = filters || [];

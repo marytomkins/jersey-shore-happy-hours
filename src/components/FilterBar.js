@@ -220,7 +220,7 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
   return (
     <div className="filter-bar">
       <div
-        className="happening-now cursor-pointer flex justify-center w-fit m-auto items-center h-10 py-1 text-sm font-medium"
+        className="happening-now cursor-pointer flex justify-center w-fit m-auto items-center h-10 py-1 text-sm font-medium hover:text-gray-500"
         onClick={() => {
           getCurrentDateTime(!happeningNow);
         }}
