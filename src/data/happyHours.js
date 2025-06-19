@@ -191,7 +191,7 @@ const data = [
     timeText: "4:00PM - 9:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM", "7:00PM", "8:00PM", "9:00PM"],
     description: "$4 Drafts, $6 House Wine, $7 Well Drinks, Discounted Food",
-    link: "https://www.instagram.com/p/DKaWtFaPJBf/?img_index=1",
+    link: "https://www.instagram.com/p/DLDyAKVAHBG/?hl=en&img_index=1",
   },
   {
     name: "Deal Lake Bar & Co",
