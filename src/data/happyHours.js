@@ -806,7 +806,7 @@ const data = [
       Wednesday: ["11:00AM", "9:00PM"],
       Thursday: ["11:00AM", "5:00PM"],
       Friday: ["11:00AM", "5:00PM"],
-      Sunday: ["2:00AM", "6:00PM"],
+      Sunday: ["2:00PM", "6:00PM"],
     },
     timeFilter: [
       "All Day",
