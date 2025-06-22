@@ -661,16 +661,20 @@ const data = [
     name: "Boatyard 401",
     town: "Point Pleasant",
     link: "https://boatyard401.com/wp-content/uploads/2025/01/BoatYard401-Menu-Jan2025pdf.pdf",
-    dayText: "Monday - Friday",
+    dayText:
+      "Monday - Friday: 12:00PM - 6:00PM, Wednesday: All Day, Saturday - Sunday: 4:00PM - 7:00PM",
     timeText: "12:00PM - 6:00PM",
     dayFilter: {
       Monday: ["12:00PM", "6:00PM"],
       Tuesday: ["12:00PM", "6:00PM"],
-      Wednesday: ["12:00PM", "6:00PM"],
+      Wednesday: ["12:00PM", "12:00AM"],
       Thursday: ["12:00PM", "6:00PM"],
       Friday: ["12:00PM", "6:00PM"],
+      Saturday: ["4:00PM", "7:00PM"],
+      Sunday: ["4:00PM", "7:00PM"],
     },
     timeFilter: [
+      "All Day",
       "12:00PM",
       "1:00PM",
       "2:00PM",
@@ -678,9 +682,10 @@ const data = [
       "4:00PM",
       "5:00PM",
       "6:00PM",
+      "7:00PM",
     ],
     description:
-      "Discounted Beer, $5 House Drinks, $5 House Wines, $6 Plain Bar Pie",
+      "Discounted Beer, $5 House Drinks, $5 House Wines, $6 Plain Bar Pie | Weekends: $10 Drink Buckets",
   },
   {
     name: "B2 Bistro & Bar",
