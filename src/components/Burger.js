@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, InstagramIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Burger = () => {
@@ -12,6 +12,14 @@ const Burger = () => {
 
   return (
     <>
+    <a
+          href="https://www.instagram.com/jerseyshore_happyhours"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-6 text-gray-900 hover:text-[#b4e255] transition absolute top-6 right-8"
+        >
+          <InstagramIcon className="w-6 h-6" />
+        </a>
       <button
         className="absolute top-4 right-4 z-50 text-gray-800 hover:text-[#2f55c4]"
         onClick={() => setIsOpen(true)}
