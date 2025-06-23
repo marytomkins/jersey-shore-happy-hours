@@ -385,7 +385,7 @@ const data = [
       Thursday: ["4:30PM", "6:30PM"],
       Friday: ["4:30PM", "6:30PM"],
       Saturday: ["10:00AM", "1:00PM"],
-      Sunday: ["10:00PM", "1:00PM"],
+      Sunday: ["10:00AM", "1:00PM"],
     },
     timeText:
       "Monday - Thursday: 4:30 PM - 6:30PM, Tuesday: All Day, Saturday - Sunday: 10:00 AM - 1:00 PM",
@@ -831,11 +831,11 @@ const data = [
     timeText: "4:00PM - 7:00PM",
     description: "$2 Off Drafts, $5 Wine & Well drinks, Discounted Food",
     dayFilter: {
-      Monday: ["4:00AM", "7:00PM"],
-      Tuesday: ["4:00AM", "7:00PM"],
-      Wednesday: ["4:00AM", "7:00PM"],
-      Thursday: ["4:00AM", "7:00PM"],
-      Friday: ["4:00AM", "7:00PM"],
+      Monday: ["4:00PM", "7:00PM"],
+      Tuesday: ["4:00PM", "7:00PM"],
+      Wednesday: ["4:00PM", "7:00PM"],
+      Thursday: ["4:00PM", "7:00PM"],
+      Friday: ["4:00PM", "7:00PM"],
     },
     timeFilter: [
       "4:00PM",
@@ -1009,6 +1009,22 @@ const data = [
       Friday: ["3:00PM", "6:00PM"],
     },
     timeFilter: ["3:00PM", "4:00PM", "5:00PM", "6:00PM"],
+  },
+  {
+    name: "Spring Lake Tap House",
+    town: "Spring Lake",
+    link: "https://www.springlaketaphouse.com/",
+    dayText: "Monday - Friday",
+    timeText: "12:00PM - 5:00PM",
+    description: "$3 Drafts, $4 Bottles, $6 Well Drinks | $6 Wings, Bar Pies & Sliders | $2 Coors All Day Every Day",
+    dayFilter: {
+      Monday: ["12:00PM", "5:00PM"],
+      Tuesday: ["12:00PM", "5:00PM"],
+      Wednesday: ["12:00PM", "5:00PM"],
+      Thursday: ["12:00PM", "5:00PM"],
+      Friday: ["12:00PM", "5:00PM"],
+    },
+    timeFilter: ["3:00PM", "4:00PM", "5:00PM", "2:00PM", "1:00PM", "12:00PM"],
   },
 ];
 
