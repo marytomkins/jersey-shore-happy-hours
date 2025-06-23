@@ -5,6 +5,7 @@ import Burger from "../components/Burger";
 import Header from "../components/Header";
 import FilterBar from "../components/FilterBar";
 import Content from "../components/Content";
+import Map from "../components/Map";
 import Feedback from "../components/Feedback";
 import Footer from "../components/Footer";
 import { Analytics } from "@vercel/analytics/react";
@@ -105,6 +106,7 @@ function App() {
                 </>
               }
             />
+            <Route path="/map" element={<Map />} />
             <Route path="/feedback" element={<Feedback />} />
           </Routes>
         </div>
