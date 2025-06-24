@@ -38,6 +38,7 @@ const times = [
   "11:00PM",
   "12:00AM",
 ];
+const events = ["Trivia", "Bingo", "Karaoke", "Live Music"];
 const sortBy = [
   "Restaurant A to Z",
   "Restaurant Z to A",
@@ -45,9 +46,10 @@ const sortBy = [
   "Town Z to A",
 ];
 
-const FilterBar = ({ onFilter, onSort, getCurrent }) => {
+const FilterBar = ({ page, onFilter, onSort }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTowns, setSelectedTowns] = useState([]);
+  const [selectedEvents, setSelectedEvents] = useState([]);
   const [selectedDays, setSelectedDays] = useState([]);
   const [selectedTimes, setSelectedTimes] = useState([]);
   const [selectedSort, setSelectedSort] = useState("Sort by");
@@ -56,10 +58,13 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
   const [happeningNow, setHappeningNow] = useState(false);
   const [appliedFilters, setAppliedFilters] = useState({
     towns: [],
+    events: [],
     days: [],
     times: [],
   });
   const dropdownRef = useRef(null);
+  const showTimeFilter = !!(page === "home");
+  const showEventFilter = !!(page === "events");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -85,6 +90,7 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
     setOpenDropdown(null);
     const newFilters = {
       towns: selectedTowns,
+      events: selectedEvents,
       days: selectedDays,
       times: selectedTimes,
     };
@@ -92,6 +98,7 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
     onFilter(
       {
         towns: selectedTowns,
+        events: selectedEvents,
         days: selectedDays,
         times: selectedTimes,
       },
@@ -101,6 +108,7 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
     setClearAllState(
       searchTerm.length > 0 ||
         selectedTowns.length > 0 ||
+        selectedEvents.length > 0 ||
         selectedDays.length > 0 ||
         selectedTimes.length > 0
     );
@@ -112,6 +120,7 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
     onFilter(
       {
         towns: selectedTowns,
+        events: selectedEvents,
         days: selectedDays,
         times: selectedTimes,
       },
@@ -127,12 +136,14 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
     };
     setAppliedFilters(updated);
     if (category === "towns") setSelectedTowns(updated.towns);
+    if (category === "events") setSelectedEvents(updated.events);
     if (category === "days") setSelectedDays(updated.days);
     if (category === "times") setSelectedTimes(updated.times);
     onFilter(updated, searchTerm, happeningNow);
     setClearAllState(
       searchTerm.length > 0 ||
         updated.towns?.length > 0 ||
+        updated.events?.length > 0 ||
         updated.days?.length > 0 ||
         updated.times?.length > 0
     );
@@ -147,10 +158,11 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
   const clearAllFilters = () => {
     setSearchTerm("");
     setSelectedTowns([]);
+    setSelectedEvents([]);
     setSelectedDays([]);
     setSelectedTimes([]);
-    setAppliedFilters({ towns: [], days: [], times: [] });
-    onFilter({ towns: [], days: [], times: [] });
+    setAppliedFilters({ towns: [], events: [], days: [], times: [] });
+    onFilter({ towns: [], events: [], days: [], times: [] });
     setHappeningNow(false);
     setClearAllState(false);
   };
@@ -261,6 +273,14 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
                 selectedTowns,
                 setSelectedTowns
               )}
+              {showEventFilter &&
+                renderDropdown(
+                  "Events",
+                  "events",
+                  events,
+                  selectedEvents,
+                  setSelectedEvents
+                )}
               {renderDropdown(
                 "Days",
                 "days",
@@ -268,13 +288,14 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
                 selectedDays,
                 setSelectedDays
               )}
-              {renderDropdown(
-                "Times",
-                "times",
-                times,
-                selectedTimes,
-                setSelectedTimes
-              )}
+              {showTimeFilter &&
+                renderDropdown(
+                  "Times",
+                  "times",
+                  times,
+                  selectedTimes,
+                  setSelectedTimes
+                )}
             </div>
           </div>
         </div>
@@ -306,6 +327,7 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
       </div>
       <div className="selected-filters flex flex-wrap px-4">
         {renderSelectedFilters("towns", appliedFilters.towns)}
+        {renderSelectedFilters("events", appliedFilters.events)}
         {renderSelectedFilters("days", appliedFilters.days)}
         {renderSelectedFilters("times", appliedFilters.times)}
       </div>

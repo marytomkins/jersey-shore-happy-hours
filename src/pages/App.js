@@ -6,6 +6,8 @@ import Feedback from "../components/Feedback";
 import Footer from "../components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import Home from "../components/Home";
+import { happyHours } from "../data/happyHours";
+import { specialEvents } from "../data/specialEvents";
 
 function App() {
   return (
@@ -18,7 +20,11 @@ function App() {
         </div>
         <div className="main-content flex-grow">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home page={"home"} content={happyHours} />} />
+            <Route
+              path="/special-events"
+              element={<Home page={"events"} content={specialEvents}/>}
+            />
             <Route path="/feedback" element={<Feedback />} />
           </Routes>
         </div>

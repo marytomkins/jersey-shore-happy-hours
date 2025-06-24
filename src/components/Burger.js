@@ -6,20 +6,21 @@ const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", path: "/" },
+    { name: "Happy Hours", path: "/" },
+    { name: "Special Events", path: "/special-events" },
     { name: "Feedback Form", path: "/feedback" },
   ];
 
   return (
     <>
-    <a
-          href="https://www.instagram.com/jerseyshore_happyhours"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 text-gray-900 hover-text-green transition absolute top-6 right-8"
-        >
-          <InstagramIcon className="w-6 h-6" />
-        </a>
+      <a
+        href="https://www.instagram.com/jerseyshore_happyhours"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 px-6 text-gray-900 hover-text-green transition absolute top-6 right-8"
+      >
+        <InstagramIcon className="w-6 h-6" />
+      </a>
       <button
         className="absolute top-4 right-4 z-50 text-gray-800 hover-text-blue"
         onClick={() => setIsOpen(true)}
