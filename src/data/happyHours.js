@@ -668,7 +668,7 @@ const data = [
     dayFilter: {
       Monday: ["12:00PM", "6:00PM"],
       Tuesday: ["12:00PM", "6:00PM"],
-      Wednesday: ["12:00PM", "12:00AM"],
+      Wednesday: ["12:00PM", "11:59PM"],
       Thursday: ["12:00PM", "6:00PM"],
       Friday: ["12:00PM", "6:00PM"],
       Saturday: ["4:00PM", "7:00PM"],
@@ -1028,18 +1028,36 @@ const data = [
     },
     timeFilter: ["3:00PM", "4:00PM", "5:00PM", "2:00PM", "1:00PM", "12:00PM"],
   },
-    {
+  {
     name: "Johnny Mac House of Spirits",
     town: "Asbury Park",
     link: "hhttps://www.johnnymacbar.com/",
     dayText: "Sunday",
     timeText: "10:00AM - 3:00PM",
-    description:
-      "$3 Bloody Marys & Mimosas, Free Omelettes",
+    description: "$3 Bloody Marys & Mimosas, Free Omelettes",
     dayFilter: {
       Sunday: ["10:00AM", "3:00PM"],
     },
     timeFilter: ["3:00PM", "2:00PM", "1:00PM", "12:00PM"],
+  },
+  {
+    name: "Leggetts Sand Bar",
+    town: "Manasquan",
+    link: "https://www.leggetts.us/calendar",
+    dayText: "Every Day",
+    // timeText: "6:00PM - 9:00PM",
+    description:
+      "Daily Specials",
+    dayFilter: {
+      Monday: ["12:00PM", "11:59AM"],
+      Tuesday: ["12:00PM", "11:59PM"],
+      Wednesday: ["12:00PM", "11:59PM"],
+      Thursday: ["12:00PM", "11:59PM"],
+      Friday: ["12:00PM", "11:59PM"],
+      Saturday: ["12:00PM", "11:59PM"],
+      Sunday: ["12:00PM", "11:59PM"],
+    },
+    timeFilter: ["All Day"],
   },
 ];
 
