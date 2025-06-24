@@ -1028,6 +1028,19 @@ const data = [
     },
     timeFilter: ["3:00PM", "4:00PM", "5:00PM", "2:00PM", "1:00PM", "12:00PM"],
   },
+    {
+    name: "Johnny Mac House of Spirits",
+    town: "Asbury Park",
+    link: "hhttps://www.johnnymacbar.com/",
+    dayText: "Sunday",
+    timeText: "10:00AM - 3:00PM",
+    description:
+      "$3 Bloody Marys & Mimosas, Free Omelettes",
+    dayFilter: {
+      Sunday: ["10:00AM", "3:00PM"],
+    },
+    timeFilter: ["3:00PM", "2:00PM", "1:00PM", "12:00PM"],
+  },
 ];
 
 export const happyHours = data.sort((a, b) => a.name.localeCompare(b.name));
