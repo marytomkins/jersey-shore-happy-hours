@@ -34,7 +34,7 @@ const Feedback = () => {
   };
 
   return (
-    <div className="p-6 md:w-1/2 w-3/4 mx-auto bg-white rounded-md mt-8">
+    <div className="feedback-page p-6 md:w-1/2 w-3/4 mx-auto bg-white rounded-md mt-8">
       <div className="text-2xl font-semibold text-center">Submit Feedback</div>
       <div className="text-sm my-4 px-4 text-center">
         If there are any mistakes or I am missing any restaurants/bars, please
