@@ -33,23 +33,24 @@ const data = [
     name: "St Stephen's Green Publick House",
     town: "Spring Lake",
     dayText: "Monday - Friday",
-    timeText: "3:30PM - 6:30PM",
+    timeText: "4:00PM - 6:00PM",
     dayFilter: {
-      Monday: ["3:30PM", "6:30PM"],
-      Tuesday: ["3:30PM", "6:30PM"],
-      Wednesday: ["3:30PM", "6:30PM"],
-      Thursday: ["3:30PM", "6:30PM"],
-      Friday: ["3:30PM", "6:30PM"],
+      Monday: ["4:00PM", "6:00PM"],
+      Tuesday: ["4:00PM", "6:00PM"],
+      Wednesday: ["4:00PM", "6:00PM"],
+      Thursday: ["4:00PM", "6:00PM"],
+      Friday: ["4:00PM", "6:00PM"],
     },
-    timeFilter: ["3:00PM", "4:00PM", "5:00PM", "6:00PM"],
-    description: "",
-    link: "https://www.ssgpub.com/",
+    timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
+    description:
+      "$5 Drafts, $5 Well Drinks, $5 House Wines, $7 20oz Guinness, 1/2 Off All Appetizers",
+    link: "https://www.instagram.com/p/DKh6zWxRRUV/?img_index=1",
   },
   {
     name: "Wharfside Seafood and Patio Bar",
     town: "Point Pleasant",
     link: "https://www.wharfsidenj.com/happy-hour",
-    dayText: "Monday - Friday: 12:00PM - 6:00PM",
+    dayText: "Every Day, Monday - Friday: 12:00PM - 6:00PM",
     timeText: "Saturday - Sunday: 12:00PM - 4:00PM",
     description:
       "Bar Area Only: $2 Raw Bar, $2 Off Cocktails, Discounted Beer, Discounted Food",
@@ -350,7 +351,7 @@ const data = [
   {
     name: "Stella Marina",
     town: "Asbury Park",
-    dayText: "Every day",
+    dayText: "Every Day",
     dayFilter: {
       Monday: ["12:00PM", "6:00PM"],
       Tuesday: ["12:00PM", "6:00PM"],
@@ -662,8 +663,8 @@ const data = [
     town: "Point Pleasant",
     link: "https://boatyard401.com/wp-content/uploads/2025/01/BoatYard401-Menu-Jan2025pdf.pdf",
     dayText:
-      "Monday - Friday: 12:00PM - 6:00PM, Wednesday: All Day, Saturday - Sunday: 4:00PM - 7:00PM",
-    timeText: "12:00PM - 6:00PM",
+      "Every Day, Monday - Friday: 12:00PM - 6:00PM, Wednesday: All Day, Saturday - Sunday: 4:00PM - 7:00PM",
+    timeText: "",
     dayFilter: {
       Monday: ["12:00PM", "6:00PM"],
       Tuesday: ["12:00PM", "6:00PM"],
@@ -752,7 +753,7 @@ const data = [
     town: "Belmar",
     link: "https://www.flamesbraziliansteakhouse.com/menu",
     dayText: "Monday - Friday: 4:00PM - 7:00PM",
-    timeText: "All Day Sunday",
+    timeText: "Sunday: All Day",
     description: "",
     dayFilter: {
       Monday: ["4:00PM", "7:00PM"],
@@ -1016,7 +1017,8 @@ const data = [
     link: "https://www.springlaketaphouse.com/",
     dayText: "Monday - Friday",
     timeText: "12:00PM - 5:00PM",
-    description: "$3 Drafts, $4 Bottles, $6 Well Drinks | $6 Wings, Bar Pies & Sliders | $2 Coors All Day Every Day",
+    description:
+      "$3 Drafts, $4 Bottles, $6 Well Drinks | $6 Wings, Bar Pies & Sliders | $2 Coors All Day Every Day",
     dayFilter: {
       Monday: ["12:00PM", "5:00PM"],
       Tuesday: ["12:00PM", "5:00PM"],
