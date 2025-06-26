@@ -12,20 +12,22 @@ const Burger = () => {
 
   return (
     <>
-    <a
+      <div className="w-full flex justify-end pt-4 px-4">
+        <a
           href="https://www.instagram.com/jerseyshore_happyhours"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 text-gray-900 hover-text-green transition absolute top-6 right-8"
+          className="flex items-center gap-2 px-4 text-gray-900 hover-text-green transition"
         >
           <InstagramIcon className="w-6 h-6" />
         </a>
-      <button
-        className="absolute top-4 right-4 z-50 text-gray-800 hover-text-blue"
-        onClick={() => setIsOpen(true)}
-      >
-        <Menu size={28} />
-      </button>
+        <button
+          className="z-50 text-gray-800 hover-text-blue"
+          onClick={() => setIsOpen(true)}
+        >
+          <Menu size={28} />
+        </button>
+      </div>
       {isOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-40 z-40"
