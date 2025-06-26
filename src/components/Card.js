@@ -31,7 +31,7 @@ const Card = ({ bar, index }) => {
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#2f55c4] hover:text-[#b4e255]"
+            className="text-blue hover-text-green"
           >
             <ArrowTopRightOnSquareIcon className="w-5 h-5" />
           </a>

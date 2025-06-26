@@ -1,3 +1,32 @@
 .App {
   min-height: 100%;
 }
+
+.text-blue {
+  color: #2f55c4;
+}
+
+.text-green {
+  color: #b4e255;
+}
+
+.bg-blue {
+  background-color: #2f55c4;
+}
+
+.bg-green {
+  background-color: #b4e255;
+}
+
+.hover-bg-green:hover {
+  background-color: #b4e255;
+}
+.hover-bg-blue:hover {
+  background-color: #2f55c4;
+}
+.hover-text-blue:hover {
+  color: #2f55c4;
+}
+.hover-text-green:hover {
+  color: #b4e255;
+}
