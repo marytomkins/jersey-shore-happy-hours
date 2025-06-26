@@ -754,7 +754,8 @@ const data = [
     link: "https://www.flamesbraziliansteakhouse.com/menu",
     dayText: "Monday - Friday: 4:00PM - 7:00PM",
     timeText: "Sunday: All Day",
-    description: "",
+    description:
+      "Martini Mondays: 1/2 Off Martinis | Margarita Tuesdays: $5 House Margaritas | Sangria Wednesdays: 1/2 Off Sangria",
     dayFilter: {
       Monday: ["4:00PM", "7:00PM"],
       Tuesday: ["4:00PM", "7:00PM"],
@@ -1046,8 +1047,7 @@ const data = [
     link: "https://www.leggetts.us/calendar",
     dayText: "Every Day",
     // timeText: "6:00PM - 9:00PM",
-    description:
-      "Daily Specials",
+    description: "Daily Specials",
     dayFilter: {
       Monday: ["12:00PM", "11:59AM"],
       Tuesday: ["12:00PM", "11:59PM"],
@@ -1058,6 +1058,27 @@ const data = [
       Sunday: ["12:00PM", "11:59PM"],
     },
     timeFilter: ["All Day"],
+  },
+  {
+    name: "The Salty Whale",
+    town: "Manasquan",
+    link: "https://www.instagram.com/p/DLDSxFdAskd/?hl=en",
+    dayText: "Wednesday",
+    timeText: "4:00PM - Close",
+    description:
+      "$8 Sangria, $8 Spicy Margaritas, $10 Beer Pitchers, $10 Large Pizza",
+    dayFilter: {
+      Wednesday: ["4:00PM", "10:00PM"],
+    },
+    timeFilter: [
+      "7:00PM",
+      "8:00PM",
+      "9:00PM",
+      "10:00PM",
+      "4:00PM",
+      "5:00PM",
+      "6:00PM",
+    ],
   },
 ];
 
