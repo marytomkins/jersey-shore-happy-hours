@@ -133,12 +133,12 @@ const data = [
   {
     name: "Barrio Costero",
     town: "Asbury Park",
-    dayText: "Tuesday & Thursday",
+    dayText: "Monday & Tuesday",
     dayFilter: {
       Tuesday: ["4:00PM", "9:30PM"],
       Thursday: ["4:00PM", "9:30PM"],
     },
-    timeText: "4:00PM - 9:30PM",
+    timeText: "All Night",
     timeFilter: [
       "All Day",
       "4:00PM",
@@ -149,7 +149,7 @@ const data = [
       "9:00PM",
     ],
     description:
-      "Taco Tuesday: 3 Tacos + 1 Margy for $15 | Thursday: All-Night Happy Hour",
+      "Monday: All-Night Happy Hour | Taco Tuesday: 3 Tacos + 1 Margy for $15",
     link: "https://www.barriocostero.com/",
   },
   {
@@ -265,9 +265,8 @@ const data = [
   {
     name: "Loteria",
     town: "Asbury Park",
-    dayText: "Tuesday",
-    dayFilter: { Tuesday: ["4:00PM", "10:00PM"] },
-    timeText: "All Day",
+    dayText: "Tuesday: All Day, Friday: 2:00PM - 5:00PM",
+    dayFilter: { Tuesday: ["4:00PM", "10:00PM"], Friday: ["2:00PM", "5:00PM"] },
     timeFilter: [
       "All Day",
       "12:00PM",
@@ -281,8 +280,24 @@ const data = [
       "8:00PM",
       "9:00PM",
     ],
-    description: "$2 Off Tacos, $10 Dos Equis Buckets",
+    description:
+      "Discounted Drinks & Apps | Tuesday: $2 Off Tacos, $10 Dos Equis Buckets",
     link: "https://www.instagram.com/p/DHV6Py-RKgI/",
+  },
+  {
+    name: "Moonstruck",
+    town: "Asbury Park",
+    dayText: "Wednesday - Friday",
+    timeText: "3:00PM - 6:00PM",
+    dayFilter: {
+      Friday: ["3:00PM", "6:00PM"],
+      Wednesday: ["3:00PM", "6:00PM"],
+      Thursday: ["3:00PM", "6:00PM"],
+    },
+    timeFilter: ["3:00PM", "4:00PM", "5:00PM", "6:00PM"],
+    description:
+      "Cocktail Lounge: $4 Domestic Beers, $5 Craft Beers, $6 Well Drinks, $8 House Martinis, Discounted Food",
+    link: "https://moonstrucknj.com/?page_id=8",
   },
   {
     name: "Lovesick",
