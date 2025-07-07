@@ -172,17 +172,40 @@ const data = [
   {
     name: "Capitoline",
     town: "Asbury Park",
-    dayText: "Wednesday - Thursday 5:00PM - 7:00PM",
+    dayText: "Wednesday - Thursday 5:00PM - 7:00PM, Friday: 2:00PM - 5:00PM",
+    timeText: "Sunday: All Day",
     dayFilter: {
       Sunday: ["12:00PM", "8:00PM"],
       Wednesday: ["5:00PM", "7:00PM"],
       Thursday: ["5:00PM", "7:00PM"],
+      Friday: ["2:00PM", "5:00PM"],
     },
-    timeText: "Sunday: All Day",
-    timeFilter: ["All Day", "5:00PM", "6:00PM", "7:00PM", "8:00PM"],
+    timeFilter: [
+      "All Day",
+      "2:00PM",
+      "3:00PM",
+      "4:00PM",
+      "5:00PM",
+      "6:00PM",
+      "7:00PM",
+      "8:00PM",
+    ],
     description:
       "$10 Martinis, $7 Wine, $5 Beer, Discounted Food, 2 for $12 Sliders",
-    link: "https://www.instagram.com/p/DGisnGGOenT/?img_index=1",
+    link: "https://www.instagram.com/p/DLr6HNXu-bp/",
+  },
+  {
+    name: "Wonder Bar",
+    town: "Asbury Park",
+    dayText: "Monday",
+    timeText: "7:00PM - Close",
+    dayFilter: {
+      Monday: ["7:00PM", "11:59PM"],
+    },
+
+    timeFilter: ["7:00PM", "8:00PM", "9:00PM", "10:00PM", "11:00PM"],
+    description: "$2 Off All Beer, $5 Shots",
+    link: "https://www.instagram.com/p/DLk34Peg38H/",
   },
   {
     name: "Cross & Orange",
