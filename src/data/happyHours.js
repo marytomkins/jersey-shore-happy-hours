@@ -288,8 +288,15 @@ const data = [
   {
     name: "Loteria",
     town: "Asbury Park",
-    dayText: "Tuesday: All Day, Friday: 2:00PM - 5:00PM",
-    dayFilter: { Tuesday: ["4:00PM", "10:00PM"], Friday: ["2:00PM", "5:00PM"] },
+    dayText:
+      "Tuesday: All Day, Wednesday - Thursday: 4:00PM - 7:00PM, Friday: 2:00PM - 5:00PM, Sunday: All Day",
+    dayFilter: {
+      Tuesday: ["4:00PM", "10:00PM"],
+      Friday: ["2:00PM", "5:00PM"],
+      Wednesday: ["4:00PM", "7:00PM"],
+      Thursday: ["4:00PM", "7:00PM"],
+      Sunday: ["12:00PM", "8:00PM"],
+    },
     timeFilter: [
       "All Day",
       "12:00PM",
@@ -304,7 +311,7 @@ const data = [
       "9:00PM",
     ],
     description:
-      "Discounted Drinks & Apps | Tuesday: $2 Off Tacos, $10 Dos Equis Buckets",
+      "Tuesday: $2 Off Tacos, $10 Dos Equis Buckets | Wednesday - Friday, Sunday: $10 Margaritas & Discounted Apps",
     link: "https://www.instagram.com/p/DHV6Py-RKgI/",
   },
   {
@@ -364,7 +371,15 @@ const data = [
       Monday: ["4:00PM", "9:00PM"],
     },
     timeText: "All Night",
-    timeFilter: ["4:00PM", "5:00PM","6:00PM","7:00PM","8:00PM","9:00PM","10:00PM",],
+    timeFilter: [
+      "4:00PM",
+      "5:00PM",
+      "6:00PM",
+      "7:00PM",
+      "8:00PM",
+      "9:00PM",
+      "10:00PM",
+    ],
     description:
       "$7 Wine, $9 Cocktails, Discounted food | Thursday: 50% Off Martinis Only",
     link: "https://www.heyreyla.com/drink",
@@ -841,17 +856,14 @@ const data = [
     name: "10th Ave Burrito",
     town: "Belmar",
     link: "https://tenthaveburrito.com/specials/",
-    dayText: "Monday - Friday: 11:00AM - 5:00PM, Wednesday: All Day",
-    timeText: "On The Patio Sunday - Thursday: 2:00PM - 6:00PM",
+    dayText: "Monday - Thursday: 11:00AM - 5:00PM, Wednesday: All Day",
     description:
-      "$3 Beers, $5 Wine & Well Drinks, Discounted Drinks and Food | Monday: Margartia and 1/2 Price Burritos | Tuesday: $10 All You Can Eat Tacos, etc. | On The Patio: $7 Street Tacos, $8 Modelito Buckets ",
+      "$3 Beers, $5 Wine & Well Drinks, Discounted Drinks and Food | Monday: Margartia and 1/2 Price Burritos | Tuesday: $10 All You Can Eat Tacos, etc.",
     dayFilter: {
       Monday: ["11:00AM", "5:00PM"],
       Tuesday: ["11:00AM", "5:00PM"],
       Wednesday: ["11:00AM", "9:00PM"],
       Thursday: ["11:00AM", "5:00PM"],
-      Friday: ["11:00AM", "5:00PM"],
-      Sunday: ["2:00PM", "6:00PM"],
     },
     timeFilter: [
       "All Day",
