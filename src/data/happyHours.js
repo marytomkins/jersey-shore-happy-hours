@@ -364,7 +364,7 @@ const data = [
   {
     name: "Reyla",
     town: "Asbury Park",
-    dayText: "Monday, Wednesday & Thursday",
+    dayText: "Monday Wednesday & Thursday",
     dayFilter: {
       Wednesday: ["4:00PM", "9:30PM"],
       Thursday: ["4:00PM", "10:00PM"],
@@ -383,6 +383,18 @@ const data = [
     description:
       "$7 Wine, $9 Cocktails, Discounted food | Thursday: 50% Off Martinis Only",
     link: "https://www.heyreyla.com/drink",
+  },
+  {
+    name: "Laylow",
+    town: "Asbury Park",
+    dayText: "Sunday",
+    dayFilter: {
+      Sunday: ["5:00PM", "10:00PM"],
+    },
+    timeText: "All Night",
+    timeFilter: ["5:00PM", "6:00PM", "7:00PM", "8:00PM", "9:00PM", "10:00PM"],
+    description: "$9 Classic Cocktails",
+    link: "https://www.laylowap.com/drink",
   },
   {
     name: "Robinson Ale House",
