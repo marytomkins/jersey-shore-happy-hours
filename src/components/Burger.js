@@ -12,7 +12,7 @@ const Burger = () => {
 
   return (
     <>
-      <div className="w-full flex justify-end pt-4 px-4">
+      <div className="z-50 w-full flex justify-end pt-4 px-4">
         <a
           href="https://www.instagram.com/jerseyshore_happyhours"
           target="_blank"
@@ -22,7 +22,7 @@ const Burger = () => {
           <InstagramIcon className="w-6 h-6" />
         </a>
         <button
-          className="z-50 text-gray-800 hover-text-blue"
+          className="text-gray-800 hover-text-blue"
           onClick={() => setIsOpen(true)}
         >
           <Menu size={28} />
