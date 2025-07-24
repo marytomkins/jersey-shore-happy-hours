@@ -248,8 +248,9 @@ const data = [
       Thursday: ["2:00PM", "6:00PM"],
       Friday: ["2:00PM", "6:00PM"],
     },
-    timeFilter: ["2:00PM","3:00PM","4:00PM", "5:00PM", "6:00PM"],
-    description: "$4 Beers, $6 Wine, $8 Spritz, $10 Specialty Cocktails, Discounted Food",
+    timeFilter: ["2:00PM", "3:00PM", "4:00PM", "5:00PM", "6:00PM"],
+    description:
+      "$4 Beers, $6 Wine, $8 Spritz, $10 Specialty Cocktails, Discounted Food",
     link: "https://drive.google.com/file/d/1JqSPTftwbFoqbWXeZXEccQ49_r-BV_FZ/view",
   },
   {
@@ -1121,6 +1122,22 @@ const data = [
       "5:00PM",
       "6:00PM",
     ],
+  },
+  {
+    name: "Scarborough Fair",
+    town: "Sea Girt",
+    link: "https://www.sfseagirt.com/bar",
+    dayText: "Tuesday - Friday",
+    timeText: "3:00PM - 6:00PM",
+    description:
+      "$3 Drafts, $6 Well Drinks & House Wines, $9 Martinis, Discounted Apps",
+    dayFilter: {
+      Wednesday: ["3:00PM", "6:00PM"],
+      Wednesday: ["3:00PM", "6:00PM"],
+      Wednesday: ["3:00PM", "6:00PM"],
+      Wednesday: ["3:00PM", "6:00PM"],
+    },
+    timeFilter: ["3:00PM", "4:00PM", "5:00PM", "6:00PM"],
   },
 ];
 
