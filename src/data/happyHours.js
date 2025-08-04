@@ -15,20 +15,20 @@ const data = [
     },
     timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
   },
-  {
-    name: "Bar Anticipation",
-    town: "Belmar",
-    dayText: "Monday & Tuesday",
-    dayFilter: {
-      Monday: ["12:00PM", "10:00PM"],
-      Tuesday: ["5:00PM", "11:59PM"],
-    },
-    timeText: "All Day",
-    timeFilter: ["All Day"],
-    description:
-      "Monday: Buy One Burger, Get One 1/2 Off | Tuesday: 2 Tacos for $7, .75c wings (starting at 5pm), Beat the Clock (starts at 8PM)",
-    link: "https://bar-a.com",
-  },
+  // {
+  //   name: "Bar Anticipation",
+  //   town: "Belmar",
+  //   dayText: "Monday & Tuesday",
+  //   dayFilter: {
+  //     Monday: ["12:00PM", "10:00PM"],
+  //     Tuesday: ["5:00PM", "11:59PM"],
+  //   },
+  //   timeText: "All Day",
+  //   timeFilter: ["All Day"],
+  //   description:
+  //     "Monday: Buy One Burger, Get One 1/2 Off | Tuesday: 2 Tacos for $7, .75c wings (starting at 5pm), Beat the Clock (starts at 8PM)",
+  //   link: "https://bar-a.com",
+  // },
   {
     name: "St Stephen's Green Publick House",
     town: "Spring Lake",
