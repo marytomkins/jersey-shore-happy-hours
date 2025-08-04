@@ -501,8 +501,8 @@ const data = [
     },
     timeText: "4:00 PM - 6:00PM",
     timeFilter: ["4:00PM", "5:00PM", "6:00PM"],
-    description: "",
-    link: "https://www.itsrbar.com/home",
+    description: "$3 Narragansett; $5 Guinness, SKYY Cocktails, Espolon Cocktails & House Wine",
+    link: "https://www.instagram.com/p/DE5KI-RAKlN/",
   },
   {
     name: "Pascal & Sabine",
@@ -877,7 +877,7 @@ const data = [
     link: "https://tenthaveburrito.com/specials/",
     dayText: "Monday - Thursday: 11:00AM - 5:00PM, Wednesday: All Day",
     description:
-      "$3 Beers, $5 Wine & Well Drinks, Discounted Drinks and Food | Monday: Margartia and 1/2 Price Burritos | Tuesday: $10 All You Can Eat Tacos, etc.",
+      "$3 Beers, $5 Wine & Well Drinks, Discounted Drinks and Food | Monday: Margartia and 1/2 Price Burritos | Tuesday: $15 All You Can Eat Tacos, etc.",
     dayFilter: {
       Monday: ["11:00AM", "5:00PM"],
       Tuesday: ["11:00AM", "5:00PM"],
