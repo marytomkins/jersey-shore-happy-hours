@@ -130,6 +130,23 @@ const data = [
       "Bar and Lounge Area Only: $10 Cocktails, $4 Bottles, $5 Drafts, $9 Wine, Food Specials",
     link: "https://cdn.mcloones.com/pdf/ap-rooftop/menus/2025/Happy-Hour-at-AP-Rooftop.pdf?v=1",
   },
+    {
+    name: "Salvation @ the Asbury Hotel",
+    town: "Asbury Park",
+    dayText: "Sunday - Thursday",
+    dayFilter: {
+      Monday: ["4:00PM", "6:00PM"],
+      Tuesday: ["4:00PM", "6:00PM"],
+      Wednesday: ["4:00PM", "6:00PM"],
+      Thursday: ["4:00PM", "6:00PM"],
+      Sunday: ["4:00PM", "6:00PM"],
+    },
+    timeText: "4:00PM - 6:00PM",
+    timeFilter: ["6:00PM", "4:00PM", "5:00PM"],
+    description:
+      "Select $10 Cocktails, Beer & Wine Specials, Half Price Wine Bottles",
+    link: "https://www.instagram.com/p/DM8KVLYs5Sk/?img_index=2",
+  },
   {
     name: "Barrio Costero",
     town: "Asbury Park",
