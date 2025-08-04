@@ -644,8 +644,8 @@ const data = [
     name: "Reef & Barrel",
     town: "Manasquan",
     link: "https://www.reefandbarrel.com/menu",
-    dayText: "Monday - Friday 11:00AM - 6:00PM",
-    timeText: "Thursday All Day",
+    dayText: "Monday - Friday: 11:00AM - 6:00PM",
+    timeText: "Thursday: All Day",
     description:
       "Daily Specials, $2 Miller High Lifes Every Day, Discounted Beers, $5 House Drinks, $5 Wine | M-F 3:00PM - 5:00PM: 25% off Appetizers",
     dayFilter: {

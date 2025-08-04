@@ -7,6 +7,7 @@ const Burger = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
+    { name: "Map", path: "/map" },
     { name: "Feedback Form", path: "/feedback" },
   ];
 
