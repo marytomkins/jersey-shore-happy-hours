@@ -152,8 +152,8 @@ const data = [
     town: "Asbury Park",
     dayText: "Monday & Tuesday",
     dayFilter: {
+      Monday: ["4:00PM", "9:30PM"],
       Tuesday: ["4:00PM", "9:30PM"],
-      Thursday: ["4:00PM", "9:30PM"],
     },
     timeText: "All Night",
     timeFilter: [
