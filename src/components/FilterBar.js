@@ -210,7 +210,7 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
     filters.map((item) => (
       <div
         key={item}
-        className="flex items-center bg-white text-sm px-2 py-1 mr-2 mb-2 rounded-full text-[#2f55c4] cursor-pointer hover:text-black"
+        className="flex items-center bg-white text-sm px-2 py-1 mr-2 mb-2 rounded-full text-blue cursor-pointer hover:text-black"
       >
         <span className="mr-2 capitalize">{item}</span>
         <div onClick={() => removeFilter(category, item)}>×</div>
@@ -227,7 +227,7 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
       >
         <button
           className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${
-            happeningNow ? "bg-[#b4e255]" : "bg-gray-300"
+            happeningNow ? "bg-green" : "bg-gray-300"
           }`}
         >
           <span
@@ -282,14 +282,14 @@ const FilterBar = ({ onFilter, onSort, getCurrent }) => {
           <div className="buttons flex w-fit gap-4">
             <button
               onClick={handleSearch}
-              className="bg-[#2f55c4] text-white px-8 py-2 rounded-md text-sm hover:bg-[#b4e255] transition"
+              className="bg-blue text-white px-8 py-2 rounded-md text-sm hover-bg-green transition"
             >
               Search
             </button>
             {showClearAll && (
               <button
                 onClick={clearAllFilters}
-                className="bg-white min-w-[6rem] text-[#2f55c4] px-4 py-2 rounded-md text-sm border border-gray-200 hover:bg-[#b4e255] transition"
+                className="bg-white min-w-[6rem] text-blue px-4 py-2 rounded-md text-sm border border-gray-200 hover-bg-green transition"
               >
                 Clear All
               </button>
