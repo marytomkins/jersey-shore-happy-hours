@@ -112,6 +112,28 @@ const data = [
       "9:00PM",
       "10:00PM",
     ],
+  },  {
+    name: "The Promenade",
+    town: "Avon-by-the-sea",
+    link: "https://www.instagram.com/p/DM_tMkKtLRi/",
+    dayText: "Wednesday & Thursday",
+    timeText: "All Night",
+    description:
+      "Wednesday (Locals Night): 20% off Dinner | Thursday: Half Off Sangria Pitchers",
+    dayFilter: {
+      Thursday: ["3:00PM", "10:00PM"],
+      Wednesday: ["3:00PM", "10:00PM"],
+    },
+    timeFilter: [
+      "3:00PM",
+      "4:00PM",
+      "5:00PM",
+      "6:00PM",
+      "7:00PM",
+      "8:00PM",
+      "9:00PM",
+      "10:00PM",
+    ],
   },
   {
     name: "AP Rooftop",
