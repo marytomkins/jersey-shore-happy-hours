@@ -9,14 +9,9 @@ const Home = ({ happyHours }) => {
   const [currentHappyHours, setCurrentHappyHours] = useState([]);
   const [sortByState, setSortByState] = useState("");
 
-  // useEffect(() => {
-  //   fetch(
-  //     "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/d12db77e2239a1ffdd0ef4ef920b9b5c3098322c/happyHours.json"
-  //   )
-  //     .then((res) => res.json())
-  //     .then((json) => json.sort((a, b) => a.name.localeCompare(b.name)))
-  //     .then((data) => setHappyHours(data))
-  // }, []);
+  useEffect(() => {
+    setFilteredData(happyHours);
+  }, [happyHours]);
 
   useEffect(() => {
     const now = new Date();
