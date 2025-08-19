@@ -373,18 +373,16 @@ const data = [
   {
     name: "Lovesick",
     town: "Asbury Park",
-    dayText: "Monday - Friday",
+    dayText: "Monday: All Night",
     dayFilter: {
-      Monday: ["5:00PM", "7:00PM"],
-      Tuesday: ["5:00PM", "7:00PM"],
-      Wednesday: ["5:00PM", "7:00PM"],
+      Monday: ["5:00PM", "9:30PM"],
       Thursday: ["5:00PM", "7:00PM"],
       Friday: ["5:00PM", "7:00PM"],
     },
-    timeText: "5:00PM - 7:00PM",
-    timeFilter: ["5:00PM", "6:00PM", "7:00PM"],
+    timeText: "Thursday - Friday: 5:00PM - 7:00PM",
+    timeFilter: ["5:00PM", "6:00PM", "7:00PM", "8:00PM", "9:00PM"],
     description: "$5 Beers, $12 Specialty Cocktails, $20 Wine Tasting",
-    link: "https://drive.google.com/file/d/1rbaDy0ao5ivmVoX5OEi32tl_YIXMlMaI/view",
+    link: "https://drive.google.com/file/d/1H1RVs_ngMd1inCo38NAtY7uGrY5E2Nni/view",
   },
   {
     name: "Palmetto",
@@ -1171,10 +1169,10 @@ const data = [
     description:
       "$3 Drafts, $6 Well Drinks & House Wines, $9 Martinis, Discounted Apps",
     dayFilter: {
+      Tuesday: ["3:00PM", "6:00PM"],
       Wednesday: ["3:00PM", "6:00PM"],
-      Wednesday: ["3:00PM", "6:00PM"],
-      Wednesday: ["3:00PM", "6:00PM"],
-      Wednesday: ["3:00PM", "6:00PM"],
+      Thursday: ["3:00PM", "6:00PM"],
+      Friday: ["3:00PM", "6:00PM"],
     },
     timeFilter: ["3:00PM", "4:00PM", "5:00PM", "6:00PM"],
   },
