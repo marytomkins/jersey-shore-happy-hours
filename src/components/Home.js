@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
 import FilterBar from "../components/FilterBar";
 import Content from "../components/Content";
-import { happyHours } from "../data/happyHours";
+// import { happyHours } from "../data/happyHours";
 import { parseTimeString } from "../data/helpers";
 
-const Home = () => {
+const Home = ({ happyHours }) => {
   const [filteredData, setFilteredData] = useState(happyHours);
   const [currentHappyHours, setCurrentHappyHours] = useState([]);
   const [sortByState, setSortByState] = useState("");
+
+  useEffect(() => {
+    setFilteredData(happyHours);
+  }, [happyHours]);
 
   useEffect(() => {
     const now = new Date();
@@ -32,7 +36,7 @@ const Home = () => {
       return false;
     });
     setCurrentHappyHours(result);
-  }, []);
+  }, [happyHours]);
 
   const handleFilter = (filters, searchTerm = "", happeningNow = false) => {
     const { towns, days, times } = filters || [];
