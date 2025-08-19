@@ -4,19 +4,19 @@ import Content from "../components/Content";
 // import { happyHours } from "../data/happyHours";
 import { parseTimeString } from "../data/helpers";
 
-const Home = () => {
-  const [filteredData, setFilteredData] = useState([]);
+const Home = ({ happyHours }) => {
+  const [filteredData, setFilteredData] = useState(happyHours);
   const [currentHappyHours, setCurrentHappyHours] = useState([]);
   const [sortByState, setSortByState] = useState("");
 
-  useEffect(() => {
-    fetch(
-      "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/d12db77e2239a1ffdd0ef4ef920b9b5c3098322c/happyHours.json"
-    )
-      .then((res) => res.json())
-      .then((json) => json.sort((a, b) => a.name.localeCompare(b.name)))
-      .then((data) => setFilteredData(data))
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/d12db77e2239a1ffdd0ef4ef920b9b5c3098322c/happyHours.json"
+  //   )
+  //     .then((res) => res.json())
+  //     .then((json) => json.sort((a, b) => a.name.localeCompare(b.name)))
+  //     .then((data) => setHappyHours(data))
+  // }, []);
 
   useEffect(() => {
     const now = new Date();
@@ -28,7 +28,7 @@ const Home = () => {
     const paddedMinutes = minutes.toString().padStart(2, "0");
     const currentTime = `${hours}:${paddedMinutes}${period}`;
 
-    const result = filteredData.filter((item) => {
+    const result = happyHours.filter((item) => {
       const matchDay = Object.keys(item.dayFilter).includes(currentDay);
       if (matchDay) {
         const [start, end] = item.dayFilter[currentDay];
@@ -41,11 +41,11 @@ const Home = () => {
       return false;
     });
     setCurrentHappyHours(result);
-  }, [filteredData]);
+  }, [happyHours]);
 
   const handleFilter = (filters, searchTerm = "", happeningNow = false) => {
     const { towns, days, times } = filters || [];
-    const data = happeningNow ? currentHappyHours : filteredData;
+    const data = happeningNow ? currentHappyHours : happyHours;
     const result = data.filter((item) => {
       const matchTown = towns?.length === 0 || towns?.includes(item.town);
       const matchDay =
