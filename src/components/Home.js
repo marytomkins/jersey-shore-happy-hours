@@ -38,6 +38,12 @@ const Home = ({ happyHours }) => {
     setCurrentHappyHours(result);
   }, [happyHours]);
 
+  const searchCheck = (item, searchTerm) => {
+    let name = item.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
+    let search = searchTerm.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
+    return name.includes(search);
+  }
+
   const handleFilter = (filters, searchTerm = "", happeningNow = false) => {
     const { towns, days, times } = filters || [];
     const data = happeningNow ? currentHappyHours : happyHours;
@@ -50,8 +56,7 @@ const Home = ({ happyHours }) => {
         times?.length === 0 ||
         item.timeFilter?.some((time) => times?.includes(time));
       const matchSearch =
-        !searchTerm ||
-        item.name.toLowerCase().includes(searchTerm.toLowerCase());
+        !searchTerm || searchCheck(item.name, searchTerm)
       return matchTown && matchDay && matchTime && matchSearch;
     });
     if (sortByState) handleSort(sortByState, result);
