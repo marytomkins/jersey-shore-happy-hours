@@ -9,11 +9,12 @@ import { Analytics } from "@vercel/analytics/react";
 import Home from "../components/Home";
 
 function App() {
-    const [happyHours, setHappyHours] = useState([])
+  const [happyHours, setHappyHours] = useState([]);
 
   useEffect(() => {
     fetch(
-      "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts=" + Date.now()
+      "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts=" +
+        Date.now()
     )
       .then((res) => res.json())
       .then((json) => json.sort((a, b) => a.name.localeCompare(b.name)))
@@ -30,7 +31,7 @@ function App() {
         </div>
         <div className="main-content flex-grow">
           <Routes>
-            <Route path="/" element={<Home happyHours={happyHours}/>} />
+            <Route path="/" element={<Home happyHours={happyHours} />} />
             <Route path="/feedback" element={<Feedback />} />
           </Routes>
         </div>
