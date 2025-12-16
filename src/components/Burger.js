@@ -6,7 +6,8 @@ const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: "Home", path: "/" },
+    { name: "Happy Hours", path: "/" },
+    { name: "Happenings", path: "/happenings" },
     { name: "Feedback Form", path: "/feedback" },
   ];
 

@@ -1,17 +1,31 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import FilterBar from "../components/FilterBar";
+import MobileFilter from "../components/MobileFilter";
 import Content from "../components/Content";
-// import { happyHours } from "../data/happyHours";
 import { parseTimeString } from "../data/helpers";
 
-const Home = ({ happyHours }) => {
-  const [filteredData, setFilteredData] = useState(happyHours);
-  const [currentHappyHours, setCurrentHappyHours] = useState([]);
+const Home = ({ page }) => {
+  const [content, setContent] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+  const [currently, setCurrently] = useState([]);
   const [sortByState, setSortByState] = useState("");
+  const location = useLocation();
+  useEffect(() => {
+    let url =
+      window.location.pathname === "/happenings"
+        ? "https://gist.githubusercontent.com/marytomkins/547cce901dea5e7d5e96870b68917df2/raw/dcfe88c91340f8a32969d6f8c6c60526e097b59c/happenings.json?ts="
+        : "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts=";
+
+    fetch(url + Date.now())
+      .then((res) => res.json())
+      .then((json) => json.sort((a, b) => a.name.localeCompare(b.name)))
+      .then((data) => setContent(data));
+  }, [location]);
 
   useEffect(() => {
-    setFilteredData(happyHours);
-  }, [happyHours]);
+    setFilteredData(content);
+  }, [content]);
 
   useEffect(() => {
     const now = new Date();
@@ -23,7 +37,7 @@ const Home = ({ happyHours }) => {
     const paddedMinutes = minutes.toString().padStart(2, "0");
     const currentTime = `${hours}:${paddedMinutes}${period}`;
 
-    const result = happyHours.filter((item) => {
+    const result = content.filter((item) => {
       const matchDay = Object.keys(item.dayFilter).includes(currentDay);
       if (matchDay) {
         const [start, end] = item.dayFilter[currentDay];
@@ -35,14 +49,17 @@ const Home = ({ happyHours }) => {
       }
       return false;
     });
-    setCurrentHappyHours(result);
-  }, [happyHours]);
+    setCurrently(result);
+  }, [content]);
 
   const handleFilter = (filters, searchTerm = "", happeningNow = false) => {
-    const { towns, days, times } = filters || [];
-    const data = happeningNow ? currentHappyHours : happyHours;
+    const { towns, events, days, times } = filters || [];
+    const data = happeningNow ? currently : content;
     const result = data.filter((item) => {
       const matchTown = towns?.length === 0 || towns?.includes(item.town);
+      const matchEvents =
+        events?.length === 0 ||
+        item.eventFilter?.some((event) => events?.includes(event));
       const matchDay =
         days?.length === 0 ||
         Object.keys(item.dayFilter)?.some((day) => days?.includes(day));
@@ -52,7 +69,7 @@ const Home = ({ happyHours }) => {
       const matchSearch =
         !searchTerm ||
         item.name.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchTown && matchDay && matchTime && matchSearch;
+      return matchTown && matchEvents && matchDay && matchTime && matchSearch;
     });
     if (sortByState) handleSort(sortByState, result);
     else setFilteredData(result);
@@ -82,7 +99,10 @@ const Home = ({ happyHours }) => {
 
   return (
     <div className="home-page">
-      <FilterBar onFilter={handleFilter} onSort={handleSort} />
+      {/* <div className="sm:hidden"> */}
+        <FilterBar page={page} onFilter={handleFilter} onSort={handleSort} />
+      {/* </div> */}
+      {/* <div><MobileFilter /></div> */}
       <Content data={filteredData} />
     </div>
   );
