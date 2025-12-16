@@ -9,15 +9,20 @@ const Content = ({ data }) => {
     return noResultsMessages[randomIndex];
   };
 
-  return isData ? (
-    <div className="cards p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-      {data.map((item, index) => (
-        <Card bar={item} index={index} />
-      ))}
-    </div>
-  ) : (
-    <div className="flex my-16 mx-24 text-center sm:mx-auto w-fit items-center">
-      {getNoResultsMessage()}
+  return (
+    <div>
+      <div className="results text-sm font-small pt-6 pr-6 flex justify-end">{data.length} Results</div>
+      {isData ? (
+        <div className="cards px-6 py-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          {data.map((item, index) => (
+            <Card bar={item} index={index} />
+          ))}
+        </div>
+      ) : (
+        <div className="flex my-16 mx-24 text-center sm:mx-auto w-fit items-center">
+          {getNoResultsMessage()}
+        </div>
+      )}
     </div>
   );
 };

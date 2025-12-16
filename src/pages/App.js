@@ -1,4 +1,5 @@
 import "../App.css";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Burger from "../components/Burger";
 import Header from "../components/Header";
@@ -10,6 +11,17 @@ import { happyHours } from "../data/happyHours";
 import { specialEvents } from "../data/specialEvents";
 
 function App() {
+    const [happyHours, setHappyHours] = useState([])
+
+  useEffect(() => {
+    fetch(
+      "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts=" + Date.now()
+    )
+      .then((res) => res.json())
+      .then((json) => json.sort((a, b) => a.name.localeCompare(b.name)))
+      .then((data) => setHappyHours(data));
+  }, []);
+
   return (
     <Router>
       <div className="App h-max flex flex-col">
@@ -20,11 +32,15 @@ function App() {
         </div>
         <div className="main-content flex-grow">
           <Routes>
+<<<<<<< HEAD
             <Route path="/" element={<Home page={"home"} content={happyHours} />} />
             <Route
               path="/special-events"
               element={<Home page={"events"} content={specialEvents}/>}
             />
+=======
+            <Route path="/" element={<Home happyHours={happyHours}/>} />
+>>>>>>> main
             <Route path="/feedback" element={<Feedback />} />
           </Routes>
         </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import FilterBar from "../components/FilterBar";
 import Content from "../components/Content";
+<<<<<<< HEAD
 import { parseTimeString } from "../data/helpers";
 
 const Home = ({ page, content }) => {
@@ -35,6 +36,44 @@ const Home = ({ page, content }) => {
       setCurrently(result);
     }
   }, [content]);
+=======
+// import { happyHours } from "../data/happyHours";
+import { parseTimeString } from "../data/helpers";
+
+const Home = ({ happyHours }) => {
+  const [filteredData, setFilteredData] = useState(happyHours);
+  const [currentHappyHours, setCurrentHappyHours] = useState([]);
+  const [sortByState, setSortByState] = useState("");
+
+  useEffect(() => {
+    setFilteredData(happyHours);
+  }, [happyHours]);
+
+  useEffect(() => {
+    const now = new Date();
+    const currentDay = now.toLocaleString("en-US", { weekday: "long" });
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+    const period = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12 || 12;
+    const paddedMinutes = minutes.toString().padStart(2, "0");
+    const currentTime = `${hours}:${paddedMinutes}${period}`;
+
+    const result = happyHours.filter((item) => {
+      const matchDay = Object.keys(item.dayFilter).includes(currentDay);
+      if (matchDay) {
+        const [start, end] = item.dayFilter[currentDay];
+        if (start.toLowerCase() === "all day") return true;
+        const current = parseTimeString(currentTime);
+        const startMinutes = parseTimeString(start);
+        const endMinutes = parseTimeString(end);
+        return current >= startMinutes && current <= endMinutes;
+      }
+      return false;
+    });
+    setCurrentHappyHours(result);
+  }, [happyHours]);
+>>>>>>> main
 
   const handleFilter = (filters, searchTerm = "", happeningNow = false) => {
     const { towns, events, days, times } = filters || [];
