@@ -7,7 +7,7 @@ const Header = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="header h-[25vh] flex items-center justify-center mt-[-2rem]">
+    <div className="header sm:h-[25vh] h-[15vh] flex items-center justify-center mt-[-2rem]">
       <Link to="/" className="h-full">
         <img
           src={isHovered ? hoverLogo : logo}
