@@ -1,7 +1,7 @@
 import Card from "./Card";
 import { noResultsMessages } from "../data/messages";
 
-const Content = ({ data }) => {
+const Content = ({ data, verifiedDate }) => {
   const isData = data.length > 0;
 
   const getNoResultsMessage = () => {
@@ -11,7 +11,14 @@ const Content = ({ data }) => {
 
   return (
     <div>
-      <div className="results text-sm font-small pt-6 pr-6 flex justify-end">{data.length} Results</div>
+      <div className="flex justify-between px-6 pt-6">
+        <div className="last-verified-text text-sm font-small ">
+          Last Verified: {verifiedDate}
+        </div>
+        <div className="results text-sm font-small">
+          {data.length} Results
+        </div>
+      </div>
       {isData ? (
         <div className="cards px-6 py-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {data.map((item, index) => (

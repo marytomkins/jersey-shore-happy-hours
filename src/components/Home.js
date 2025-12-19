@@ -7,6 +7,7 @@ import { parseTimeString } from "../data/helpers";
 
 const Home = ({ page }) => {
   const [content, setContent] = useState([]);
+  const [verifiedDate, setVerifiedDate] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [currently, setCurrently] = useState([]);
   const [sortByState, setSortByState] = useState("");
@@ -19,8 +20,15 @@ const Home = ({ page }) => {
 
     fetch(url + Date.now())
       .then((res) => res.json())
-      .then((json) => json.sort((a, b) => a.name.localeCompare(b.name)))
-      .then((data) => setContent(data));
+      .then((json) => {
+        if (json && Object.prototype.hasOwnProperty.call(json, "lastVerified")) {
+          setVerifiedDate(json.lastVerified);
+        }
+        if (json && Object.prototype.hasOwnProperty.call(json, "content")) {
+          const sortedContent = json.content.sort((a, b) => a.name.localeCompare(b.name));
+          setContent(sortedContent);
+        }
+      });
   }, [location]);
 
   useEffect(() => {
@@ -100,10 +108,10 @@ const Home = ({ page }) => {
   return (
     <div className="home-page">
       {/* <div className="sm:hidden"> */}
-        <FilterBar page={page} onFilter={handleFilter} onSort={handleSort} />
+      <FilterBar page={page} onFilter={handleFilter} onSort={handleSort} />
       {/* </div> */}
       {/* <div><MobileFilter /></div> */}
-      <Content data={filteredData} />
+      <Content data={filteredData} verifiedDate={verifiedDate} />
     </div>
   );
 };
