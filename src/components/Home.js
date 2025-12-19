@@ -60,6 +60,12 @@ const Home = ({ page }) => {
     setCurrently(result);
   }, [content]);
 
+  const searchCheck = (item, searchTerm) => {
+    let name = item.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
+    let search = searchTerm.toLowerCase().replace(/[^a-zA-Z0-9 ]/g, '');
+    return name.includes(search);
+  }
+
   const handleFilter = (filters, searchTerm = "", happeningNow = false) => {
     const { towns, events, days, times } = filters || [];
     const data = happeningNow ? currently : content;
@@ -75,9 +81,8 @@ const Home = ({ page }) => {
         times?.length === 0 ||
         item.timeFilter?.some((time) => times?.includes(time));
       const matchSearch =
-        !searchTerm ||
-        item.name.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchTown && matchEvents && matchDay && matchTime && matchSearch;
+        !searchTerm || searchCheck(item.name, searchTerm)
+      return matchTown && matchDay && matchTime && matchSearch;
     });
     if (sortByState) handleSort(sortByState, result);
     else setFilteredData(result);
