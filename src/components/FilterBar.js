@@ -303,7 +303,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
           <div className="buttons flex w-fit gap-4">
             <button
               onClick={handleSearch}
-              className="bg-blue text-white px-8 py-2 rounded-md text-sm hover-bg-green transition"
+              className="bg-[#c72d2f] text-white px-8 py-2 rounded-md text-sm hover-bg-green transition" //bg-blue
             >
               Search
             </button>
