@@ -18,7 +18,8 @@ function App() {
         </div>
         <div className="main-content flex-grow">
           <Routes>
-            <Route path="/" element={<Home happyHours={happyHours} />} />
+            <Route path="/" element={<Home page={"home"} />} />
+            <Route path="/happenings" element={<Home page={"happenings"} />} />
             <Route path="/feedback" element={<Feedback />} />
           </Routes>
         </div>
