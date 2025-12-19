@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import FilterBar from "../components/FilterBar";
-import MobileFilter from "../components/MobileFilter";
+// import MobileFilter from "../components/MobileFilter";
 import Content from "../components/Content";
 import { parseTimeString } from "../data/helpers";
 
