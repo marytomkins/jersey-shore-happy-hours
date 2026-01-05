@@ -11,10 +11,10 @@ const Footer = () => {
       </div>
       <div class="grid gap-2">
         <Link
-          to="/feedback"
+          to="/contact"
           className="hover-text-green transition-colors underline"
         >
-          Feedback Form
+          Contact Us
         </Link>
         <Link
           to="https://www.instagram.com/jerseyshore_happyhours"
