@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
+import { CalendarDaysIcon, ClockIcon } from "@heroicons/react/24/outline";
 
 const towns = [
   "Asbury Park",
   "Ocean Grove",
   "Bradley Beach",
-  "Avon-by-the-sea",
+  // "Avon-by-the-sea",
   "Belmar",
   "Spring Lake",
   "Sea Girt",
@@ -78,12 +79,15 @@ const FilterBar = ({ page, onFilter, onSort }) => {
     };
   }, []);
 
-  const toggleSelection = (value, list, setList) => {
+  const toggleSelection = (value, list, setList, search = false) => {
     if (list.includes(value)) {
       setList(list.filter((item) => item !== value));
     } else {
       setList([...list, value]);
     }
+    // if (search) {
+    //   handleSearch();
+    // }
   };
 
   const handleSearch = () => {
@@ -167,7 +171,14 @@ const FilterBar = ({ page, onFilter, onSort }) => {
     setClearAllState(false);
   };
 
-  const renderDropdown = (label, key, options, selected, setSelected) => {
+  const renderDropdown = (
+    label,
+    key,
+    options,
+    selected,
+    setSelected,
+    icon = <></>
+  ) => {
     let isSortBy = key === "sortBy";
     let disabled = (key === "times" || key === "days") && happeningNow;
     return (
@@ -179,6 +190,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
           onClick={() => setOpenDropdown(openDropdown === key ? null : key)}
           disabled={disabled}
         >
+          {icon}
           <span className="mr-2">{label}</span>
           {openDropdown === key ? (
             <ChevronUpIcon className="h-4 w-4 text-gray-500" />
@@ -232,7 +244,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
   return (
     <div className="filter-bar">
       <div
-        className="happening-now cursor-pointer flex justify-center w-fit m-auto items-center h-10 py-1 text-sm font-medium hover:text-gray-500"
+        className="happening-now cursor-pointer flex justify-center w-fit m-auto items-center h-10 py-1 text-sm font-semibold hover:text-gray-500"
         onClick={() => {
           getCurrentDateTime(!happeningNow);
         }}
@@ -250,6 +262,21 @@ const FilterBar = ({ page, onFilter, onSort }) => {
         </button>
         Happening Now
       </div>
+      <div className="town-buttons flex flex-wrap gap-2 px-4 mt-4 mb-2 m-auto w-[85%] justify-center">
+        {towns.map((town) => (
+          <button
+            key={town}
+            className={`cursor-pointer hover:bg-gray-100 hover-text-blue bg-white border border-gray-300 rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${
+              selectedTowns.includes(town)
+                ? "bg-blue text-white border-blue"
+                : "text-blue bg-white border-gray-300 hover-bg-green"
+            }`}
+            onClick={() => toggleSelection(town, selectedTowns, setSelectedTowns, true)}
+          >
+            {town}
+          </button>
+        ))}
+      </div>
       <div className="block sm:flex" ref={dropdownRef}>
         <div className="left-filters flex px-4 sm:px-8">
           <div className="search-filters flex  justify-center sm:justify-start flex-wrap items-center gap-2 py-4">
@@ -266,13 +293,13 @@ const FilterBar = ({ page, onFilter, onSort }) => {
               />
             </div>
             <div className="dropdowns flex flex-wrap w-fit gap-2 items-center">
-              {renderDropdown(
+              {/* {renderDropdown(
                 "Filter by town",
                 "towns",
                 towns,
                 selectedTowns,
                 setSelectedTowns
-              )}
+              )} */}
               {showEventFilter &&
                 renderDropdown(
                   "Events",
@@ -286,7 +313,8 @@ const FilterBar = ({ page, onFilter, onSort }) => {
                 "days",
                 days,
                 selectedDays,
-                setSelectedDays
+                setSelectedDays,
+                <CalendarDaysIcon className="h-4 w-4 text-gray-500 mr-2" />
               )}
               {showTimeFilter &&
                 renderDropdown(
@@ -294,7 +322,8 @@ const FilterBar = ({ page, onFilter, onSort }) => {
                   "times",
                   times,
                   selectedTimes,
-                  setSelectedTimes
+                  setSelectedTimes,
+                  <ClockIcon className="h-4 w-4 text-gray-500 mr-2" />
                 )}
             </div>
           </div>

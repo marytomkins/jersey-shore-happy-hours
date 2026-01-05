@@ -21,11 +21,16 @@ const Home = ({ page }) => {
     fetch(url + Date.now())
       .then((res) => res.json())
       .then((json) => {
-        if (json && Object.prototype.hasOwnProperty.call(json, "lastVerified")) {
+        if (
+          json &&
+          Object.prototype.hasOwnProperty.call(json, "lastVerified")
+        ) {
           setVerifiedDate(json.lastVerified);
         }
         if (json && Object.prototype.hasOwnProperty.call(json, "content")) {
-          const sortedContent = json.content.sort((a, b) => a.name.localeCompare(b.name));
+          const sortedContent = json.content.sort((a, b) =>
+            a.name.localeCompare(b.name)
+          );
           setContent(sortedContent);
         }
       });
@@ -76,7 +81,16 @@ const Home = ({ page }) => {
         item.timeFilter?.some((time) => times?.includes(time));
       const matchSearch =
         !searchTerm ||
-        item.name.toLowerCase().includes(searchTerm.toLowerCase());
+        item.name
+          .toLowerCase()
+          .replace(/[^\w\s]/g, "")
+          .trim()
+          .includes(
+            searchTerm
+              .toLowerCase()
+              .replace(/[^\w\s]/g, "")
+              .trim()
+          );
       return matchTown && matchEvents && matchDay && matchTime && matchSearch;
     });
     if (sortByState) handleSort(sortByState, result);
@@ -107,10 +121,7 @@ const Home = ({ page }) => {
 
   return (
     <div className="home-page">
-      {/* <div className="sm:hidden"> */}
       <FilterBar page={page} onFilter={handleFilter} onSort={handleSort} />
-      {/* </div> */}
-      {/* <div><MobileFilter /></div> */}
       <Content data={filteredData} verifiedDate={verifiedDate} />
     </div>
   );
