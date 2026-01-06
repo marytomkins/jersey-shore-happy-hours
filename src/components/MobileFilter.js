@@ -64,7 +64,7 @@ const MobileFilter = ({ page, onFilter, onSort }) => {
   });
   const dropdownRef = useRef(null);
   const showTimeFilter = !!(page === "home");
-  const showEventFilter = !!(page === "happenings");
+  const showEventFilter = !!(page === "events");
 
   useEffect(() => {
     const handleClickOutside = (event) => {

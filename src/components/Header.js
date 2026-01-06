@@ -17,7 +17,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 30);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -25,10 +25,10 @@ const Header = () => {
   }, []);
   return (
     <div
-      className={`header sm:h-[15vh] h-[10vh] w-full z-50 flex items-center justify-between border-b border-gray-300 bg-white fixed transition-all
-    duration-300 ease-in-out ${isScrolled ? "shadow-md sm:h-[9vh]" : ""}`}
+      className={`header nav:h-[15vh] h-[10vh] w-full z-50 flex items-center justify-between border-b border-gray-300 bg-white fixed transition-all
+    duration-300 ease-in-out ${isScrolled ? "shadow-md nav:h-[9vh]" : ""}`}
     >
-      <Link to="/" className="h-full w-2/5 ml-4">
+      <Link to="/" className="h-full w-2/5 sm:w-1/5 nav:w-2/5 ml-4">
         <img
           src={isHovered ? hoverLogo : logo}
           alt="Jersey Shore Happy Hours"
@@ -40,9 +40,9 @@ const Header = () => {
       <div className="burger sm:hidden flex w-3/5 justify-end">
         <Burger />
       </div>
-      <div className="menu-bar sm:flex sm:justify-between hidden font-black text-base text-blue uppercase mx-4">
+      <div className="menu-bar sm:flex sm:justify-between hidden font-black text-blue uppercase mx-4">
         {navItems.map((item) => (
-          <div key={item.name} className="text-lg">
+          <div key={item.name} className="text-lg [@media(min-width:640px)_and_(max-width:675px)]:text-base">
             <Link
               to={item.path}
               className="hover-text-green transition-colors cursor-pointer ml-4"

@@ -12,11 +12,12 @@ function App() {
       <div className="App h-max flex flex-col">
         <Analytics />
         <Header />
-        <div className="blank-space sm:h-[17vh] h-[12vh]"></div>
+        <div className="blank-space nav:h-[17vh] h-[12vh]"></div>
         <div className="main-content flex-grow">
           <Routes>
             <Route path="/" element={<Home page={"home"} />} />
-            <Route path="/happenings" element={<Home page={"happenings"} />} />
+            <Route path="/events" element={<Home page={"events"} />} />
+            <Route path="/specials" element={<Home page={"specials"} />} />
             <Route path="/contact" element={<Feedback />} />
           </Routes>
         </div>

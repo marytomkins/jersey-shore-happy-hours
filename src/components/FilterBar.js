@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
-import { CalendarDaysIcon, ClockIcon } from "@heroicons/react/24/outline";
+import { CalendarDaysIcon, ClockIcon, StarIcon } from "@heroicons/react/24/outline";
 
 const towns = [
   "Asbury Park",
@@ -65,7 +65,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
   });
   const dropdownRef = useRef(null);
   const showTimeFilter = !!(page === "home");
-  const showEventFilter = !!(page === "happenings");
+  const showEventFilter = !!(page === "events");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -79,19 +79,26 @@ const FilterBar = ({ page, onFilter, onSort }) => {
     };
   }, []);
 
-  const toggleSelection = (value, list, setList, search = false) => {
+  useEffect(() => {
+    handleSearch();
+  }, [
+    selectedTowns,
+    selectedEvents,
+    selectedDays,
+    selectedTimes,
+    searchTerm,
+    happeningNow,
+  ]);
+
+  const toggleSelection = (value, list, setList) => {
     if (list.includes(value)) {
       setList(list.filter((item) => item !== value));
     } else {
       setList([...list, value]);
     }
-    // if (search) {
-    //   handleSearch();
-    // }
   };
 
   const handleSearch = () => {
-    setOpenDropdown(null);
     const newFilters = {
       towns: selectedTowns,
       events: selectedEvents,
@@ -204,6 +211,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
             className={`absolute z-10 bg-white border border-gray-200 shadow-md rounded-md mt-2 p-2 w-40 ${
               isSortBy ? "right-0" : ""
             }`}
+            ref={dropdownRef}
           >
             {options.map((option) => (
               <label
@@ -262,100 +270,92 @@ const FilterBar = ({ page, onFilter, onSort }) => {
         </button>
         Happening Now
       </div>
-      <div className="town-buttons flex flex-wrap gap-2 px-4 mt-4 mb-2 m-auto w-[85%] justify-center">
+      <div className="town-buttons flex flex-wrap gap-2 mt-4 mb-2 m-auto sm:w-[85%] justify-center p-1">
         {towns.map((town) => (
           <button
             key={town}
-            className={`cursor-pointer hover:bg-gray-100 hover-text-blue bg-white border border-gray-300 rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${
+            className={`cursor-pointer hover-bg-green border  border-gray-300 rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${
               selectedTowns.includes(town)
                 ? "bg-blue text-white border-blue"
-                : "text-blue bg-white border-gray-300 hover-bg-green"
+                : "text-blue bg-white border-gray-300"
             }`}
-            onClick={() => toggleSelection(town, selectedTowns, setSelectedTowns, true)}
+            onClick={() =>
+              toggleSelection(town, selectedTowns, setSelectedTowns)
+            }
           >
             {town}
           </button>
         ))}
       </div>
-      <div className="block sm:flex" ref={dropdownRef}>
-        <div className="left-filters flex px-4 sm:px-8">
-          <div className="search-filters flex  justify-center sm:justify-start flex-wrap items-center gap-2 py-4">
-            <div>
-              <input
-                type="text"
-                placeholder="Search by restaurant"
-                className="cursor-pointer h-10 hover:bg-gray-100 bg-white border border-gray-300 rounded-md px-4 py-2 text-sm shadow-sm focus:outline-none"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") handleSearch();
-                }}
-              />
-            </div>
-            <div className="dropdowns flex flex-wrap w-fit gap-2 items-center">
-              {/* {renderDropdown(
+      <div className="flex flex-wrap w-fit gap-2 items-center justify-center mx-auto mb-4 mt-6">
+        {/* {renderDropdown(
                 "Filter by town",
                 "towns",
                 towns,
                 selectedTowns,
                 setSelectedTowns
               )} */}
-              {showEventFilter &&
-                renderDropdown(
-                  "Events",
-                  "events",
-                  events,
-                  selectedEvents,
-                  setSelectedEvents
-                )}
-              {renderDropdown(
-                "Days",
-                "days",
-                days,
-                selectedDays,
-                setSelectedDays,
-                <CalendarDaysIcon className="h-4 w-4 text-gray-500 mr-2" />
-              )}
-              {showTimeFilter &&
-                renderDropdown(
-                  "Times",
-                  "times",
-                  times,
-                  selectedTimes,
-                  setSelectedTimes,
-                  <ClockIcon className="h-4 w-4 text-gray-500 mr-2" />
-                )}
-            </div>
-          </div>
-        </div>
-        <div className="right-filters flex flex-wrap justify-center sm:justify-between grow pl-8 pr-8 sm:pl-0 py-4 gap-4">
-          <div className="buttons flex w-fit gap-4">
-            <button
-              onClick={handleSearch}
-              className="bg-blue text-white px-8 py-2 rounded-md text-sm hover-bg-green transition"
-            >
-              Search
-            </button>
-            {showClearAll && (
-              <button
-                onClick={clearAllFilters}
-                className="bg-white min-w-[6rem] text-blue px-4 py-2 rounded-md text-sm border border-gray-200 hover-bg-green transition"
-              >
-                Clear All
-              </button>
-            )}
-          </div>
-          {renderDropdown(
-            selectedSort,
-            "sortBy",
-            sortBy,
-            selectedSort,
-            setSelectedSort
+        {showEventFilter &&
+          renderDropdown(
+            "Events",
+            "events",
+            events,
+            selectedEvents,
+            setSelectedEvents,
+            <StarIcon className="h-4 w-4 text-gray-500 mr-2" />
           )}
-        </div>
+        {renderDropdown(
+          "Days",
+          "days",
+          days,
+          selectedDays,
+          setSelectedDays,
+          <CalendarDaysIcon className="h-4 w-4 text-gray-500 mr-2" />
+        )}
+        {showTimeFilter &&
+          renderDropdown(
+            "Times",
+            "times",
+            times,
+            selectedTimes,
+            setSelectedTimes,
+            <ClockIcon className="h-4 w-4 text-gray-500 mr-2" />
+          )}
+        <input
+          type="text"
+          id="search"
+          placeholder="Search by restaurant"
+          className="cursor-pointer h-10 hover:bg-gray-100 bg-white border border-gray-300 rounded-md px-4 py-2 text-sm shadow-sm focus:outline-none"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") handleSearch();
+          }}
+        />
+        <button
+          onClick={handleSearch}
+          className="bg-blue text-white px-8 py-2 rounded-md text-sm hover-bg-green transition"
+        >
+          Search
+        </button>
+        {showClearAll && (
+          <button
+            onClick={clearAllFilters}
+            className="bg-white min-w-[6rem] text-blue px-4 py-2 rounded-md text-sm border border-gray-200 hover-bg-green transition"
+          >
+            Clear All
+          </button>
+        )}
+        {/* {renderDropdown(
+          selectedSort,
+          "sortBy",
+          sortBy,
+          selectedSort,
+          setSelectedSort
+        )} */}
       </div>
       <div className="selected-filters flex flex-wrap px-4">
-        {renderSelectedFilters("towns", appliedFilters.towns)}
+        {/* {renderSelectedFilters("towns", appliedFilters.towns)} */}
         {renderSelectedFilters("events", appliedFilters.events)}
         {renderSelectedFilters("days", appliedFilters.days)}
         {renderSelectedFilters("times", appliedFilters.times)}
