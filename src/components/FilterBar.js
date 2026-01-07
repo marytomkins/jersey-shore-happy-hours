@@ -1,6 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
-import { CalendarDaysIcon, ClockIcon, StarIcon } from "@heroicons/react/24/outline";
+import {
+  CalendarDaysIcon,
+  ClockIcon,
+  StarIcon,
+} from "@heroicons/react/24/outline";
+import home from "../images/home.png";
+import event from "../images/events.png";
+import specials from "../images/specials.png";
 
 const towns = [
   "Asbury Park",
@@ -251,6 +258,11 @@ const FilterBar = ({ page, onFilter, onSort }) => {
 
   return (
     <div className="filter-bar">
+      <img
+        src={page === "home" ? home : page === "events" ? event : specials}
+        alt={page}
+        className="m-auto nav:w-1/3 w-1/2"
+      />
       <div
         className="happening-now cursor-pointer flex justify-center w-fit m-auto items-center h-10 py-1 text-sm font-semibold hover:text-gray-500"
         onClick={() => {

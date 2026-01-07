@@ -8,7 +8,7 @@ import { InstagramIcon } from "lucide-react";
 const navItems = [
   { name: "Happy Hours", path: "/" },
   { name: "Events", path: "/events" },
-  { name: "Specials", path: "/specials" },
+  // { name: "Specials", path: "/specials" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -42,10 +42,13 @@ const Header = () => {
       </div>
       <div className="menu-bar sm:flex sm:justify-between hidden font-black text-blue uppercase mx-4">
         {navItems.map((item) => (
-          <div key={item.name} className="text-lg [@media(min-width:640px)_and_(max-width:675px)]:text-base">
+          <div
+            key={item.name}
+            className="text-lg [@media(min-width:640px)_and_(max-width:675px)]:text-base ml-8"  //ml-4
+          >
             <Link
               to={item.path}
-              className="hover-text-green transition-colors cursor-pointer ml-4"
+              className="hover-text-green transition-colors cursor-pointer"
             >
               {item.name}
             </Link>
@@ -55,7 +58,7 @@ const Header = () => {
           href="https://www.instagram.com/jerseyshore_happyhours"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-blue hover-text-green transition ml-4"
+          className="flex items-center gap-2 text-blue hover-text-green transition ml-8"  //ml-4
         >
           <InstagramIcon className="w-6 h-6" />
         </a>

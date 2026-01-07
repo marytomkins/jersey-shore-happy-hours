@@ -8,7 +8,7 @@ const Burger = () => {
   const navItems = [
     { name: "Happy Hours", path: "/" },
     { name: "Events", path: "/events" },
-    { name: "Specials", path: "/specials" },
+    // { name: "Specials", path: "/specials" },
     { name: "Contact", path: "/contact" },
   ];
 
