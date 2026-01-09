@@ -198,7 +198,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
     return (
       <div className="relative group">
         <button
-          className={`flex items-center border border-gray-300 rounded-md px-4 py-2 text-sm shadow-sm hover:bg-gray-100 ${
+          className={`flex items-center border border-gray-300 rounded-md py-2 px-4 text-sm shadow-sm hover:bg-gray-100 ${
             disabled ? "bg-gray-100" : "bg-white"
           }`}
           onClick={() => setOpenDropdown(openDropdown === key ? null : key)}
@@ -299,65 +299,69 @@ const FilterBar = ({ page, onFilter, onSort }) => {
           </button>
         ))}
       </div>
-      <div className="flex flex-wrap w-fit gap-2 items-center justify-center mx-auto mb-4 mt-6">
-        {/* {renderDropdown(
+      <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-between w-full px-6 py-4">
+        <div className="sm:w-1/2 sm:justify-start w-full justify-center flex gap-1">
+          <input
+            type="text"
+            id="search"
+            placeholder="Search by restaurant"
+            className="cursor-pointer sm:w-2/3 w-fit h-10 hover:bg-gray-100 bg-white border border-gray-300 rounded-md px-4 py-2 text-sm shadow-sm focus:outline-none"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleSearch();
+            }}
+          />
+          {showClearAll && (
+            <button
+              onClick={clearAllFilters}
+              className="bg-white min-w-[6rem] w-1/4 text-blue px-4 py-2 rounded-md text-sm border border-gray-200 hover-bg-green transition"
+            >
+              Clear All
+            </button>
+          )}
+        </div>
+        <div className="flex gap-2">
+          {/* {renderDropdown(
                 "Filter by town",
                 "towns",
                 towns,
                 selectedTowns,
                 setSelectedTowns
               )} */}
-        {showEventFilter &&
-          renderDropdown(
-            "Events",
-            "events",
-            events,
-            selectedEvents,
-            setSelectedEvents,
-            <StarIcon className="h-4 w-4 text-gray-500 mr-2" />
+          {showEventFilter &&
+            renderDropdown(
+              "Events",
+              "events",
+              events,
+              selectedEvents,
+              setSelectedEvents,
+              <StarIcon className="h-4 w-4 text-gray-500 mr-2" />
+            )}
+          {renderDropdown(
+            "Days",
+            "days",
+            days,
+            selectedDays,
+            setSelectedDays,
+            <CalendarDaysIcon className="h-4 w-4 text-gray-500 mr-2" />
           )}
-        {renderDropdown(
-          "Days",
-          "days",
-          days,
-          selectedDays,
-          setSelectedDays,
-          <CalendarDaysIcon className="h-4 w-4 text-gray-500 mr-2" />
-        )}
-        {showTimeFilter &&
-          renderDropdown(
-            "Times",
-            "times",
-            times,
-            selectedTimes,
-            setSelectedTimes,
-            <ClockIcon className="h-4 w-4 text-gray-500 mr-2" />
-          )}
-        <input
-          type="text"
-          id="search"
-          placeholder="Search by restaurant"
-          className="cursor-pointer h-10 hover:bg-gray-100 bg-white border border-gray-300 rounded-md px-4 py-2 text-sm shadow-sm focus:outline-none"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") handleSearch();
-          }}
-        />
-        <button
+          {showTimeFilter &&
+            renderDropdown(
+              "Times",
+              "times",
+              times,
+              selectedTimes,
+              setSelectedTimes,
+              <ClockIcon className="h-4 w-4 text-gray-500 mr-2" />
+            )}
+        </div>
+        {/* <button
           onClick={handleSearch}
           className="bg-blue text-white px-8 py-2 rounded-md text-sm hover-bg-green transition"
         >
           Search
-        </button>
-        {showClearAll && (
-          <button
-            onClick={clearAllFilters}
-            className="bg-white min-w-[6rem] text-blue px-4 py-2 rounded-md text-sm border border-gray-200 hover-bg-green transition"
-          >
-            Clear All
-          </button>
-        )}
+        </button> */}
         {/* {renderDropdown(
           selectedSort,
           "sortBy",
