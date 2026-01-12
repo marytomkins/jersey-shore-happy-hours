@@ -14,18 +14,25 @@ const Home = ({ page }) => {
   const location = useLocation();
   useEffect(() => {
     let url =
-      window.location.pathname === "/happenings"
-        ? "https://gist.githubusercontent.com/marytomkins/547cce901dea5e7d5e96870b68917df2/raw/dcfe88c91340f8a32969d6f8c6c60526e097b59c/happenings.json?ts="
-        : "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts=";
+      location.pathname === "/"
+        ? "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts="
+        : location.pathname === "/events"
+        ? "https://gist.githubusercontent.com/marytomkins/547cce901dea5e7d5e96870b68917df2/raw/happenings.json?ts="
+        : "";
 
     fetch(url + Date.now())
       .then((res) => res.json())
       .then((json) => {
-        if (json && Object.prototype.hasOwnProperty.call(json, "lastVerified")) {
+        if (
+          json &&
+          Object.prototype.hasOwnProperty.call(json, "lastVerified")
+        ) {
           setVerifiedDate(json.lastVerified);
         }
         if (json && Object.prototype.hasOwnProperty.call(json, "content")) {
-          const sortedContent = json.content.sort((a, b) => a.name.localeCompare(b.name));
+          const sortedContent = json.content.sort((a, b) =>
+            a.name.localeCompare(b.name)
+          );
           setContent(sortedContent);
         }
       });
@@ -76,7 +83,16 @@ const Home = ({ page }) => {
         item.timeFilter?.some((time) => times?.includes(time));
       const matchSearch =
         !searchTerm ||
-        item.name.toLowerCase().includes(searchTerm.toLowerCase());
+        item.name
+          .toLowerCase()
+          .replace(/[^\w\s]/g, "")
+          .trim()
+          .includes(
+            searchTerm
+              .toLowerCase()
+              .replace(/[^\w\s]/g, "")
+              .trim()
+          );
       return matchTown && matchEvents && matchDay && matchTime && matchSearch;
     });
     if (sortByState) handleSort(sortByState, result);
@@ -107,10 +123,7 @@ const Home = ({ page }) => {
 
   return (
     <div className="home-page">
-      {/* <div className="sm:hidden"> */}
       <FilterBar page={page} onFilter={handleFilter} onSort={handleSort} />
-      {/* </div> */}
-      {/* <div><MobileFilter /></div> */}
       <Content data={filteredData} verifiedDate={verifiedDate} />
     </div>
   );

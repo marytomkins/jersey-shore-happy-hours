@@ -7,13 +7,14 @@ const Burger = () => {
 
   const navItems = [
     { name: "Happy Hours", path: "/" },
-    // { name: "Happenings", path: "/happenings" },
-    { name: "Feedback Form", path: "/feedback" },
+    { name: "Events", path: "/events" },
+    // { name: "Specials", path: "/specials" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
     <>
-      <div className="z-50 w-full flex justify-end pt-4 px-4">
+      <div className="w-3/5 flex justify-end px-4 z-50 relative">
         <a
           href="https://www.instagram.com/jerseyshore_happyhours"
           target="_blank"
@@ -45,7 +46,7 @@ const Burger = () => {
             <X size={24} className="text-gray-700 hover-text-blue" />
           </button>
         </div>
-        <ul className="flex flex-col items-start gap-4 px-6 text-gray-800">
+        <ul className="flex flex-col items-start gap-4 px-6 font-black text-base text-blue uppercase mx-4">
           {navItems.map((item) => (
             <li key={item.name} className="text-lg">
               <Link
@@ -57,6 +58,14 @@ const Burger = () => {
               </Link>
             </li>
           ))}
+          <a
+            href="https://www.instagram.com/jerseyshore_happyhours"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-blue hover-text-green transition"
+          >
+            <InstagramIcon className="w-6 h-6" />
+          </a>
         </ul>
       </div>
     </>

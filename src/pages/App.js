@@ -1,7 +1,6 @@
 import "../App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../components/Home";
-import Burger from "../components/Burger";
 import Header from "../components/Header";
 import Feedback from "../components/Feedback";
 import Footer from "../components/Footer";
@@ -12,15 +11,14 @@ function App() {
     <Router>
       <div className="App h-max flex flex-col">
         <Analytics />
-        <Burger />
-        <div>
-          <Header />
-        </div>
+        <Header />
+        <div className="blank-space nav:h-[17vh] h-[12vh]"></div>
         <div className="main-content flex-grow">
           <Routes>
             <Route path="/" element={<Home page={"home"} />} />
-            <Route path="/happenings" element={<Home page={"happenings"} />} />
-            <Route path="/feedback" element={<Feedback />} />
+            <Route path="/events" element={<Home page={"events"} />} />
+            <Route path="/specials" element={<Home page={"specials"} />} />
+            <Route path="/contact" element={<Feedback />} />
           </Routes>
         </div>
         <Footer />

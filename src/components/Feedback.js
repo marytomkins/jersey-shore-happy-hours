@@ -34,12 +34,13 @@ const Feedback = () => {
   };
 
   return (
-    <div className="feedback-page p-6 md:w-1/2 w-3/4 mx-auto bg-white rounded-md mt-8">
-      <div className="text-2xl font-semibold text-center">Submit Feedback</div>
+    <div className="feedback-page p-6 md:w-1/2 w-4/5 mx-auto bg-white rounded-md mt-8">
+      <div className="text-2xl font-semibold text-center">Contact Us</div>
       <div className="text-sm my-4 px-4 text-center">
-        If there are any mistakes or I am missing any restaurants/bars, please
-        let me know below!{<br />}
-        Any additional feedback is welcomed as well.
+        Use the form below to contact us directly. {<br />}
+        If we made any mistakes or missed any bars/restaurants, please let us
+        know.{<br />}{<br />}
+        If you would like a direct response, please include your email.
       </div>
       <form className="space-y-4">
         <textarea
@@ -47,7 +48,7 @@ const Feedback = () => {
           name="formText"
           value={formText}
           onChange={(e) => handleChange(e)}
-          placeholder="Add your feedback here..."
+          placeholder="Message"
           className="w-full px-3 py-2 border rounded"
           rows={6}
         />
