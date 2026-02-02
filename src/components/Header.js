@@ -48,7 +48,7 @@ const Header = () => {
           >
             <Link
               to={item.path}
-              className="hover-text-green transition-colors cursor-pointer"
+              className="hover-text-light-blue transition-colors cursor-pointer"
             >
               {item.name}
             </Link>
@@ -58,7 +58,7 @@ const Header = () => {
           href="https://www.instagram.com/jerseyshore_happyhours"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-blue hover-text-green transition ml-8"  //ml-4
+          className="flex items-center gap-2 text-blue hover-text-light-blue transition ml-8"  //ml-4
         >
           <InstagramIcon className="w-6 h-6" />
         </a>

@@ -271,7 +271,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
       >
         <button
           className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${
-            happeningNow ? "bg-green" : "bg-gray-300"
+            happeningNow ? "bg-light-blue" : "bg-gray-300"
           }`}
         >
           <span
@@ -286,7 +286,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
         {towns.map((town) => (
           <button
             key={town}
-            className={`cursor-pointer hover-bg-green border  border-gray-300 rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${
+            className={`cursor-pointer hover-bg-light-blue border  border-gray-300 rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${
               selectedTowns.includes(town)
                 ? "bg-blue text-white border-blue"
                 : "text-blue bg-white border-gray-300"
@@ -315,7 +315,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
           {showClearAll && (
             <button
               onClick={clearAllFilters}
-              className="bg-white min-w-[6rem] w-1/4 text-blue px-4 py-2 rounded-md text-sm border border-gray-200 hover-bg-green transition"
+              className="bg-white min-w-[6rem] w-1/4 text-blue px-4 py-2 rounded-md text-sm border border-gray-200 hover-bg-light-blue transition"
             >
               Clear All
             </button>
@@ -358,7 +358,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
         </div>
         {/* <button
           onClick={handleSearch}
-          className="bg-blue text-white px-8 py-2 rounded-md text-sm hover-bg-green transition"
+          className="bg-blue text-white px-8 py-2 rounded-md text-sm hover-bg-light-blue transition"
         >
           Search
         </button> */}

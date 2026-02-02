@@ -239,7 +239,7 @@ const MobileFilter = ({ page, onFilter, onSort }) => {
       >
         <button
           className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${
-            happeningNow ? "bg-green" : "bg-gray-300"
+            happeningNow ? "bg-light-blue" : "bg-gray-300"
           }`}
         >
           <span
@@ -303,14 +303,14 @@ const MobileFilter = ({ page, onFilter, onSort }) => {
           <div className="buttons flex w-fit gap-4">
             <button
               onClick={handleSearch}
-              className="bg-blue text-white px-8 py-2 rounded-md text-sm hover-bg-green transition"
+              className="bg-blue text-white px-8 py-2 rounded-md text-sm hover-bg-light-blue transition"
             >
               Search
             </button>
             {showClearAll && (
               <button
                 onClick={clearAllFilters}
-                className="bg-white min-w-[6rem] text-blue px-4 py-2 rounded-md text-sm border border-gray-200 hover-bg-green transition"
+                className="bg-white min-w-[6rem] text-blue px-4 py-2 rounded-md text-sm border border-gray-200 hover-bg-light-blue transition"
               >
                 Clear All
               </button>

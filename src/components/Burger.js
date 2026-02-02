@@ -19,7 +19,7 @@ const Burger = () => {
           href="https://www.instagram.com/jerseyshore_happyhours"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-4 text-gray-900 hover-text-green transition"
+          className="flex items-center gap-2 px-4 text-gray-900 hover-text-light-blue transition"
         >
           <InstagramIcon className="w-6 h-6" />
         </a>
@@ -52,7 +52,7 @@ const Burger = () => {
               <Link
                 to={item.path}
                 onClick={() => setIsOpen(false)}
-                className="hover-text-green transition-colors"
+                className="hover-text-light-blue transition-colors"
               >
                 {item.name}
               </Link>
@@ -62,7 +62,7 @@ const Burger = () => {
             href="https://www.instagram.com/jerseyshore_happyhours"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-blue hover-text-green transition"
+            className="flex items-center gap-2 text-blue hover-text-light-blue transition"
           >
             <InstagramIcon className="w-6 h-6" />
           </a>

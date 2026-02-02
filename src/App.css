@@ -6,20 +6,20 @@
   color: #2f55c4;
 }
 
-.text-green {
-  color: #b4e255;
+.text-light-blue {
+  color: #bad6da;
 }
 
 .bg-blue {
   background-color: #2f55c4;
 }
 
-.bg-green {
-  background-color: #b4e255;
+.bg-light-blue {
+  background-color: #bad6da;
 }
 
-.hover-bg-green:hover {
-  background-color: #b4e255;
+.hover-bg-light-blue:hover {
+  background-color: #bad6da;
 }
 .hover-bg-blue:hover {
   background-color: #2f55c4;
@@ -27,6 +27,6 @@
 .hover-text-blue:hover {
   color: #2f55c4;
 }
-.hover-text-green:hover {
-  color: #b4e255;
+.hover-text-light-blue:hover {
+  color: #bad6da;
 }
