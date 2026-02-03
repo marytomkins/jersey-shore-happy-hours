@@ -47,12 +47,12 @@ const times = [
   "11:00PM",
   "12:00AM",
 ];
-const sortBy = [
-  "Restaurant A to Z",
-  "Restaurant Z to A",
-  "Town A to Z",
-  "Town Z to A",
-];
+// const sortBy = [
+//   "Restaurant A to Z",
+//   "Restaurant Z to A",
+//   "Town A to Z",
+//   "Town Z to A",
+// ];
 
 const FilterBar = ({ page, onFilter, onSort }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -60,7 +60,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
   const [selectedEvents, setSelectedEvents] = useState([]);
   const [selectedDays, setSelectedDays] = useState([]);
   const [selectedTimes, setSelectedTimes] = useState([]);
-  const [selectedSort, setSelectedSort] = useState("Sort by");
+  // const [selectedSort, setSelectedSort] = useState("Sort by");
   const [openDropdown, setOpenDropdown] = useState(null);
   const [showClearAll, setClearAllState] = useState(false);
   const [happeningNow, setHappeningNow] = useState(false);
@@ -169,7 +169,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
 
   const setSortBy = (option) => {
     setOpenDropdown(false);
-    setSelectedSort(option);
+    // setSelectedSort(option);
     onSort(option);
   };
 
@@ -193,7 +193,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
     setSelected,
     icon = <></>
   ) => {
-    let isSortBy = key === "sortBy";
+    // let isSortBy = key === "sortBy";
     let disabled = (key === "times" || key === "days") && happeningNow;
     return (
       <div className="relative group">
