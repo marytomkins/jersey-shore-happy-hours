@@ -194,6 +194,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
     icon = <></>
   ) => {
     // let isSortBy = key === "sortBy";
+    let isSortBy = false;
     let disabled = (key === "times" || key === "days") && happeningNow;
     return (
       <div className="relative group">
