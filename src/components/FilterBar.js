@@ -89,11 +89,13 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     };
   }, []);
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     if (dayParam)  setSelectedDays([dayParam]);
     else clearAllFilters();
   }, [dayParam]);
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
     if (!dataReady) return;
     handleSearch();
