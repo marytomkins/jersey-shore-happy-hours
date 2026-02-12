@@ -63,7 +63,7 @@ const MobileFilter = ({ page, onFilter, onSort }) => {
     times: [],
   });
   const dropdownRef = useRef(null);
-  const showTimeFilter = !!(page === "home");
+  const showTimeFilter = !!(page === "happyhours");
   const showEventFilter = !!(page === "events");
 
   useEffect(() => {

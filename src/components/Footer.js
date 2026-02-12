@@ -19,6 +19,8 @@ const Footer = () => {
         <Link
           to="https://www.instagram.com/jerseyshore_happyhours"
           className="hover-text-light-blue transition-colors underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Follow us on Instagram
         </Link>

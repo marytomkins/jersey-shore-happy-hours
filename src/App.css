@@ -3,7 +3,7 @@
 }
 
 .text-blue {
-  color: #2f55c4;
+  color: #3677cd;
 }
 
 .text-light-blue {
@@ -11,7 +11,11 @@
 }
 
 .bg-blue {
-  background-color: #2f55c4;
+  background-color: #3677cd;
+}
+
+.bg-green {
+  background-color: #b4e255;
 }
 
 .bg-light-blue {
@@ -22,10 +26,10 @@
   background-color: #bad6da;
 }
 .hover-bg-blue:hover {
-  background-color: #2f55c4;
+  background-color: #3677cd;
 }
 .hover-text-blue:hover {
-  color: #2f55c4;
+  color: #3677cd;
 }
 .hover-text-light-blue:hover {
   color: #bad6da;

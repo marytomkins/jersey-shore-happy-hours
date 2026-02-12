@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import {
   CalendarDaysIcon,
@@ -6,8 +7,8 @@ import {
   StarIcon,
 } from "@heroicons/react/24/outline";
 import home from "../images/home.png";
+import happyhours from "../images/happyhours.png";
 import event from "../images/events.png";
-import specials from "../images/specials.png";
 
 const towns = [
   "Asbury Park",
@@ -47,20 +48,20 @@ const times = [
   "11:00PM",
   "12:00AM",
 ];
-const sortBy = [
-  "Restaurant A to Z",
-  "Restaurant Z to A",
-  "Town A to Z",
-  "Town Z to A",
-];
+// const sortBy = [
+//   "Restaurant A to Z",
+//   "Restaurant Z to A",
+//   "Town A to Z",
+//   "Town Z to A",
+// ];
 
-const FilterBar = ({ page, onFilter, onSort }) => {
+const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTowns, setSelectedTowns] = useState([]);
   const [selectedEvents, setSelectedEvents] = useState([]);
   const [selectedDays, setSelectedDays] = useState([]);
   const [selectedTimes, setSelectedTimes] = useState([]);
-  const [selectedSort, setSelectedSort] = useState("Sort by");
+  // const [selectedSort, setSelectedSort] = useState("Sort by");
   const [openDropdown, setOpenDropdown] = useState(null);
   const [showClearAll, setClearAllState] = useState(false);
   const [happeningNow, setHappeningNow] = useState(false);
@@ -71,8 +72,10 @@ const FilterBar = ({ page, onFilter, onSort }) => {
     times: [],
   });
   const dropdownRef = useRef(null);
-  const showTimeFilter = !!(page === "home");
+  const showTimeFilter = !!(page === "happyhours");
   const showEventFilter = !!(page === "events");
+  const [searchParams] = useSearchParams();
+  const dayParam = searchParams.get("day");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -87,14 +90,21 @@ const FilterBar = ({ page, onFilter, onSort }) => {
   }, []);
 
   useEffect(() => {
+    if (dayParam)  setSelectedDays([dayParam]);
+    else clearAllFilters();
+  }, [dayParam]);
+
+  useEffect(() => {
+    if (!dataReady) return;
     handleSearch();
   }, [
+    dataReady,
     selectedTowns,
     selectedEvents,
     selectedDays,
     selectedTimes,
     searchTerm,
-    happeningNow,
+    // dayParam,
   ]);
 
   const toggleSelection = (value, list, setList) => {
@@ -169,7 +179,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
 
   const setSortBy = (option) => {
     setOpenDropdown(false);
-    setSelectedSort(option);
+    // setSelectedSort(option);
     onSort(option);
   };
 
@@ -193,7 +203,8 @@ const FilterBar = ({ page, onFilter, onSort }) => {
     setSelected,
     icon = <></>
   ) => {
-    let isSortBy = key === "sortBy";
+    // let isSortBy = key === "sortBy";
+    let isSortBy = false;
     let disabled = (key === "times" || key === "days") && happeningNow;
     return (
       <div className="relative group">
@@ -249,7 +260,11 @@ const FilterBar = ({ page, onFilter, onSort }) => {
     filters.map((item) => (
       <div
         key={item}
-        className="flex items-center bg-white text-sm px-2 py-1 mr-2 mb-2 rounded-full text-blue cursor-pointer hover:text-black"
+        className={`flex items-center ${
+          item === dayParam
+            ? "bg-blue text-white hover-bg-light-blue"
+            : "bg-white text-blue hover:text-black"
+        } text-sm px-2 py-1 mr-2 mb-2 rounded-full cursor-pointer`}
       >
         <span className="mr-2 capitalize">{item}</span>
         <div onClick={() => removeFilter(category, item)}>×</div>
@@ -259,7 +274,9 @@ const FilterBar = ({ page, onFilter, onSort }) => {
   return (
     <div className="filter-bar">
       <img
-        src={page === "home" ? home : page === "events" ? event : specials}
+        src={
+          page === "happyhours" ? happyhours : page === "events" ? event : home
+        }
         alt={page}
         className="m-auto nav:w-1/3 w-1/2"
       />
@@ -271,7 +288,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
       >
         <button
           className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${
-            happeningNow ? "bg-light-blue" : "bg-gray-300"
+            happeningNow ? "bg-green" : "bg-gray-300"
           }`}
         >
           <span

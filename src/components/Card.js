@@ -37,7 +37,7 @@ const Card = ({ bar, index }) => {
           </a>
         </div>
         <div className="flex items-center text-sm">
-          {<MapPinIcon className="w-4 h-4 mr-1" style={{ color: "#2f55c4" }} />}
+          {<MapPinIcon className="w-4 h-4 mr-1" style={{ color: "#3677cd" }} />}
           {town}
         </div>
         <div className="text-[.9rem] font-medium">
