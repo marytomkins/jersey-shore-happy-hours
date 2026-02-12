@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import home from "../images/home.png";
 import home1 from "../images/home1.JPG";
 import home2 from "../images/home2.JPG";
-// import home3 from "../images/home3.JPG";
+import home3 from "../images/home3.JPG";
 // import home4 from "../images/home4.JPG";
 
 function getToday() {
@@ -37,10 +37,10 @@ const Home = () => {
         </div>
       </div> */}
       <div className="flex flex-wrap">
-        <img src={home1 ?? ""} alt="Home 1" className="md:w-1/4 w-1/2 h-auto" />
-        <img src={home2 ?? ""} alt="Home 2" className="md:w-1/4 w-1/2 h-auto" />
-        {/* <img src={home3 ?? ""} alt="Home 3" className="md:w-1/4 w-1/2 h-auto" />
-        <img src={home4 ?? ""} alt="Home 4" className="md:w-1/4 w-1/2 h-auto" /> */}
+        <img src={home1} alt="Home 1" className="md:w-1/4 w-1/2 h-auto" />
+        <img src={home2} alt="Home 2" className="md:w-1/4 w-1/2 h-auto" />
+        <img src={home3} alt="Home 3" className="md:w-1/4 w-1/2 h-auto" />
+        {/* <img src={home4 ?? ""} alt="Home 4" className="md:w-1/4 w-1/2 h-auto" /> */}
       </div>
     </div>
   );
