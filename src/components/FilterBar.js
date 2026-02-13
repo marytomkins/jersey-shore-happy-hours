@@ -333,7 +333,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
             key={town}
             className={`cursor-pointer hover-bg-light-blue hover:text-white hover:border-gray-300 border rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${
               selectedTowns.includes(town)
-                ? `${getColors(town)} text-white`
+                ? `${getColors(town)}`
                 : "text-blue bg-white border-gray-300"
             }`}
             onClick={() =>
