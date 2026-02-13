@@ -34,3 +34,11 @@
 .hover-text-light-blue:hover {
   color: #bad6da;
 }
+
+@media (hover: hover) {
+  .hoverable:hover {
+    background-color: #bad6da;
+    color: white;
+    border-color: #d1d5db;
+  }
+}
