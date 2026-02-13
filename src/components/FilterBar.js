@@ -273,6 +273,32 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
       </div>
     ));
 
+  const getColors = (town) => {
+    switch (town) {
+      case "Asbury Park":
+        return "bg-[#e8ef9c] border-[#595e2e] text-[#595e2e]";
+      case "Ocean Grove":
+        return "bg-[#3677cd] border-[#e1f2fa] text-[#e1f2fa]";
+      case "Bradley Beach":
+        return "bg-[#ff9b64] border-[#fdf3ea] text-[#fdf3ea]";
+      case "Belmar":
+      return "bg-[#ffdbdf] border-[#f49287] text-[#f49287]";
+      case "Spring Lake":
+        return "bg-[#aad8d5] border-[#3677cd] text-[#3677cd]";
+      case "Sea Girt":
+        return "bg-[#8da663] border-white text-white";
+      case "Manasquan":
+        return "bg-[#fda7bb] border-white text-white";
+      case "Brielle":
+        return "bg-[#fff5e6] border-[#ff9256] text-[#ff9256]";
+      case "Point Pleasant":
+        return "bg-[#e2e772] border-[#595e2e] text-[#595e2e]";
+      default:
+        return "bg-blue";
+    }
+    
+  }
+
   return (
     <div className="filter-bar">
       <img
@@ -305,9 +331,9 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
         {towns.map((town) => (
           <button
             key={town}
-            className={`cursor-pointer hover-bg-light-blue border  border-gray-300 rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${
+            className={`cursor-pointer hover-bg-light-blue hover:text-white hover:border-gray-300 border rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${
               selectedTowns.includes(town)
-                ? "bg-blue text-white border-blue"
+                ? `${getColors(town)} text-white`
                 : "text-blue bg-white border-gray-300"
             }`}
             onClick={() =>
