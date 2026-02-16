@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
 import {
   CalendarDaysIcon,
@@ -6,8 +7,8 @@ import {
   StarIcon,
 } from "@heroicons/react/24/outline";
 import home from "../images/home.png";
+import happyhours from "../images/happyhours.png";
 import event from "../images/events.png";
-import specials from "../images/specials.png";
 
 const towns = [
   "Asbury Park",
@@ -54,7 +55,7 @@ const times = [
 //   "Town Z to A",
 // ];
 
-const FilterBar = ({ page, onFilter, onSort }) => {
+const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTowns, setSelectedTowns] = useState([]);
   const [selectedEvents, setSelectedEvents] = useState([]);
@@ -71,8 +72,10 @@ const FilterBar = ({ page, onFilter, onSort }) => {
     times: [],
   });
   const dropdownRef = useRef(null);
-  const showTimeFilter = !!(page === "home");
+  const showTimeFilter = !!(page === "happyhours");
   const showEventFilter = !!(page === "events");
+  const [searchParams] = useSearchParams();
+  const dayParam = searchParams.get("day");
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -86,15 +89,24 @@ const FilterBar = ({ page, onFilter, onSort }) => {
     };
   }, []);
 
+  /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
+    if (dayParam)  setSelectedDays([dayParam]);
+    else clearAllFilters();
+  }, [dayParam]);
+
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    if (!dataReady) return;
     handleSearch();
   }, [
+    dataReady,
     selectedTowns,
     selectedEvents,
     selectedDays,
     selectedTimes,
     searchTerm,
-    happeningNow,
+    // dayParam,
   ]);
 
   const toggleSelection = (value, list, setList) => {
@@ -250,17 +262,49 @@ const FilterBar = ({ page, onFilter, onSort }) => {
     filters.map((item) => (
       <div
         key={item}
-        className="flex items-center bg-white text-sm px-2 py-1 mr-2 mb-2 rounded-full text-blue cursor-pointer hover:text-black"
+        className={`flex items-center ${
+          item === dayParam
+            ? "bg-blue text-white hover-bg-light-blue"
+            : "bg-white text-blue hover:text-black"
+        } text-sm px-2 py-1 mr-2 mb-2 rounded-full cursor-pointer`}
       >
         <span className="mr-2 capitalize">{item}</span>
         <div onClick={() => removeFilter(category, item)}>×</div>
       </div>
     ));
 
+  const getColors = (town) => {
+    switch (town) {
+      case "Asbury Park":
+        return "bg-[#e8ef9c] border-[#595e2e] text-[#595e2e]";
+      case "Ocean Grove":
+        return "bg-[#3677cd] border-[#e1f2fa] text-[#e1f2fa]";
+      case "Bradley Beach":
+        return "bg-[#ff9b64] border-[#fdf3ea] text-[#fdf3ea]";
+      case "Belmar":
+      return "bg-[#ffdbdf] border-[#f49287] text-[#f49287]";
+      case "Spring Lake":
+        return "bg-[#aad8d5] border-[#3677cd] text-[#3677cd]";
+      case "Sea Girt":
+        return "bg-[#8da663] border-white text-white";
+      case "Manasquan":
+        return "bg-[#fda7bb] border-white text-white";
+      case "Brielle":
+        return "bg-[#fff5e6] border-[#ff9256] text-[#ff9256]";
+      case "Point Pleasant":
+        return "bg-[#e2e772] border-[#595e2e] text-[#595e2e]";
+      default:
+        return "bg-blue";
+    }
+    
+  }
+
   return (
     <div className="filter-bar">
       <img
-        src={page === "home" ? home : page === "events" ? event : specials}
+        src={
+          page === "happyhours" ? happyhours : page === "events" ? event : home
+        }
         alt={page}
         className="m-auto nav:w-1/3 w-1/2"
       />
@@ -272,7 +316,7 @@ const FilterBar = ({ page, onFilter, onSort }) => {
       >
         <button
           className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${
-            happeningNow ? "bg-light-blue" : "bg-gray-300"
+            happeningNow ? "bg-green" : "bg-gray-300"
           }`}
         >
           <span
@@ -287,9 +331,9 @@ const FilterBar = ({ page, onFilter, onSort }) => {
         {towns.map((town) => (
           <button
             key={town}
-            className={`cursor-pointer hover-bg-light-blue border  border-gray-300 rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${
+            className={`cursor-pointer hoverable border rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${
               selectedTowns.includes(town)
-                ? "bg-blue text-white border-blue"
+                ? `${getColors(town)}`
                 : "text-blue bg-white border-gray-300"
             }`}
             onClick={() =>

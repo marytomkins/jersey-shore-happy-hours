@@ -1,130 +1,65 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import FilterBar from "../components/FilterBar";
-// import MobileFilter from "../components/MobileFilter";
-import Content from "../components/Content";
-import { parseTimeString } from "../data/helpers";
+import { Link } from "react-router-dom";
+import home from "../images/home.png";
 
-const Home = ({ page }) => {
-  const [content, setContent] = useState([]);
-  const [verifiedDate, setVerifiedDate] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
-  const [currently, setCurrently] = useState([]);
-  const [sortByState, setSortByState] = useState("");
-  const location = useLocation();
-  useEffect(() => {
-    let url =
-      location.pathname === "/"
-        ? "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts="
-        : location.pathname === "/events"
-        ? "https://gist.githubusercontent.com/marytomkins/547cce901dea5e7d5e96870b68917df2/raw/happenings.json?ts="
-        : "";
+function getToday() {
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[new Date().getDay()];
+}
 
-    fetch(url + Date.now())
-      .then((res) => res.json())
-      .then((json) => {
-        if (
-          json &&
-          Object.prototype.hasOwnProperty.call(json, "lastVerified")
-        ) {
-          setVerifiedDate(json.lastVerified);
-        }
-        if (json && Object.prototype.hasOwnProperty.call(json, "content")) {
-          const sortedContent = json.content.sort((a, b) =>
-            a.name.localeCompare(b.name)
-          );
-          setContent(sortedContent);
-        }
-      });
-  }, [location]);
-
-  useEffect(() => {
-    setFilteredData(content);
-  }, [content]);
-
-  useEffect(() => {
-    const now = new Date();
-    const currentDay = now.toLocaleString("en-US", { weekday: "long" });
-    let hours = now.getHours();
-    const minutes = now.getMinutes();
-    const period = hours >= 12 ? "PM" : "AM";
-    hours = hours % 12 || 12;
-    const paddedMinutes = minutes.toString().padStart(2, "0");
-    const currentTime = `${hours}:${paddedMinutes}${period}`;
-
-    const result = content.filter((item) => {
-      const matchDay = Object.keys(item.dayFilter).includes(currentDay);
-      if (matchDay) {
-        const [start, end] = item.dayFilter[currentDay];
-        if (start.toLowerCase() === "all day") return true;
-        const current = parseTimeString(currentTime);
-        const startMinutes = parseTimeString(start);
-        const endMinutes = parseTimeString(end);
-        return current >= startMinutes && current <= endMinutes;
-      }
-      return false;
-    });
-    setCurrently(result);
-  }, [content]);
-
-  const handleFilter = (filters, searchTerm = "", happeningNow = false) => {
-    const { towns, events, days, times } = filters || [];
-    const data = happeningNow ? currently : content;
-    const result = data.filter((item) => {
-      const matchTown = towns?.length === 0 || towns?.includes(item.town);
-      const matchEvents =
-        events?.length === 0 ||
-        item.eventFilter?.some((event) => events?.includes(event));
-      const matchDay =
-        days?.length === 0 ||
-        Object.keys(item.dayFilter)?.some((day) => days?.includes(day));
-      const matchTime =
-        times?.length === 0 ||
-        item.timeFilter?.some((time) => times?.includes(time));
-      const matchSearch =
-        !searchTerm ||
-        item.name
-          .toLowerCase()
-          .replace(/[^\w\s]/g, "")
-          .trim()
-          .includes(
-            searchTerm
-              .toLowerCase()
-              .replace(/[^\w\s]/g, "")
-              .trim()
-          );
-      return matchTown && matchEvents && matchDay && matchTime && matchSearch;
-    });
-    if (sortByState) handleSort(sortByState, result);
-    else setFilteredData(result);
-  };
-
-  const handleSort = (sortBy, data = []) => {
-    setSortByState(sortBy);
-    let sortedData = data.length > 0 ? [...data] : [...filteredData];
-    switch (sortBy) {
-      case "Restaurant A to Z":
-        sortedData = sortedData.sort((a, b) => a.name.localeCompare(b.name));
-        break;
-      case "Restaurant Z to A":
-        sortedData = sortedData.sort((a, b) => b.name.localeCompare(a.name));
-        break;
-      case "Town A to Z":
-        sortedData = sortedData.sort((a, b) => a.town.localeCompare(b.town));
-        break;
-      case "Town Z to A":
-        sortedData = sortedData.sort((a, b) => b.town.localeCompare(a.town));
-        break;
-      default:
-        break;
-    }
-    setFilteredData(sortedData);
-  };
-
+const Home = () => {
   return (
     <div className="home-page">
-      <FilterBar page={page} onFilter={handleFilter} onSort={handleSort} />
-      <Content data={filteredData} verifiedDate={verifiedDate} />
+      <div className="section-1 h-[66vh] sm:h-[81vh] flex flex-col items-center justify-center bg-white rounded-2xl mx-4 mb-4 shadow-lg">
+        <Link to="/" className="w-4/5 nav:w-3/5 my-0 mx-auto">
+          <img src={home} alt="Jersey Shore Happy Hours" className="" />
+        </Link>
+        <span className="tagline text-center font-semibold sm:text-base text-sm mt-4 mx-8 sm:mx-40">
+          Your guide to the best happy hours and daily deals along the Jersey
+          Shore from Asbury Park to Point Pleasant
+        </span>
+        <div className="flex flex-col nav:flex-row justify-center mt-8">
+          <Link
+            to={`/happyhours?day=${getToday()}`}
+            className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-44 py-2 rounded-3xl m-2"
+          >
+            Today's Happy Hours
+          </Link>
+          <Link
+            to={`/happyhours`}
+            className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-44 py-2 rounded-3xl m-2"
+          >
+            All Happy Hours
+          </Link>
+          <Link
+            to={`/events`}
+            className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-44 py-2 rounded-3xl m-2"
+          >
+            Daily Events
+          </Link>
+        </div>
+      </div>
+      {/* <div className="section-2 flex flex-row h-[40vh]">
+        <div className="w-1/2 py-6 px-24 flex flex-col text-left justify-center bg-light-blue">
+          <span className="font-bold text-2xl text-white mb-4">NEW!</span>
+          <p className="text-base font-semibold">Your guide to daily events and happenings when you're not just looking for a happy hour deal...</p>
+        </div>
+        <div className="">
+        </div>
+      </div> */}
+      <div className="flex flex-wrap">
+        {/* <img src={home1} alt="Home 1" className="md:w-1/4 w-1/2 h-auto" />
+        <img src={home2} alt="Home 2" className="md:w-1/4 w-1/2 h-auto" />
+        <img src={home3} alt="Home 3" className="md:w-1/4 w-1/2 h-auto" /> */}
+        {/* <img src={home4 ?? ""} alt="Home 4" className="md:w-1/4 w-1/2 h-auto" /> */}
+      </div>
     </div>
   );
 };

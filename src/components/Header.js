@@ -6,7 +6,7 @@ import Burger from "./Burger";
 import { InstagramIcon } from "lucide-react";
 
 const navItems = [
-  { name: "Happy Hours", path: "/" },
+  { name: "Happy Hours", path: "/happyhours" },
   { name: "Events", path: "/events" },
   // { name: "Specials", path: "/specials" },
   { name: "Contact", path: "/contact" },
@@ -28,11 +28,11 @@ const Header = () => {
       className={`header nav:h-[15vh] h-[10vh] w-full z-50 flex items-center justify-between border-b border-gray-300 bg-white fixed transition-all
     duration-300 ease-in-out ${isScrolled ? "shadow-md nav:h-[9vh]" : ""}`}
     >
-      <Link to="/" className="h-full w-2/5 sm:w-1/5 nav:w-2/5 ml-4">
+      <Link to="/" className="h-full w-full sm:w-1/5 nav:w-2/5 ml-4 flex items-center">
         <img
           src={isHovered ? hoverLogo : logo}
           alt="Jersey Shore Happy Hours"
-          className="h-full object-contain transition-transform duration-300 ease-in-out cursor-pointer"
+          className="h-[85%] object-contain transition-transform duration-300 ease-in-out cursor-pointer"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         />
