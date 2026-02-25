@@ -1,29 +1,29 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import FilterBar from "../components/FilterBar";
-// import MobileFilter from "../components/MobileFilter";
+import TownBlurb from "./TownBlurb";
 import Content from "../components/Content";
 import { parseTimeString } from "../data/helpers";
 
-const Page = ({ page }) => {
+const Page = ({ page, town = null }) => {
   const [content, setContent] = useState([]);
   const [verifiedDate, setVerifiedDate] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [currently, setCurrently] = useState([]);
   const [sortByState, setSortByState] = useState("");
+  const [showFilters, setShowFilters] = useState(true);
   const location = useLocation();
   const lastFetchedPath = useRef(null);
 
   useEffect(() => {
     if (lastFetchedPath.current === location.pathname) return;
     lastFetchedPath.current = location.pathname;
+    setShowFilters(true);
 
     let url =
-      location.pathname === "/happyhours"
-        ? "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts="
-        : location.pathname === "/events"
+      location.pathname === "/events"
         ? "https://gist.githubusercontent.com/marytomkins/547cce901dea5e7d5e96870b68917df2/raw/happenings.json?ts="
-        : "";
+        : "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts=";
 
     fetch(url + Date.now())
       .then((res) => res.json())
@@ -35,7 +35,14 @@ const Page = ({ page }) => {
           setVerifiedDate(json.lastVerified);
         }
         if (json && Object.prototype.hasOwnProperty.call(json, "content")) {
-          const sortedContent = json.content.sort((a, b) =>
+          let filteredContent = json.content;
+          if (town) {
+            setShowFilters(false);
+            filteredContent = filteredContent.filter(
+              (item) => item.town.toLowerCase() === town.toLowerCase()
+            );
+          }
+          const sortedContent = filteredContent.sort((a, b) =>
             a.name.localeCompare(b.name)
           );
           setContent(sortedContent);
@@ -130,12 +137,16 @@ const Page = ({ page }) => {
 
   return content.length > 0 ? (
     <div className={`${page}-page`}>
-      <FilterBar
-        page={page}
-        onFilter={handleFilter}
-        onSort={handleSort}
-        dataReady={content.length > 0}
-      />
+      {showFilters ? (
+        <FilterBar
+          page={page}
+          onFilter={handleFilter}
+          onSort={handleSort}
+          dataReady={content.length > 0}
+        />
+      ) : (
+        <TownBlurb town={town} />
+      )}
       <Content data={filteredData} verifiedDate={verifiedDate} />
     </div>
   ) : null;

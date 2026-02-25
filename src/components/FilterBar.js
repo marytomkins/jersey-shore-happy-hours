@@ -6,54 +6,7 @@ import {
   ClockIcon,
   StarIcon,
 } from "@heroicons/react/24/outline";
-import home from "../images/home.png";
-import happyhours from "../images/happyhours.png";
-import event from "../images/events.png";
-
-const towns = [
-  "Asbury Park",
-  "Ocean Grove",
-  "Bradley Beach",
-  // "Avon-by-the-sea",
-  "Belmar",
-  "Spring Lake",
-  "Sea Girt",
-  "Manasquan",
-  "Brielle",
-  "Point Pleasant",
-];
-const events = ["Trivia", "Bingo", "Karaoke"];
-const days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-const times = [
-  "All Day",
-  "12:00PM",
-  "1:00PM",
-  "2:00PM",
-  "3:00PM",
-  "4:00PM",
-  "5:00PM",
-  "6:00PM",
-  "7:00PM",
-  "8:00PM",
-  "9:00PM",
-  "10:00PM",
-  "11:00PM",
-  "12:00AM",
-];
-// const sortBy = [
-//   "Restaurant A to Z",
-//   "Restaurant Z to A",
-//   "Town A to Z",
-//   "Town Z to A",
-// ];
+import { towns, events, days, times } from "../data/filters";
 
 const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -91,7 +44,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
 
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
-    if (dayParam)  setSelectedDays([dayParam]);
+    if (dayParam) setSelectedDays([dayParam]);
     else clearAllFilters();
   }, [dayParam]);
 
@@ -282,7 +235,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
       case "Bradley Beach":
         return "bg-[#ff9b64] border-[#fdf3ea] text-[#fdf3ea]";
       case "Belmar":
-      return "bg-[#ffdbdf] border-[#f49287] text-[#f49287]";
+        return "bg-[#ffdbdf] border-[#f49287] text-[#f49287]";
       case "Spring Lake":
         return "bg-[#aad8d5] border-[#3677cd] text-[#3677cd]";
       case "Sea Girt":
@@ -296,18 +249,17 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
       default:
         return "bg-blue";
     }
-    
-  }
+  };
 
   return (
     <div className="filter-bar">
-      <img
-        src={
-          page === "happyhours" ? happyhours : page === "events" ? event : home
-        }
-        alt={page}
-        className="m-auto nav:w-1/3 w-1/2"
-      />
+      <h1 className="flex justify-center sm:text-5xl text-3xl m-4 text-blue">
+        {page === "happyhours"
+          ? "H a p p y H o u r s"
+          : page === "events"
+          ? "E v E n t s"
+          : ""}
+      </h1>
       <div
         className="happening-now cursor-pointer flex justify-center w-fit m-auto items-center h-10 py-1 text-sm font-semibold hover:text-gray-500"
         onClick={() => {
