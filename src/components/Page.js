@@ -48,7 +48,7 @@ const Page = ({ page, town = null }) => {
           setContent(sortedContent);
         }
       });
-  }, [location.pathname]);
+  }, [location.pathname, town]);
 
   useEffect(() => {
     if (content.length) {
