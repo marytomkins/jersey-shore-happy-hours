@@ -148,6 +148,7 @@ const Page = ({ page, town = null }) => {
         <TownBlurb town={town} />
       )}
       <Content data={filteredData} verifiedDate={verifiedDate} />
+      <TownBlurb />
     </div>
   ) : null;
 };
