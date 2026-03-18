@@ -14,7 +14,7 @@ function formatSearchLink(item) {
 const Home = () => {
   return (
     <div className="home-page">
-      <div className="section-1 h-[66vh] sm:h-[81vh] flex flex-col items-center justify-center bg-white rounded-2xl mx-4 mb-4 shadow-lg">
+      <div className="section-1 h-[66vh] sm:h-[81vh] flex flex-col items-center justify-center bg-white rounded-2xl mx-4 mb-8 shadow-lg">
         <Link to="/" className="w-4/5 nav:w-3/5 my-0 mx-auto">
           <img src={home} alt="Jersey Shore Happy Hours" />
         </Link>
@@ -46,7 +46,7 @@ const Home = () => {
       {/* <div className="specials py-12 mt-8 border-t border-gray-300">
         <Specials />
       </div> */}
-      <div className="search-by-town justify-center border-t border-gray-300 py-16">
+      <div className="search-by-town justify-center border-t border-gray-300 pb-16 pt-8">
         <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-40">
           s e a r c h B Y d a y
         </h1>
@@ -62,7 +62,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="search-by-town justify-center border-t border-gray-300 py-16">
+      <div className="search-by-town justify-center border-t border-gray-300 pb-16 pt-8">
         <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-40">
           s e a r c h B Y t o w n
         </h1>
