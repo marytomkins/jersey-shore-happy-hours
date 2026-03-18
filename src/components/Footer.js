@@ -4,7 +4,7 @@ import footer_logo from "../images/footer_logo.png";
 
 const Footer = () => {
   return (
-    <div className="block text-center text-xs py-4 mt-2 bg-white border-t border-gray-300">
+    <div className="block text-center text-xs py-4 bg-white border-t border-gray-300">
       <div className="my-4 mx-8 text-sm">
         <b>Disclaimer:</b> Happy hours/events are subject to change regularly
         and exclusions may apply (ex: holidays, time of year, etc).

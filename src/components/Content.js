@@ -12,10 +12,10 @@ const Content = ({ data, verifiedDate }) => {
   return (
     <div>
       <div className="flex justify-between px-6 pt-6">
-        <div className="last-verified-text text-sm font-small ">
+        {verifiedDate && <div className="last-verified-text text-sm font-small ">
           Last Verified: {verifiedDate}
-        </div>
-        <div className="results text-sm font-small">
+        </div>}
+        <div className="results text-sm font-small ml-auto">
           {data.length} Results
         </div>
       </div>

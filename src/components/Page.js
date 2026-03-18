@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
-import FilterBar from "../components/FilterBar";
-import TownBlurb from "./TownBlurb";
-import Content from "../components/Content";
+import { useLocation, Link } from "react-router-dom";
+import FilterBar from "./FilterBar";
+import PageTitle from "./PageTitle";
+import Content from "./Content";
+import Spinner from "./Spinner";
 import { parseTimeString } from "../data/helpers";
 
-const Page = ({ page, town = null }) => {
+const Page = ({ page, day = null, town = null, special = null }) => {
   const [content, setContent] = useState([]);
   const [verifiedDate, setVerifiedDate] = useState("");
   const [filteredData, setFilteredData] = useState([]);
@@ -20,66 +21,91 @@ const Page = ({ page, town = null }) => {
     lastFetchedPath.current = location.pathname;
     setShowFilters(true);
 
-    let url =
-      location.pathname === "/events"
-        ? "https://gist.githubusercontent.com/marytomkins/547cce901dea5e7d5e96870b68917df2/raw/happenings.json?ts="
-        : "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts=";
+    let url = null;
+    if (location.pathname === "/events") {
+      url =
+        "https://gist.githubusercontent.com/marytomkins/547cce901dea5e7d5e96870b68917df2/raw/happenings.json?ts=";
+    } else if (location.pathname.includes("/specials")) {
+      if (special) {
+        url =
+          "https://gist.githubusercontent.com/marytomkins/5d860551674cf9f7026bf8b2e694ade0/raw/specials.json?ts=";
+      } else return;
+    } else {
+      url =
+        "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts=";
+    }
 
-    fetch(url + Date.now())
-      .then((res) => res.json())
-      .then((json) => {
-        if (
-          json &&
-          Object.prototype.hasOwnProperty.call(json, "lastVerified")
-        ) {
-          setVerifiedDate(json.lastVerified);
-        }
-        if (json && Object.prototype.hasOwnProperty.call(json, "content")) {
-          let filteredContent = json.content;
-          if (town) {
-            setShowFilters(false);
-            filteredContent = filteredContent.filter(
-              (item) => item.town.toLowerCase() === town.toLowerCase()
-            );
+    if (url)
+      fetch(url + Date.now())
+        .then((res) => res.json())
+        .then((json) => {
+          if (
+            json &&
+            Object.prototype.hasOwnProperty.call(json, "lastVerified")
+          ) {
+            setVerifiedDate(json.lastVerified);
           }
-          const sortedContent = filteredContent.sort((a, b) =>
-            a.name.localeCompare(b.name)
-          );
-          setContent(sortedContent);
-        }
-      });
-  }, [location.pathname, town]);
+          if (json && Object.prototype.hasOwnProperty.call(json, "content")) {
+            let filteredContent = json.content;
+            if (day || town || special) {
+              setShowFilters(false);
+              if (day)
+                filteredContent = filteredContent?.filter(
+                  (item) =>
+                    item?.dayFilter &&
+                    Object.prototype.hasOwnProperty.call(item.dayFilter, day)
+                );
+              if (town)
+                filteredContent = filteredContent?.filter(
+                  (item) => item?.town?.toLowerCase() === town?.toLowerCase()
+                );
+              if (special)
+                filteredContent = filteredContent?.[special?.toLowerCase()];
+            }
+            const sortedContent = filteredContent?.sort((a, b) =>
+              a?.name.localeCompare(b?.name)
+            );
+            setContent(sortedContent);
+          }
+        });
+  }, [location.pathname, day, town, special]);
 
   useEffect(() => {
-    if (content.length) {
+    if (content?.length) {
       setFilteredData(content);
     }
   }, [content]);
 
   useEffect(() => {
-    const now = new Date();
-    const currentDay = now.toLocaleString("en-US", { weekday: "long" });
-    let hours = now.getHours();
-    const minutes = now.getMinutes();
-    const period = hours >= 12 ? "PM" : "AM";
-    hours = hours % 12 || 12;
-    const paddedMinutes = minutes.toString().padStart(2, "0");
-    const currentTime = `${hours}:${paddedMinutes}${period}`;
+    if (!day && !town && !special) {
+      const now = new Date();
+      const currentDay = now.toLocaleString("en-US", { weekday: "long" });
+      let hours = now.getHours();
+      const minutes = now.getMinutes();
+      const period = hours >= 12 ? "PM" : "AM";
+      hours = hours % 12 || 12;
+      const paddedMinutes = minutes.toString().padStart(2, "0");
+      const currentTime = `${hours}:${paddedMinutes}${period}`;
 
-    const result = content.filter((item) => {
-      const matchDay = Object.keys(item.dayFilter).includes(currentDay);
-      if (matchDay) {
-        const [start, end] = item.dayFilter[currentDay];
-        if (start.toLowerCase() === "all day") return true;
-        const current = parseTimeString(currentTime);
-        const startMinutes = parseTimeString(start);
-        const endMinutes = parseTimeString(end);
-        return current >= startMinutes && current <= endMinutes;
-      }
-      return false;
-    });
-    setCurrently(result);
-  }, [content]);
+      const result = content.filter((item) => {
+        const matchDay =
+          item &&
+          item.dayFilter &&
+          typeof item.dayFilter === "object" &&
+          Object.keys(item.dayFilter).includes(currentDay);
+        if (matchDay) {
+          const [start, end] = item?.dayFilter[currentDay];
+          if (start.toLowerCase() === "all day") return true;
+          const current = parseTimeString(currentTime);
+          const startMinutes = parseTimeString(start);
+          const endMinutes = parseTimeString(end);
+          return current >= startMinutes && current <= endMinutes;
+        }
+        return false;
+      });
+      setCurrently(result);
+    }
+  }, [content, day, town, special]);
 
   const handleFilter = (filters, searchTerm = "", happeningNow = false) => {
     const { towns, events, days, times } = filters || {};
@@ -135,7 +161,11 @@ const Page = ({ page, town = null }) => {
     setFilteredData(sortedData);
   };
 
-  return content.length > 0 ? (
+  if (!content || content.length === 0) {
+    return <Spinner />;
+  }
+
+  return (
     <div className={`${page}-page`}>
       {showFilters ? (
         <FilterBar
@@ -145,12 +175,27 @@ const Page = ({ page, town = null }) => {
           dataReady={content.length > 0}
         />
       ) : (
-        <TownBlurb town={town} />
+        <PageTitle day={day} town={town} special={special} />
       )}
       <Content data={filteredData} verifiedDate={verifiedDate} />
-      <TownBlurb />
+      {(day || town) && (
+        <Link
+          to="/happyhours"
+          className="flex flex-col justify-center text-center break-words m-4 mb-8 font-bold uppercase text-lg text-blue hover-text-light-blue"
+        >
+          View All Happy Hours
+        </Link>
+      )}
+      {special && (
+        <Link
+          to="/specials"
+          className="flex flex-col justify-center text-center break-words m-4 mb-8 font-bold uppercase text-lg text-blue hover-text-light-blue"
+        >
+          View All Specials
+        </Link>
+      )}
     </div>
-  ) : null;
+  );
 };
 
 export default Page;

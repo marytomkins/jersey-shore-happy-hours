@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import home from "../images/home.png";
 import { towns, days } from "../data/filters";
+// import Specials from "./Specials";
 
 function getToday() {
   return days[new Date().getDay()];
 }
 
-function formatTownLink(town) {
-  return `${town.toLowerCase().trim().replace(/\s+/g, "-")}-happy-hours`;
+function formatSearchLink(item) {
+  return `${item.toLowerCase().trim().replace(/\s+/g, "-")}-happy-hours`;
 }
 
 const Home = () => {
@@ -42,15 +43,34 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <div className="search-by-town justify-center pt-8">
+      {/* <div className="specials py-12 mt-8 border-t border-gray-300">
+        <Specials />
+      </div> */}
+      <div className="search-by-town justify-center border-t border-gray-300 py-16">
         <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-40">
-          Search by Town
+          s e a r c h B Y d a y
         </h1>
-        <div className="towns p-6 gap-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 nav:grid-cols-6 lg:flex lg:flex-wrap lg:justify-center">
+        <div className="towns p-6 pb-0 gap-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 nav:grid-cols-6 lg:flex lg:flex-wrap lg:justify-center">
+          {days.map((day) => (
+            <Link
+              key={day}
+              to={formatSearchLink(day)}
+              className="flex text-blue hover:text-white hover-bg-light-blue items-center justify-center text-center text-base font-semibold bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md lg:min-w-[8rem] min-h-[6rem]"
+            >
+              <h2>{day}</h2>
+            </Link>
+          ))}
+        </div>
+      </div>
+      <div className="search-by-town justify-center border-t border-gray-300 py-16">
+        <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-40">
+          s e a r c h B Y t o w n
+        </h1>
+        <div className="towns p-6 pb-0 gap-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 nav:grid-cols-6 lg:flex lg:flex-wrap lg:justify-center">
           {towns.map((town) => (
             <Link
               key={town}
-              to={formatTownLink(town)}
+              to={formatSearchLink(town)}
               className="flex text-blue hover:text-white hover-bg-light-blue items-center justify-center text-center text-base font-semibold bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md lg:min-w-[8rem] min-h-[6rem]"
             >
               <h2>{town}</h2>
