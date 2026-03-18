@@ -1,30 +1,27 @@
 import { Link } from "react-router-dom";
 import home from "../images/home.png";
+import { towns, days } from "../data/filters";
+// import Specials from "./Specials";
 
 function getToday() {
-  const days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
   return days[new Date().getDay()];
+}
+
+function formatSearchLink(item) {
+  return `${item.toLowerCase().trim().replace(/\s+/g, "-")}-happy-hours`;
 }
 
 const Home = () => {
   return (
     <div className="home-page">
-      <div className="section-1 h-[66vh] sm:h-[81vh] flex flex-col items-center justify-center bg-white rounded-2xl mx-4 mb-4 shadow-lg">
+      <div className="section-1 h-[66vh] sm:h-[81vh] flex flex-col items-center justify-center bg-white rounded-2xl mx-4 mb-8 shadow-lg">
         <Link to="/" className="w-4/5 nav:w-3/5 my-0 mx-auto">
-          <img src={home} alt="Jersey Shore Happy Hours" className="" />
+          <img src={home} alt="Jersey Shore Happy Hours" />
         </Link>
-        <span className="tagline text-center font-semibold sm:text-base text-sm mt-4 mx-8 sm:mx-40">
+        <h2 className="tagline text-center font-semibold sm:text-base text-sm mt-4 mx-8 sm:mx-40">
           Your guide to the best happy hours and daily deals along the Jersey
           Shore from Asbury Park to Point Pleasant
-        </span>
+        </h2>
         <div className="flex flex-col nav:flex-row justify-center mt-8">
           <Link
             to={`/happyhours?day=${getToday()}`}
@@ -46,6 +43,41 @@ const Home = () => {
           </Link>
         </div>
       </div>
+      {/* <div className="specials py-12 mt-8 border-t border-gray-300">
+        <Specials />
+      </div> */}
+      <div className="search-by-town justify-center border-t border-gray-300 pb-16 pt-8">
+        <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-40">
+          s e a r c h B Y d a y
+        </h1>
+        <div className="towns p-6 pb-0 gap-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 nav:grid-cols-6 lg:flex lg:flex-wrap lg:justify-center">
+          {days.map((day) => (
+            <Link
+              key={day}
+              to={formatSearchLink(day)}
+              className="flex text-blue hover:text-white hover-bg-light-blue items-center justify-center text-center text-base font-semibold bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md lg:min-w-[8rem] min-h-[6rem]"
+            >
+              <h2>{day}</h2>
+            </Link>
+          ))}
+        </div>
+      </div>
+      <div className="search-by-town justify-center border-t border-gray-300 pb-16 pt-8">
+        <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-40">
+          s e a r c h B Y t o w n
+        </h1>
+        <div className="towns p-6 pb-0 gap-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 nav:grid-cols-6 lg:flex lg:flex-wrap lg:justify-center">
+          {towns.map((town) => (
+            <Link
+              key={town}
+              to={formatSearchLink(town)}
+              className="flex text-blue hover:text-white hover-bg-light-blue items-center justify-center text-center text-base font-semibold bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md lg:min-w-[8rem] min-h-[6rem]"
+            >
+              <h2>{town}</h2>
+            </Link>
+          ))}
+        </div>
+      </div>
       {/* <div className="section-2 flex flex-row h-[40vh]">
         <div className="w-1/2 py-6 px-24 flex flex-col text-left justify-center bg-light-blue">
           <span className="font-bold text-2xl text-white mb-4">NEW!</span>
@@ -54,12 +86,6 @@ const Home = () => {
         <div className="">
         </div>
       </div> */}
-      <div className="flex flex-wrap">
-        {/* <img src={home1} alt="Home 1" className="md:w-1/4 w-1/2 h-auto" />
-        <img src={home2} alt="Home 2" className="md:w-1/4 w-1/2 h-auto" />
-        <img src={home3} alt="Home 3" className="md:w-1/4 w-1/2 h-auto" /> */}
-        {/* <img src={home4 ?? ""} alt="Home 4" className="md:w-1/4 w-1/2 h-auto" /> */}
-      </div>
     </div>
   );
 };

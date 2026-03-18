@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "High Cruiser";
+  src: url("../public/fonts/HighCruiser.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1 {
+  font-family: "High Cruiser", sans-serif;
+    font-weight: 100;
+
+}
+
 .App {
   min-height: 100%;
 }
