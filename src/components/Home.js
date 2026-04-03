@@ -48,7 +48,7 @@ const Home = () => {
       </div> */}
       <div className="search-by-town justify-center border-t border-gray-300 pb-16 pt-8">
         <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-40">
-          s e a r c h B Y d a y
+          s e a r c h BY d a y
         </h1>
         <div className="towns p-6 pb-0 gap-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 nav:grid-cols-6 lg:flex lg:flex-wrap lg:justify-center">
           {days.map((day) => (
@@ -64,7 +64,7 @@ const Home = () => {
       </div>
       <div className="search-by-town justify-center border-t border-gray-300 pb-16 pt-8">
         <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-40">
-          s e a r c h B Y t o w n
+          s e a r c h BY t o w n
         </h1>
         <div className="towns p-6 pb-0 gap-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 nav:grid-cols-6 lg:flex lg:flex-wrap lg:justify-center">
           {towns.map((town) => (

@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="mt-2">
-        Jersey Shore Happy Hours by Mary Tomkins © 2025
+        Jersey Shore Happy Hours by Mary Tomkins © 2026
       </div>
     </div>
   );

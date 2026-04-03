@@ -20,7 +20,7 @@ const Content = ({ data, verifiedDate }) => {
         </div>
       </div>
       {isData ? (
-        <div className="cards px-6 py-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="cards px-6 py-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 items-start">
           {data.map((item, index) => (
             <Card bar={item} index={index} />
           ))}
