@@ -32,7 +32,7 @@ const Page = ({ page, day = null, town = null, special = null }) => {
       } else return;
     } else {
       url =
-        "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts=";
+        "https://gist.githubusercontent.com/marytomkins/32f650a63265a7ea09a16b765b70e91f/raw/happyHours1.json?ts=";
     }
 
     if (url)
@@ -53,17 +53,17 @@ const Page = ({ page, day = null, town = null, special = null }) => {
                 filteredContent = filteredContent?.filter(
                   (item) =>
                     item?.dayFilter &&
-                    Object.prototype.hasOwnProperty.call(item.dayFilter, day)
+                    Object.prototype.hasOwnProperty.call(item.dayFilter, day),
                 );
               if (town)
                 filteredContent = filteredContent?.filter(
-                  (item) => item?.town?.toLowerCase() === town?.toLowerCase()
+                  (item) => item?.town?.toLowerCase() === town?.toLowerCase(),
                 );
               if (special)
                 filteredContent = filteredContent?.[special?.toLowerCase()];
             }
             const sortedContent = filteredContent?.sort((a, b) =>
-              a?.name.localeCompare(b?.name)
+              a?.name.localeCompare(b?.name),
             );
             setContent(sortedContent);
           }
@@ -131,7 +131,7 @@ const Page = ({ page, day = null, town = null, special = null }) => {
             searchTerm
               .toLowerCase()
               .replace(/[^\w\s]/g, "")
-              .trim()
+              .trim(),
           );
       return matchTown && matchEvents && matchDay && matchTime && matchSearch;
     });
@@ -177,7 +177,11 @@ const Page = ({ page, day = null, town = null, special = null }) => {
       ) : (
         <PageTitle day={day} town={town} special={special} />
       )}
-      <Content data={filteredData} verifiedDate={verifiedDate} />
+      <Content
+        data={filteredData}
+        verifiedDate={verifiedDate}
+        currently={currently}
+      />
       {(day || town) && (
         <Link
           to="/happyhours"

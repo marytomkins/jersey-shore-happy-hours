@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import home from "../images/home.png";
-import { towns, days } from "../data/filters";
+import { towns, days, truncDays } from "../data/filters";
 // import Specials from "./Specials";
 
 function getToday() {
@@ -51,10 +51,10 @@ const Home = () => {
           s e a r c h BY d a y
         </h1>
         <div className="towns p-6 pb-0 gap-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 nav:grid-cols-6 lg:flex lg:flex-wrap lg:justify-center">
-          {days.map((day) => (
+          {truncDays.map((day, index) => (
             <Link
               key={day}
-              to={formatSearchLink(day)}
+              to={formatSearchLink(days[index])}
               className="flex text-blue hover:text-white hover-bg-light-blue items-center justify-center text-center text-base font-semibold bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md lg:min-w-[8rem] min-h-[6rem]"
             >
               <h2>{day}</h2>

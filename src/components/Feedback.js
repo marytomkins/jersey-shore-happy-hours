@@ -34,13 +34,14 @@ const Feedback = () => {
   };
 
   return (
-    <div className="feedback-page p-6 md:w-1/2 w-4/5 mx-auto bg-white rounded-md mt-8">
+    <div className="feedback-page p-6 md:w-1/2 w-4/5 mx-auto bg-white rounded-md my-8 shadow-lg">
       <div className="text-2xl font-semibold text-center">Contact Us</div>
       <div className="text-sm my-4 px-4 text-center">
-        Use the form below to contact us directly. {<br />}
-        If we made any mistakes or missed any bars/restaurants, please let us
-        know.{<br />}{<br />}
-        If you would like a direct response, please include your email.
+        Use the form to get in touch!
+        <br /> Submit a happy hour below or let us know what we missed. <br />
+        <br />
+        Want a reply? Include your email and we’ll get back to you as soon as
+        possible.
       </div>
       <form className="space-y-4">
         <textarea

@@ -21,6 +21,7 @@ export const days = [
   "Friday",
   "Saturday",
 ];
+export const truncDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 export const times = [
   "All Day",
   "12:00PM",
@@ -37,9 +38,9 @@ export const times = [
   "11:00PM",
   "12:00AM",
 ];
-// export const sortBy = [
-//   "Restaurant A to Z",
-//   "Restaurant Z to A",
-//   "Town A to Z",
-//   "Town Z to A",
-// ];
+export const sortBy = [
+  "Restaurant A to Z",
+  "Restaurant Z to A",
+  "Town A to Z",
+  "Town Z to A",
+];
