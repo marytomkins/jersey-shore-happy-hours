@@ -1,12 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  FireIcon,
+} from "@heroicons/react/20/solid";
 import {
   CalendarDaysIcon,
   ClockIcon,
   StarIcon,
 } from "@heroicons/react/24/outline";
-import { towns, events, days, times } from "../data/filters";
+import { towns, events, days, times, sortBy } from "../data/filters";
 
 const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,7 +18,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
   const [selectedEvents, setSelectedEvents] = useState([]);
   const [selectedDays, setSelectedDays] = useState([]);
   const [selectedTimes, setSelectedTimes] = useState([]);
-  // const [selectedSort, setSelectedSort] = useState("Sort by");
+  const [selectedSort, setSelectedSort] = useState("Sort by");
   const [openDropdown, setOpenDropdown] = useState(null);
   const [showClearAll, setClearAllState] = useState(false);
   const [happeningNow, setHappeningNow] = useState(false);
@@ -25,8 +29,9 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     times: [],
   });
   const dropdownRef = useRef(null);
-  const showTimeFilter = !!(page === "happyhours");
+  const showTimeFilter = false; //!!(page === "happyhours");
   const showEventFilter = !!(page === "events");
+  const showSortBy = page !== "events";
   const [searchParams] = useSearchParams();
   const dayParam = searchParams.get("day");
 
@@ -86,14 +91,14 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
         times: selectedTimes,
       },
       searchTerm,
-      happeningNow
+      happeningNow,
     );
     setClearAllState(
       searchTerm.length > 0 ||
         selectedTowns.length > 0 ||
         selectedEvents.length > 0 ||
         selectedDays.length > 0 ||
-        selectedTimes.length > 0
+        selectedTimes.length > 0,
     );
   };
 
@@ -108,7 +113,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
         times: selectedTimes,
       },
       searchTerm,
-      getCurrentDateTime
+      getCurrentDateTime,
     );
   };
 
@@ -128,13 +133,13 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
         updated.towns?.length > 0 ||
         updated.events?.length > 0 ||
         updated.days?.length > 0 ||
-        updated.times?.length > 0
+        updated.times?.length > 0,
     );
   };
 
   const setSortBy = (option) => {
     setOpenDropdown(false);
-    // setSelectedSort(option);
+    setSelectedSort(option);
     onSort(option);
   };
 
@@ -156,10 +161,10 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     options,
     selected,
     setSelected,
-    icon = <></>
+    icon = <></>,
   ) => {
-    // let isSortBy = key === "sortBy";
-    let isSortBy = false;
+    let isSortBy = key === "sortBy";
+    // let isSortBy = false;
     let disabled = (key === "times" || key === "days") && happeningNow;
     return (
       <div className="relative group">
@@ -257,8 +262,8 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
         {page === "happyhours"
           ? "H a p p y H o u r s"
           : page === "events"
-          ? "E v E n t s"
-          : ""}
+            ? "E v E n t s"
+            : ""}
       </h1>
       <div
         className="happening-now cursor-pointer flex justify-center w-fit m-auto items-center h-10 py-1 text-sm font-semibold hover:text-gray-500"
@@ -268,7 +273,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
       >
         <button
           className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${
-            happeningNow ? "bg-green" : "bg-gray-300"
+            happeningNow ? "bg-[#ff9b64]" : "bg-gray-300"
           }`}
         >
           <span
@@ -277,7 +282,8 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
             }`}
           />
         </button>
-        Happening Now
+        HAPPENING NOW
+        <FireIcon className="ml-3 w-5 h-5 text-[#ff9b64]" />
       </div>
       <div className="town-buttons flex flex-wrap gap-2 mt-4 mb-2 m-auto sm:w-[85%] justify-center p-1">
         {towns.map((town) => (
@@ -333,7 +339,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
               events,
               selectedEvents,
               setSelectedEvents,
-              <StarIcon className="h-4 w-4 text-gray-500 mr-2" />
+              <StarIcon className="h-4 w-4 text-gray-500 mr-2" />,
             )}
           {renderDropdown(
             "Days",
@@ -341,7 +347,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
             days,
             selectedDays,
             setSelectedDays,
-            <CalendarDaysIcon className="h-4 w-4 text-gray-500 mr-2" />
+            <CalendarDaysIcon className="h-4 w-4 text-gray-500 mr-2" />,
           )}
           {showTimeFilter &&
             renderDropdown(
@@ -350,7 +356,15 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
               times,
               selectedTimes,
               setSelectedTimes,
-              <ClockIcon className="h-4 w-4 text-gray-500 mr-2" />
+              <ClockIcon className="h-4 w-4 text-gray-500 mr-2" />,
+            )}
+          {showSortBy &&
+            renderDropdown(
+              selectedSort,
+              "sortBy",
+              sortBy,
+              selectedSort,
+              setSelectedSort,
             )}
         </div>
         {/* <button
@@ -359,13 +373,6 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
         >
           Search
         </button> */}
-        {/* {renderDropdown(
-          selectedSort,
-          "sortBy",
-          sortBy,
-          selectedSort,
-          setSelectedSort
-        )} */}
       </div>
       <div className="selected-filters flex flex-wrap px-4">
         {/* {renderSelectedFilters("towns", appliedFilters.towns)} */}

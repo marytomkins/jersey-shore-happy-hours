@@ -4,6 +4,8 @@ module.exports = {
     extend: {
       screens: {
         nav: "912px",
+        desktop: "1100px",
+        desktopPlus: "1600px",
       },
     },
   },
