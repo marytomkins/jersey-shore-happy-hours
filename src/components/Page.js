@@ -32,7 +32,7 @@ const Page = ({ page, day = null, town = null, special = null }) => {
       } else return;
     } else {
       url =
-        "https://gist.githubusercontent.com/marytomkins/32f650a63265a7ea09a16b765b70e91f/raw/happyHours1.json?ts=";
+        "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts=";
     }
 
     if (url)
