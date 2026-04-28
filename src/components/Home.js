@@ -39,7 +39,7 @@ const Home = () => {
             to={`/events`}
             className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-44 py-2 rounded-3xl m-2"
           >
-            Daily Events
+            Weekly Events
           </Link>
         </div>
       </div>

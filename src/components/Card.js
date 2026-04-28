@@ -16,7 +16,8 @@ const Card = ({ bar, index, happeningNow }) => {
 
   useEffect(() => {
     if (contentRef.current) {
-      setShowToggle(contentRef.current.scrollHeight > 150);
+      setShowToggle(contentRef.current.scrollHeight > 200);
+      setExpanded(window.innerWidth < 640);
     }
   }, [bar]);
 
@@ -55,8 +56,8 @@ const Card = ({ bar, index, happeningNow }) => {
   return (
     <div
       key={index}
-      className={`relative flex flex-col bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md transition duration-300 min-h-[12.5rem] ${
-        expanded ? "max-h-[1000px]" : "max-h-[15rem] sm:max-h-[12.5rem]"
+      className={`relative flex flex-col bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md transition duration-300 min-h-[15rem] ${
+        expanded ? "max-h-[1000px]" : "max-h-[15rem]"
       }`}
     >
       <div
