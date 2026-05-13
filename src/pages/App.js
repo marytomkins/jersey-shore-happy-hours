@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import Home from "../components/Home";
 import Page from "../components/Page";
+import MappyHours from "../components/MappyHours";
 import Header from "../components/Header";
 import Specials from "../components/Specials";
 import Feedback from "../components/Feedback";
@@ -21,6 +22,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/happyhours" element={<Page page={"happyhours"} />} />
+            <Route path="/map" element={<MappyHours />} />
             <Route path="/events" element={<Page page={"events"} />} />
             <Route path="/contact" element={<Feedback />} />
             {/* SPECIALS */}

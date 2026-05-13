@@ -7,6 +7,7 @@ import { InstagramIcon } from "lucide-react";
 
 const navItems = [
   { name: "Happy Hours", path: "/happyhours" },
+  { name: "Map", path: "/map" },
   { name: "Events", path: "/events" },
   // { name: "Specials", path: "/specials" },
   { name: "Contact", path: "/contact" },
