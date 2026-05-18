@@ -13,7 +13,6 @@ const MappyHours = ({ data, currently }) => {
   const mapRef = useRef(null);
   const markersRef = useRef([]);
 
-  const [mapReady, setMapReady] = useState(false);
   const [checkedTowns, setCheckedTowns] = useState(new Set(towns));
   const [happeningNow, setHappeningNow] = useState(false);
 
@@ -35,7 +34,7 @@ const MappyHours = ({ data, currently }) => {
    * INITIALIZE MAP
    */
   useEffect(() => {
-    if (mapRef.current || !mapContainer.current) return;
+    if (!mapContainer.current || mapRef.current) return;
 
     const map = new mapboxgl.Map({
       container: mapContainer.current,
@@ -53,11 +52,6 @@ const MappyHours = ({ data, currently }) => {
       }),
       "top-right",
     );
-    map.on("load", () => {
-      map.setConfigProperty("basemap", "showPointOfInterestLabels", false);
-      map.setConfigProperty("basemap", "showTransitLabels", false);
-      setMapReady(true);
-    });
     mapRef.current = map;
 
     return () => {
@@ -71,7 +65,7 @@ const MappyHours = ({ data, currently }) => {
    */
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || !mapReady) return;
+    if (!map) return;
 
     markersRef.current.forEach((m) => m.remove());
     markersRef.current = [];
@@ -114,7 +108,7 @@ const MappyHours = ({ data, currently }) => {
 
       markersRef.current.push(marker);
     });
-  }, [filtered, mapReady]);
+  }, [filtered]);
 
   /*
    * TOGGLE TOWN / SELECT ALL
