@@ -72,7 +72,7 @@ const Page = ({ page, day = null, town = null, special = null }) => {
             setContent(sortedContent);
           }
         });
-  }, [location.pathname, day, town, special]);
+  }, [location.pathname, day, town, special, isMapPage]);
 
   useEffect(() => {
     if (content?.length) {
