@@ -4,6 +4,7 @@ import FilterBar from "./FilterBar";
 import PageTitle from "./PageTitle";
 import Content from "./Content";
 import Spinner from "./Spinner";
+import MappyHours from "../pages/MappyHours";
 import { parseTimeString } from "../data/helpers";
 
 const Page = ({ page, day = null, town = null, special = null }) => {
@@ -15,6 +16,9 @@ const Page = ({ page, day = null, town = null, special = null }) => {
   const [showFilters, setShowFilters] = useState(true);
   const location = useLocation();
   const lastFetchedPath = useRef(null);
+  const isHappyHoursPage = page === "happyhours";
+  const isEventsPage = page === "events";
+  const isMapPage = page === "map";
 
   useEffect(() => {
     if (lastFetchedPath.current === location.pathname) return;
@@ -47,7 +51,7 @@ const Page = ({ page, day = null, town = null, special = null }) => {
           }
           if (json && Object.prototype.hasOwnProperty.call(json, "content")) {
             let filteredContent = json.content;
-            if (day || town || special) {
+            if (day || town || special || isMapPage) {
               setShowFilters(false);
               if (day)
                 filteredContent = filteredContent?.filter(
@@ -167,21 +171,26 @@ const Page = ({ page, day = null, town = null, special = null }) => {
 
   return (
     <div className={`${page}-page`}>
-      {showFilters ? (
-        <FilterBar
-          page={page}
-          onFilter={handleFilter}
-          onSort={handleSort}
-          dataReady={content.length > 0}
-        />
+      {!isMapPage &&
+        (showFilters ? (
+          <FilterBar
+            page={page}
+            onFilter={handleFilter}
+            onSort={handleSort}
+            dataReady={content.length > 0}
+          />
+        ) : (
+          <PageTitle day={day} town={town} special={special} />
+        ))}
+      {isMapPage ? (
+        <MappyHours data={filteredData} currently={currently} />
       ) : (
-        <PageTitle day={day} town={town} special={special} />
+        <Content
+          data={filteredData}
+          verifiedDate={verifiedDate}
+          currently={currently}
+        />
       )}
-      <Content
-        data={filteredData}
-        verifiedDate={verifiedDate}
-        currently={currently}
-      />
       {(day || town) && (
         <Link
           to="/happyhours"
