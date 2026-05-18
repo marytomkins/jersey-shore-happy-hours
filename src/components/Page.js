@@ -16,8 +16,8 @@ const Page = ({ page, day = null, town = null, special = null }) => {
   const [showFilters, setShowFilters] = useState(true);
   const location = useLocation();
   const lastFetchedPath = useRef(null);
-  const isHappyHoursPage = page === "happyhours";
-  const isEventsPage = page === "events";
+  // const isHappyHoursPage = page === "happyhours";
+  // const isEventsPage = page === "events";
   const isMapPage = page === "map";
 
   useEffect(() => {
