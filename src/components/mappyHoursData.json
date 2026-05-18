@@ -72,7 +72,8 @@
         "Tuesday": ["8:00PM", "11:59PM"]
       },
       "specials": "Tuesday: Beat the Clock (Drafts start at 50 cents at 8PM and increase 50 cents every hour)",
-      "link": "https://bar-a.com/entertainment-calendar/"
+      "link": "https://bar-a.com/entertainment-calendar/",
+      "latlong": [40.17450,-74.02833]
     },
     {
       "name": "Barrio Costero",
@@ -85,7 +86,8 @@
         "Thursday": ["4:00PM", "10:00PM"],
         "Tuesday": ["4:00PM", "10:00PM"],
         "Sunday": ["4:00PM", "9:30PM"]
-      }
+      },
+      "latlong": [40.21679,-74.01049]
     },
     {
       "name": "Beach Haus Brewery",
@@ -95,7 +97,8 @@
       "description": "Test Dept Happy Hour: Try a new beer/$4 Drafts/$7 Spirits/$1 Wings + Food Menu",
       "dayFilter": {
         "Friday": ["12:00PM", "4:00PM"]
-      }
+      },
+      "latlong": [40.18124,-74.02541]
     },
     {
       "name": "Black Swan",
@@ -109,7 +112,8 @@
         "Wednesday": ["3:00PM", "6:00PM"],
         "Thursday": ["3:00PM", "6:00PM"],
         "Friday": ["3:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.21635,-74.01064]
     },
     {
       "name": "Boathouse",
@@ -124,7 +128,8 @@
         "Thursday": ["4:00PM", "7:00PM"],
         "Friday": ["4:00PM", "7:00PM"],
         "Sunday": ["12:00PM", "8:00PM"]
-      }
+      },
+      "latlong": [40.17576,-74.02721]
     },
     {
       "name": "Boatyard 401",
@@ -138,7 +143,8 @@
         "Wednesday": ["11:00AM", "12:00AM"],
         "Thursday": ["12:00PM", "6:00PM"],
         "Friday": ["12:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.10084,-74.04676]
     },
     {
       "name": "Brielle House Bar & Grill",
@@ -152,7 +158,8 @@
         "Wednesday": ["11:00AM", "12:00AM"],
         "Thursday": ["12:00PM", "6:00PM"],
         "Friday": ["12:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.10598,-74.05627]
     },
     {
       "name": "Capitoline",
@@ -165,7 +172,8 @@
         "Wednesday": ["5:00PM", "7:00PM"],
         "Thursday": ["5:00PM", "7:00PM"],
         "Friday": ["5:00PM", "7:00PM"]
-      }
+      },
+      "latlong": [40.21597,-74.01166]
     },
     {
       "name": "Committed Pig",
@@ -178,7 +186,8 @@
         "Wednesday": ["3:00PM", "6:00PM"],
         "Thursday": ["3:00PM", "6:00PM"],
         "Tuesday": ["3:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.12263,-74.04999]
     },
     {
       "name": "Cross & Orange",
@@ -189,7 +198,8 @@
       "dayFilter": {
         "Wednesday": ["4:00PM", "9:00PM"],
         "Thursday": ["4:00PM", "9:00PM"]
-      }
+      },
+      "latlong": [40.21647,-74.00869]
     },
     {
       "name": "Elbow Room",
@@ -204,7 +214,8 @@
         "Thursday": ["3:00PM", "6:00PM"],
         "Friday": ["11:00AM", "6:00PM"],
         "Saturday": ["11:00AM", "6:00PM"]
-      }
+      },
+      "latlong": [40.20162,-74.01835]
     },
     {
       "name": "Frankie's",
@@ -219,7 +230,8 @@
         "Thursday": ["12:00PM", "6:00PM"],
         "Friday": ["12:00PM", "6:00PM"],
         "Sunday": ["12:00PM", "11:59PM"]
-      }
+      },
+      "latlong": [40.09252,-74.04964]
     },
     {
       "name": "Fratello's",
@@ -235,7 +247,8 @@
         "Friday": ["3:00PM", "6:00PM"],
         "Saturday": ["3:00PM", "6:00PM"],
         "Sunday": ["3:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.13042,-74.04171]
     },
     {
       "name": "Four Winds",
@@ -251,7 +264,8 @@
         "Friday": ["2:00PM", "6:00PM"],
         "Saturday": ["2:00PM", "6:00PM"],
         "Sunday": ["2:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.13367,-74.06351]
     },
     {
       "name": "Harrigan's",
@@ -266,7 +280,8 @@
         "Wednesday": ["3:00PM", "5:30PM"],
         "Thursday": ["3:00PM", "5:30PM"],
         "Friday": ["3:00PM", "5:30PM"]
-      }
+      },
+      "latlong": [40.13487,-74.04297]
     },
     {
       "name": "Heights 27 Bar & Grille",
@@ -280,7 +295,8 @@
         "Wednesday": ["12:00PM", "6:00PM"],
         "Thursday": ["12:00PM", "6:00PM"],
         "Friday": ["12:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.16363,-74.03549]
     },
     {
       "name": "Homesick",
@@ -292,7 +308,8 @@
         "Thursday": ["5:00PM", "7:00PM"],
         "Friday": ["4:00PM", "7:00PM"],
         "Saturday": ["2:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.21632,-74.00900]
     },
     {
       "name": "Iron Whale",
@@ -306,7 +323,8 @@
         "Wednesday": ["2:00PM", "6:00PM"],
         "Thursday": ["2:00PM", "6:00PM"],
         "Friday": ["2:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.22300,-73.99899]
     },
     {
       "name": "Jacks By The Tracks",
@@ -320,7 +338,8 @@
         "Wednesday": ["4:00PM", "6:00PM"],
         "Thursday": ["4:00PM", "6:00PM"],
         "Friday": ["4:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17930,-74.02621]
     },
     {
       "name": "Joe's Surf Shack",
@@ -330,7 +349,8 @@
       "description": "",
       "dayFilter": {
         "Wednesday": ["12:00PM", "11:59PM"]
-      }
+      },
+      "latlong": [40.17153,-74.02308]
     },
     {
       "name": "Johnny Mac House of Spirits",
@@ -343,7 +363,8 @@
         "Tuesday": ["12:00PM", "11:59PM"],
         "Wednesday": ["12:00PM", "11:59PM"],
         "Thursday": ["12:00PM", "11:59PM"]
-      }
+      },
+      "latlong": [40.21617,-74.01299]
     },
     {
       "name": "Kim Maries",
@@ -357,7 +378,8 @@
         "Wednesday": ["4:00PM", "6:00PM"],
         "Thursday": ["4:00PM", "6:00PM"],
         "Friday": ["4:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.22555,-74.00027]
     },
     {
       "name": "Klein's Seafood Restaurant",
@@ -370,7 +392,8 @@
         "Wednesday": ["3:00PM", "6:00PM"],
         "Thursday": ["3:00PM", "6:00PM"],
         "Friday": ["3:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.18445,-74.02453]
     },
     {
       "name": "La Dolce Vita",
@@ -385,7 +408,8 @@
         "Thursday": ["12:00PM", "5:00PM"],
         "Friday": ["12:00PM", "5:00PM"],
         "Sunday": ["12:00PM", "5:00PM"]
-      }
+      },
+      "latlong": [40.18270,-74.01190]
     },
     {
       "name": "La Sierra Restaurant",
@@ -400,7 +424,8 @@
         "Wednesday": ["1:00PM", "4:00PM"],
         "Thursday": ["11:00AM", "10:00PM"],
         "Friday": ["1:00PM", "4:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Loteria",
@@ -414,7 +439,8 @@
         "Thursday": ["4:00PM", "7:00PM"],
         "Friday": ["4:00PM", "6:00PM"],
         "Sunday": ["12:00PM", "8:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Lovesick",
@@ -426,7 +452,8 @@
         "Thursday": ["5:00PM", "7:00PM"],
         "Friday": ["5:00PM", "7:00PM"],
         "Saturday": ["5:00PM", "7:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "McCann's Tavern",
@@ -442,7 +469,8 @@
         "Thursday": ["12:00PM", "6:00PM"],
         "Friday": ["12:00PM", "6:00PM"],
         "Saturday": ["12:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Moonstruck",
@@ -454,7 +482,8 @@
         "Friday": ["4:00PM", "7:00PM"],
         "Wednesday": ["4:00PM", "7:00PM"],
         "Thursday": ["4:00PM", "7:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Mutiny Beach",
@@ -464,7 +493,8 @@
       "description": "$4 Miller Lite/$5 Cavit Wines/$6 Well Drinks/$7 Margaritas/$8 Specialty Cocktail of the Week/BOGO 50% Off Sandwiches/$10 Food Menu",
       "dayFilter": {
         "Friday": ["4:00PM", "7:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Pagano's Uva Ristorante",
@@ -479,7 +509,8 @@
         "Friday": ["12:00PM", "7:00PM"],
         "Saturday": ["12:00PM", "6:00PM"],
         "Sunday": ["12:00PM", "10:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Palmetto",
@@ -493,7 +524,8 @@
         "Wednesday": ["3:00PM", "6:00PM"],
         "Thursday": ["3:00PM", "6:00PM"],
         "Friday": ["3:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Pascal & Sabine",
@@ -508,7 +540,8 @@
         "Wednesday": ["5:00PM", "7:00PM"],
         "Thursday": ["5:00PM", "7:00PM"],
         "Friday": ["4:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "The Pig & Parrot",
@@ -522,7 +555,8 @@
         "Wednesday": ["3:00PM", "6:00PM"],
         "Thursday": ["3:00PM", "6:00PM"],
         "Friday": ["3:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Point Lobster Bar & Grill",
@@ -537,7 +571,8 @@
         "Sunday": ["12:00PM", "10:00PM"],
         "Friday": ["3:00PM", "6:00PM"],
         "Saturday": ["3:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Porta",
@@ -551,7 +586,8 @@
         "Wednesday": ["4:00PM", "6:00PM"],
         "Thursday": ["4:00PM", "6:00PM"],
         "Friday": ["4:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "R Bar",
@@ -561,7 +597,8 @@
       "description": "$5 Narragansetts/Guinness/SKYY Cocktails/Espolon Cocktails & House Wine",
       "dayFilter": {
         "Friday": ["4:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Reef & Barrel",
@@ -576,7 +613,8 @@
         "Wednesday": ["11:00AM", "6:00PM"],
         "Thursday": ["11:00AM", "11:59PM"],
         "Friday": ["11:00AM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Rella's",
@@ -590,7 +628,8 @@
         "Wednesday": ["3:30PM", "5:30PM"],
         "Thursday": ["3:30PM", "9:00PM"],
         "Friday": ["3:30PM", "5:30PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Reyla",
@@ -602,7 +641,8 @@
       "dayFilter": {
         "Wednesday": ["4:00PM", "9:30PM"],
         "Thursday": ["4:00PM", "10:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Robinson Ale House",
@@ -616,7 +656,8 @@
         "Wednesday": ["4:00PM", "6:00PM"],
         "Thursday": ["4:00PM", "6:00PM"],
         "Friday": ["4:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Rod's Tavern",
@@ -632,7 +673,8 @@
         "Friday": ["12:00PM", "6:00PM"],
         "Saturday": ["12:00PM", "6:00PM"],
         "Sunday": ["12:00PM", "11:59PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Scarborough Fair",
@@ -645,7 +687,8 @@
         "Wednesday": ["3:00PM", "6:00PM"],
         "Thursday": ["3:00PM", "6:00PM"],
         "Friday": ["3:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Seacrab",
@@ -659,7 +702,8 @@
         "Wednesday": ["3:00PM", "7:00PM"],
         "Thursday": ["3:00PM", "7:00PM"],
         "Friday": ["3:00PM", "7:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Shrimp Box",
@@ -673,7 +717,8 @@
         "Wednesday": ["12:00PM", "6:00PM"],
         "Thursday": ["12:00PM", "6:00PM"],
         "Friday": ["12:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Sinner's Steakhouse",
@@ -688,7 +733,8 @@
         "Friday": ["3:00PM", "5:00PM"],
         "Saturday": ["12:00PM", "2:00PM"],
         "Sunday": ["12:00PM", "2:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Spring Lake Tap House",
@@ -702,7 +748,8 @@
         "Wednesday": ["12:00PM", "5:00PM"],
         "Thursday": ["12:00PM", "5:00PM"],
         "Friday": ["12:00PM", "5:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "St Stephen's Green Publick House",
@@ -716,7 +763,8 @@
         "Wednesday": ["2:00PM", "6:00PM"],
         "Thursday": ["2:00PM", "6:00PM"],
         "Friday": ["2:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Talulas",
@@ -729,7 +777,8 @@
         "Tuesday": ["4:30PM", "6:30PM"],
         "Wednesday": ["4:30PM", "6:30PM"],
         "Thursday": ["4:30PM", "6:30PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Tommy's Tavern & Tap",
@@ -744,7 +793,8 @@
         "Wednesday": ["3:00PM", "6:00PM"],
         "Thursday": ["3:00PM", "6:00PM"],
         "Friday": ["3:00PM", "6:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Watermark",
@@ -755,7 +805,8 @@
       "dayFilter": {
         "Friday": ["5:00PM", "7:00PM"],
         "Thursday": ["5:00PM", "7:00PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     },
     {
       "name": "Wharfside Seafood and Patio Bar",
@@ -771,7 +822,8 @@
         "Friday": ["12:00PM", "6:00PM"],
         "Saturday": ["12:00PM", "6:00PM"],
         "Sunday": ["11:30AM", "11:59PM"]
-      }
+      },
+      "latlong": [40.17405,-74.02758]
     }
   ]
 }

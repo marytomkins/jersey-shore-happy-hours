@@ -1,12 +1,26 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import markerImage from "../images/martini.png";
 import { parseTimeString } from "../data/helpers";
 import { towns } from "../data/filters";
 import mappyData from "./mappyHoursData.json";
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
+
+const getMarkerColors = (town) => {
+  switch (town) {
+    case "Asbury Park":    return { bg: "#e8ef9c", border: "#595e2e" };
+    case "Ocean Grove":    return { bg: "#3677cd", border: "#e1f2fa" };
+    case "Bradley Beach":  return { bg: "#ff9b64", border: "#fdf3ea" };
+    case "Belmar":         return { bg: "#ffdbdf", border: "#f49287" };
+    case "Spring Lake":    return { bg: "#aad8d5", border: "#3677cd" };
+    case "Sea Girt":       return { bg: "#8da663", border: "#ffffff" };
+    case "Manasquan":      return { bg: "#fda7bb", border: "#ffffff" };
+    case "Brielle":        return { bg: "#fff5e6", border: "#ff9256" };
+    case "Point Pleasant": return { bg: "#e2e772", border: "#595e2e" };
+    default:               return { bg: "#3677cd", border: "#ffffff" };
+  }
+};
 
 function isHappeningNow(item) {
   const now = new Date();
@@ -55,13 +69,25 @@ export default function MappyHours() {
 
     const map = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/light-v11",
+      style: "mapbox://styles/mapbox/standard",
       center: [-74.03452, 40.14868],
       zoom: 11,
     });
 
     map.addControl(new mapboxgl.NavigationControl(), "top-right");
-    map.on("load", () => setMapReady(true));
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: { enableHighAccuracy: true },
+        trackUserLocation: true,
+        showUserHeading: true,
+      }),
+      "top-right",
+    );
+    map.on("load", () => {
+      map.setConfigProperty("basemap", "showPointOfInterestLabels", false);
+      map.setConfigProperty("basemap", "showTransitLabels", false);
+      setMapReady(true);
+    });
     mapRef.current = map;
 
     return () => {
@@ -81,12 +107,14 @@ export default function MappyHours() {
     markersRef.current = [];
 
     filtered.forEach((item) => {
+      const { bg, border } = getMarkerColors(item.town);
       const el = document.createElement("div");
-      el.style.backgroundImage = `url(${markerImage})`;
-      el.style.width = "32px";
-      el.style.height = "32px";
-      el.style.backgroundSize = "contain";
-      el.style.backgroundRepeat = "no-repeat";
+      el.style.width = "18px";
+      el.style.height = "18px";
+      el.style.borderRadius = "50%";
+      el.style.backgroundColor = bg;
+      el.style.border = `2.5px solid ${border}`;
+      el.style.boxShadow = "0 2px 6px rgba(0,0,0,0.3)";
       el.style.cursor = "pointer";
 
       const dayTextFormatted = item.dayText
@@ -120,7 +148,7 @@ export default function MappyHours() {
   }, [filtered, mapReady]);
 
   /*
-   * TOGGLE TOWN
+   * TOGGLE TOWN / SELECT ALL
    */
   function toggleTown(town) {
     setCheckedTowns((prev) => {
@@ -130,6 +158,12 @@ export default function MappyHours() {
       return next;
     });
   }
+
+  function toggleAllTowns() {
+    setCheckedTowns(checkedTowns.size === towns.length ? new Set() : new Set(towns));
+  }
+
+  const allSelected = checkedTowns.size === towns.length;
 
   /*
    * UI
@@ -152,17 +186,18 @@ export default function MappyHours() {
           flex: 1,
           borderRadius: "10px",
           overflow: "hidden",
+          minWidth: 0,
         }}
       />
 
       {/* SIDEBAR */}
       <div
         style={{
-          width: "220px",
+          width: "clamp(148px, 30vw, 220px)",
           flexShrink: 0,
           background: "#3677cd",
           color: "white",
-          padding: "16px",
+          padding: "14px",
           borderRadius: "10px",
           border: "1px solid rgba(255,255,255,0.2)",
           boxShadow: "0 4px 24px rgba(54,119,205,0.4)",
@@ -172,7 +207,7 @@ export default function MappyHours() {
           overflowY: "auto",
         }}
       >
-        {/* Happening Now toggle */}
+        {/* Happening Now */}
         <div
           style={{
             display: "flex",
@@ -225,36 +260,32 @@ export default function MappyHours() {
           </span>
         </div>
 
-        {/* Filter by Town */}
-        <p
+        {/* Filter by Town header + toggle all */}
+        <span
           style={{
             fontSize: "11px",
             fontWeight: 700,
             letterSpacing: "0.1em",
             color: "rgba(255,255,255,0.75)",
             textTransform: "uppercase",
-            margin: 0,
           }}
         >
-          Filter by Town
-        </p>
+          Towns
+        </span>
 
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-          }}
-        >
+        {/* Town checkboxes */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           {towns.map((town) => (
             <label
               key={town}
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "10px",
+                gap: "8px",
                 cursor: "pointer",
-                fontSize: "14px",
+                fontSize: "13px",
+                fontWeight: 500,
+                color: "white",
               }}
             >
               <input
@@ -263,9 +294,10 @@ export default function MappyHours() {
                 onChange={() => toggleTown(town)}
                 style={{
                   accentColor: "white",
-                  width: "15px",
-                  height: "15px",
+                  width: "14px",
+                  height: "14px",
                   cursor: "pointer",
+                  flexShrink: 0,
                 }}
               />
               {town}
@@ -273,17 +305,36 @@ export default function MappyHours() {
           ))}
         </div>
 
-        {/* Footer count */}
+        {/* Count + toggle all */}
         <div
           style={{
             marginTop: "auto",
             paddingTop: "12px",
             borderTop: "1px solid rgba(255,255,255,0.25)",
-            fontSize: "12px",
-            color: "rgba(255,255,255,0.7)",
+            display: "flex",
+            flexDirection: "column",
+            gap: "8px",
           }}
         >
-          {filtered.length} location{filtered.length !== 1 ? "s" : ""} shown
+          <button
+            onClick={toggleAllTowns}
+            style={{
+              fontSize: "11px",
+              fontWeight: 600,
+              color: "white",
+              background: "rgba(255,255,255,0.15)",
+              border: "1px solid rgba(255,255,255,0.3)",
+              borderRadius: "9999px",
+              padding: "5px 0",
+              cursor: "pointer",
+              width: "100%",
+            }}
+          >
+            {allSelected ? "Deselect All" : "Select All"}
+          </button>
+          <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)" }}>
+            {filtered.length} location{filtered.length !== 1 ? "s" : ""} shown
+          </div>
         </div>
       </div>
     </div>
