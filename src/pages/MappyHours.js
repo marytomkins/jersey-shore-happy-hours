@@ -39,7 +39,7 @@ const MappyHours = ({ data, currently }) => {
 
     const map = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/standard",
+      style: "mapbox://styles/mapbox/streets-v12",
       center: [-74.03452, 40.14868],
       zoom: 11,
     });
