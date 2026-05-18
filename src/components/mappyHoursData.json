@@ -440,7 +440,7 @@
         "Friday": ["4:00PM", "6:00PM"],
         "Sunday": ["12:00PM", "8:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.21616,-74.01128]
     },
     {
       "name": "Lovesick",
@@ -453,7 +453,7 @@
         "Friday": ["5:00PM", "7:00PM"],
         "Saturday": ["5:00PM", "7:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.21634,-74.00895]
     },
     {
       "name": "McCann's Tavern",
@@ -470,7 +470,7 @@
         "Friday": ["12:00PM", "6:00PM"],
         "Saturday": ["12:00PM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.17237,-74.02706]
     },
     {
       "name": "Moonstruck",
@@ -483,7 +483,7 @@
         "Wednesday": ["4:00PM", "7:00PM"],
         "Thursday": ["4:00PM", "7:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.21599,-74.00868]
     },
     {
       "name": "Mutiny Beach",
@@ -494,7 +494,7 @@
       "dayFilter": {
         "Friday": ["4:00PM", "7:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.22402,-73.99866]
     },
     {
       "name": "Pagano's Uva Ristorante",
@@ -510,7 +510,7 @@
         "Saturday": ["12:00PM", "6:00PM"],
         "Sunday": ["12:00PM", "10:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.20530,-74.01689]
     },
     {
       "name": "Palmetto",
@@ -525,7 +525,7 @@
         "Thursday": ["3:00PM", "6:00PM"],
         "Friday": ["3:00PM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.22052,-73.99999]
     },
     {
       "name": "Pascal & Sabine",
@@ -541,7 +541,7 @@
         "Thursday": ["5:00PM", "7:00PM"],
         "Friday": ["4:00PM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.21703,-74.01022]
     },
     {
       "name": "The Pig & Parrot",
@@ -556,7 +556,7 @@
         "Thursday": ["3:00PM", "6:00PM"],
         "Friday": ["3:00PM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.10716,-74.05251]
     },
     {
       "name": "Point Lobster Bar & Grill",
@@ -572,7 +572,7 @@
         "Friday": ["3:00PM", "6:00PM"],
         "Saturday": ["3:00PM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.09195,-74.04956]
     },
     {
       "name": "Porta",
@@ -587,7 +587,7 @@
         "Thursday": ["4:00PM", "6:00PM"],
         "Friday": ["4:00PM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.22021,-74.00227]
     },
     {
       "name": "R Bar",
@@ -598,7 +598,7 @@
       "dayFilter": {
         "Friday": ["4:00PM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.22418,-74.01019]
     },
     {
       "name": "Reef & Barrel",
@@ -614,7 +614,7 @@
         "Thursday": ["11:00AM", "11:59PM"],
         "Friday": ["11:00AM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.13013,-74.04326]
     },
     {
       "name": "Rella's",
@@ -629,7 +629,7 @@
         "Thursday": ["3:30PM", "9:00PM"],
         "Friday": ["3:30PM", "5:30PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.11241,-74.05740]
     },
     {
       "name": "Reyla",
@@ -642,7 +642,7 @@
         "Wednesday": ["4:00PM", "9:30PM"],
         "Thursday": ["4:00PM", "10:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.21632,-74.01072]
     },
     {
       "name": "Robinson Ale House",
@@ -657,7 +657,7 @@
         "Thursday": ["4:00PM", "6:00PM"],
         "Friday": ["4:00PM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.22319,-73.99901]
     },
     {
       "name": "Rod's Tavern",
@@ -674,7 +674,7 @@
         "Saturday": ["12:00PM", "6:00PM"],
         "Sunday": ["12:00PM", "11:59PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.13002,-74.04013]
     },
     {
       "name": "Scarborough Fair",
@@ -688,7 +688,7 @@
         "Thursday": ["3:00PM", "6:00PM"],
         "Friday": ["3:00PM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.13492,-74.06535]
     },
     {
       "name": "Seacrab",
@@ -703,7 +703,7 @@
         "Thursday": ["3:00PM", "7:00PM"],
         "Friday": ["3:00PM", "7:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.21326,-74.01503]
     },
     {
       "name": "Shrimp Box",
@@ -718,7 +718,7 @@
         "Thursday": ["12:00PM", "6:00PM"],
         "Friday": ["12:00PM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.10171,-74.03701]
     },
     {
       "name": "Sinner's Steakhouse",
@@ -734,7 +734,7 @@
         "Saturday": ["12:00PM", "2:00PM"],
         "Sunday": ["12:00PM", "2:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.10284,-74.03706]
     },
     {
       "name": "Spring Lake Tap House",
@@ -749,7 +749,7 @@
         "Thursday": ["12:00PM", "5:00PM"],
         "Friday": ["12:00PM", "5:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.15095,-74.03895]
     },
     {
       "name": "St Stephen's Green Publick House",
@@ -764,7 +764,7 @@
         "Thursday": ["2:00PM", "6:00PM"],
         "Friday": ["2:00PM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.16120,-74.03516]
     },
     {
       "name": "Talulas",
@@ -778,7 +778,7 @@
         "Wednesday": ["4:30PM", "6:30PM"],
         "Thursday": ["4:30PM", "6:30PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.21614,-74.00947]
     },
     {
       "name": "Tommy's Tavern & Tap",
@@ -794,7 +794,7 @@
         "Thursday": ["3:00PM", "6:00PM"],
         "Friday": ["3:00PM", "6:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.13823,-74.06151]
     },
     {
       "name": "Watermark",
@@ -806,7 +806,7 @@
         "Friday": ["5:00PM", "7:00PM"],
         "Thursday": ["5:00PM", "7:00PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.21870,-74.00067]
     },
     {
       "name": "Wharfside Seafood and Patio Bar",
@@ -823,7 +823,8 @@
         "Saturday": ["12:00PM", "6:00PM"],
         "Sunday": ["11:30AM", "11:59PM"]
       },
-      "latlong": [40.17405,-74.02758]
+      "latlong": [40.10190,-74.04090],
+      "reds": [40.10279,-74.03810]
     }
   ]
 }
