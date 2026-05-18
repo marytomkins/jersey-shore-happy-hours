@@ -38,7 +38,7 @@ const MappyHours = ({ data, currently }) => {
 
     const map = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/streets-v12",
+      style: "mapbox://styles/mapbox/streets-v11",
       center: [-74.03452, 40.14868],
       zoom: 11,
     });
@@ -53,6 +53,10 @@ const MappyHours = ({ data, currently }) => {
       "top-right",
     );
     mapRef.current = map;
+
+    map.on("styledata", () => {
+      console.log("style loaded", map.getStyle());
+    });
 
     return () => {
       map.remove();
