@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import { towns } from "../data/filters";
-import mapboxgl from "mapbox-gl/dist/mapbox-gl";
-// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
-import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
+import mapboxgl from "mapbox-gl";
+import "mapbox-gl/dist/mapbox-gl.css";
 
-mapboxgl.workerClass = MapboxWorker;
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWFyeXRvbWtpbnMiLCJhIjoiY21wYncxc3d1MDA0azJyb3hpMzFvcmszZyJ9.zET9YubEWMZx7u3Ox5_gPQ";
 
@@ -17,6 +15,7 @@ const MappyHours = ({ data, currently }) => {
 
   const [checkedTowns, setCheckedTowns] = useState(new Set(towns));
   const [happeningNow, setHappeningNow] = useState(false);
+  const [mapReady, setMapReady] = useState(false);
 
   /*
    * FILTERED DATA
@@ -55,14 +54,12 @@ const MappyHours = ({ data, currently }) => {
       "top-right",
     );
     mapRef.current = map;
-
-    map.on("styledata", () => {
-      console.log("style loaded", map.getStyle());
-    });
+    map.on("load", () => setMapReady(true));
 
     return () => {
       map.remove();
       mapRef.current = null;
+      setMapReady(false);
     };
   }, []);
 
@@ -114,7 +111,7 @@ const MappyHours = ({ data, currently }) => {
 
       markersRef.current.push(marker);
     });
-  }, [filtered]);
+  }, [filtered, mapReady]);
 
   /*
    * TOGGLE TOWN / SELECT ALL
