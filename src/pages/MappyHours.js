@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import { towns } from "../data/filters";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl";
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
 import MapboxWorker from "worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker";
 
 mapboxgl.workerClass = MapboxWorker;
