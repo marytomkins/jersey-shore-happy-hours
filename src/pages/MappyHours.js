@@ -4,7 +4,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { towns } from "../data/filters";
 
 mapboxgl.accessToken =
-  "pk.eyJ1IjoibWFyeXRvbWtpbnMiLCJhIjoiY21wYnB1ejVtMDRhMzMyb2xpeHlvd2pkNiJ9.R7dq4y_hbY7cdDMvOFqBcA";
+  "pk.eyJ1IjoibWFyeXRvbWtpbnMiLCJhIjoiY21wYncxc3d1MDA0azJyb3hpMzFvcmszZyJ9.zET9YubEWMZx7u3Ox5_gPQ";
 
 const MappyHours = ({ data, currently }) => {
   "use no memo";
