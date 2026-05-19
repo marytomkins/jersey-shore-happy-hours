@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 import { towns } from "../data/filters";
-import mapboxgl from "mapbox-gl";
+import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
 import "mapbox-gl/dist/mapbox-gl.css";
 
+mapboxgl.workerUrl = `${process.env.PUBLIC_URL}/mapbox-gl-csp-worker.js`;
 mapboxgl.accessToken =
   "pk.eyJ1IjoibWFyeXRvbWtpbnMiLCJhIjoiY21wYncxc3d1MDA0azJyb3hpMzFvcmszZyJ9.zET9YubEWMZx7u3Ox5_gPQ";
 
