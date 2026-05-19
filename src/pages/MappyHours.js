@@ -15,7 +15,6 @@ const MappyHours = ({ data, currently }) => {
 
   const [checkedTowns, setCheckedTowns] = useState(new Set(towns));
   const [happeningNow, setHappeningNow] = useState(false);
-  const [mapReady, setMapReady] = useState(false);
 
   /*
    * FILTERED DATA
@@ -54,12 +53,10 @@ const MappyHours = ({ data, currently }) => {
       "top-right",
     );
     mapRef.current = map;
-    map.on("load", () => setMapReady(true));
 
     return () => {
       map.remove();
       mapRef.current = null;
-      setMapReady(false);
     };
   }, []);
 
@@ -70,48 +67,56 @@ const MappyHours = ({ data, currently }) => {
     const map = mapRef.current;
     if (!map) return;
 
-    markersRef.current.forEach((m) => m.remove());
-    markersRef.current = [];
+    const addMarkers = () => {
+      markersRef.current.forEach((m) => m.remove());
+      markersRef.current = [];
+      filtered.forEach((item) => {
+        const el = document.createElement("div");
+        el.style.width = "18px";
+        el.style.height = "18px";
+        el.style.borderRadius = "50%";
+        el.style.backgroundColor = "#3677cd";
+        el.style.border = "2.5px solid #ffffff";
+        el.style.boxShadow = "0 2px 6px rgba(0,0,0,0.3)";
+        el.style.cursor = "pointer";
 
-    filtered.forEach((item) => {
-      const el = document.createElement("div");
-      el.style.width = "18px";
-      el.style.height = "18px";
-      el.style.borderRadius = "50%";
-      el.style.backgroundColor = "#3677cd";
-      el.style.border = "2.5px solid #ffffff";
-      el.style.boxShadow = "0 2px 6px rgba(0,0,0,0.3)";
-      el.style.cursor = "pointer";
+        const dayTextFormatted = item.dayText
+          ? item.dayText.replace(/\//g, "<br/>")
+          : "";
+        const descFormatted = item.description
+          ? item.description.replace(/\//g, " &middot; ")
+          : "";
 
-      const dayTextFormatted = item.dayText
-        ? item.dayText.replace(/\//g, "<br/>")
-        : "";
-      const descFormatted = item.description
-        ? item.description.replace(/\//g, " &middot; ")
-        : "";
+        const popup = new mapboxgl.Popup({
+          offset: 25,
+          maxWidth: "240px",
+        }).setHTML(`
+          <div style="font-family:sans-serif;padding:4px;">
+            <strong style="font-size:13px;color:#3677cd;">${item.name}</strong>
+            <div style="font-size:11px;color:#888;margin:2px 0 5px;">${item.town}</div>
+            ${dayTextFormatted ? `<div style="font-size:11px;margin-bottom:4px;line-height:1.5;">${dayTextFormatted}</div>` : ""}
+            ${descFormatted ? `<div style="font-size:10px;color:#555;margin-bottom:5px;">${descFormatted}</div>` : ""}
+            ${item.link ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:#3677cd;text-decoration:underline;">View Menu →</a>` : ""}
+          </div>
+        `);
 
-      const popup = new mapboxgl.Popup({
-        offset: 25,
-        maxWidth: "240px",
-      }).setHTML(`
-        <div style="font-family:sans-serif;padding:4px;">
-          <strong style="font-size:13px;color:#3677cd;">${item.name}</strong>
-          <div style="font-size:11px;color:#888;margin:2px 0 5px;">${item.town}</div>
-          ${dayTextFormatted ? `<div style="font-size:11px;margin-bottom:4px;line-height:1.5;">${dayTextFormatted}</div>` : ""}
-          ${descFormatted ? `<div style="font-size:10px;color:#555;margin-bottom:5px;">${descFormatted}</div>` : ""}
-          ${item.link ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:#3677cd;text-decoration:underline;">View Menu →</a>` : ""}
-        </div>
-      `);
+        const [lat, lng] = item.latlong;
+        const marker = new mapboxgl.Marker(el)
+          .setLngLat([lng, lat])
+          .setPopup(popup)
+          .addTo(map);
 
-      const [lat, lng] = item.latlong;
-      const marker = new mapboxgl.Marker(el)
-        .setLngLat([lng, lat])
-        .setPopup(popup)
-        .addTo(map);
+        markersRef.current.push(marker);
+      });
+    };
 
-      markersRef.current.push(marker);
-    });
-  }, [filtered, mapReady]);
+    if (map.isStyleLoaded()) {
+      addMarkers();
+    } else {
+      map.once("load", addMarkers);
+      return () => map.off("load", addMarkers);
+    }
+  }, [filtered]);
 
   /*
    * TOGGLE TOWN / SELECT ALL
