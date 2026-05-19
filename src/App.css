@@ -59,3 +59,7 @@ h1 {
 .mapboxgl-popup-close-button {
   display: none;
 }
+
+.mapboxgl-popup {
+  z-index: 9999;
+}
