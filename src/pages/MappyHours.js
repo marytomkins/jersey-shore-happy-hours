@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from "react";
+import { createRoot } from "react-dom/client";
 import { towns } from "../data/filters";
+import Card from "../components/Card";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
 import "mapbox-gl/dist/mapbox-gl.css";
 
@@ -8,8 +10,6 @@ mapboxgl.accessToken =
   "pk.eyJ1IjoibWFyeXRvbWtpbnMiLCJhIjoiY21wYncxc3d1MDA0azJyb3hpMzFvcmszZyJ9.zET9YubEWMZx7u3Ox5_gPQ";
 
 const MappyHours = ({ data, currently }) => {
-  "use no memo";
-
   const mapContainer = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
@@ -71,38 +71,32 @@ const MappyHours = ({ data, currently }) => {
     const addMarkers = () => {
       markersRef.current.forEach((m) => m.remove());
       markersRef.current = [];
-      filtered.forEach((item) => {
-        const el = document.createElement("div");
-        el.style.width = "18px";
-        el.style.height = "18px";
-        el.style.borderRadius = "50%";
-        el.style.backgroundColor = "#3677cd";
-        el.style.border = "2.5px solid #ffffff";
-        el.style.boxShadow = "0 2px 6px rgba(0,0,0,0.3)";
-        el.style.cursor = "pointer";
 
-        const dayTextFormatted = item.dayText
-          ? item.dayText.replace(/\//g, "<br/>")
-          : "";
-        const descFormatted = item.description
-          ? item.description.replace(/\//g, " &middot; ")
-          : "";
+      filtered.forEach((item, index) => {
+        // Marker element
+        const markerEl = document.createElement("div");
+
+        markerEl.className = `w-[18px] h-[18px] rounded-full border-[2.5px] border-white shadow-md cursor-pointer ${happeningNow ? "bg-[#ff9b64]" : "bg-[#3677cd]"}`;
+
+        // Popup container
+        const popupNode = document.createElement("div");
+
+        // Render React component into popup
+        const root = createRoot(popupNode);
+
+        root.render(
+          <Card bar={item} index={index} happeningNow={false} compact />,
+        );
 
         const popup = new mapboxgl.Popup({
-          offset: 25,
-          maxWidth: "240px",
-        }).setHTML(`
-          <div style="font-family:sans-serif;padding:4px;">
-            <strong style="font-size:13px;color:#3677cd;">${item.name}</strong>
-            <div style="font-size:11px;color:#888;margin:2px 0 5px;">${item.town}</div>
-            ${dayTextFormatted ? `<div style="font-size:11px;margin-bottom:4px;line-height:1.5;">${dayTextFormatted}</div>` : ""}
-            ${descFormatted ? `<div style="font-size:10px;color:#555;margin-bottom:5px;">${descFormatted}</div>` : ""}
-            ${item.link ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:#3677cd;text-decoration:underline;">View Menu →</a>` : ""}
-          </div>
-        `);
+          offset: 10,
+          maxWidth: "300px",
+          borderRadius: "16px",
+        }).setDOMContent(popupNode);
 
         const [lat, lng] = item.latlong;
-        const marker = new mapboxgl.Marker(el)
+
+        const marker = new mapboxgl.Marker(markerEl)
           .setLngLat([lng, lat])
           .setPopup(popup)
           .addTo(map);
@@ -117,7 +111,7 @@ const MappyHours = ({ data, currently }) => {
       map.once("load", addMarkers);
       return () => map.off("load", addMarkers);
     }
-  }, [filtered]);
+  }, [filtered, happeningNow]);
 
   /*
    * TOGGLE TOWN / SELECT ALL
@@ -255,9 +249,9 @@ const MappyHours = ({ data, currently }) => {
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "8px",
+                gap: "12px",
                 cursor: "pointer",
-                fontSize: "13px",
+                fontSize: "14px",
                 fontWeight: 500,
                 color: "white",
               }}
@@ -266,6 +260,7 @@ const MappyHours = ({ data, currently }) => {
                 type="checkbox"
                 checked={checkedTowns.has(town)}
                 onChange={() => toggleTown(town)}
+                className="accent-blue-600"
                 style={{
                   accentColor: "white",
                   width: "14px",

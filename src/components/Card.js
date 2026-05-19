@@ -66,7 +66,7 @@ const Card = ({ bar, index, happeningNow }) => {
       >
         <div className="font-semibold text-base flex justify-between">
           <div className="text-xl">{name}</div>
-          <div className="flex items-center gap-2">
+          <div className="flex mt-1 gap-2">
             {happeningNow && (
               <Tooltip
                 icon={<FireIcon className="w-5 h-5 text-[#ff9b64]" />}
