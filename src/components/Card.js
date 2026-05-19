@@ -8,7 +8,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 
-const Card = ({ bar, index, happeningNow }) => {
+const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
   const { name, town, dayText, description, link, specials, events } = bar;
   const [expanded, setExpanded] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
@@ -16,10 +16,10 @@ const Card = ({ bar, index, happeningNow }) => {
 
   useEffect(() => {
     if (contentRef.current) {
-      setShowToggle(contentRef.current.scrollHeight > 200);
-      setExpanded(window.innerWidth < 640);
+      setShowToggle(!mapView && contentRef.current.scrollHeight > 200);
+      setExpanded(mapView || window.innerWidth < 640);
     }
-  }, [bar]);
+  }, [bar, mapView]);
 
   const ListText = ({ text, bullets = true }) => {
     if (!text) return null;
@@ -56,8 +56,8 @@ const Card = ({ bar, index, happeningNow }) => {
   return (
     <div
       key={index}
-      className={`relative flex flex-col bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md transition duration-300 min-h-[15rem] ${
-        expanded ? "max-h-[1000px]" : "max-h-[15rem]"
+      className={`relative flex flex-col bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md transition duration-300 ${
+        mapView ? "" : "min-h-[15rem] " + (expanded ? "max-h-[1000px]" : "max-h-[15rem]")
       }`}
     >
       <div

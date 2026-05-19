@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect, useRef } from "react";
 import { createRoot } from "react-dom/client";
-import { towns } from "../data/filters";
 import Card from "../components/Card";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -13,23 +12,6 @@ const MappyHours = ({ data, currently }) => {
   const mapContainer = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
-
-  const [checkedTowns, setCheckedTowns] = useState(new Set(towns));
-  const [happeningNow, setHappeningNow] = useState(false);
-
-  /*
-   * FILTERED DATA
-   */
-  const filtered = useMemo(() => {
-    return data.filter((item) => {
-      const curr = currently.some((curr) => curr.name === item.name);
-      if (!Array.isArray(item.latlong) || item.latlong.length !== 2)
-        return false;
-      if (!checkedTowns.has(item.town)) return false;
-      if (happeningNow && !curr) return false;
-      return true;
-    });
-  }, [data, currently, checkedTowns, happeningNow]);
 
   /*
    * INITIALIZE MAP
@@ -72,11 +54,11 @@ const MappyHours = ({ data, currently }) => {
       markersRef.current.forEach((m) => m.remove());
       markersRef.current = [];
 
-      filtered.forEach((item, index) => {
+      data.forEach((item, index) => {
         // Marker element
         const markerEl = document.createElement("div");
 
-        markerEl.className = `w-[18px] h-[18px] rounded-full border-[2.5px] border-white shadow-md cursor-pointer ${happeningNow ? "bg-[#ff9b64]" : "bg-[#3677cd]"}`;
+        markerEl.className = "w-[18px] h-[18px] rounded-full border-[2.5px] border-white shadow-md cursor-pointer bg-[#3677cd]";
 
         // Popup container
         const popupNode = document.createElement("div");
@@ -85,7 +67,7 @@ const MappyHours = ({ data, currently }) => {
         const root = createRoot(popupNode);
 
         root.render(
-          <Card bar={item} index={index} happeningNow={false} compact />,
+          <Card bar={item} index={index} happeningNow={false} mapView={true} compact />,
         );
 
         const popup = new mapboxgl.Popup({
@@ -111,27 +93,8 @@ const MappyHours = ({ data, currently }) => {
       map.once("load", addMarkers);
       return () => map.off("load", addMarkers);
     }
-  }, [filtered, happeningNow]);
+  }, [data]);
 
-  /*
-   * TOGGLE TOWN / SELECT ALL
-   */
-  function toggleTown(town) {
-    setCheckedTowns((prev) => {
-      const next = new Set(prev);
-      if (next.has(town)) next.delete(town);
-      else next.add(town);
-      return next;
-    });
-  }
-
-  function toggleAllTowns() {
-    setCheckedTowns(
-      checkedTowns.size === towns.length ? new Set() : new Set(towns),
-    );
-  }
-
-  const allSelected = checkedTowns.size === towns.length;
 
   /*
    * UI
@@ -159,7 +122,7 @@ const MappyHours = ({ data, currently }) => {
       />
 
       {/* SIDEBAR */}
-      <div
+      {/* <div
         style={{
           width: "clamp(148px, 30vw, 220px)",
           flexShrink: 0,
@@ -175,7 +138,6 @@ const MappyHours = ({ data, currently }) => {
           overflowY: "auto",
         }}
       >
-        {/* Happening Now */}
         <div
           style={{
             display: "flex",
@@ -228,7 +190,6 @@ const MappyHours = ({ data, currently }) => {
           </span>
         </div>
 
-        {/* Filter by Town header + toggle all */}
         <span
           style={{
             fontSize: "11px",
@@ -241,7 +202,6 @@ const MappyHours = ({ data, currently }) => {
           Towns
         </span>
 
-        {/* Town checkboxes */}
         <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
           {towns.map((town) => (
             <label
@@ -274,7 +234,6 @@ const MappyHours = ({ data, currently }) => {
           ))}
         </div>
 
-        {/* Count + toggle all */}
         <div
           style={{
             marginTop: "auto",
@@ -302,10 +261,11 @@ const MappyHours = ({ data, currently }) => {
             {allSelected ? "Deselect All" : "Select All"}
           </button>
           <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.7)" }}>
-            {filtered.length} location{filtered.length !== 1 ? "s" : ""} shown
+            {data.length} location{data.length !== 1 ? "s" : ""} shown
           </div>
         </div>
-      </div>
+      </div> */}
+      
     </div>
   );
 };

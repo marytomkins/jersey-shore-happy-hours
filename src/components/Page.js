@@ -51,7 +51,7 @@ const Page = ({ page, day = null, town = null, special = null }) => {
           }
           if (json && Object.prototype.hasOwnProperty.call(json, "content")) {
             let filteredContent = json.content;
-            if (day || town || special || isMapPage) {
+            if (day || town || special) {
               setShowFilters(false);
               if (day)
                 filteredContent = filteredContent?.filter(
@@ -171,17 +171,16 @@ const Page = ({ page, day = null, town = null, special = null }) => {
 
   return (
     <div className={`${page}-page`}>
-      {!isMapPage &&
-        (showFilters ? (
-          <FilterBar
-            page={page}
-            onFilter={handleFilter}
-            onSort={handleSort}
-            dataReady={content.length > 0}
-          />
-        ) : (
-          <PageTitle day={day} town={town} special={special} />
-        ))}
+      {showFilters ? (
+        <FilterBar
+          page={page}
+          onFilter={handleFilter}
+          onSort={handleSort}
+          dataReady={content.length > 0}
+        />
+      ) : (
+        <PageTitle day={day} town={town} special={special} />
+      )}
       {isMapPage ? (
         <MappyHours data={filteredData} currently={currently} />
       ) : (
