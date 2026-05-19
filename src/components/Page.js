@@ -4,6 +4,7 @@ import FilterBar from "./FilterBar";
 import PageTitle from "./PageTitle";
 import Content from "./Content";
 import Spinner from "./Spinner";
+import MappyHours from "../pages/MappyHours";
 import { parseTimeString } from "../data/helpers";
 
 const Page = ({ page, day = null, town = null, special = null }) => {
@@ -15,6 +16,9 @@ const Page = ({ page, day = null, town = null, special = null }) => {
   const [showFilters, setShowFilters] = useState(true);
   const location = useLocation();
   const lastFetchedPath = useRef(null);
+  // const isHappyHoursPage = page === "happyhours";
+  // const isEventsPage = page === "events";
+  const isMapPage = page === "map";
 
   useEffect(() => {
     if (lastFetchedPath.current === location.pathname) return;
@@ -68,7 +72,7 @@ const Page = ({ page, day = null, town = null, special = null }) => {
             setContent(sortedContent);
           }
         });
-  }, [location.pathname, day, town, special]);
+  }, [location.pathname, day, town, special, isMapPage]);
 
   useEffect(() => {
     if (content?.length) {
@@ -177,11 +181,15 @@ const Page = ({ page, day = null, town = null, special = null }) => {
       ) : (
         <PageTitle day={day} town={town} special={special} />
       )}
-      <Content
-        data={filteredData}
-        verifiedDate={verifiedDate}
-        currently={currently}
-      />
+      {isMapPage ? (
+        <MappyHours data={filteredData} currently={currently} />
+      ) : (
+        <Content
+          data={filteredData}
+          verifiedDate={verifiedDate}
+          currently={currently}
+        />
+      )}
       {(day || town) && (
         <Link
           to="/happyhours"

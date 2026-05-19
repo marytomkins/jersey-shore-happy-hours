@@ -8,8 +8,7 @@
 
 h1 {
   font-family: "High Cruiser", sans-serif;
-    font-weight: 100;
-
+  font-weight: 100;
 }
 
 .App {
@@ -55,4 +54,12 @@ h1 {
     color: white;
     border-color: #d1d5db;
   }
+}
+
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+.mapboxgl-popup {
+  z-index: 9999;
 }

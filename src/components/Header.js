@@ -7,6 +7,7 @@ import { InstagramIcon } from "lucide-react";
 
 const navItems = [
   { name: "Happy Hours", path: "/happyhours" },
+  { name: "Map", path: "/map" },
   { name: "Events", path: "/events" },
   // { name: "Specials", path: "/specials" },
   { name: "Contact", path: "/contact" },
@@ -25,10 +26,12 @@ const Header = () => {
   }, []);
   return (
     <div
-      className={`header nav:h-[15vh] h-[10vh] w-full z-50 flex items-center justify-between border-b border-gray-300 bg-white fixed transition-all
-    duration-300 ease-in-out ${isScrolled ? "shadow-md nav:h-[9vh]" : ""}`}
+      className={`header nav:h-[15vh] h-[10vh] w-full z-50 flex items-center justify-between border-b border-gray-300 bg-white fixed transition-all duration-300 ease-in-out ${isScrolled ? "shadow-md nav:h-[9vh]" : ""}`}
     >
-      <Link to="/" className="h-full w-full sm:w-1/5 nav:w-2/5 ml-4 flex items-center">
+      <Link
+        to="/"
+        className="h-full w-full sm:w-1/5 nav:w-2/5 ml-4 flex items-center"
+      >
         <img
           src={isHovered ? hoverLogo : logo}
           alt="Jersey Shore Happy Hours"
@@ -37,14 +40,14 @@ const Header = () => {
           onMouseLeave={() => setIsHovered(false)}
         />
       </Link>
-      <div className="burger sm:hidden flex w-3/5 justify-end">
+      <div className="burger min-[730px]:hidden flex w-3/5 justify-end">
         <Burger />
       </div>
-      <div className="menu-bar sm:flex sm:justify-between hidden font-black text-blue uppercase mx-4">
+      <div className="menu-bar min-[730px]:flex min-[730px]:justify-between hidden font-black text-blue uppercase mx-4">
         {navItems.map((item) => (
           <div
             key={item.name}
-            className="text-lg [@media(min-width:640px)_and_(max-width:675px)]:text-base ml-8"  //ml-4
+            className="text-lg [@media(min-width:640px)_and_(max-width:675px)]:text-base ml-8" //ml-4
           >
             <Link
               to={item.path}
@@ -58,7 +61,7 @@ const Header = () => {
           href="https://www.instagram.com/jerseyshore_happyhours"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-blue hover-text-light-blue transition ml-8"  //ml-4
+          className="flex items-center gap-2 text-blue hover-text-light-blue transition ml-8" //ml-4
         >
           <InstagramIcon className="w-6 h-6" />
         </a>

@@ -12,18 +12,18 @@ const Footer = () => {
         submit any mistakes on our contact page.
       </div>
       <div className="h-32 flex flex-row items-center justify-center">
-        <Link
-            to="/"
-            className="hover-text-light-blue transition-colors h-full"
-          >
-            <img src={footer_logo} alt="JSHH" className="h-full" />
-          </Link>
-        <div className="flex flex-col items-start gap-2 text-sm text-blue font-semibold uppercase mx-4">
+        <Link to="/" className="hover-text-light-blue transition-colors h-full">
+          <img src={footer_logo} alt="JSHH" className="h-full" />
+        </Link>
+        <div className="flex flex-col items-start gap-1 text-sm text-blue font-semibold uppercase mx-4">
           <Link
             to="/happyhours"
             className="hover-text-light-blue transition-colors"
           >
             Happy Hours
+          </Link>
+          <Link to="/map" className="hover-text-light-blue transition-colors">
+            Map
           </Link>
           <Link
             to="/events"
@@ -39,8 +39,8 @@ const Footer = () => {
           </Link>
           <Link
             to="https://www.instagram.com/jerseyshore_happyhours"
-          target="_blank"
-          rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hover-text-light-blue flex"
           >
             Follow us <InstagramIcon className="w-4 h-5 mx-2 my-0" />

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Feedback = () => {
+const Contact = () => {
   const [formText, setFormText] = useState("");
 
   const handleChange = (e) => {
@@ -68,4 +68,4 @@ const Feedback = () => {
     </div>
   );
 };
-export default Feedback;
+export default Contact;
