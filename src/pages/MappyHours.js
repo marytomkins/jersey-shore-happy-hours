@@ -58,7 +58,8 @@ const MappyHours = ({ data, currently }) => {
         // Marker element
         const markerEl = document.createElement("div");
 
-        markerEl.className = "w-[18px] h-[18px] rounded-full border-[2.5px] border-white shadow-md cursor-pointer bg-[#3677cd]";
+        markerEl.className =
+          "w-[18px] h-[18px] rounded-full border-[2.5px] border-white shadow-md cursor-pointer bg-[#3677cd]";
 
         // Popup container
         const popupNode = document.createElement("div");
@@ -67,7 +68,13 @@ const MappyHours = ({ data, currently }) => {
         const root = createRoot(popupNode);
 
         root.render(
-          <Card bar={item} index={index} happeningNow={false} mapView={true} compact />,
+          <Card
+            bar={item}
+            index={index}
+            happeningNow={false}
+            mapView={true}
+            compact
+          />,
         );
 
         const popup = new mapboxgl.Popup({
@@ -95,7 +102,6 @@ const MappyHours = ({ data, currently }) => {
     }
   }, [data]);
 
-
   /*
    * UI
    */
@@ -104,7 +110,7 @@ const MappyHours = ({ data, currently }) => {
       style={{
         display: "flex",
         width: "100%",
-        height: "calc(100vh - 130px)",
+        height: "calc(100vh - 200px)",
         gap: "12px",
         padding: "12px",
         boxSizing: "border-box",
@@ -265,7 +271,6 @@ const MappyHours = ({ data, currently }) => {
           </div>
         </div>
       </div> */}
-      
     </div>
   );
 };
