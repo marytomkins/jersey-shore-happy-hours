@@ -6,13 +6,25 @@ import {
   ChevronDoubleUpIcon,
   FireIcon,
 } from "@heroicons/react/20/solid";
-import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import {
+  ArrowTopRightOnSquareIcon,
+  MapIcon,
+} from "@heroicons/react/24/outline";
 
 const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
-  const { name, town, dayText, description, link, specials, events } = bar;
+  const { name, town, dayText, description, link, specials, events, latlong } =
+    bar;
+  const [latitude, longitude] = latlong;
   const [expanded, setExpanded] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
   const contentRef = useRef(null);
+  const isIOS = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent);
+
+  const mapUrl = isIOS
+    ? `https://maps.apple.com/?q=${encodeURIComponent(name)}&ll=${latitude},${longitude}`
+    : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+        `${name} ${latitude},${longitude}`,
+      )}`;
 
   useEffect(() => {
     if (contentRef.current) {
@@ -57,7 +69,9 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
     <div
       key={index}
       className={`relative flex flex-col bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md transition duration-300 ${
-        mapView ? "" : "min-h-[15rem] " + (expanded ? "max-h-[1000px]" : "max-h-[15rem]")
+        mapView
+          ? ""
+          : "min-h-[15rem] " + (expanded ? "max-h-[1000px]" : "max-h-[15rem]")
       }`}
     >
       <div
@@ -67,11 +81,22 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
         <div className="font-semibold text-base flex justify-between">
           <div className="text-xl">{name}</div>
           <div className="flex mt-1 gap-2">
-            {happeningNow && (
+            {happeningNow ? (
               <Tooltip
                 icon={<FireIcon className="w-5 h-5 text-[#ff9b64]" />}
                 text="Happening Now!"
               />
+            ) : mapView ? (
+              <a
+                href={mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue hover-text-light-blue"
+              >
+                <MapIcon className="w-5 h-5" />
+              </a>
+            ) : (
+              <></>
             )}
             <a
               href={link}
