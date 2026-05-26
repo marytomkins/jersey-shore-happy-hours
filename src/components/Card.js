@@ -14,7 +14,7 @@ import {
 const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
   const { name, town, dayText, description, link, specials, events, latlong } =
     bar;
-  const [latitude, longitude] = latlong;
+  const [latitude, longitude] = latlong || [0, 0];
   const [expanded, setExpanded] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
   const contentRef = useRef(null);
