@@ -2,7 +2,7 @@ export const towns = [
   "Asbury Park",
   "Ocean Grove",
   "Bradley Beach",
-  // "Avon-by-the-sea",
+  "Avon-by-the-sea",
   "Belmar",
   "Spring Lake",
   "Sea Girt",
@@ -11,7 +11,7 @@ export const towns = [
   "Point Pleasant",
 ];
 
-export const events = ["Trivia", "Bingo", "Karaoke"];
+export const events = ["Trivia", "Bingo", "Karaoke", "Yappy Hour"];
 export const days = [
   "Sunday",
   "Monday",

@@ -97,10 +97,10 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     );
     setClearAllState(
       searchTerm.length > 0 ||
-      selectedTowns.length > 0 ||
-      selectedEvents.length > 0 ||
-      selectedDays.length > 0 ||
-      selectedTimes.length > 0,
+        selectedTowns.length > 0 ||
+        selectedEvents.length > 0 ||
+        selectedDays.length > 0 ||
+        selectedTimes.length > 0,
     );
   };
 
@@ -132,10 +132,10 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     onFilter(updated, searchTerm, happeningNow);
     setClearAllState(
       searchTerm.length > 0 ||
-      updated.towns?.length > 0 ||
-      updated.events?.length > 0 ||
-      updated.days?.length > 0 ||
-      updated.times?.length > 0,
+        updated.towns?.length > 0 ||
+        updated.events?.length > 0 ||
+        updated.days?.length > 0 ||
+        updated.times?.length > 0,
     );
   };
 
@@ -171,8 +171,9 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     return (
       <div className="relative group">
         <button
-          className={`flex items-center border border-gray-300 rounded-md py-2 px-4 text-sm shadow-sm hover:bg-gray-100 ${disabled ? "bg-gray-100" : "bg-white"
-            }`}
+          className={`flex items-center border border-gray-300 rounded-md py-2 px-4 text-sm shadow-sm hover:bg-gray-100 ${
+            disabled ? "bg-gray-100" : "bg-white"
+          }`}
           onClick={() => setOpenDropdown(openDropdown === key ? null : key)}
           disabled={disabled}
         >
@@ -187,8 +188,9 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
 
         {openDropdown === key && (
           <div
-            className={`absolute z-10 bg-white border border-gray-200 shadow-md rounded-md mt-2 p-2 w-40 ${isSortBy ? "right-0" : ""
-              }`}
+            className={`absolute z-10 bg-white border border-gray-200 shadow-md rounded-md mt-2 p-2 w-40 ${
+              isSortBy ? "right-0" : ""
+            }`}
             ref={dropdownRef}
           >
             {options.map((option) => (
@@ -220,10 +222,11 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     filters.map((item) => (
       <div
         key={item}
-        className={`flex items-center ${item === dayParam
+        className={`flex items-center ${
+          item === dayParam
             ? "bg-blue text-white hover-bg-light-blue"
             : "bg-white text-blue hover:text-black"
-          } text-sm px-2 py-1 mr-2 mb-2 rounded-full cursor-pointer`}
+        } text-sm px-2 py-1 mr-2 mb-2 rounded-full cursor-pointer`}
       >
         <span className="mr-2 capitalize">{item}</span>
         <div onClick={() => removeFilter(category, item)}>×</div>
@@ -238,6 +241,8 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
         return "bg-[#3677cd] border-[#e1f2fa] text-[#e1f2fa]";
       case "Bradley Beach":
         return "bg-[#ff9b64] border-[#fdf3ea] text-[#fdf3ea]";
+      case "Avon-by-the-sea":
+        return "bg-[#9bbb66] border-[#5d7931] text-white";
       case "Belmar":
         return "bg-[#ffdbdf] border-[#f49287] text-[#f49287]";
       case "Spring Lake":
@@ -273,12 +278,14 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
         }}
       >
         <button
-          className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${happeningNow ? "bg-[#ff9b64]" : "bg-gray-300"
-            }`}
+          className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${
+            happeningNow ? "bg-[#ff9b64]" : "bg-gray-300"
+          }`}
         >
           <span
-            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${happeningNow ? "translate-x-6" : "translate-x-1"
-              }`}
+            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${
+              happeningNow ? "translate-x-6" : "translate-x-1"
+            }`}
           />
         </button>
         HAPPENING NOW
@@ -288,10 +295,11 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
         {towns.map((town) => (
           <button
             key={town}
-            className={`cursor-pointer hoverable border rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${selectedTowns.includes(town)
+            className={`cursor-pointer hoverable border rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${
+              selectedTowns.includes(town)
                 ? `${getColors(town)}`
                 : "text-blue bg-white border-gray-300"
-              }`}
+            }`}
             onClick={() =>
               toggleSelection(town, selectedTowns, setSelectedTowns)
             }
@@ -372,7 +380,8 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
         >
           Search
         </button> */}
-        </div>)}
+        </div>
+      )}
       <div className="selected-filters flex flex-wrap px-4">
         {/* {renderSelectedFilters("towns", appliedFilters.towns)} */}
         {renderSelectedFilters("events", appliedFilters.events)}
