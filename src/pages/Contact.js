@@ -38,10 +38,18 @@ const Contact = () => {
       <div className="text-2xl font-semibold text-center">Contact Us</div>
       <div className="text-sm my-4 px-4 text-center">
         Use the form to get in touch!
-        <br /> Submit a happy hour below or let us know what we missed. <br />
+        <br />
         <br />
         Want a reply? Include your email and we’ll get back to you as soon as
         possible.
+        <br />
+        You can also email us directly at{" "}
+        <a
+          href="mailto:jerseyshorehappyhour@gmail.com"
+          className="text-blue hover-text-light-blue"
+        >
+          jerseyshorehappyhour@gmail.com
+        </a>
       </div>
       <form className="space-y-4">
         <textarea
