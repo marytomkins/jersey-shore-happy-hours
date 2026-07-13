@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
+import posthog from "posthog-js";
 import {
   ChevronDownIcon,
   ChevronUpIcon,
@@ -105,6 +106,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
   };
 
   const getCurrentDateTime = (getCurrentDateTime) => {
+    posthog.capture("happening_now_toggled", { enabled: getCurrentDateTime });
     setHappeningNow(getCurrentDateTime);
     setClearAllState(getCurrentDateTime);
     onFilter(
@@ -140,12 +142,14 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
   };
 
   const setSortBy = (option) => {
+    posthog.capture("sort_applied", { sort_option: option });
     setOpenDropdown(false);
     setSelectedSort(option);
     onSort(option);
   };
 
   const clearAllFilters = () => {
+    posthog.capture("filters_cleared");
     setSearchTerm("");
     setSelectedTowns([]);
     setSelectedEvents([]);
@@ -203,9 +207,17 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
                   <input
                     type="checkbox"
                     checked={selected.includes(option)}
-                    onChange={() =>
-                      toggleSelection(option, selected, setSelected)
-                    }
+                    onChange={() => {
+                      if (key === "days") {
+                        posthog.capture("day_filter_applied", {
+                          day: option,
+                          action: selected.includes(option)
+                            ? "removed"
+                            : "added",
+                        });
+                      }
+                      toggleSelection(option, selected, setSelected);
+                    }}
                     className="accent-blue-600"
                   />
                 )}
@@ -300,9 +312,13 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
                 ? `${getColors(town)}`
                 : "text-blue bg-white border-gray-300"
             }`}
-            onClick={() =>
-              toggleSelection(town, selectedTowns, setSelectedTowns)
-            }
+            onClick={() => {
+              posthog.capture("town_filter_applied", {
+                town,
+                action: selectedTowns.includes(town) ? "removed" : "added",
+              });
+              toggleSelection(town, selectedTowns, setSelectedTowns);
+            }}
           >
             {town}
           </button>

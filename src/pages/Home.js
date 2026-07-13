@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import home from "../images/home.png";
 import { towns, days, truncDays } from "../data/filters";
+import posthog from "posthog-js";
 // import Specials from "./Specials";
 
 function getToday() {
@@ -26,18 +27,29 @@ const Home = () => {
           <Link
             to={`/happyhours?day=${getToday()}`}
             className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-44 py-2 rounded-3xl m-2"
+            onClick={() =>
+              posthog.capture("home_cta_clicked", {
+                cta: "Today's Happy Hours",
+              })
+            }
           >
             Today's Happy Hours
           </Link>
           <Link
             to={`/happyhours`}
             className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-44 py-2 rounded-3xl m-2"
+            onClick={() =>
+              posthog.capture("home_cta_clicked", { cta: "All Happy Hours" })
+            }
           >
             All Happy Hours
           </Link>
           <Link
             to={`/map`}
             className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-44 py-2 rounded-3xl m-2"
+            onClick={() =>
+              posthog.capture("home_cta_clicked", { cta: "View Map" })
+            }
           >
             View Map
           </Link>
@@ -56,6 +68,9 @@ const Home = () => {
               key={day}
               to={formatSearchLink(days[index])}
               className="flex text-blue hover:text-white hover-bg-light-blue items-center justify-center text-center text-base font-semibold bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md lg:min-w-[8rem] min-h-[6rem]"
+              onClick={() =>
+                posthog.capture("search_by_day_clicked", { day: days[index] })
+              }
             >
               <h2>{day}</h2>
             </Link>
@@ -72,6 +87,9 @@ const Home = () => {
               key={town}
               to={formatSearchLink(town)}
               className="flex text-blue hover:text-white hover-bg-light-blue items-center justify-center text-center text-base font-semibold bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md lg:min-w-[8rem] min-h-[6rem]"
+              onClick={() =>
+                posthog.capture("search_by_town_clicked", { town })
+              }
             >
               <h2>{town}</h2>
             </Link>
