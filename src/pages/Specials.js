@@ -1,5 +1,6 @@
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import posthog from "posthog-js";
 
 const Specials = () => {
   return (
@@ -15,6 +16,9 @@ const Specials = () => {
           <Link
             to="/specials/wine"
             className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-24 py-2 rounded-3xl mt-8"
+            onClick={() =>
+              posthog.capture("specials_category_viewed", { category: "wine" })
+            }
           >
             View
             <ArrowLongRightIcon className="w-4 ml-2" />
@@ -30,6 +34,11 @@ const Specials = () => {
           <Link
             to="/specials/margarita"
             className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-24 py-2 rounded-3xl mt-8"
+            onClick={() =>
+              posthog.capture("specials_category_viewed", {
+                category: "margarita",
+              })
+            }
           >
             View
             <ArrowLongRightIcon className="w-4 ml-2" />
@@ -45,6 +54,11 @@ const Specials = () => {
           <Link
             to="/specials/martini"
             className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-24 py-2 rounded-3xl mt-8"
+            onClick={() =>
+              posthog.capture("specials_category_viewed", {
+                category: "martini",
+              })
+            }
           >
             View
             <ArrowLongRightIcon className="w-4 ml-2" />

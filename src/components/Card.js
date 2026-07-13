@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import posthog from "posthog-js";
 import Tooltip from "./Tooltip";
 import {
   MapPinIcon,
@@ -92,6 +93,12 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue hover-text-light-blue"
+                onClick={() =>
+                  posthog.capture("map_directions_clicked", {
+                    restaurant_name: name,
+                    town,
+                  })
+                }
               >
                 <MapIcon className="w-5 h-5" />
               </a>
@@ -103,6 +110,12 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue hover-text-light-blue"
+              onClick={() =>
+                posthog.capture("restaurant_link_clicked", {
+                  restaurant_name: name,
+                  town,
+                })
+              }
             >
               <ArrowTopRightOnSquareIcon className="w-5 h-5" />
             </a>

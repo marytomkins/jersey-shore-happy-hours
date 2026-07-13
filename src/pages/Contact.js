@@ -1,4 +1,5 @@
 import { useState } from "react";
+import posthog from "posthog-js";
 
 const Contact = () => {
   const [formText, setFormText] = useState("");
@@ -22,11 +23,14 @@ const Contact = () => {
       });
 
       if (response.ok) {
+        posthog.capture("contact_form_submitted", { success: true });
         alert("Thank you! Your feedback has been submitted.");
       } else {
+        posthog.capture("contact_form_submitted", { success: false });
         alert("Something went wrong. Please try again.");
       }
     } catch (error) {
+      posthog.captureException(error, { context: "contact_form_submit" });
       console.error(error);
       alert("An error occurred while submitting.");
     }
