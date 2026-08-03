@@ -9,7 +9,7 @@ const Burger = () => {
     { name: "Home", path: "/" },
     { name: "Happy Hours", path: "/happyhours" },
     { name: "Map", path: "/map" },
-    { name: "Events", path: "/events" },
+    // { name: "Events", path: "/events" },
     // { name: "Specials", path: "/specials" },
     { name: "Contact", path: "/contact" },
   ];

@@ -21,7 +21,7 @@ const Home = () => {
         </Link>
         <h2 className="tagline text-center font-semibold sm:text-base text-sm mt-4 mx-8 sm:mx-40">
           Your guide to the best happy hours and daily deals along the Jersey
-          Shore from Asbury Park to Point Pleasant
+          Shore from Asbury Park to Point Pleasant!
         </h2>
         <div className="flex flex-col nav:flex-row justify-center mt-8">
           <Link

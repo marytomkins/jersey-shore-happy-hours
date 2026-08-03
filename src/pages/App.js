@@ -72,10 +72,10 @@ function App() {
               path="/asbury-park-happy-hours"
               element={<Page page={"happyhours"} town={"Asbury Park"} />}
             />
-            <Route
+            {/* <Route
               path="/ocean-grove-happy-hours"
               element={<Page page={"happyhours"} town={"Ocean Grove"} />}
-            />
+            /> */}
             <Route
               path="/bradley-beach-happy-hours"
               element={<Page page={"happyhours"} town={"Bradley Beach"} />}

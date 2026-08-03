@@ -25,12 +25,12 @@ const Footer = () => {
           <Link to="/map" className="hover-text-light-blue transition-colors">
             Map
           </Link>
-          <Link
+          {/* <Link
             to="/events"
             className="hover-text-light-blue transition-colors"
           >
             Events
-          </Link>
+          </Link> */}
           <Link
             to="/contact"
             className="hover-text-light-blue transition-colors"
@@ -47,9 +47,7 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      <div className="mt-2">
-        Jersey Shore Happy Hours by Mary Tomkins © 2026
-      </div>
+      <div className="mt-2">Jersey Shore Happy Hours LLC © 2026</div>
     </div>
   );
 };
