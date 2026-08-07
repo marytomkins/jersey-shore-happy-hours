@@ -56,9 +56,9 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     else clearAllFilters();
   }, [dayParam]);
 
-  useEffect(() => {
-    clearAllFilters();
-  }, [page]);
+  // useEffect(() => {
+  //   clearAllFilters();
+  // }, [page]);
 
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
