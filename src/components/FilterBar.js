@@ -251,10 +251,12 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
 
   const getColors = (town) => {
     switch (town) {
+      case "Long Branch":
+        return "bg-[#3677cd] border-[#e1f2fa] text-[#e1f2fa]";
       case "Asbury Park":
         return "bg-[#e8ef9c] border-[#595e2e] text-[#595e2e]";
-      case "Ocean Grove":
-        return "bg-[#3677cd] border-[#e1f2fa] text-[#e1f2fa]";
+      // case "Ocean Grove":
+      //   return "bg-[#3677cd] border-[#e1f2fa] text-[#e1f2fa]";
       case "Bradley Beach":
         return "bg-[#ff9b64] border-[#fdf3ea] text-[#fdf3ea]";
       case "Avon-by-the-sea":
