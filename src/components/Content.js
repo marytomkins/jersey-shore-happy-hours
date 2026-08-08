@@ -1,10 +1,11 @@
 import Card from "./Card";
 import { noResultsMessages } from "../data/messages";
 
-const Content = ({ data, verifiedDate, currently }) => {
+const Content = ({ data, verifiedDate, currently, error }) => {
   const isData = data.length > 0;
 
   const getNoResultsMessage = () => {
+    if (error) return "Sorry, there was an error loading the content. Please try again later.";
     const randomIndex = Math.floor(Math.random() * noResultsMessages.length);
     return noResultsMessages[randomIndex];
   };
