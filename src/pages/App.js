@@ -69,6 +69,10 @@ function App() {
             />
             {/* TOWN LINKS */}
             <Route
+              path="/long-branch-happy-hours"
+              element={<Page page={"happyhours"} town={"Long Branch"} />}
+            />
+            <Route
               path="/asbury-park-happy-hours"
               element={<Page page={"happyhours"} town={"Asbury Park"} />}
             />

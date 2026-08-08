@@ -13,7 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { towns, events, days, times, sortBy } from "../data/filters";
 
-const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
+const FilterBar = ({ page, onFilter, onSort, dataReady = false, day, town }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTowns, setSelectedTowns] = useState([]);
   const [selectedEvents, setSelectedEvents] = useState([]);
@@ -32,6 +32,8 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
   const dropdownRef = useRef(null);
   const showTimeFilter = false; //!!(page === "happyhours");
   const showEventFilter = !!(page === "events");
+  const showTownFilter = !town
+  const showDayFilter = !day
   const showSortBy = page !== "events";
   const [searchParams] = useSearchParams();
   const dayParam = searchParams.get("day");
@@ -55,10 +57,6 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     if (dayParam) setSelectedDays([dayParam]);
     else clearAllFilters();
   }, [dayParam]);
-
-  // useEffect(() => {
-  //   clearAllFilters();
-  // }, [page]);
 
   /* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
@@ -102,10 +100,10 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     );
     setClearAllState(
       searchTerm.length > 0 ||
-        selectedTowns.length > 0 ||
-        selectedEvents.length > 0 ||
-        selectedDays.length > 0 ||
-        selectedTimes.length > 0,
+      selectedTowns.length > 0 ||
+      selectedEvents.length > 0 ||
+      selectedDays.length > 0 ||
+      selectedTimes.length > 0,
     );
   };
 
@@ -138,10 +136,10 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     onFilter(updated, searchTerm, happeningNow);
     setClearAllState(
       searchTerm.length > 0 ||
-        updated.towns?.length > 0 ||
-        updated.events?.length > 0 ||
-        updated.days?.length > 0 ||
-        updated.times?.length > 0,
+      updated.towns?.length > 0 ||
+      updated.events?.length > 0 ||
+      updated.days?.length > 0 ||
+      updated.times?.length > 0,
     );
   };
 
@@ -179,9 +177,8 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     return (
       <div className="relative group">
         <button
-          className={`flex items-center border border-gray-300 rounded-md py-2 px-4 text-sm shadow-sm hover:bg-gray-100 ${
-            disabled ? "bg-gray-100" : "bg-white"
-          }`}
+          className={`flex items-center border border-gray-300 rounded-md py-2 px-4 text-sm shadow-sm hover:bg-gray-100 ${disabled ? "bg-gray-100" : "bg-white"
+            }`}
           onClick={() => setOpenDropdown(openDropdown === key ? null : key)}
           disabled={disabled}
         >
@@ -196,9 +193,8 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
 
         {openDropdown === key && (
           <div
-            className={`absolute z-10 bg-white border border-gray-200 shadow-md rounded-md mt-2 p-2 w-40 ${
-              isSortBy ? "right-0" : ""
-            }`}
+            className={`absolute z-10 bg-white border border-gray-200 shadow-md rounded-md mt-2 p-2 w-40 ${isSortBy ? "right-0" : ""
+              }`}
             ref={dropdownRef}
           >
             {options.map((option) => (
@@ -238,11 +234,10 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
     filters.map((item) => (
       <div
         key={item}
-        className={`flex items-center ${
-          item === dayParam
-            ? "bg-blue text-white hover-bg-light-blue"
-            : "bg-white text-blue hover:text-black"
-        } text-sm px-2 py-1 mr-2 mb-2 rounded-full cursor-pointer`}
+        className={`flex items-center ${item === dayParam
+          ? "bg-blue text-white hover-bg-light-blue"
+          : "bg-white text-blue hover:text-black"
+          } text-sm px-2 py-1 mr-2 mb-2 rounded-full cursor-pointer`}
       >
         <span className="mr-2 capitalize">{item}</span>
         <div onClick={() => removeFilter(category, item)}>×</div>
@@ -251,10 +246,12 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
 
   const getColors = (town) => {
     switch (town) {
+      case "Long Branch":
+        return "bg-[#3677cd] border-[#e1f2fa] text-[#e1f2fa]";
       case "Asbury Park":
         return "bg-[#e8ef9c] border-[#595e2e] text-[#595e2e]";
-      case "Ocean Grove":
-        return "bg-[#3677cd] border-[#e1f2fa] text-[#e1f2fa]";
+      // case "Ocean Grove":
+      //   return "bg-[#3677cd] border-[#e1f2fa] text-[#e1f2fa]";
       case "Bradley Beach":
         return "bg-[#ff9b64] border-[#fdf3ea] text-[#fdf3ea]";
       case "Avon-by-the-sea":
@@ -279,7 +276,8 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
   return (
     <div className="filter-bar">
       {showPageTitle && (
-        <h1 className="flex justify-center sm:text-5xl text-3xl m-4 text-blue">
+        <h1 className="flex flex-col items-center justify-center text-center sm:text-5xl text-3xl m-4 text-blue">
+          <div>{day?.toUpperCase() || town?.toUpperCase()}</div>
           {page === "happyhours"
             ? "H a p p y H o u r s"
             : page === "events"
@@ -294,28 +292,25 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
         }}
       >
         <button
-          className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${
-            happeningNow ? "bg-[#ff9b64]" : "bg-gray-300"
-          }`}
+          className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${happeningNow ? "bg-[#ff9b64]" : "bg-gray-300"
+            }`}
         >
           <span
-            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${
-              happeningNow ? "translate-x-6" : "translate-x-1"
-            }`}
+            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${happeningNow ? "translate-x-6" : "translate-x-1"
+              }`}
           />
         </button>
         HAPPENING NOW
         <FireIcon className="ml-3 w-5 h-5 text-[#ff9b64]" />
       </div>
-      <div className="town-buttons flex flex-wrap gap-2 mt-4 mb-2 m-auto sm:w-[85%] justify-center p-1">
+      {showTownFilter && <div className="town-buttons flex flex-wrap gap-2 mt-4 mb-2 m-auto sm:w-[85%] justify-center p-1">
         {towns.map((town) => (
           <button
             key={town}
-            className={`cursor-pointer hoverable border rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${
-              selectedTowns.includes(town)
-                ? `${getColors(town)}`
-                : "text-blue bg-white border-gray-300"
-            }`}
+            className={`cursor-pointer hoverable border rounded-3xl px-4 text-base font-semibold shadow-sm focus:outline-none ${selectedTowns.includes(town)
+              ? `${getColors(town)}`
+              : "text-blue bg-white border-gray-300"
+              }`}
             onClick={() => {
               posthog.capture("town_filter_applied", {
                 town,
@@ -327,7 +322,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
             {town}
           </button>
         ))}
-      </div>
+      </div>}
       {!isMapPage && (
         <div className="flex flex-col items-center gap-1 sm:flex-row sm:justify-between w-full px-6 py-4">
           <div className="sm:w-1/2 sm:justify-start w-full justify-center flex gap-1">
@@ -368,13 +363,14 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
                 setSelectedEvents,
                 <StarIcon className="h-4 w-4 text-gray-500 mr-2" />,
               )}
-            {renderDropdown(
+            {showDayFilter && renderDropdown(
               "Days",
               "days",
               days,
               selectedDays,
               setSelectedDays,
               <CalendarDaysIcon className="h-4 w-4 text-gray-500 mr-2" />,
+
             )}
             {showTimeFilter &&
               renderDropdown(
@@ -384,6 +380,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false }) => {
                 selectedTimes,
                 setSelectedTimes,
                 <ClockIcon className="h-4 w-4 text-gray-500 mr-2" />,
+
               )}
             {showSortBy &&
               renderDropdown(

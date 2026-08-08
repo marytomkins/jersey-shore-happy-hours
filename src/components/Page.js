@@ -1,11 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation, Link } from "react-router-dom";
 import FilterBar from "./FilterBar";
-import PageTitle from "./PageTitle";
 import Content from "./Content";
 import Spinner from "./Spinner";
 import MappyHours from "../pages/MappyHours";
-import { parseTimeString } from "../data/helpers";
+import { parseTimeString, loadPageContent } from "../data/helpers";
 
 const Page = ({ page, day = null, town = null, special = null }) => {
   const [content, setContent] = useState([]);
@@ -13,65 +12,24 @@ const Page = ({ page, day = null, town = null, special = null }) => {
   const [filteredData, setFilteredData] = useState([]);
   const [currently, setCurrently] = useState([]);
   const [sortByState, setSortByState] = useState("");
-  const [showFilters, setShowFilters] = useState(true);
+  const [error, setError] = useState(false);
   const location = useLocation();
   const lastFetchedPath = useRef(null);
-  // const isHappyHoursPage = page === "happyhours";
-  // const isEventsPage = page === "events";
   const isMapPage = page === "map";
 
   useEffect(() => {
     if (lastFetchedPath.current === location.pathname) return;
     lastFetchedPath.current = location.pathname;
-    setShowFilters(true);
-
-    let url = null;
-    if (location.pathname === "/events") {
-      url =
-        "https://gist.githubusercontent.com/marytomkins/547cce901dea5e7d5e96870b68917df2/raw/happenings.json?ts=";
-    } else if (location.pathname.includes("/specials")) {
-      if (special) {
-        url =
-          "https://gist.githubusercontent.com/marytomkins/5d860551674cf9f7026bf8b2e694ade0/raw/specials.json?ts=";
-      } else return;
-    } else {
-      url =
-        "https://gist.githubusercontent.com/marytomkins/a25ef825b3571312111b34581c0f28e1/raw/happyHours.json?ts=";
-    }
-
-    if (url)
-      fetch(url + Date.now())
-        .then((res) => res.json())
-        .then((json) => {
-          if (
-            json &&
-            Object.prototype.hasOwnProperty.call(json, "lastVerified")
-          ) {
-            setVerifiedDate(json.lastVerified);
-          }
-          if (json && Object.prototype.hasOwnProperty.call(json, "content")) {
-            let filteredContent = json.content;
-            if (day || town || special) {
-              setShowFilters(false);
-              if (day)
-                filteredContent = filteredContent?.filter(
-                  (item) =>
-                    item?.dayFilter &&
-                    Object.prototype.hasOwnProperty.call(item.dayFilter, day),
-                );
-              if (town)
-                filteredContent = filteredContent?.filter(
-                  (item) => item?.town?.toLowerCase() === town?.toLowerCase(),
-                );
-              if (special)
-                filteredContent = filteredContent?.[special?.toLowerCase()];
-            }
-            const sortedContent = filteredContent?.sort((a, b) =>
-              a?.name.localeCompare(b?.name),
-            );
-            setContent(sortedContent);
-          }
-        });
+    setError(false);
+    loadPageContent({
+      pathname: location.pathname,
+      special,
+      day,
+      town,
+      setVerifiedDate,
+      setContent,
+      setError,
+    });
   }, [location.pathname, day, town, special, isMapPage]);
 
   useEffect(() => {
@@ -165,22 +123,20 @@ const Page = ({ page, day = null, town = null, special = null }) => {
     setFilteredData(sortedData);
   };
 
-  if (!content || content.length === 0) {
+  if ((!content || content.length === 0) && !error) {
     return <Spinner />;
   }
 
   return (
     <div className={`${page}-page`}>
-      {showFilters ? (
-        <FilterBar
-          page={page}
-          onFilter={handleFilter}
-          onSort={handleSort}
-          dataReady={content.length > 0}
-        />
-      ) : (
-        <PageTitle day={day} town={town} special={special} />
-      )}
+      <FilterBar
+        page={page}
+        onFilter={handleFilter}
+        onSort={handleSort}
+        dataReady={content.length > 0}
+        day={day}
+        town={town}
+      />
       {isMapPage ? (
         <MappyHours data={filteredData} currently={currently} />
       ) : (
@@ -188,6 +144,7 @@ const Page = ({ page, day = null, town = null, special = null }) => {
           data={filteredData}
           verifiedDate={verifiedDate}
           currently={currently}
+          error={error}
         />
       )}
       {(day || town) && (
