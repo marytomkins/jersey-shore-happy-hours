@@ -14,7 +14,7 @@ import {
 
 const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
   const { name, town, dayText, description, link, specials, events, latlong } =
-    bar;
+    bar || "";
   const [latitude, longitude] = latlong || [0, 0];
   const [expanded, setExpanded] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
@@ -105,20 +105,22 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
             ) : (
               <></>
             )}
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue hover-text-light-blue"
-              onClick={() =>
-                posthog.capture("restaurant_link_clicked", {
-                  restaurant_name: name,
-                  town,
-                })
-              }
-            >
-              <ArrowTopRightOnSquareIcon className="w-5 h-5" />
-            </a>
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue hover-text-light-blue"
+                onClick={() =>
+                  posthog.capture("restaurant_link_clicked", {
+                    restaurant_name: name,
+                    town,
+                  })
+                }
+              >
+                <ArrowTopRightOnSquareIcon className="w-5 h-5" />
+              </a>
+            )}
           </div>
         </div>
         <div className="flex items-center text-sm pb-2 border-b border-gray-300">
