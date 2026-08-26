@@ -39,34 +39,34 @@ const Page = ({ page, day = null, town = null, special = null }) => {
   }, [content]);
 
   useEffect(() => {
-    if (!day && !town && !special) {
-      const now = new Date();
-      const currentDay = now.toLocaleString("en-US", { weekday: "long" });
-      let hours = now.getHours();
-      const minutes = now.getMinutes();
-      const period = hours >= 12 ? "PM" : "AM";
-      hours = hours % 12 || 12;
-      const paddedMinutes = minutes.toString().padStart(2, "0");
-      const currentTime = `${hours}:${paddedMinutes}${period}`;
+    if (special) return;
 
-      const result = content.filter((item) => {
-        const matchDay =
-          item &&
-          item.dayFilter &&
-          typeof item.dayFilter === "object" &&
-          Object.keys(item.dayFilter).includes(currentDay);
-        if (matchDay) {
-          const [start, end] = item?.dayFilter[currentDay];
-          if (start.toLowerCase() === "all day") return true;
-          const current = parseTimeString(currentTime);
-          const startMinutes = parseTimeString(start);
-          const endMinutes = parseTimeString(end);
-          return current >= startMinutes && current <= endMinutes;
-        }
-        return false;
-      });
-      setCurrently(result);
-    }
+    const now = new Date();
+    const currentDay = now.toLocaleString("en-US", { weekday: "long" });
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+    const period = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12 || 12;
+    const paddedMinutes = minutes.toString().padStart(2, "0");
+    const currentTime = `${hours}:${paddedMinutes}${period}`;
+
+    const result = content.filter((item) => {
+      const matchDay =
+        item &&
+        item.dayFilter &&
+        typeof item.dayFilter === "object" &&
+        Object.keys(item.dayFilter).includes(currentDay);
+      if (matchDay) {
+        const [start, end] = item.dayFilter[currentDay];
+        if (start.toLowerCase() === "all day") return true;
+        const current = parseTimeString(currentTime);
+        const startMinutes = parseTimeString(start);
+        const endMinutes = parseTimeString(end);
+        return current >= startMinutes && current <= endMinutes;
+      }
+      return false;
+    });
+    setCurrently(result);
   }, [content, day, town, special]);
 
   const handleFilter = (filters, searchTerm = "", happeningNow = false) => {
