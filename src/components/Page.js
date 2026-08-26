@@ -106,10 +106,16 @@ const Page = ({ page, day = null, town = null, special = null }) => {
     let sortedData = data.length > 0 ? [...data] : [...filteredData];
     switch (sortBy) {
       case "Restaurant A to Z":
-        sortedData = sortedData.sort((a, b) => a.name.localeCompare(b.name));
+        sortedData = sortedData.sort((a, b) =>
+          a.name.replace(/^the\s+/i, '').localeCompare(
+            b.name.replace(/^the\s+/i, '')
+          )
+        );
         break;
       case "Restaurant Z to A":
-        sortedData = sortedData.sort((a, b) => b.name.localeCompare(a.name));
+        sortedData = sortedData.sort((a, b) => b.name.replace(/^the\s+/i, '').localeCompare(
+          a.name.replace(/^the\s+/i, '')
+        ));
         break;
       case "Town A to Z":
         sortedData = sortedData.sort((a, b) => a.town.localeCompare(b.town));

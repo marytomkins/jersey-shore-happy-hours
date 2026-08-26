@@ -1,4 +1,5 @@
 export const towns = [
+  "Red Bank",
   "Long Branch",
   "Asbury Park",
   // "Ocean Grove",

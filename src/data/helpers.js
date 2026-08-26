@@ -52,7 +52,9 @@ export const loadPageContent = async ({
       }
 
       const sortedContent = filteredContent?.sort((a, b) =>
-        a?.name.localeCompare(b?.name),
+        a.name.replace(/^the\s+/i, '').localeCompare(
+          b.name.replace(/^the\s+/i, '')
+        )
       );
       setContent(sortedContent);
     }

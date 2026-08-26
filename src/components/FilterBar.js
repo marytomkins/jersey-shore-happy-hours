@@ -246,6 +246,8 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false, day, town }) => 
 
   const getColors = (town) => {
     switch (town) {
+      case "Red Bank":
+        return "bg-[#3677cd] border-[#aad8d5] text-[#aad8d5]";
       case "Long Branch":
         return "bg-[#e0f2fb] border-[#ff7494] text-[#ff7494]";
       case "Asbury Park":
@@ -267,7 +269,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false, day, town }) => 
       case "Brielle":
         return "bg-[#fff5e6] border-[#ff9256] text-[#ff9256]";
       case "Point Pleasant":
-        return "bg-[#e2e772] border-[#595e2e] text-[#595e2e]";
+        return "bg-[#e2e772] border-[#3677cd] text-[#3677cd]";
       default:
         return "bg-blue";
     }
