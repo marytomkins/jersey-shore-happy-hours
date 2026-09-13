@@ -9,7 +9,7 @@ export const loadPageContent = async ({
   setContent,
   setError,
 }) => {
-  const { happyHours, events, specials } = gists;
+  const { happyHours, events, specials, gameDaySpecials } = gists;
   let url = null;
   if (pathname === "/events") {
     url = events;
@@ -17,6 +17,8 @@ export const loadPageContent = async ({
     if (special) {
       url = specials;
     } else return;
+  } else if (pathname === "/game-day-specials") {
+    url = gameDaySpecials;
   } else {
     url = happyHours;
   }

@@ -38,6 +38,11 @@ function App() {
               path="/specials/martini"
               element={<Page page={"specials"} special={"martini"} />}
             />
+            {/* GAME DAY SPECIALS */}
+            <Route
+              path="/game-day-specials"
+              element={<Page page={"gameDaySpecials"} />}
+            />
             {/* DAY LINKS */}
             <Route
               path="/sunday-happy-hours"

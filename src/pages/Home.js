@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import home from "../images/home.png";
 import { towns, days, truncDays } from "../data/filters";
 import posthog from "posthog-js";
+import { FaFootballBall } from "react-icons/fa";
 // import Specials from "./Specials";
 
 function getToday() {
@@ -58,6 +59,26 @@ const Home = () => {
       {/* <div className="specials py-12 mt-8 border-t border-gray-300">
         <Specials />
       </div> */}
+      <div className="search-by-container justify-center border-t border-gray-300 pb-16 pt-14 bg-light-blue">
+        <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-24">
+          Game Day is Better at the SHORE!
+        </h1>
+        <h2 className="tagline text-center font-semibold sm:text-base text-sm mt-4 mx-8 sm:mx-40">
+          Check out all the NFL Game Day Specials at your favorite Jersey Shore bars and restaurants!
+        </h2>
+        <Link
+          to={`/game-day-specials`}
+          className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-max rounded-3xl m-auto mt-8 py-3 px-8"
+          onClick={() =>
+            posthog.capture("home_cta_clicked", { cta: "GAME DAY SPECIALS" })
+          }
+        >
+          <FaFootballBall className="mt-1 mr-2" />
+          VIEW ALL NFL GAME DAY SPECIALS
+          <FaFootballBall className="mt-1 ml-2" />
+
+        </Link>
+      </div>
       <div className="search-by-town justify-center border-t border-gray-300 pb-16 pt-8">
         <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-40">
           s e a r c h BY d a y

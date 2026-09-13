@@ -32,8 +32,9 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false, day, town }) => 
   const dropdownRef = useRef(null);
   const showTimeFilter = false; //!!(page === "happyhours");
   const showEventFilter = !!(page === "events");
-  const showTownFilter = !town
-  const showDayFilter = !day
+  const showTownFilter = !town && page !== "gameDaySpecials"
+  const showDayFilter = !day && page !== "gameDaySpecials"
+  const showHappeningNow = page !== "gameDaySpecials"
   const showSortBy = page !== "events";
   const [searchParams] = useSearchParams();
   const dayParam = searchParams.get("day");
@@ -284,27 +285,28 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false, day, town }) => 
             ? "H a p p y H o u r s"
             : page === "events"
               ? "E v E n t s"
-              : ""}
+              : page === "gameDaySpecials" ? "G a m e D a y S p e c i a l s" : ""}
         </h1>
       )}
-      <div
-        className="happening-now cursor-pointer flex justify-center w-fit m-auto items-center h-10 py-1 text-sm font-semibold hover:text-gray-500"
-        onClick={() => {
-          getCurrentDateTime(!happeningNow);
-        }}
-      >
-        <button
-          className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${happeningNow ? "bg-[#ff9b64]" : "bg-gray-300"
-            }`}
+      {showHappeningNow && (
+        <div
+          className="happening-now cursor-pointer flex justify-center w-fit m-auto items-center h-10 py-1 text-sm font-semibold hover:text-gray-500"
+          onClick={() => {
+            getCurrentDateTime(!happeningNow);
+          }}
         >
-          <span
-            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${happeningNow ? "translate-x-6" : "translate-x-1"
+          <button
+            className={`relative inline-flex !h-6 w-11 items-center rounded-full transition-colors duration-300 mr-4 ${happeningNow ? "bg-[#ff9b64]" : "bg-gray-300"
               }`}
-          />
-        </button>
-        HAPPENING NOW
-        <FireIcon className="ml-3 w-5 h-5 text-[#ff9b64]" />
-      </div>
+          >
+            <span
+              className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform duration-300 ${happeningNow ? "translate-x-6" : "translate-x-1"
+                }`}
+            />
+          </button>
+          HAPPENING NOW
+          <FireIcon className="ml-3 w-5 h-5 text-[#ff9b64]" />
+        </div>)}
       {showTownFilter && <div className="town-buttons flex flex-wrap gap-2 mt-4 mb-2 m-auto sm:w-[85%] justify-center p-1">
         {towns.map((town) => (
           <button
