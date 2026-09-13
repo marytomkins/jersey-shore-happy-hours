@@ -279,7 +279,7 @@ const FilterBar = ({ page, onFilter, onSort, dataReady = false, day, town }) => 
   return (
     <div className="filter-bar">
       {showPageTitle && (
-        <h1 className="flex flex-col items-center justify-center text-center sm:text-5xl text-3xl m-4 text-blue">
+        <h1 className="flex flex-col items-center justify-center text-center sm:text-5xl text-3xl m-4 text-blue text-balance">
           <div>{day?.toUpperCase() || town?.toUpperCase()}</div>
           {page === "happyhours"
             ? "H a p p y H o u r s"
