@@ -61,7 +61,7 @@ const Home = () => {
       </div> */}
       <div className="search-by-container justify-center border-t border-gray-300 pb-16 pt-14 bg-light-blue">
         <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-24">
-          Game Day is Better at the SHORE!
+          Game Day is Better at the SHORE
         </h1>
         <h2 className="tagline text-center font-semibold sm:text-base text-sm mt-4 mx-8 sm:mx-40">
           Check out all the NFL Game Day Specials at your favorite Jersey Shore bars and restaurants!
