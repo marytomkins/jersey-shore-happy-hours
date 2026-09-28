@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
-const Burger = () => {
+const Burger = ({ isDarkMode, onToggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
@@ -24,13 +24,13 @@ const Burger = () => {
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-4 text-gray-900 hover-text-light-blue transition"
         >
-          <FaInstagram size={28} color="#000" />
+          <FaInstagram size={28} color="#3677cd" />
         </a>
         <button
           className="text-gray-800 hover-text-blue"
           onClick={() => setIsOpen(true)}
         >
-          <Menu size={28} />
+          <Menu size={28} color="#3677cd" />
         </button>
       </div>
       {isOpen && (
@@ -40,7 +40,7 @@ const Burger = () => {
         />
       )}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
+        className={`burger-menu flex flex-col fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         <div className="p-4 flex justify-end">
@@ -78,6 +78,26 @@ const Burger = () => {
               <FaFacebook size={28} color="#3677cd" />
             </a></div>
         </ul>
+        <div className="mobile-theme-toggle mx-6 mt-auto mb-6 p-1 flex rounded-full" role="group" aria-label="Color theme">
+          <button
+            type="button"
+            aria-label="Light mode"
+            aria-pressed={!isDarkMode}
+            className={`mobile-theme-option flex-1 flex justify-center items-center rounded-full transition-colors ${!isDarkMode ? "is-active" : ""}`}
+            onClick={() => isDarkMode && onToggleTheme()}
+          >
+            <Sun size={20} />
+          </button>
+          <button
+            type="button"
+            aria-label="Dark mode"
+            aria-pressed={isDarkMode}
+            className={`mobile-theme-option flex-1 flex justify-center items-center rounded-full transition-colors ${isDarkMode ? "is-active" : ""}`}
+            onClick={() => !isDarkMode && onToggleTheme()}
+          >
+            <Moon size={20} />
+          </button>
+        </div>
       </div>
     </>
   );

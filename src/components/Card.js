@@ -169,7 +169,7 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
         )}
         {specials && (
           <div className="py-2 text-sm">
-            <div className="bg-[#e4f2f4] border-[#3677cd] p-2 rounded-lg border">
+            <div className="daily-specials bg-[#e4f2f4] border-[#3677cd] p-2 rounded-lg border">
               <div className="flex items-center mb-1">
                 <span className="font-semibold text-xs tracking-wide text-blue">
                   DAILY SPECIALS
@@ -196,7 +196,7 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
         </div>
       )}
       {!expanded && showToggle && (
-        <div className="absolute bottom-9 left-0 w-full h-6 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+        <div className="card-content-fade absolute bottom-9 left-0 w-full h-6 bg-gradient-to-t from-white to-transparent pointer-events-none" />
       )}
     </div>
   );

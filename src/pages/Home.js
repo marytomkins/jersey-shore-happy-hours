@@ -60,7 +60,7 @@ const Home = () => {
       {/* <div className="specials py-12 mt-8 border-t border-gray-300">
         <Specials />
       </div> */}
-      <div className="search-by-container justify-center border-t border-gray-300 pb-16 pt-14 bg-light-blue">
+      <div className="game-day-container justify-center border-t border-gray-300 pb-16 pt-14 bg-light-blue">
         <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl px-2 sm:px-0 sm:mx-24">
           Game Day is Better at the SHORE
         </h1>

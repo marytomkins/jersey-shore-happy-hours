@@ -38,12 +38,15 @@ h1 {
 .hover-bg-light-blue:hover {
   background-color: #bad6da;
 }
+
 .hover-bg-blue:hover {
   background-color: #3677cd;
 }
+
 .hover-text-blue:hover {
   color: #3677cd;
 }
+
 .hover-text-light-blue:hover {
   color: #bad6da;
 }
@@ -62,4 +65,107 @@ h1 {
 
 .mapboxgl-popup {
   z-index: 9999;
+}
+
+.theme-dark {
+  color: #e5e7eb;
+  background-color: #171c1b;
+}
+
+.theme-dark .bg-white {
+  background-color: #222927;
+}
+
+.theme-dark .card-content-fade {
+  background-image: linear-gradient(to top, #000, transparent);
+}
+
+.theme-dark .daily-specials {
+  background-color: #263633;
+  border-color: #527b75;
+}
+
+.theme-dark .daily-specials .text-blue {
+  color: #9ad8d1;
+}
+
+.mobile-theme-toggle {
+  background-color: #edf1f0;
+}
+
+.mobile-theme-option {
+  min-width: 0;
+  color: #53615c;
+  background: transparent;
+}
+
+.mobile-theme-option.is-active {
+  color: #fff;
+  background-color: #3677cd;
+}
+
+.theme-dark .mobile-theme-toggle {
+  background-color: #303936;
+}
+
+.theme-dark .mobile-theme-option {
+  color: #aab5b0;
+}
+
+.theme-dark .mobile-theme-option.is-active {
+  color: #17201d;
+  background-color: #9ad8d1;
+}
+
+.theme-dark .bg-gray-100,
+.theme-dark .hover\\:bg-gray-100:hover {
+  background-color: #303936;
+}
+
+.theme-dark .filter-dropdown-button:disabled {
+  color: #89958f;
+  background-color: #252c29;
+  border-color: #3c4641;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.theme-dark .border-gray-200,
+.theme-dark .border-gray-300 {
+  border-color: #46514d;
+}
+
+.theme-dark .text-gray-900,
+.theme-dark .text-gray-800,
+.theme-dark .text-gray-700 {
+  color: #e5e7eb;
+}
+
+.theme-dark .text-gray-500 {
+  color: #aab5b0;
+}
+
+.theme-dark .bg-light-blue {
+  background-color: #293c3b;
+}
+
+.theme-dark .section-1,
+.theme-dark .feedback-page,
+.theme-dark .flex.flex-col.text-blue.bg-white {
+  color: #e5e7eb;
+}
+
+.theme-dark input,
+.theme-dark select,
+.theme-dark textarea {
+  color: #e5e7eb;
+  background-color: #222927;
+  border-color: #46514d;
+}
+
+html.dark-mode,
+html.dark-mode body,
+html.dark-mode #root {
+  color-scheme: dark;
+  background-color: #171c1b;
 }
