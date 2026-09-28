@@ -4,6 +4,7 @@ import { towns, days } from "../data/filters";
 import { getColors } from "../data/helpers";
 import posthog from "posthog-js";
 import { FaFootballBall } from "react-icons/fa";
+import PopUp from "../components/PopUp";
 // import Specials from "./Specials";
 
 function getToday() {
@@ -15,8 +16,11 @@ function formatSearchLink(item) {
 }
 
 const Home = () => {
+  const showPopUp = true;
+
   return (
     <div className="home-page">
+      {showPopUp && <PopUp />}
       <div className="section-1 h-[66vh] sm:h-[81vh] flex flex-col items-center justify-center bg-white rounded-2xl mx-4 mb-8 shadow-lg">
         <Link to="/" className="w-4/5 nav:w-3/5 my-0 mx-auto">
           <img src={home} alt="Jersey Shore Happy Hours" />

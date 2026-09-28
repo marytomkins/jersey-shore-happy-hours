@@ -17,15 +17,30 @@ function App() {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark-mode", isDarkMode);
-    window.localStorage.setItem("theme", isDarkMode ? "dark" : "light");
   }, [isDarkMode]);
+
+  useEffect(() => {
+    const handleThemePreferenceChange = (event) => {
+      setIsDarkMode(event.detail.isDarkMode);
+    };
+
+    window.addEventListener("theme-preference-change", handleThemePreferenceChange);
+    return () => {
+      window.removeEventListener("theme-preference-change", handleThemePreferenceChange);
+    };
+  }, []);
+
+  const chooseTheme = (darkMode) => {
+    setIsDarkMode(darkMode);
+    window.localStorage.setItem("theme", darkMode ? "dark" : "light");
+  };
 
   return (
     <Router>
       <ScrollToTop />
       <div className={`App h-max flex flex-col ${isDarkMode ? "theme-dark" : ""}`}>
         <Analytics />
-        <Header isDarkMode={isDarkMode} onToggleTheme={() => setIsDarkMode(!isDarkMode)} />
+        <Header isDarkMode={isDarkMode} onToggleTheme={() => chooseTheme(!isDarkMode)} />
         <div className="blank-space nav:h-[17vh] h-[12vh]"></div>
         <div className="main-content flex-grow flex flex-col">
           <Routes>

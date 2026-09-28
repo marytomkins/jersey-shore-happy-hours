@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram } from 'react-icons/fa';
+import ThemeToggle from "./ThemeToggle";
 
 const Burger = ({ isDarkMode, onToggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -78,26 +79,13 @@ const Burger = ({ isDarkMode, onToggleTheme }) => {
               <FaFacebook size={28} color="#3677cd" />
             </a></div>
         </ul>
-        <div className="mobile-theme-toggle mx-6 mt-auto mb-6 p-1 flex rounded-full" role="group" aria-label="Color theme">
-          <button
-            type="button"
-            aria-label="Light mode"
-            aria-pressed={!isDarkMode}
-            className={`mobile-theme-option flex-1 flex justify-center items-center rounded-full transition-colors ${!isDarkMode ? "is-active" : ""}`}
-            onClick={() => isDarkMode && onToggleTheme()}
-          >
-            <Sun size={20} />
-          </button>
-          <button
-            type="button"
-            aria-label="Dark mode"
-            aria-pressed={isDarkMode}
-            className={`mobile-theme-option flex-1 flex justify-center items-center rounded-full transition-colors ${isDarkMode ? "is-active" : ""}`}
-            onClick={() => !isDarkMode && onToggleTheme()}
-          >
-            <Moon size={20} />
-          </button>
-        </div>
+        <ThemeToggle
+          isDarkMode={isDarkMode}
+          onSelectTheme={(darkMode) => {
+            if (darkMode !== isDarkMode) onToggleTheme();
+          }}
+          className="mx-6 mt-auto mb-6"
+        />
       </div>
     </>
   );

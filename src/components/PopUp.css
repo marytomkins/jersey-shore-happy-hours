@@ -1,0 +1,50 @@
+.theme-prompt-backdrop {
+    background-color: rgb(13 20 18 / 58%);
+}
+
+.theme-prompt-close-button {
+    color: #53615c;
+    background-color: transparent;
+}
+
+.theme-prompt-close-button:hover {
+    color: #3677cd;
+    background-color: #e9f0fa;
+}
+
+.theme-prompt-close-button:focus-visible {
+    outline: 2px solid #3677cd;
+    outline-offset: 2px;
+}
+
+.theme-prompt-icon {
+    color: #3677cd;
+    background-color: #e9f0fa;
+}
+
+.theme-dark .theme-prompt-panel {
+    color: #e5e7eb;
+    background-color: #222927;
+}
+
+.theme-dark .theme-prompt-panel p {
+    color: #b5c0bb;
+}
+
+.theme-dark .theme-prompt-close-button {
+    color: #c3cec9;
+}
+
+.theme-dark .theme-prompt-close-button:hover {
+    color: #9ad8d1;
+    background-color: #293c3b;
+}
+
+.theme-dark .theme-prompt-close-button:focus-visible {
+    outline-color: #9ad8d1;
+}
+
+.theme-dark .theme-prompt-icon {
+    color: #9ad8d1;
+    background-color: #293c3b;
+}
