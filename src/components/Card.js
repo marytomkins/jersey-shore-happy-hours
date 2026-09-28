@@ -13,7 +13,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
-  const { name, town, dayText, description, link, specials, events, latlong } =
+  const { name, town, dayText, location, description, link, specials, events, latlong } =
     bar || "";
   const [latitude, longitude] = latlong || [0, 0];
   const [expanded, setExpanded] = useState(false);
@@ -24,8 +24,8 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
   const mapUrl = isIOS
     ? `https://maps.apple.com/?q=${encodeURIComponent(name)}&ll=${latitude},${longitude}`
     : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-        `${name} ${latitude},${longitude}`,
-      )}`;
+      `${name} ${latitude},${longitude}`,
+    )}`;
 
   useEffect(() => {
     if (contentRef.current) {
@@ -34,9 +34,10 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
     }
   }, [bar, mapView]);
 
-  const ListText = ({ text, bullets = true }) => {
+  const ListText = ({ text, bullets = true, bulletInLine = false }) => {
     if (!text) return null;
     const items = text.split("/").map((item) => item.trim());
+    if (bulletInLine) return <span>{items.join(" • ")}</span>;
     return (
       <ul className={bullets ? `list-disc ml-5` : ""}>
         {items.map((text, idx) => (
@@ -69,11 +70,10 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
   return (
     <div
       key={index}
-      className={`relative flex flex-col bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md transition duration-300 ${
-        mapView
-          ? ""
-          : "min-h-[15rem] " + (expanded ? "max-h-[1000px]" : "max-h-[15rem]")
-      }`}
+      className={`relative flex flex-col bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md transition duration-300 ${mapView
+        ? ""
+        : "min-h-[15rem] " + (expanded ? "max-h-[1000px]" : "max-h-[15rem]")
+        }`}
     >
       <div
         className="transition duration-300 overflow-hidden flex flex-col"
@@ -140,6 +140,18 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
               <div className="text-sm font-medium">
                 <ListText text={dayText} bullets={false} />
               </div>
+              {location && (
+                <>
+                  <div className="flex items-center mb-1 mt-2">
+                    <span className="font-semibold text-xs tracking-wide text-[#f29154]">
+                      SEATING
+                    </span>
+                  </div>
+                  <div className="text-sm">
+                    <ListText text={location} bullets={false} bulletInLine={true} />
+                  </div>
+                </>
+              )}
             </div>
             {description && (
               <div className="text-sm w-1/2 pl-2 border-l border-gray-300">

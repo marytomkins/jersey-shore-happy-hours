@@ -4,12 +4,27 @@ export const towns = [
   "Asbury Park",
   // "Ocean Grove",
   "Bradley Beach",
-  "Avon-by-the-sea",
+  // "Avon-by-the-sea",
   "Belmar",
   "Spring Lake",
   "Sea Girt",
   "Manasquan",
   "Brielle",
+  "Point Pleasant",
+];
+
+export const mobileTowns = [
+  "Red Bank",
+  // "Long Branch",
+  "Asbury Park",
+  // "Ocean Grove",
+  // "Bradley Beach",
+  // "Avon-by-the-sea",
+  "Belmar",
+  // "Spring Lake",
+  // "Sea Girt",
+  "Manasquan",
+  // "Brielle",
   "Point Pleasant",
 ];
 

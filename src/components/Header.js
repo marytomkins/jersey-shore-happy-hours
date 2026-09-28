@@ -3,7 +3,7 @@ import logo from "../images/logo.png";
 import hoverLogo from "../images/logo_hover.png";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
-import { InstagramIcon } from "lucide-react";
+import { FaInstagram } from 'react-icons/fa';
 
 const navItems = [
   { name: "Happy Hours", path: "/happyhours" },
@@ -63,7 +63,7 @@ const Header = () => {
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-blue hover-text-light-blue transition ml-8" //ml-4
         >
-          <InstagramIcon className="w-6 h-6" />
+          <FaInstagram size={28} color="#3677cd" />
         </a>
       </div>
     </div>

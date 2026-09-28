@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Menu, X, InstagramIcon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,7 @@ const Burger = () => {
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-4 text-gray-900 hover-text-light-blue transition"
         >
-          <InstagramIcon className="w-6 h-6" />
+          <FaInstagram size={28} color="#000" />
         </a>
         <button
           className="text-gray-800 hover-text-blue"
@@ -39,9 +40,8 @@ const Burger = () => {
         />
       )}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="p-4 flex justify-end">
           <button onClick={() => setIsOpen(false)}>
@@ -60,14 +60,23 @@ const Burger = () => {
               </Link>
             </li>
           ))}
-          <a
-            href="https://www.instagram.com/jerseyshore_happyhours"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-blue hover-text-light-blue transition"
-          >
-            <InstagramIcon className="w-6 h-6" />
-          </a>
+          <div className="flex flex-row gap-2">
+            <a
+              href="https://www.instagram.com/jerseyshore_happyhours"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-blue hover-text-light-blue transition"
+            >
+              <FaInstagram size={30} color="#3677cd" />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61592038439351"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-blue hover-text-light-blue transition"
+            >
+              <FaFacebook size={28} color="#3677cd" />
+            </a></div>
         </ul>
       </div>
     </>

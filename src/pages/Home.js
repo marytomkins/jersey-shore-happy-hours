@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import home from "../images/home.png";
-import { towns, days, truncDays } from "../data/filters";
+import { towns, days } from "../data/filters";
+import { getColors } from "../data/helpers";
 import posthog from "posthog-js";
 import { FaFootballBall } from "react-icons/fa";
 // import Specials from "./Specials";
@@ -60,7 +61,7 @@ const Home = () => {
         <Specials />
       </div> */}
       <div className="search-by-container justify-center border-t border-gray-300 pb-16 pt-14 bg-light-blue">
-        <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-24">
+        <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl px-2 sm:px-0 sm:mx-24">
           Game Day is Better at the SHORE
         </h1>
         <h2 className="tagline text-center font-semibold sm:text-base text-sm mt-4 mx-8 sm:mx-40">
@@ -83,17 +84,17 @@ const Home = () => {
         <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-40">
           s e a r c h BY d a y
         </h1>
-        <div className="towns p-6 pb-0 gap-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 nav:grid-cols-6 lg:flex lg:flex-wrap lg:justify-center">
-          {truncDays.map((day, index) => (
+        <div className="towns p-6 pb-0 gap-4 flex flex-col min-[641px]:grid min-[641px]:grid-cols-4 md:grid-cols-5 nav:grid-cols-6">
+          {days.map((day) => (
             <Link
               key={day}
-              to={formatSearchLink(days[index])}
-              className="flex text-blue hover:text-white hover-bg-light-blue items-center justify-center text-center text-base font-semibold bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md lg:min-w-[8rem] min-h-[6rem]"
+              to={formatSearchLink(day)}
+              className="flex w-full min-[641px]:w-auto text-white bg-blue hover-bg-light-blue items-center justify-center text-center text-base font-semibold shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md lg:min-w-[8rem] min-h-0 min-[641px]:min-h-[6rem]"
               onClick={() =>
-                posthog.capture("search_by_day_clicked", { day: days[index] })
+                posthog.capture("search_by_day_clicked", { day: day })
               }
             >
-              <h2>{day}</h2>
+              <h2>{day.toUpperCase()}</h2>
             </Link>
           ))}
         </div>
@@ -102,12 +103,12 @@ const Home = () => {
         <h1 className="text-center font-semibold text-blue sm:text-4xl text-2xl sm:mx-40">
           s e a r c h BY t o w n
         </h1>
-        <div className="towns p-6 pb-0 gap-4 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 nav:grid-cols-6 lg:flex lg:flex-wrap lg:justify-center">
+        <div className="towns p-6 pb-0 gap-4 flex flex-col min-[641px]:grid min-[641px]:grid-cols-4 md:grid-cols-5 nav:grid-cols-6">
           {towns.map((town) => (
             <Link
               key={town}
               to={formatSearchLink(town)}
-              className="flex text-blue hover:text-white hover-bg-light-blue items-center justify-center text-center text-base font-semibold bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md lg:min-w-[8rem] min-h-[6rem]"
+              className={`flex w-full min-[641px]:w-auto hover:text-white hover-bg-light-blue items-center justify-center text-center text-base font-semibold shadow-sm rounded-2xl p-4 hover:shadow-md hover:border-white lg:min-w-[8rem] min-h-0 min-[641px]:min-h-[6rem] border-[1.5px] ${getColors(town)}`}
               onClick={() =>
                 posthog.capture("search_by_town_clicked", { town })
               }

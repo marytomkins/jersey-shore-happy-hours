@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { InstagramIcon } from "lucide-react";
 import footer_logo from "../images/footer_logo.png";
+import { FaFacebook, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <div className="block text-center text-xs py-4 bg-white border-t border-gray-300">
-      <div className="my-4 mx-8 text-sm">
-        <b>Disclaimer:</b> Happy hours/events are subject to change regularly
+      <div className="my-4 mx-8 text-xs">
+        <b>Disclaimer:</b> Happy hours are subject to change regularly
         and exclusions may apply (ex: holidays, time of year, etc).
         <br /> Please check the restaurant's website/social media beforehand and
         submit any mistakes on our contact page.
@@ -37,14 +37,24 @@ const Footer = () => {
           >
             Contact
           </Link>
-          <Link
-            to="https://www.instagram.com/jerseyshore_happyhours"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover-text-light-blue flex"
-          >
-            Follow us <InstagramIcon className="w-4 h-5 mx-2 my-0" />
-          </Link>
+          <div className="flex flex-row gap-2">
+            <Link
+              to="https://www.instagram.com/jerseyshore_happyhours"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover-text-light-blue flex"
+            >
+              <FaInstagram size={20} color="#3677cd" />
+            </Link>
+            <Link
+              to="https://www.facebook.com/profile.php?id=61592038439351"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover-text-light-blue flex"
+            >
+              <FaFacebook size={18} color="#3677cd" />
+            </Link>
+          </div>
         </div>
       </div>
       <div className="mt-2">Jersey Shore Happy Hours LLC © 2026</div>
