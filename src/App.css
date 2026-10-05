@@ -57,6 +57,11 @@ h1 {
     color: white;
     border-color: #d1d5db;
   }
+
+  .theme-dark .town-buttons .hoverable:hover {
+    background-color: #3677cd;
+    color: white;
+  }
 }
 
 .mapboxgl-popup-close-button {
