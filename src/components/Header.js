@@ -4,6 +4,7 @@ import hoverLogo from "../images/logo_hover.png";
 import { Link } from "react-router-dom";
 import Burger from "./Burger";
 import { FaInstagram } from 'react-icons/fa';
+import { Moon, Sun } from "lucide-react";
 
 const navItems = [
   { name: "Happy Hours", path: "/happyhours" },
@@ -13,7 +14,7 @@ const navItems = [
   { name: "Contact", path: "/contact" },
 ];
 
-const Header = () => {
+const Header = ({ isDarkMode, onToggleTheme }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
@@ -40,10 +41,21 @@ const Header = () => {
           onMouseLeave={() => setIsHovered(false)}
         />
       </Link>
-      <div className="burger min-[730px]:hidden flex w-3/5 justify-end">
-        <Burger />
+      <div className="burger min-[730px]:hidden flex justify-end">
+        <Burger isDarkMode={isDarkMode} onToggleTheme={onToggleTheme} />
       </div>
-      <div className="menu-bar min-[730px]:flex min-[730px]:justify-between hidden font-black text-blue uppercase mx-4">
+      <div className="menu-bar min-[730px]:flex min-[730px]:justify-between hidden items-center font-black text-blue uppercase mx-4">
+        <div className="flex">
+          <button
+            type="button"
+            onClick={onToggleTheme}
+            aria-label={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
+            title={`Switch to ${isDarkMode ? "light" : "dark"} mode`}
+            className="flex items-center justify-center h-10 w-10 rounded-full text-blue hover:bg-gray-100 transition-colors"
+          >
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+        </div>
         {navItems.map((item) => (
           <div
             key={item.name}
@@ -63,7 +75,7 @@ const Header = () => {
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-blue hover-text-light-blue transition ml-8" //ml-4
         >
-          <FaInstagram size={28} color="#3677cd" />
+          <FaInstagram size={28} color={"#3677cd"} />
         </a>
       </div>
     </div>

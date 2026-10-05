@@ -8,14 +8,39 @@ import Specials from "./Specials";
 import Feedback from "./Contact";
 import Footer from "../components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(
+    () => window.localStorage.getItem("theme") === "dark",
+  );
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark-mode", isDarkMode);
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    const handleThemePreferenceChange = (event) => {
+      setIsDarkMode(event.detail.isDarkMode);
+    };
+
+    window.addEventListener("theme-preference-change", handleThemePreferenceChange);
+    return () => {
+      window.removeEventListener("theme-preference-change", handleThemePreferenceChange);
+    };
+  }, []);
+
+  const chooseTheme = (darkMode) => {
+    setIsDarkMode(darkMode);
+    window.localStorage.setItem("theme", darkMode ? "dark" : "light");
+  };
+
   return (
     <Router>
       <ScrollToTop />
-      <div className="App h-max flex flex-col">
+      <div className={`App h-max flex flex-col ${isDarkMode ? "theme-dark" : ""}`}>
         <Analytics />
-        <Header />
+        <Header isDarkMode={isDarkMode} onToggleTheme={() => chooseTheme(!isDarkMode)} />
         <div className="blank-space nav:h-[17vh] h-[12vh]"></div>
         <div className="main-content flex-grow flex flex-col">
           <Routes>
