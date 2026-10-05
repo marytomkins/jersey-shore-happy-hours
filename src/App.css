@@ -78,20 +78,20 @@ h1 {
 }
 
 .theme-dark .bg-white {
-  background-color: #222927;
+  background-color: #1e2a3b;
 }
 
 .theme-dark .card-content-fade {
-  background-image: linear-gradient(to top, #000, transparent);
+  background-image: linear-gradient(to top, #141d2a, transparent);
 }
 
 .theme-dark .daily-specials {
-  background-color: #263633;
-  border-color: #527b75;
+  background-color: #44515f;
+  border-color: #9ad8d1;
 }
 
 .theme-dark .daily-specials .text-blue {
-  color: #9ad8d1;
+  color: #e2e772;
 }
 
 .mobile-theme-toggle {
@@ -151,7 +151,7 @@ h1 {
 }
 
 .theme-dark .bg-light-blue {
-  background-color: #293c3b;
+  background-color: #1a3f49;
 }
 
 .theme-dark .section-1,
