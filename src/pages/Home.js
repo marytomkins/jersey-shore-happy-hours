@@ -31,7 +31,7 @@ const Home = () => {
         </h2>
         <div className="flex flex-col nav:flex-row justify-center mt-8">
           <Link
-            to={`/happyhours?day=${getToday()}`}
+            to={formatSearchLink(getToday())}
             className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-44 py-2 rounded-3xl m-2"
             onClick={() =>
               posthog.capture("home_cta_clicked", {
