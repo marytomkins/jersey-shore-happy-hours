@@ -16,7 +16,7 @@ function formatSearchLink(item) {
 }
 
 const Home = () => {
-  const showPopUp = true;
+  const showPopUp = false;
 
   return (
     <div className="home-page">
@@ -31,8 +31,19 @@ const Home = () => {
         </h2>
         <div className="flex flex-col nav:flex-row justify-center mt-8">
           <Link
-            to={`/happyhours?day=${getToday()}`}
-            className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-44 py-2 rounded-3xl m-2"
+            to={'/featured'}
+            className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-48 py-2 rounded-3xl m-2"
+            onClick={() =>
+              posthog.capture("home_cta_clicked", {
+                cta: "Featured Happy Hour",
+              })
+            }
+          >
+            Happy Hour of the Week
+          </Link>
+          {/* <Link
+            to={formatSearchLink(getToday())}
+            className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-48 py-2 rounded-3xl m-2"
             onClick={() =>
               posthog.capture("home_cta_clicked", {
                 cta: "Today's Happy Hours",
@@ -40,10 +51,10 @@ const Home = () => {
             }
           >
             Today's Happy Hours
-          </Link>
+          </Link> */}
           <Link
             to={`/happyhours`}
-            className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-44 py-2 rounded-3xl m-2"
+            className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-48 py-2 rounded-3xl m-2"
             onClick={() =>
               posthog.capture("home_cta_clicked", { cta: "All Happy Hours" })
             }
@@ -52,7 +63,7 @@ const Home = () => {
           </Link>
           <Link
             to={`/map`}
-            className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-44 py-2 rounded-3xl m-2"
+            className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-48 py-2 rounded-3xl m-2"
             onClick={() =>
               posthog.capture("home_cta_clicked", { cta: "View Map" })
             }

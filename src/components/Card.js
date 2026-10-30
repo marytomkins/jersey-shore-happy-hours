@@ -6,6 +6,7 @@ import {
   ChevronDoubleDownIcon,
   ChevronDoubleUpIcon,
   FireIcon,
+  StarIcon
 } from "@heroicons/react/20/solid";
 import {
   ArrowTopRightOnSquareIcon,
@@ -13,7 +14,7 @@ import {
 } from "@heroicons/react/24/outline";
 
 const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
-  const { name, town, dayText, location, description, link, specials, events, latlong } =
+  const { name, town, dayText, location, description, link, specials, events, latlong, featured = false } =
     bar || "";
   const [latitude, longitude] = latlong || [0, 0];
   const [expanded, setExpanded] = useState(false);
@@ -70,7 +71,7 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
   return (
     <div
       key={index}
-      className={`relative flex flex-col bg-white shadow-sm rounded-2xl p-4 border border-gray-200 hover:shadow-md transition duration-300 ${mapView
+      className={`relative flex flex-col bg-white shadow-sm rounded-2xl p-4 border ${featured ? "border-[#f2c94c]" : "border-gray-200"} hover:shadow-md transition duration-300 ${mapView
         ? ""
         : "min-h-[15rem] " + (expanded ? "max-h-[1000px]" : "max-h-[15rem]")
         }`}
@@ -82,29 +83,36 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
         <div className="font-semibold text-base flex justify-between">
           <div className="text-xl">{name}</div>
           <div className="flex mt-1 gap-2">
-            {happeningNow ? (
+            {featured && (
               <Tooltip
-                icon={<FireIcon className="w-5 h-5 text-[#ff9b64]" />}
-                text="Happening Now!"
+                icon={<StarIcon className="w-5 h-5 text-[#f2c94c]" />}
+                text="Happy Hour of the Week!"
               />
-            ) : mapView ? (
-              <a
-                href={mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue hover-text-light-blue"
-                onClick={() =>
-                  posthog.capture("map_directions_clicked", {
-                    restaurant_name: name,
-                    town,
-                  })
-                }
-              >
-                <MapIcon className="w-5 h-5" />
-              </a>
-            ) : (
-              <></>
             )}
+            {
+              happeningNow ? (
+                <Tooltip
+                  icon={<FireIcon className="w-5 h-5 text-[#ff9b64]" />}
+                  text="Happening Now!"
+                />
+              ) : mapView ? (
+                <a
+                  href={mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue hover-text-light-blue"
+                  onClick={() =>
+                    posthog.capture("map_directions_clicked", {
+                      restaurant_name: name,
+                      town,
+                    })
+                  }
+                >
+                  <MapIcon className="w-5 h-5" />
+                </a>
+              ) : (
+                <></>
+              )}
             {link && (
               <a
                 href={link}

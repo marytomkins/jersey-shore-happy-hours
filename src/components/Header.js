@@ -8,6 +8,7 @@ import { Moon, Sun } from "lucide-react";
 
 const navItems = [
   { name: "Happy Hours", path: "/happyhours" },
+  { name: "Featured", path: "/featured" },
   { name: "Map", path: "/map" },
   // { name: "Events", path: "/events" },
   // { name: "Specials", path: "/specials" },
@@ -41,10 +42,10 @@ const Header = ({ isDarkMode, onToggleTheme }) => {
           onMouseLeave={() => setIsHovered(false)}
         />
       </Link>
-      <div className="burger min-[730px]:hidden flex justify-end">
+      <div className="burger nav:hidden flex justify-end">
         <Burger isDarkMode={isDarkMode} onToggleTheme={onToggleTheme} />
       </div>
-      <div className="menu-bar min-[730px]:flex min-[730px]:justify-between hidden items-center font-black text-blue uppercase mx-4">
+      <div className="menu-bar hidden nav:flex nav:justify-between items-center font-black text-blue uppercase mx-4">
         <div className="flex">
           <button
             type="button"
@@ -63,7 +64,7 @@ const Header = ({ isDarkMode, onToggleTheme }) => {
           >
             <Link
               to={item.path}
-              className="hover-text-light-blue transition-colors cursor-pointer"
+              className="whitespace-nowrap hover-text-light-blue transition-colors cursor-pointer"
             >
               {item.name}
             </Link>

@@ -6,6 +6,7 @@ import Page from "../components/Page";
 import Header from "../components/Header";
 import Specials from "./Specials";
 import Feedback from "./Contact";
+import Featured from "./Featured";
 import Footer from "../components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { useEffect, useState } from "react";
@@ -48,6 +49,7 @@ function App() {
             <Route path="/happyhours" element={<Page page={"happyhours"} />} />
             <Route path="/map" element={<Page page="map" />} />
             <Route path="/events" element={<Page page={"events"} />} />
+            <Route path="/featured" element={<Featured />} />
             <Route path="/contact" element={<Feedback />} />
             {/* SPECIALS */}
             <Route path="/specials" element={<Specials />} />

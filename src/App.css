@@ -160,6 +160,27 @@ h1 {
   color: #e5e7eb;
 }
 
+.theme-dark .featured-page {
+  color: #e5e7eb;
+  background-color: #171c1b;
+}
+
+.theme-dark .featured-page .text-black {
+  color: #e5e7eb;
+}
+
+@media (max-width: 639px) {
+  .featured-page .featured-mobile-section {
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    background-color: #e8f0f1;
+  }
+
+  .theme-dark .featured-page .featured-mobile-section {
+    background-color: #1e2a3b;
+  }
+}
+
 .theme-dark input,
 .theme-dark select,
 .theme-dark textarea {
