@@ -7,9 +7,9 @@ import { FaFootballBall } from "react-icons/fa";
 import PopUp from "../components/PopUp";
 // import Specials from "./Specials";
 
-function getToday() {
-  return days[new Date().getDay()];
-}
+// function getToday() {
+//   return days[new Date().getDay()];
+// }
 
 function formatSearchLink(item) {
   return `${item.toLowerCase().trim().replace(/\s+/g, "-")}-happy-hours`;
