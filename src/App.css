@@ -1,6 +1,6 @@
 @font-face {
   font-family: "High Cruiser";
-  src: url("../public/fonts/HighCruiser.woff2") format("woff2");
+  src: url("/fonts/HighCruiser.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -123,7 +123,7 @@ h1 {
 }
 
 .theme-dark .bg-gray-100,
-.theme-dark .hover\\:bg-gray-100:hover {
+.theme-dark .hover\:bg-gray-100:hover {
   background-color: #303936;
 }
 

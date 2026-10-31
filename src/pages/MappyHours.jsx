@@ -4,9 +4,8 @@ import Card from "../components/Card";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
 import "mapbox-gl/dist/mapbox-gl.css";
 
-mapboxgl.workerUrl = `${process.env.PUBLIC_URL}/mapbox-gl-csp-worker.js`;
-mapboxgl.accessToken =
-  "pk.eyJ1IjoibWFyeXRvbWtpbnMiLCJhIjoiY21wYncxc3d1MDA0azJyb3hpMzFvcmszZyJ9.zET9YubEWMZx7u3Ox5_gPQ";
+mapboxgl.workerUrl = `${import.meta.env.BASE_URL}mapbox-gl-csp-worker.js`;
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
 const MappyHours = ({ data, currently }) => {
   const mapContainer = useRef(null);
