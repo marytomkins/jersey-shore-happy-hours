@@ -1,0 +1,1465 @@
+{
+  "lastVerified": "10/28/2026",
+  "content": [
+    {
+      "name": "10th Ave Burrito",
+      "town": "Belmar",
+      "link": "https://tenthaveburrito.com/specials/",
+      "reel": "",
+      "dayText": "Mon - Thurs: 11AM - 5PM/Wed: All Day",
+	  "location": "Bar Only/Bar & Restaurant on Wednesdays",
+      "description": "$3 Domestics/$5 Imports/$5 Wine & Well Drinks/$6 Craft Beers/$7 La Casa Margs/Food Menu",
+      "specials": "Monday: $5 Modelos, $7 Margaritas, Half Off Burritos/Tuesday: $12 All You Can Eat Tacos, $5 Stateside Seltzers, $8 Modelito Buckets/Wednesday: $12 Quesadillas and All Day Happy Hour/Thursday: 75c Wings, $5 Spiked Ades, $7 Tecate & Shot of El Jimador/Saturday & Sunday: $15 Bloody Mary & Mimosa Pitchers",
+      "dayFilter": {
+        "Monday": ["11:00AM", "5:00PM"],
+        "Tuesday": ["11:00AM", "5:00PM"],
+        "Wednesday": ["11:00AM", "9:00PM"],
+        "Thursday": ["11:00AM", "5:00PM"]
+      },
+      "latlong": [40.18142, -74.02642]
+    },
+	{
+      "name": "26 West on the Navesink",
+      "town": "Red Bank",
+      "link": "https://26westonthenavesink.com/menu/",
+      "reel": "",
+      "dayText": "Mon - Fri: 4PM - 6PM/Sun: 11AM - 4PM",
+	  "location": "Bar & High Tops Only",
+      "description": "$2 Off Draft Beers/$5 High Noons/$10 Martinis/$10 House Wines/Food Menu",
+      "specials": "",
+      "dayFilter": {
+        "Monday": ["4:00PM", "6:00PM"],
+        "Tuesday": ["4:00PM", "6:00PM"],
+        "Wednesday": ["4:00PM", "6:00PM"],
+        "Thursday": ["4:00PM", "6:00PM"],
+        "Friday": ["4:00PM", "6:00PM"],
+        "Sunday": ["11:00AM", "6:00PM"]
+      },
+      "latlong": [40.3522, -74.066529] 
+    },
+    {
+      "name": "Anchor Tavern",
+      "town": "Belmar",
+      "link": "https://www.anchortavernnj.com/happy-hour",
+      "reel": "",
+      "dayText": "Mon - Fri: 11:30AM - 6PM/Sat: 1PM - 5PM/Sun: All Day",
+	  "location": "Bar Only",
+      "description": "$3.50 Drafts/$4 Bottles/$7 Titos Drinks/$7 Crafts and Imports/$2 Off All Menu Cocktails/Food Menu",
+      "specials": "Thursday: BOGO Burgers All Day",
+      "dayFilter": {
+        "Monday": ["11:30AM", "6:00PM"],
+        "Tuesday": ["11:30AM", "6:00PM"],
+        "Wednesday": ["11:30AM", "6:00PM"],
+        "Thursday": ["11:30AM", "6:00PM"],
+        "Friday": ["11:30AM", "6:00PM"],
+        "Saturday": ["1:00PM", "5:00PM"],
+        "Sunday": ["11:30AM", "11:59PM"]
+      },
+      "latlong": [40.18161, -74.02506]
+    },
+    {
+      "name": "AP Rooftop",
+      "town": "Asbury Park",
+      "link": "https://cdn.mcloones.com/pdf/ap-rooftop/menus/2026/Happy-Hour-APR-10.5.26.pdf",
+      "reel": "",
+      "dayText": "Mon - Fri: 3PM - 6PM",
+      "location": "Bar & Lounge Area Only",
+	  "description": "$4 Bottles/$5 Drafts/$9 Wine/$10 Cocktails/Food Menu",
+      "dayFilter": {
+        "Monday": ["3:00PM", "6:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.22288, -73.99916]
+    },
+	{
+      "name": "Asbury Hotel - Soundbooth",
+      "town": "Asbury Park",
+      "link": "https://www.instagram.com/p/DdW_Rl5CArl/?stkn=YWZtMmY3dHpobHFm",
+      "reel": "",
+      "dayText": "Sun – Thurs: 4PM – 7PM",
+      "description": "$5 Select Beers/$8 Wines/$10 Featured Cocktails",
+      "dayFilter": {
+        "Monday": ["4:00PM", "7:00PM"],
+        "Tuesday": ["4:00PM", "7:00PM"],
+        "Wednesday": ["4:00PM", "7:00PM"],
+        "Thursday": ["4:00PM", "7:00PM"],
+        "Sunday": ["4:00PM", "7:00PM"]
+      },
+      "latlong": [40.2235825, -74.0016738]
+    },
+	{
+      "name": "Avenue",
+      "town": "Long Branch",
+      "link": "https://www.avenuelongbranch.com/weekly-promotions",
+      "reel": "",
+      "dayText": "Wed - Sun: All Day",
+		"location": "Bar & Lounge Area Only",
+      "description": "$5 Select Beers/$7-8 Wines/$10-12 Cocktails/Food Menu",
+      "specials": "Wednesday: 50% Select Wine Bottles/Thursday: $2 Oysters & Clams, $10 Sparkling Wine, 50% Off Select Bottles of Champagne & Wine/Sunday: Moules & Brews - $12 Mussels & $5 Rotating Brews",
+      "dayFilter": {
+        "Wednesday": ["12:00PM", "9:00PM"],
+        "Thursday": ["12:00PM", "9:00PM"],
+        "Friday": ["12:00PM", "9:00PM"],
+        "Saturday": ["11:00AM", "9:00PM"],
+        "Sunday": ["11:00AM", "9:00PM"]
+      },
+      "latlong": [40.30112, -73.97825]
+    },
+	{
+      "name": "B2 Bistro & Bar",
+      "town": "Red Bank",
+      "link": "https://www.b2bistro.com/red-bank-menus.html",
+      "reel": "",
+      "dayText": "Mon - Fri: 3PM - 6PM/Sun: All Day",
+		"location": "Bar & High Tops Only/Bar & Restaurant on Sundays",
+      "description": "$3 Domestic Cans/$4 Premium Cans/$5 Crafts/$5 House Wine/$5 House Drinks/$7 Well Martinis/$8 Sangria/Food Menu",
+      "specials": "",
+      "dayFilter": {
+        "Monday": ["3:00PM", "6:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["3:00PM", "6:00PM"],
+        "Sunday": ["11:00AM", "9:00PM"]
+      },
+      "latlong": [40.346095, -74.075963] 
+    },
+    {
+      "name": "B2 Bistro & Bar",
+      "town": "Point Pleasant",
+      "link": "https://www.b2bistro.com/point-pleasant-beach-menus.html",
+      "reel": "",
+      "dayText": "Mon - Fri: 4PM - 7PM/Sun: All Day",
+      "description": "$1 Off Cans/$2 Off Drafts/$7 Wine & House Drinks/$9 Margaritas/$10 Martinis/Food Menu",
+      "dayFilter": {
+        "Monday": ["4:00PM", "7:00PM"],
+        "Tuesday": ["4:00PM", "7:00PM"],
+        "Wednesday": ["4:00PM", "7:00PM"],
+        "Thursday": ["4:00PM", "7:00PM"],
+        "Friday": ["4:00PM", "7:00PM"],
+        "Sunday": ["10:00AM", "9:00PM"]
+      },
+      "latlong": [40.09175, -74.05247]
+    },
+    {
+      "name": "Bar Anticipation",
+      "town": "Belmar",
+      "dayFilter": {
+        "Tuesday": ["8:00PM", "11:59PM"]
+      },
+      "specials": "Tuesday: Beat the Clock (Drafts start at 50 cents at 8PM and increase 50 cents every hour)",
+      "link": "https://bar-a.com/entertainment-calendar/",
+      "reel": "",
+      "latlong": [40.1745, -74.02833]
+    },
+    {
+      "name": "Barrio Costero",
+      "town": "Asbury Park",
+      "link": "https://www.barriocostero.com/eat",
+      "reel": "",
+      "dayText": "Thurs: All Night/Sun: 4PM - Close",
+      "description": "Happy Hour Menu",
+      "specials": "Taco Tuesday: 2 Tacos + 1 Margy for $15",
+      "dayFilter": {
+        "Thursday": ["4:00PM", "10:00PM"],
+        "Sunday": ["4:00PM", "9:30PM"]
+      },
+      "latlong": [40.21679, -74.01049]
+    },
+    {
+      "name": "Black Swan",
+      "town": "Asbury Park",
+      "link": "https://www.theblackswanap.com/happy-hour",
+      "reel": "",
+      "dayText": "Mon - Fri: 3PM - 6PM",
+      "description": "$5 Drafts/$8 Mixed Drinks/$11 Specialty Cocktails/Food Menu",
+      "dayFilter": {
+        "Monday": ["3:00PM", "6:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.21635, -74.01064]
+    },
+    {
+      "name": "Boathouse",
+      "town": "Belmar",
+      "link": "https://www.boathousebelmar.com/specials",
+      "reel": "",
+      "dayText": "Mon - Fri: 4PM - 7PM/Sun: All Day",
+		"location": "Bar & Restaurant",
+      "description": "$2 Off Drafts/$5 Wine & Well drinks/Food Menu",
+      "dayFilter": {
+        "Monday": ["4:00PM", "7:00PM"],
+        "Tuesday": ["4:00PM", "7:00PM"],
+        "Wednesday": ["4:00PM", "7:00PM"],
+        "Thursday": ["4:00PM", "7:00PM"],
+        "Friday": ["4:00PM", "7:00PM"],
+        "Sunday": ["12:00PM", "8:00PM"]
+      },
+	  "specials": "Tuesday: $5 Specials starting @ 8PM/Sunday: All Day Happy Hour & $1 Wings",
+      "latlong": [40.17576, -74.02721]
+    },
+    {
+      "name": "Boatyard 401",
+      "town": "Point Pleasant",
+      "link": "https://boatyard401.com/menu",
+      "reel": "",
+      "dayText": "Mon - Fri: 12PM - 6PM/Wed: All Day",
+      "description": "$3 Domestic Drafts/$3.50 Domestic Cans & Bottles/$5.50 House Drinks & Wines/$6 Plain Bar Pie/$2.50 Yuengling Pints All Day Every Day",
+      "specials": "Sunday (Industry Nights) 8PM - 2AM: $6 High Noons, White Claws, Statesides, Surfsides, Stateside Vodkas, Sun Cruisers, Superlytes, Bombs and Bar Pies",
+      "dayFilter": {
+        "Monday": ["12:00PM", "6:00PM"],
+        "Tuesday": ["12:00PM", "6:00PM"],
+        "Wednesday": ["11:00AM", "12:00AM"],
+        "Thursday": ["12:00PM", "6:00PM"],
+        "Friday": ["12:00PM", "6:00PM"],
+        "Sunday": ["8:00PM", "2:00AM"]
+      },
+      "latlong": [40.10084, -74.04676]
+    },
+    {
+      "name": "Brickwall",
+      "town": "Asbury Park",
+      "link": "https://drive.google.com/file/d/11pkuNnVzTMVzxrttp8Bl8ScgovsW6aI_/view",
+      "reel": "",
+      "dayText": "Mon, Thurs, Fri: 4PM - 6PM",
+      "description": "$2 Bud & Miller Mugs/$6 Select Wines/$10 Martinis/Food Menu",
+      "dayFilter": {
+        "Thursday": ["4:00PM", "6:00PM"],
+        "Friday": ["4:00PM", "6:00PM"],
+        "Monday": ["4:00PM", "6:00PM"]
+      },
+      "latlong": [40.21632, -74.009]
+    },
+    {
+      "name": "Brielle House Bar & Grill",
+      "town": "Brielle",
+      "link": "https://brielle-house.com/specials-events/",
+      "reel": "",
+      "dayText": "Mon - Fri: 12PM - 6PM",
+      "description": "$5 Drafts/$6 Well Drinks/$8 Martinis/Half Off Wines/25% Off Bar Menu",
+      "dayFilter": {
+        "Monday": ["12:00PM", "6:00PM"],
+        "Tuesday": ["12:00PM", "6:00PM"],
+        "Wednesday": ["11:00AM", "12:00AM"],
+        "Thursday": ["12:00PM", "6:00PM"],
+        "Friday": ["12:00PM", "6:00PM"]
+      },
+      "latlong": [40.10598, -74.05627]
+    },
+	{
+      "name": "Buona Sera",
+      "town": "Red Bank",
+      "link": "https://buona-sera.com/storage/2025/11/Minimalistic-Watercolour-Wedding-Bar-Drinks-Menu-A4.pdf",
+      "reel": "",
+      "dayText": "Mon - Fri: 2PM - 5PM",
+		"location": "Bar Only",
+      "description": "$3 Domestic Bottles/$4 Import Bottles/$5 Crafts/$6 House Wines/$7 Titos Drinks/$10 Sangria/$11 Manhattans & Old Fashioned/$12 Martinis/$12 Casamigos Margaritas & Cocktails/Food Menu",
+      "specials": "",
+      "dayFilter": {
+        "Monday": ["2:00PM", "5:00PM"],
+        "Tuesday": ["2:00PM", "5:00PM"],
+        "Wednesday": ["2:00PM", "5:00PM"],
+        "Thursday": ["2:00PM", "5:00PM"],
+        "Friday": ["2:00PM", "5:00PM"]
+      },
+      "latlong": [40.349109, -74.069512] 
+    },
+    {
+      "name": "Capitoline",
+      "town": "Asbury Park",
+      "link": "https://www.instagram.com/p/DexZQD2K8w4/",
+      "reel": "",
+      "dayText": "Thurs: All Day/Fri: 5PM - 7PM/Sun: 12PM - 6PM",
+      "description": "$5 Beer/$7 Wine/$10 Martinis/2 for $14 Sliders/Food Menu",
+      "dayFilter": {
+        "Sunday": ["12:00PM", "6:00PM"],
+        "Thursday": ["5:00PM", "9:00PM"],
+		"Friday": ["5:00PM", "7:00PM"]
+      },
+      "latlong": [40.21597, -74.01166]
+    },
+	{
+      "name": "Coastal Canteen",
+	  "featured": true,
+      "town": "Manasquan",
+      "link": "https://static1.squarespace.com/static/674e50c92502920e4fa0083b/t/6a31971c8d2cd7397ad8c6ba/1781634844508/Happy+Hour+%285+x+7+in%29.pdf",
+      "reel": "",
+      "dayText": "Mon - Fri: 4PM - 6PM",
+	  "location": "Bar Only",
+      "description": "50% Off Draft Beer/$5 House Wines/$7 Aperol Spritz/$7 Tito's Drinks/25% Off Appetizers",
+	  "specials": "Monday: $25 Burger + Beer or Wine + Soup or Salad/Thursday: $8 Margaritas and Espresso Martinis",
+      "dayFilter": {
+        "Monday": ["4:00PM", "6:00PM"],
+        "Tuesday": ["4:00PM", "6:00PM"],
+        "Wednesday": ["4:00PM", "6:00PM"],
+		"Thursday": ["4:00PM", "6:00PM"],
+		"Friday": ["4:00PM", "6:00PM"]
+      },
+      "latlong": [40.1227831, -74.0494702]
+    },
+    {
+      "name": "Cross & Orange",
+      "town": "Asbury Park",
+      "link": "https://crossandorangeap.com/happy-hour?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+      "reel": "",
+      "dayText": "Wed - Thurs: 4PM - 9PM",
+		"location": "Bar Only",
+      "description": "$4 Drafts/$5 Bottles/$6 House Wine/$7 Well Drinks/Food Menu",
+      "dayFilter": {
+        "Wednesday": ["4:00PM", "9:00PM"],
+        "Thursday": ["4:00PM", "9:00PM"]
+      },
+      "latlong": [40.21647, -74.00869]
+    },
+	{
+      "name": "Deal Lake Bar & Co",
+      "town": "Loch Arbour",
+      "link": "https://drive.google.com/file/d/1t3ULujqkJ1N3g7_LFVPNmZRCDMJAaKB9/view?usp=sharing",
+      "reel": "",
+      "dayText": "Mon - Fri: 3PM - 6PM",
+		"location": "Bar Only",
+      "description": "$4 Miller Lites & Yuengling Drafts/$6 Kane Drafts/$5 Orange Tea Shots/$5 House Wine/$8 Sangria/$8 Select Cocktails/Bar Snacks",
+      "dayFilter": {
+		"Monday": ["3:00PM", "6:00PM"],
+		"Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+		"Friday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.232822, -74.008002]
+    },
+	{
+      "name": "Dublin House",
+      "town": "Red Bank",
+      "link": "https://www.thedublinhouse.co/facilities",
+      "reel": "",
+      "dayText": "Mon - Fri: 4PM - 7PM",
+      "description": "$10 Bites/Drink Specials",
+      "specials": "",
+      "dayFilter": {
+        "Monday": ["4:00PM", "7:00PM"],
+        "Tuesday": ["4:00PM", "7:00PM"],
+        "Wednesday": ["4:00PM", "7:00PM"],
+        "Thursday": ["4:00PM", "7:00PM"],
+        "Friday": ["4:00PM", "7:00PM"]
+      },
+      "latlong": [40.349825, -74.066539] 
+    },
+    {
+      "name": "Elbow Room",
+      "town": "Bradley Beach",
+      "link": "https://elbowroomnj.com/wp-content/uploads/2026/04/FW_3878196_ElbowRoom_6d76c674ccf44b6f9b8af125f755bff0_SG.pdf",
+      "reel": "",
+      "dayText": "Every Day until 6PM",
+		"location": "Bar Only",
+      "description": "$3 Domestic Beers/$5 Imported Beers/$6 House Wines/$7 Signature Cocktails/$10 Specialty Martinis/Food Menu",
+      "dayFilter": {
+        "Sunday": ["11:00AM", "6:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["11:00AM", "6:00PM"],
+        "Saturday": ["11:00AM", "6:00PM"]
+      },
+      "latlong": [40.20162, -74.01835]
+    },
+	{
+      "name": "Fish & Whistle",
+      "town": "Belmar",
+      "link": "https://www.instagram.com/p/DeNrJGrDms1/?img_index=6",
+      "reel": "",
+      "dayText": "Mon - Fri: 12PM - 3PM/Mon - Thurs: 8PM - 12AM",
+	  "location": "",
+      "description": "BOGO Domestic Beers/$10 All Food/Late Night: $5 Wine & House Drinks, Half Off Beers",
+      "specials": "Monday: $10 Burger Night/Tuesday: $10 Food All Day/Wednesday: $10 Cocktails /Thursday: $10 Martinis/Friday: Free Fried Chicken All Day/Friday & Saturday: $20 Scorpion Bowls",
+      "dayFilter": {
+        "Monday": ["12:00PM", "3:00PM"],
+        "Tuesday": ["12:00PM", "3:00PM"],
+        "Wednesday": ["12:00PM", "3:00PM"],
+        "Thursday": ["12:00PM", "3:00PM"],
+		"Friday": ["12:00PM", "3:00PM"]
+      },
+      "latlong": [40.1813815, -74.0265421]
+	},
+    {
+      "name": "Frankie's",
+      "town": "Point Pleasant",
+      "link": "https://www.frankiesnj.com/happy-hour",
+      "reel": "",
+      "dayText": "Mon - Fri: 12PM - 6PM/Sun: All Day",
+		"location": "Bar Only",
+      "description": "$3.50 Domestic Beers/$5 House Wines/$7 Tito Drinks/$8 Guinness/$1 Off Crafts & Imports/Food Menu",
+      "dayFilter": {
+        "Monday": ["12:00PM", "6:00PM"],
+        "Tuesday": ["12:00PM", "6:00PM"],
+        "Wednesday": ["12:00PM", "6:00PM"],
+        "Thursday": ["12:00PM", "6:00PM"],
+        "Friday": ["12:00PM", "6:00PM"],
+        "Sunday": ["12:00PM", "11:59PM"]
+      },
+      "latlong": [40.09252, -74.04964]
+    },
+    {
+      "name": "Flames Brazilian Steakhouse",
+      "town": "Belmar",
+      "link": "https://www.flamesbraziliansteakhouse.com/specials",
+      "reel": "",
+      "dayText": "Mon - Fri: 5PM - 7PM/Sun: All Day",
+	  "location": "Bar & Outdoor Seating Only",
+      "description": "Weeknights: 50% Off All Beer, Wine, Liquor; $5 Off Brazilian Bar Bites/Sunday: $2 Off Bottled & Draft Beer, $5 Off All Cocktails, $5 House Wine & Well Drinks, $8 Sangria, $5 Off Brazilian Bites",
+      "specials": "Monday: Half Off Martinis/Tuesday: Half Off House Margaritas/Wednesday: Half Off Sangria Glasses & Pitchers/Thursday: Half Off All Caipirinhas & Caipiroskas",
+	  "dayFilter": {
+        "Monday": ["5:00PM", "7:00PM"],
+        "Tuesday": ["5:00PM", "7:00PM"],
+        "Wednesday": ["5:00PM", "7:00PM"],
+        "Thursday": ["5:00PM", "7:00PM"],
+        "Friday": ["5:00PM", "7:00PM"],
+        "Sunday": ["1:00PM", "9:00PM"]
+      },
+      "latlong": [40.17919, -74.02548]
+    },
+    {
+      "name": "Four Winds",
+      "town": "Sea Girt",
+      "link": "https://fourwindsrestaurant.com/happyhour.pdf",
+      "reel": "",
+      "dayText": "Every Day: 2PM - 6PM",
+		"location": "Bar Only",
+      "description": "$4 Miller Lites/$5.50 House Wine & Well Drinks/$6.50 House Sangria/Food Menu",
+      "dayFilter": {
+        "Monday": ["2:00PM", "6:00PM"],
+        "Tuesday": ["2:00PM", "6:00PM"],
+        "Wednesday": ["2:00PM", "6:00PM"],
+        "Thursday": ["2:00PM", "6:00PM"],
+        "Friday": ["2:00PM", "6:00PM"],
+        "Saturday": ["2:00PM", "6:00PM"],
+        "Sunday": ["2:00PM", "6:00PM"]
+      },
+       "latlong": [40.13367, -74.06351]
+    },
+	{
+      "name": "Half Moon Point",
+      "town": "Point Pleasant",
+      "link": "https://static1.squarespace.com/static/65e9d2821cf0ec02cc0c58c8/t/6a4e752facc03a1b403985c4/1783526703424/Happy+Hour+Menu+Summer+26.png",
+      "reel": "",
+      "dayText": "Mon - Fri: 2:30PM - 5:30PM",
+		"location": "Bar Only",
+      "description": "Half Off All Drafts/$5 Wines/$7 Tito’s Drinks/$9 Aperol & Huge Spritz/25% Off All Appetizers",
+      "dayFilter": {
+        "Monday": ["2:30PM", "5:30PM"],
+        "Tuesday": ["2:30PM", "5:30PM"],
+        "Wednesday": ["2:30PM", "5:30PM"],
+        "Thursday": ["2:30PM", "5:30PM"],
+        "Friday": ["2:30PM", "5:30PM"]
+      },
+       "latlong": [40.071339, -74.066908]
+    },
+	{
+      "name": "Hannah's",
+      "town": "Long Branch",
+      "link": "https://www.instagram.com/p/DcJZMWQkUd4/?igsh=dmwwc3dud2RiZmJ1",
+      "reel": "",
+      "dayText": "Mon - Fri: 4PM - 7PM",
+		"location": "Bar & Outdoor Patio",
+      "description": "$4 Domestic Bottles/$5 Import Bottles/$4 Off House Wine/$8 House Drinks",
+      "specials": "Monday: $5 House Margaritas, $6 Fresca Margaritas, $9 Signature Margaritas/Tuesday: Half Off Soju Flights & Bar Bites/Wednesday: Half Priced Bottles of Wine/Thursday: $5 Off Signature Cocktails, Half Off Bar Bites & Raw Bar/Friday: $6 Soju Frescas, Fresca Margaritas, Fresca Mojitos",
+      "dayFilter": {
+        "Monday": ["4:00PM", "7:00PM"],
+        "Tuesday": ["4:00PM", "7:00PM"],
+        "Wednesday": ["4:00PM", "7:00PM"],
+        "Thursday": ["4:00PM", "7:00PM"],
+        "Friday": ["4:00PM", "7:00PM"]
+      },
+      "latlong": [40.302447, -73.978717]
+    },
+    {
+      "name": "Harrigan's",
+      "town": "Sea Girt",
+      "link": "https://www.harriganspub.com/specials/",
+      "reel": "",
+      "dayText": "Mon - Fri: 3PM - 5:30PM",
+		"location": "Bar Only",
+      "description": "$3 Miller Lites/$5 House Wines & Well Drinks/$7 Appetizers/$10 Sliders",
+      "specials": "Monday: $10 Martinis All Day",
+      "dayFilter": {
+        "Monday": ["3:00PM", "5:30PM"],
+        "Tuesday": ["3:00PM", "5:30PM"],
+        "Wednesday": ["3:00PM", "5:30PM"],
+        "Thursday": ["3:00PM", "5:30PM"],
+        "Friday": ["3:00PM", "5:30PM"]
+      },
+      "latlong": [40.13487, -74.04297]
+    },
+    {
+      "name": "Heights 27 Bar & Grille",
+      "town": "Spring Lake",
+      "link": "https://www.heights27.com/",
+      "reel": "",
+      "dayText": "Mon - Fri: 12PM - 6PM",
+      "description": "$2.75 Drafts/$3.75 Bottles/$6 Well Drinks/$7 House Wine/25% Off Select Appetizers",
+      "dayFilter": {
+        "Monday": ["12:00PM", "6:00PM"],
+        "Tuesday": ["12:00PM", "6:00PM"],
+        "Wednesday": ["12:00PM", "6:00PM"],
+        "Thursday": ["12:00PM", "6:00PM"],
+        "Friday": ["12:00PM", "6:00PM"]
+      },
+      "latlong": [40.16363, -74.03549]
+    },
+    {
+      "name": "Iron Whale",
+      "town": "Asbury Park",
+      "link": "https://cdn.mcloones.com/pdf/iron-whale/menus/2026/Happy-Hour-IW-9.21.26.pdf",
+      "reel": "",
+      "dayText": "Mon - Fri: 2PM - 6PM",
+		"location": "Bar Only",
+      "description": "$3 Off Drafts/$4 Off Wine/$5 Off Cocktails/$8 Margaritas/$2 Off Oyster Shooters/$5-$10-$15 Food Menus",
+      "dayFilter": {
+        "Monday": ["2:00PM", "6:00PM"],
+        "Tuesday": ["2:00PM", "6:00PM"],
+        "Wednesday": ["2:00PM", "6:00PM"],
+        "Thursday": ["2:00PM", "6:00PM"],
+        "Friday": ["2:00PM", "6:00PM"]
+      },
+      "latlong": [40.223, -73.99899]
+    },
+    {
+      "name": "Jacks By The Tracks",
+      "town": "Belmar",
+      "link": "https://www.jacksbytracks.com/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn_zTvw0q27rSNoZZiLHH9gKaBoHAKl8JL0Fc4AMTwuNjkidlir6EczyrumHA_aem_xKc3DwZWHstSlJZH4zsMzw",
+      "reel": "",
+      "dayText": "Mon - Fri: 4PM - 6PM",
+      "description": "50% Off All Beer, Wine & Liquor",
+		"specials": "Tuesday: BOGO Burgers",
+      "dayFilter": {
+        "Monday": ["4:00PM", "6:00PM"],
+        "Tuesday": ["4:00PM", "6:00PM"],
+        "Wednesday": ["4:00PM", "6:00PM"],
+        "Thursday": ["4:00PM", "6:00PM"],
+        "Friday": ["4:00PM", "6:00PM"]
+      },
+      "latlong": [40.1793, -74.02621]
+    },
+	{
+      "name": "Jack's Goal Line Stand",
+      "town": "Long Branch",
+      "link": "https://jacksgoallinestand.com/food-menu",
+      "reel": "",
+      "dayText": "Mon - Fri: 4PM - 7PM",
+      "description": "$1 Off All Domestic Beer, Wine & Well Cocktails/Food Menu",
+      "specials": "Sunday: $10 All Day Menu/Wednesday: $1 Wings",
+      "dayFilter": {
+        "Monday": ["4:00PM", "7:00PM"],
+        "Tuesday": ["4:00PM", "7:00PM"],
+        "Wednesday": ["4:00PM", "7:00PM"],
+        "Thursday": ["4:00PM", "7:00PM"],
+        "Friday": ["4:00PM", "7:00PM"]
+      },
+      "latlong": [40.28491, -73.98873]
+    },
+    {
+      "name": "Joe's Surf Shack",
+      "town": "Belmar",
+      "link": "https://www.instagram.com/p/Db8zDG8EZE3/?img_index=3",
+      "reel": "",
+      "dayText": "Mon - Fri: 12PM - 6PM/Wed: All Day",
+      "description": "$3 Miller Lite & Coors Light Drafts/$3.50 Miller Lite & Coors Light Cans/$1.75 PBR/$5.50 House Wines/$5.50 House Drinks",
+      "dayFilter": {
+        "Monday": ["12:00PM", "6:00PM"],
+        "Tuesday": ["12:00PM", "6:00PM"],
+        "Wednesday": ["12:00PM", "11:59PM"],
+        "Thursday": ["12:00PM", "6:00PM"],
+        "Friday": ["12:00PM", "6:00PM"]
+      },
+      "latlong": [40.17153, -74.02308]
+    },
+    {
+      "name": "Johnny Mac House of Spirits",
+      "town": "Asbury Park",
+      "link": "https://www.johnnymacbar.com/",
+      "reel": "",
+      "specials": "Mondays: $5 Nutrl Seltzers/Tuesdays: $4 Kona Big Waves/Wednesdays: $5 Shot Wheel/Thursdays: $5 White Tea Shots/Sundays: $3 Bloody Marys, Mimosas, & Free Omelettes",
+      "dayFilter": {
+        "Sunday": ["10:00AM", "3:00PM"],
+        "Monday": ["12:00PM", "11:59PM"],
+        "Tuesday": ["12:00PM", "11:59PM"],
+        "Wednesday": ["12:00PM", "11:59PM"],
+        "Thursday": ["12:00PM", "11:59PM"]
+      },
+      "latlong": [40.21617, -74.01299]
+    },
+	{
+      "name": "Johnny Piancone's",
+      "town": "Long Branch",
+      "link": "http://www.johnnypiancones.com/happy-hour",
+      "reel": "",
+      "dayText": "Mon - Thurs: 2PM - 6PM/Fri - Sat: 12PM - 6PM/Sun: 3PM - 6PM",
+		"location": "Bar Only",
+      "description": "$4 Domestics/$4.50 Imports/$7 House Wines/$7 House Drinks/Food Menu",
+      "dayFilter": {
+        "Monday": ["2:00PM", "6:00PM"],
+        "Tuesday": ["2:00PM", "6:00PM"],
+        "Wednesday": ["2:00PM", "6:00PM"],
+        "Thursday": ["2:00PM", "6:00PM"],
+        "Friday": ["12:00PM", "6:00PM"],
+        "Saturday": ["12:00PM", "6:00PM"],
+        "Sunday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.29989, -74.00266]
+    },
+	{
+      "name": "Kahuna Burger",
+      "town": "Long Branch",
+      "link": "https://kahunaburgernj.com/pdf/Kahuna-Burger-Happy-Hour.pdf?v=20261002",
+      "reel": "",
+      "dayText": "Thurs - Sun: 4PM - 7PM",
+		"location": "Bar Only",
+      "description": "$3.50 Draft Beers/$2 Off Signature Cocktails/$2 Off Starters/$3 Off Tacos",
+      "dayFilter": {
+        "Thursday": ["4:00PM", "7:00PM"],
+        "Friday": ["4:00PM", "7:00PM"],
+        "Saturday": ["4:00PM", "7:00PM"],
+        "Sunday": ["4:00PM", "7:00PM"]
+      },
+      "latlong": [40.302291, -73.979047]
+    },
+    {
+      "name": "Kim Marie's",
+      "town": "Asbury Park",
+      "link": "https://www.kimmarieseatndrinkaway.com/menus/#happy",
+      "reel": "",
+      "dayText": "Mon - Fri: 4PM - 6PM",
+		"location": "Bar Only",
+      "description": "$5 Local Drafts/$6 House Wine & Sangria/$7 House Mixed Drinks/Food Menu",
+      "dayFilter": {
+        "Monday": ["4:00PM", "6:00PM"],
+        "Tuesday": ["4:00PM", "6:00PM"],
+        "Wednesday": ["4:00PM", "6:00PM"],
+        "Thursday": ["4:00PM", "6:00PM"],
+        "Friday": ["4:00PM", "6:00PM"]
+      },
+      "latlong": [40.22555, -74.00027]
+    },
+    {
+      "name": "Klein's Seafood Restaurant",
+      "town": "Belmar",
+      "link": "https://kleinsfish.com/happy-hour/",
+      "reel": "",
+      "dayText": "Wed - Sun: 3PM - 6PM",
+	  "location": "Bar & High Tops Only",
+      "description": "$2 Off Craft Beers/$4 Domestic Drafts/$5 Suncruisers & High Noons/$7 House Wines/$8 House Drinks/$9 Titos Drinks/Food Menu",
+      "specials": "Sunday: Half Off All Sushi",
+	  "dayFilter": {
+		"Sunday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["3:00PM", "6:00PM"],
+		"Saturday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.18445, -74.02453]
+    },
+    {
+      "name": "La Dolce Vita",
+      "town": "Belmar",
+      "link": "https://ladolcevitanj.com/happy-hour/",
+      "reel": "",
+      "dayText": "Sun - Fri: 12PM - 5PM",
+		"location": "Bar Only",
+      "description": "$4 Domestic Bottles/$5 Imported Bottles/$5 Wine/$7 Martinis/$6-8 Food Menu",
+      "dayFilter": {
+        "Monday": ["12:00PM", "5:00PM"],
+        "Tuesday": ["12:00PM", "5:00PM"],
+        "Wednesday": ["12:00PM", "5:00PM"],
+        "Thursday": ["12:00PM", "5:00PM"],
+        "Friday": ["12:00PM", "5:00PM"],
+        "Sunday": ["12:00PM", "5:00PM"]
+      },
+      "latlong": [40.1827, -74.0119]
+    },
+    {
+      "name": "La Sierra Restaurant",
+      "town": "Belmar",
+      "link": "https://www.instagram.com/lasierrarestaurant/?hl=en",
+      "reel": "",
+      "dayText": "Mon - Fri: 1PM - 4PM",
+      "description": "$4 Beers/Food Menu",
+      "specials": "Thursdays: $9.99 House Margarita",
+      "dayFilter": {
+        "Monday": ["1:00PM", "4:00PM"],
+        "Tuesday": ["1:00PM", "4:00PM"],
+        "Wednesday": ["1:00PM", "4:00PM"],
+        "Thursday": ["1:00PM", "4:00PM"],
+        "Friday": ["1:00PM", "4:00PM"]
+      },
+      "latlong": [40.17405, -74.02758]
+    },
+	{
+      "name": "Lili",
+      "town": "Asbury Park",
+      "link": "https://drive.google.com/file/d/1SAIcFo-qSk2GFWPa5V3sktxeF6CCPdmu/view?usp=sharing",
+      "reel": "",
+      "dayText": "Mon - Fri: 2PM - 6PM/Sun: All Day",
+      "description": "",
+      "specials": "",
+      "dayFilter": {
+		"Monday": ["2:00PM", "6:00PM"],
+		"Tuesday": ["2:00PM", "6:00PM"],
+        "Wednesday": ["2:00PM", "6:00PM"],
+        "Thursday": ["2:00PM", "6:00PM"],
+		"Friday": ["2:00PM", "6:00PM"],
+        "Sunday": ["11:30AM", "9:00PM"]
+      },
+      "latlong": [40.2182403, -74.0008261]
+    },
+    {
+      "name": "Loteria",
+      "town": "Asbury Park",
+      "link": "https://www.instagram.com/p/DdCOQauJc_4/",
+      "reel": "",
+      "dayText": "Wed - Fri: 4PM - 6PM/Sun: All Day",
+      "description": "$8 Classic Marg/$10 Modelito Bucket/Food Menu",
+      "specials": "Wednesday: $2 Off All Tacos, Margarita Pitchers & Hexi Mexis/Thursday: $2 Off All Tacos, Chimichangas & Dip Flights",
+      "dayFilter": {
+        "Wednesday": ["4:00PM", "6:00PM"],
+        "Thursday": ["4:00PM", "6:00PM"],
+		"Friday": ["4:00PM", "6:00PM"],
+        "Sunday": ["12:00PM", "8:00PM"]
+      },
+      "latlong": [40.21616, -74.01128]
+    },
+    {
+      "name": "Lovesick",
+      "town": "Asbury Park",
+      "link": "https://drive.google.com/file/d/1OZ2jdhvTtkKEa221OiAvi7pqkztQGsSy/view",
+      "reel": "",
+      "dayText": "Mon, Thurs - Sat: 4PM - 6PM",
+      "description": "$3 Miller High Life/$6 Surfsides/$10 Espresso Martinis/Half Off Select Wine Bottles",
+      "dayFilter": {
+		"Monday": ["4:00PM", "6:00PM"],
+        "Thursday": ["4:00PM", "6:00PM"],
+        "Friday": ["4:00PM", "6:00PM"],
+        "Saturday": ["4:00PM", "6:00PM"]
+      },
+      "latlong": [40.21634, -74.00895]
+    },
+	{
+      "name": "Marina Grille",
+      "town": "Belmar",
+      "link": "https://www.marinagrillenj.com/happy-hour",
+      "reel": "",
+      "dayText": "Mon - Fri: 11:30AM - 6PM/Sat: 1PM - 5PM/Sun: All Day",
+		"location": "Bar Only",
+      "description": "$3.50 Domestic Drafts/$4 Domestic Bottles/$7 Crafts & Imports/$8 Guinness/$7 Tito's Drinks/$10 Tito Martinis & Cosmos/$12 Espresso Martinis/$2 Off Menu Cocktails/Food Menu",
+      "dayFilter": {
+        "Monday": ["11:30AM", "6:00PM"],
+        "Tuesday": ["11:30AM", "6:00PM"],
+        "Wednesday": ["11:30AM", "6:00PM"],
+        "Thursday": ["11:30AM", "6:00PM"],
+        "Friday": ["1:00PM", "5:00PM"],
+        "Saturday": ["1:00PM", "5:00PM"],
+        "Sunday": ["11:30AM", "10:00PM"]
+      },
+      "latlong": [40.180606, -74.029319]
+    },
+    {
+      "name": "McCann's Tavern",
+      "town": "Belmar",
+      "link": "http://www.mccannstavernnj.com/happy-hour.html",
+      "reel": "",
+      "dayText": "Every Day: 12PM - 6PM",
+      "description": "$3 Domestic Drafts/$2.50 PBR Mug/$5 Well Drinks & House Wine/Food Menu",
+      "dayFilter": {
+        "Sunday": ["12:00PM", "6:00PM"],
+        "Monday": ["12:00PM", "6:00PM"],
+        "Tuesday": ["12:00PM", "6:00PM"],
+        "Wednesday": ["12:00PM", "6:00PM"],
+        "Thursday": ["12:00PM", "6:00PM"],
+        "Friday": ["12:00PM", "6:00PM"],
+        "Saturday": ["12:00PM", "6:00PM"]
+      },
+      "latlong": [40.17237, -74.02706]
+    },
+	{
+      "name": "McLoone's Pier House",
+      "town": "Long Branch",
+      "link": "https://cdn.mcloones.com/pdf/pier-house-long-branch/menus/2026/Pier-House-Happy-Hour-Summer-2026.pdf",
+      "reel": "",
+      "dayText": "Mon: All Day/Tues - Fri: 3PM - 6PM",
+		"location": "Bar & Cocktail Area Only",
+      "description": "$2 Off Draft Beer/$5 Off Frozen Cocktails/$6 House Drinks/$8 House Wines/Food Menu",
+      "dayFilter": {
+        "Monday": ["11:00AM", "10:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.30262, -73.97797]
+    },
+	{
+      "name": "The Melting Pot",
+      "town": "Red Bank",
+      "link": "https://www.meltingpot.com/red-bank-nj/happy-hour.aspx",
+      "reel": "",
+      "dayText": "Mon - Fri: 4PM - 6PM & 8PM - Close",
+		"location": "Bar Only",
+      "description": "Half Off Select Cheese & Chocolate Fondues/$10 Cocktails/$9 Select Wines/$2 Off Sam Adams",
+      "specials": "",
+      "dayFilter": {
+        "Monday": ["4:00PM", "6:00PM"],
+        "Tuesday": ["4:00PM", "6:00PM"],
+        "Wednesday": ["4:00PM", "6:00PM"],
+        "Thursday": ["4:00PM", "6:00PM"],
+        "Friday": ["4:00PM", "6:00PM"]
+      },
+      "latlong": [40.350221, -74.075688]
+    },
+	{
+      "name": "MJ's",
+      "town": "Long Branch",
+      "link": "https://www.mjsrestaurant.com/longbranch/specials/happy-hour/",
+      "reel": "",
+      "dayText": "Mon - Thurs: 8PM - 10PM",
+      "description": "$4 Off All Appetizers",
+      "specials": "Wednesday: Half Price Wings, $4 Yuenglings/Thursday: 2 Pizzas for $20, $4 Sam Adams Seasonal/Saturday: $8 Sangrias, $18 Sangria Pitchers",
+      "dayFilter": {
+        "Monday": ["8:00PM", "10:00PM"],
+        "Tuesday": ["8:00PM", "10:00PM"],
+        "Wednesday": ["8:00PM", "10:00PM"],
+        "Thursday": ["8:00PM", "10:00PM"]
+      },
+      "latlong": [40.30206, -74.00885]
+    },
+	{
+      "name": "Molly Pitcher Inn",
+      "town": "Red Bank",
+      "link": "https://themollypitcher.com/wp-content/uploads/2023/09/MP-HH26.pdf",
+      "reel": "",
+      "dayText": "Mon - Thurs: 4PM - 6PM",
+		"location": "Bar Only",
+      "description": "$4 Select Drafts/$6 House Cocktails/$6 Select Wines",
+      "specials": "Monday: Half-Price Burger Night/Tuesday: $8 Tacos/Wednesday - Friday: $8 Appetizers",
+      "dayFilter": {
+        "Monday": ["4:00PM", "6:00PM"],
+        "Tuesday": ["4:00PM", "6:00PM"],
+        "Wednesday": ["4:00PM", "6:00PM"],
+        "Thursday": ["4:00PM", "6:00PM"]
+      },
+      "latlong": [40.35297, -74.07311] 
+    },
+    {
+      "name": "Moonstruck",
+      "town": "Asbury Park",
+      "link": "https://moonstrucknj.com/menu/happy-hour-drink-specials/",
+      "reel": "",
+      "dayText": "Wed - Fri, Sun: 4PM - 7PM",
+		"location": "Bar & Lounge Only",
+      "description": "$4 Domestic Beers/$5 Craft Beers/$5 House Wine/$6 Well Drinks/$8 Cosmos & Ritas/Food Menu",
+      "dayFilter": {
+        "Friday": ["4:00PM", "7:00PM"],
+        "Wednesday": ["4:00PM", "7:00PM"],
+        "Thursday": ["4:00PM", "7:00PM"],
+        "Sunday": ["4:00PM", "7:00PM"]
+      },
+      "latlong": [40.21599, -74.00868]
+    },
+	{
+      "name": "Nip N Tuck",
+      "town": "Long Branch",
+      "link": "https://www.instagram.com/p/DDatkr8yiLp/",
+      "reel": "",
+      "dayText": "Mon - Fri: 3PM - 6PM/Sun - Thurs: 11PM - 1AM",
+      "description": "$2 Domestic Drafts/$5 House Wine/$6 Green Tea Shots/$7 Crafts/$10 House Pint Drinks/$7 Apps",
+      "dayFilter": {
+        "Monday": ["3:00PM", "6:00PM"],
+		"Tuesday": ["3:00PM", "6:00PM"],
+		"Wednesday": ["3:00PM", "6:00PM"],
+		"Thursday": ["3:00PM", "6:00PM"],
+		"Friday": ["3:00PM", "6:00PM"],
+		"Sunday": ["11:00PM", "11:59PM"]
+      },
+      "latlong": [40.29881, -74.002671]
+    },
+    {
+      "name": "Pagano's Uva Ristorante",
+      "town": "Bradley Beach",
+      "link": "https://www.uvaonmain.com/menus/",
+      "reel": "",
+      "dayText": "Tues - Fri: 12PM - 7PM/Sat: 12PM - 6PM/Sun: All Day",
+      "description": "",
+      "dayFilter": {
+        "Tuesday": ["12:00PM", "7:00PM"],
+        "Wednesday": ["12:00PM", "7:00PM"],
+        "Thursday": ["12:00PM", "7:00PM"],
+        "Friday": ["12:00PM", "7:00PM"],
+        "Saturday": ["12:00PM", "6:00PM"],
+        "Sunday": ["12:00PM", "10:00PM"]
+      },
+      "latlong": [40.2053, -74.01689]
+    },
+    {
+      "name": "Palmetto",
+      "town": "Asbury Park",
+      "link": "https://www.instagram.com/p/Db8eBDVHGAa/",
+      "reel": "",
+      "dayText": "Mon - Fri: 12PM - 6PM",
+		"location": "Bar Only",
+      "description": "$5 Drafts/$7 Wine & Cocktails/$7 Surfsides/$10 Specialty Cocktails/$2 Oysters/$10 Food Menu",
+      "dayFilter": {
+        "Monday": ["12:00PM", "6:00PM"],
+        "Tuesday": ["12:00PM", "6:00PM"],
+        "Wednesday": ["12:00PM", "6:00PM"],
+        "Thursday": ["12:00PM", "6:00PM"],
+        "Friday": ["12:00PM", "6:00PM"]
+      },
+      "latlong": [40.22052, -73.99999]
+    },
+    {
+      "name": "Pascal & Sabine",
+      "town": "Asbury Park",
+      "link": "https://drive.google.com/file/d/1vSaRrmBS1hAyrHFesKvBO1E2OG806Cne/view",
+      "reel": "",
+      "dayText": "Mon - Thurs: 5PM - 7PM",
+		"location": "Bar & Lounge Areas Only",
+      "description": "$14 Pascal’s Manhattan & Sabine’s Old Fashioned/$12 Hugo & Aperol Spritz/$10 Bordeaux Blanc & Cab Franc",
+      "dayFilter": {
+        "Monday": ["5:00PM", "7:00PM"],
+        "Tuesday": ["5:00PM", "7:00PM"],
+        "Wednesday": ["5:00PM", "7:00PM"],
+        "Thursday": ["5:00PM", "7:00PM"]
+      },
+      "latlong": [40.21703, -74.01022]
+    },
+	{
+      "name": "Pazzo",
+      "town": "Red Bank",
+      "link": "https://www.pazzoredbank.com/s/Happy-Hour-Menu-Updated.pdf",
+      "reel": "",
+      "dayText": "Mon - Fri: 3PM - 6PM/Sat: 12PM - 4PM/Sun: All Day",
+      "description": "$5 Drafts/$5 Domestic Bottles/$7 Wine Specials/$7 House Mixed Drinks/$8 Seasonal Mule/$9 House Martinis/$11 Happy Hour Bites",
+      "specials": "Monday: Half-Price Pasta & Pizza/Wednesday: Half-Price Wines/Thursday: $10 Martinis",
+      "dayFilter": {
+        "Monday": ["3:00PM", "6:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["3:00PM", "6:00PM"],
+        "Saturday": ["12:00PM", "4:00PM"],
+        "Sunday": ["12:00PM", "9:00PM"]
+      },
+      "latlong": [40.350615, -74.071649]
+    },
+	{
+      "name": "Pearl at the Oyster Point Hotel",
+      "town": "Red Bank",
+      "link": "https://www.theoysterpointhotel.com/wp-content/uploads/2026/10/Pearl-Drinks-and-Happy-Hour.pdf",
+      "reel": "",
+      "dayText": "Mon - Fri: 4PM - 6PM",
+      "description": "$5 Bottles/$7 Drafts/$7 High Noons/$8 House Wine/$8 Mixed Drinks/$9 Martinis/$8-12 Appetizers",
+      "specials": "",
+      "dayFilter": {
+        "Monday": ["4:00PM", "6:00PM"],
+        "Tuesday": ["4:00PM", "6:00PM"],
+        "Wednesday": ["4:00PM", "6:00PM"],
+        "Thursday": ["4:00PM", "6:00PM"],
+        "Friday": ["4:00PM", "6:00PM"]
+      },
+      "latlong": [40.355347, -74.074285] 
+    },
+    {
+      "name": "The Pig & Parrot",
+      "town": "Brielle",
+      "link": "https://www.instagram.com/p/DWT-gGwDQkb/?img_index=1",
+      "reel": "",
+      "dayText": "Mon - Fri: 3PM - 6PM",
+      "description": "$3 Coors & Miller Drafts/$4 Pacifico & Modelo Drafts/$5 SKYY Vodka Drinks/$5 Suncruisers & Spiked Ades/$6 House Wines/$7 Titos & Casamigos Drinks/$8 Margaritas/$10 Rum Buckets, Espresso Martinis, Pina Coladas & Daquiris/$20 Sangria Pitchers/Food Menu",
+      "specials": "Monday 7PM: $4 Grateful Dead Drafts, $6 LITs, Half Off Wings/Tuesday: $4 Coronas & Modelos, $7 Titos Drinks, $8 Margaritas, $10 Tacos/Wednesday: $20 Lobster Rolls, $20 Sangria Pitchers, $3 Miller Lites, $5 Suncruisers/Thursday: $10 Margaritas, Espresso Martinis, Titos & Patron Mules",
+	  "dayFilter": {
+        "Monday": ["3:00PM", "6:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.10716, -74.05251]
+    },
+    {
+      "name": "Point Lobster Bar & Grill",
+      "town": "Point Pleasant",
+      "link": "https://pointlobsterbarandgrill.com/happy-hour/",
+      "reel": "",
+      "dayText": "Wed, Thurs, Sun: All Day/Fri - Sat: 3PM - 6PM",
+      "description": "$4 Select Beer/$5 Suncruisers & Angry Orchards/$6 White Claws/$9 Bloody Marys, Espresso Martinis, Cosmos & Classic Margarita/Food Menu",
+      "dayFilter": {
+       "Sunday": ["12:00PM", "10:00PM"],
+        "Wednesday": ["12:00PM", "10:00PM"],
+        "Thursday": ["12:00PM", "10:00PM"],
+        "Friday": ["3:00PM", "6:00PM"],
+        "Saturday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.09195, -74.04956]
+    },
+    {
+      "name": "Porta",
+      "town": "Asbury Park",
+      "link": "https://drive.google.com/file/d/1pMAY5Pg_xg7Znj4eILFMFob2QP9_hzfB/view",
+      "reel": "",
+      "dayText": "Mon - Fri: 12PM - 6PM",
+      "description": "$5 Select Beers/$7 Wine/$10 Specialty Cocktails/Food Menu",
+      "dayFilter": {
+        "Monday": ["12:00PM", "6:00PM"],
+        "Tuesday": ["12:00PM", "6:00PM"],
+        "Wednesday": ["12:00PM", "6:00PM"],
+        "Thursday": ["12:00PM", "6:00PM"],
+        "Friday": ["12:00PM", "6:00PM"]
+      },
+      "latlong": [40.22021, -74.00227]
+    },
+	{
+      "name": "R Bar",
+      "town": "Asbury Park",
+      "link": "https://www.itsrbar.com/events",
+      "reel": "",
+	  "specials": "Tuesday: $5 Tacos, $5 Classic Margaritas",
+      "dayFilter": {
+        "Tuesday": ["4:00PM", "9:00PM"]
+      },
+      "latlong": [40.224178, -74.010163]
+    },
+	{
+      "name": "Red Rock Tap & Grill",
+      "town": "Red Bank",
+      "link": "https://redrockrb.com/#menu",
+      "reel": "",
+      "dayText": "Mon - Fri: 3PM - 6PM",
+      "description": "$3 Miller Lite Drafts/$5 House Wines/$8 Red Rock Water/$8 Well Martinis/$10 Specialty Martinis/Food Menu",
+      "specials": "",
+      "dayFilter": {
+        "Monday": ["3:00PM", "6:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.352825, -74.064876] 
+    },
+    {
+      "name": "Reef & Barrel",
+      "town": "Manasquan",
+      "link": "https://www.reefandbarrel.com/menu",
+      "reel": "",
+      "dayText": "Mon - Fri: 11AM - 6PM",
+      "description": "$2.25 Miller High Lifes Every Day/$3 Miller Lite & Coors Light Drafts/$3.50 Miller Lite & Coors Light Cans/$5 House Wines/$5.50 House Drinks",
+      "specials": "Monday: 50c Wings, $10 Pizza/Tuesday: 3 Tacos + Domestic Beer for $18/Wednesday: Any Hoagie $15/Thursday: BOGO Burgers/Friday: $14 French Dip",
+	  "dayFilter": {
+        "Monday": ["11:00AM", "6:00PM"],
+        "Tuesday": ["11:00AM", "6:00PM"],
+        "Wednesday": ["11:00AM", "6:00PM"],
+        "Thursday": ["11:00AM", "6:00PM"],
+        "Friday": ["11:00AM", "6:00PM"]
+      },
+      "latlong": [40.13013, -74.04326]
+    },
+    {
+      "name": "Rella's",
+      "town": "Brielle",
+      "link": "https://rellastavern.com/happy-hour/",
+      "reel": "",
+      "dayText": "Mon - Sat: 3PM - 6PM and 9PM - 11PM",
+      "description": "$3 Miller Lite Draft/$3 Bottles/$6 Surfside’s & High Noons/$6 Tito’s Drinks/$7 House Wine/$10 Specialty Cocktails/Food Menu",
+      "specials": "Monday: Half Off Appetizers, $7 House Wine/Tuesday: $3 Domestics, $5 Crafts, $15 All Handhelds/Wednesday: $18 Pasta Menu, Half Off Wine/Thursday: Lobster Night, $3 Bottles/Friday: $10 Specialty Cocktails/Saturday - Sunday: $6 Seltzers, $8 Bloodies, $10 Bar Pies from 12-5PM", 
+      "dayFilter": {
+        "Monday": ["3:00PM", "6:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["3:00PM", "6:00PM"],
+        "Saturday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.11241, -74.0574]
+    },
+    {
+      "name": "Reyla",
+      "town": "Asbury Park",
+      "link": "https://www.heyreyla.com/drink",
+      "reel": "",
+      "dayText": "Wed: All Night",
+      "description": "$7 Wine/$9 Cocktails",
+      "specials": "Thursday: 50% Off Martinis",
+      "dayFilter": {
+        "Wednesday": ["4:00PM", "9:30PM"],
+        "Thursday": ["4:00PM", "10:00PM"]
+      },
+      "latlong": [40.21632, -74.01072]
+    },
+    {
+      "name": "Robinson Ale House",
+      "town": "Asbury Park",
+      "link": "https://cdn.mcloones.com/pdf/robinson-ale-house-asbury-park/menus/2026/Happy-Hour-Asbury-Park-Autumn-2026.pdf",
+      "reel": "",
+      "dayText": "Mon - Fri: 2PM - 6PM",
+		"location": "Bar Only",
+      "description": "$4 Drafts/$7 House Wine/$7 Sangria/$7 Margaritas/$8 House Cocktails/Food Menu",
+	  "specials": "Tuesday 6PM - 9PM: Burger Night - Buy one, get one for $5",
+      "dayFilter": {
+        "Monday": ["2:00PM", "6:00PM"],
+        "Tuesday": ["2:00PM", "6:00PM"],
+        "Wednesday": ["2:00PM", "6:00PM"],
+        "Thursday": ["2:00PM", "6:00PM"],
+        "Friday": ["2:00PM", "6:00PM"]
+      },
+      "latlong": [40.22319, -73.99901]
+    },
+	{
+      "name": "Robinson Ale House",
+      "town": "Long Branch",
+      "link": "https://cdn.mcloones.com/pdf/robinson-ale-house-long-branch/menus/2025/2026-Happy-Hour-LB.pdf",
+      "reel": "",
+      "dayText": "Mon - Fri: 3PM - 6PM",
+		"location": "Bar & Cocktail Area Only",
+      "description": "$4 Draft Beer/$7 House Wines/$10 Signature Cocktails/Food Menu",
+      "dayFilter": {
+        "Monday": ["3:00PM", "6:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.30144, -73.97891]
+    },
+	{
+      "name": "Robinson Ale House",
+      "town": "Red Bank",
+      "link": "https://cdn.mcloones.com/pdf/robinson-ale-house-red-bank/menus/2026/Red-Bank-Happy-Hour-26.pdf",
+      "reel": "",
+      "dayText": "Mon - Thurs: 3PM - 6PM",
+		"location": "Bar Only",
+      "description": "$4 Drafts/$7 House Wines/$7 Margaritas/$8 House Cocktails/$10 Food Menu",
+      "specials": "Monday 3PM - Close: $10 Martinis/Tuesday 3PM - Close: $4 Drafts, $7 House Margarita/Wednesday 3PM - Close: Half Off Wine by the Glass/Thursday 3PM - Close: $5 Drafts",
+      "dayFilter": {
+        "Monday": ["3:00PM", "6:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.351255, -74.065812]
+    },
+    {
+      "name": "Rod's Tavern",
+      "town": "Sea Girt",
+      "link": "https://www.rodstavernnj.com/happy-hour",
+      "reel": "",
+      "dayText": "Sun - Thurs: All Day/Fri - Sat: 12PM - 5PM",
+		"location": "Bar Only",
+      "description": "$4 Domestic Beers/$1 Off Craft & Imports/$7 Wines/$8 High Noons & Cruisers/$8 Sangria/$2 Off Cocktails/$7 Tito's Drinks/$10 Tito's Cosmo/$12 Espresso Martini/Food Menu",
+      "dayFilter": {
+        "Monday": ["11:30AM", "11:59PM"],
+        "Tuesday": ["11:30AM", "11:59PM"],
+        "Wednesday": ["11:30AM", "11:59PM"],
+        "Thursday": ["11:30AM", "11:59PM"],
+        "Friday": ["12:00PM", "5:00PM"],
+        "Saturday": ["12:00PM", "5:00PM"],
+        "Sunday": ["11:30AM", "11:59PM"]
+      },
+      "latlong": [40.13002, -74.04013]
+    },
+	{
+      "name": "Rooney's Oceanfront",
+      "town": "Long Branch",
+      "link": "https://www.instagram.com/p/DecFJL4DTar/",
+      "reel": "",
+      "dayText": "Mon - Fri: 12PM - 6PM",
+		"location": "Inside Bar Only",
+      "description": "$12 Sangria/$12 Spicy Margarita/Food Menu",
+      "specials": "Monday: Margarita Monday - $10 Spicy & Regular Margaritas",
+      "dayFilter": {
+        "Monday": ["12:00PM", "6:00PM"],
+        "Tuesday": ["12:00PM", "6:00PM"],
+        "Wednesday": ["12:00PM", "6:00PM"],
+        "Thursday": ["12:00PM", "6:00PM"],
+		"Friday": ["12:00PM", "6:00PM"]
+      },
+      "latlong": [40.30843, -73.97789]
+    },
+    {
+      "name": "Scarborough Fair",
+      "town": "Sea Girt",
+      "link": "https://www.sfseagirt.com/bar",
+      "reel": "",
+      "dayText": "Tues - Fri: 3PM - 6PM",
+		"location": "Bar Only",
+      "description": "$3 Drafts/$6 Well Drinks & House Wines/$9 Martinis/Food Menu",
+      "dayFilter": {
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.13492, -74.06535]
+    },
+    {
+      "name": "Shrimp Box",
+      "town": "Point Pleasant",
+      "link": "https://theshrimpbox.com/menus/happy-hour/",
+      "reel": "",
+      "dayText": "Mon - Fri: 12PM - 6PM",
+		"location": "Inside Bar Only",
+      "description": "$3 Domestics/$6 Premiums/$5 House Wine/$8 Aperol Spritz/Raw Bar & Food Menu",
+      "dayFilter": {
+        "Monday": ["12:00PM", "6:00PM"],
+        "Tuesday": ["12:00PM", "6:00PM"],
+        "Wednesday": ["12:00PM", "6:00PM"],
+        "Thursday": ["12:00PM", "6:00PM"],
+        "Friday": ["12:00PM", "6:00PM"]
+      },
+      "latlong": [40.10171, -74.03701]
+    },
+	{
+      "name": "Simply Greek",
+      "town": "Long Branch",
+      "link": "https://www.simplygreekeats.com/happyhour",
+      "reel": "",
+      "dayText": "Mon - Sat: 4PM - 7:30PM/Fri: 4PM - Close/Sun: 1PM - 7:30PM",
+		"location": "Bar Only",
+      "description": "$2 Off Beer/$8 Sangria/$8.95 House Wines/$8.95 House Drinks/$11 Martinis/Food Menu",
+      "dayFilter": {
+        "Monday": ["4:00PM", "7:30PM"],
+        "Tuesday": ["4:00PM", "7:30PM"],
+        "Wednesday": ["4:00PM", "7:30PM"],
+        "Thursday": ["4:00PM", "7:30PM"],
+        "Friday": ["4:00PM", "11:00PM"],
+        "Saturday": ["4:00PM", "7:30PM"],
+        "Sunday": ["1:00PM", "7:30PM"]
+      },
+      "latlong": [40.30197, -73.97932]
+    },
+    {
+      "name": "Sinner's Steakhouse",
+      "town": "Point Pleasant",
+      "link": "https://sinnerssteakhouse.com/menu/",
+      "reel": "",
+      "dayText": "Tues – Fri: 3PM – 5PM/Sat – Sun: 12PM – 4PM",
+      "description": "$4 Miller & Coors Light Drafts/$8 House Drinks/$10 Martinis/Food Menu",
+      "dayFilter": {
+        "Tuesday": ["3:00PM", "5:00PM"],
+        "Wednesday": ["3:00PM", "5:00PM"],
+        "Thursday": ["3:00PM", "5:00PM"],
+        "Friday": ["3:00PM", "5:00PM"],
+        "Saturday": ["12:00PM", "4:00PM"],
+        "Sunday": ["12:00PM", "4:00PM"]
+      },
+      "latlong": [40.10284, -74.03706]
+    },
+	{
+      "name": "Sirena Ristorante",
+      "town": "Long Branch",
+      "link": "https://sirenaristorante.com/drinks/",
+      "reel": "",
+      "dayText": "Mon - Sat: 1PM - 6PM/Sun: All Day",
+      "dayFilter": {
+        "Monday": ["1:00PM", "6:00PM"],
+        "Tuesday": ["1:00PM", "6:00PM"],
+        "Wednesday": ["1:00PM", "6:00PM"],
+        "Thursday": ["1:00PM", "6:00PM"],
+        "Friday": ["1:00PM", "6:00PM"],
+        "Saturday": ["1:00PM", "6:00PM"],
+        "Sunday": ["11:30AM", "11:00PM"]
+      },
+      "latlong": [40.30094, -73.97835]
+    },
+    {
+      "name": "Spring Lake Tap House",
+      "town": "Spring Lake",
+      "link": "https://www.springlaketaphouse.com/whats-goin-on/",
+      "reel": "",
+      "dayText": "Mon - Fri: 12PM - 5PM",
+		"location": "Bar Only",
+      "description": "$3 Domestic Drafts/$4 Domestic Bottles/$7 Craft Imports/$6 House Wine & Well Drinks/$6 Sliders, Wings and Bar Pies/$2 Coors All Day Every Day",
+      "dayFilter": {
+        "Monday": ["12:00PM", "5:00PM"],
+        "Tuesday": ["12:00PM", "5:00PM"],
+        "Wednesday": ["12:00PM", "5:00PM"],
+        "Thursday": ["12:00PM", "5:00PM"],
+        "Friday": ["12:00PM", "5:00PM"]
+      },
+      "latlong": [40.15095, -74.03895]
+    },
+    {
+      "name": "St Stephen's Green Publick House",
+      "town": "Spring Lake",
+      "link": "https://www.instagram.com/p/DXhI_dMEUhv/?igsh=MTg0MjF5ODY0ZnpjYQ==",
+      "reel": "",
+      "dayText": "Mon - Fri: 2PM - 6PM",
+		"location": "Bar Only",
+      "description": "$3 Domestic Bottles & Drafts/$4 Import Bottles/$6 Craft Drafts/$7 Guinness/$5 Well Drinks/$5 House Wine/$8 Titos Drinks/$8 Jameson Drinks",
+      "dayFilter": {
+        "Monday": ["2:00PM", "6:00PM"],
+        "Tuesday": ["2:00PM", "6:00PM"],
+        "Wednesday": ["2:00PM", "6:00PM"],
+        "Thursday": ["2:00PM", "6:00PM"],
+        "Friday": ["2:00PM", "6:00PM"]
+      },
+      "latlong": [40.1612, -74.03516]
+    },
+	{
+      "name": "Street Kitchen and Pub",
+      "town": "Red Bank",
+      "link": "https://streetkitchenpub.com/specials",
+      "reel": "",
+      "dayText": "Mon: All Day/Tues - Fri: 4PM - 6:30PM",
+      "description": "$4 Miller Lite Drafts/$6 Guinness Pints/$6 Josh Wines/$8 Tito's Drinks/$9 SKP Espressotini/$7 Bar Bites",
+      "dayFilter": {
+        "Monday": ["11:00AM", "10:00PM"],
+        "Tuesday": ["4:00PM", "6:30PM"],
+        "Wednesday": ["4:00PM", "6:30PM"],
+        "Thursday": ["4:00PM", "6:30PM"],
+        "Friday": ["4:00PM", "6:30PM"]
+      },
+      "latlong": [40.352005, -74.065183] 
+    },
+    {
+      "name": "Talula's",
+      "town": "Asbury Park",
+      "link": "https://talulaspizza.com/blogs/events/happy-hour-at-the-bar",
+      "reel": "",
+      "dayText": "Mon - Thurs: 4:30PM - 5:30PM",
+		"location": "Bar Only",
+      "description": "$10 Gin & Jams/$6 House Wines/$5 Draft Beer/Discounted Select Pizzas and Bar Snacks",
+      "dayFilter": {
+        "Monday": ["4:30PM", "5:30PM"],
+        "Tuesday": ["4:30PM", "5:30PM"],
+        "Wednesday": ["4:30PM", "5:30PM"],
+        "Thursday": ["4:30PM", "5:30PM"]
+      },
+      "latlong": [40.21614, -74.00947]
+    },
+	{
+      "name": "Teak Restaurant",
+      "town": "Red Bank",
+      "link": "https://www.teakrestaurant.com/happy-hour",
+      "reel": "",
+      "dayText": "Mon - Fri: 12PM - 6PM/Sun: All Day/Rooftop: Thurs - Sat: 5PM - 7PM",
+		"location": "Bar & Rooftop Only",
+      "description": "$5 Select Drafts/$7 Select Wine/$9-12 Cocktails/Food Menu",
+      "specials": "",
+      "dayFilter": {
+        "Monday": ["12:00PM", "6:00PM"],
+        "Tuesday": ["12:00PM", "6:00PM"],
+        "Wednesday": ["12:00PM", "6:00PM"],
+        "Thursday": ["12:00PM", "7:00PM"],
+        "Friday": ["12:00PM", "7:00PM"],
+		"Saturday": ["5:00PM", "7:00PM"],
+        "Sunday": ["4:00PM", "9:00PM"]
+      },
+      "latlong": [40.349711, -74.068321]
+    },
+    {
+      "name": "Tommy's Tavern & Tap",
+      "town": "Sea Girt",
+      "link": "https://www.tommystavernandtap.com/_files/ugd/29ea2c_c25fa9d22623484d88d1365947a168fb.pdf",
+      "reel": "",
+      "dayText": "Mon - Fri: 3PM - 6PM",
+		"location": "Bar Only",
+      "description": "$2 Off Drafts/$7 House Wines/$2 Off All Cocktails/$7 Sangria/Food Menu",
+      "specials": "Monday 4:00PM - Close: Half Price Cocktails/Tuesday 4:00PM - Close: Half Price Wine List/Wednesdays 4:00PM - Close: Half Price Sangria/Thursday 4:00PM - Close: $2 Off All Draft Beers",
+      "dayFilter": {
+        "Monday": ["3:00PM", "6:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"],
+        "Friday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.13823, -74.06151]
+    },
+	{
+      "name": "Tradewinds",
+      "town": "Point Pleasant",
+      "link": "https://tradewindsppb.com/food-menu",
+      "reel": "",
+      "dayText": "Sun - Fri: 4PM - 7PM",
+		"location": "Bar Only",
+      "description": "$4 Bottles/$7 House Wine/$8 Tito's Drinks/$12 Specialty Cocktails/$10 Appetizers",
+      "specials": "",
+      "dayFilter": {
+        "Monday": ["4:00PM", "7:00PM"],
+        "Tueday": ["4:00PM", "7:00PM"],
+        "Wednesday": ["4:00PM", "7:00PM"],
+        "Thursday": ["4:00PM", "7:00PM"],
+        "Friday": ["4:00PM", "7:00PM"],
+        "Sunday": ["4:00PM", "7:00PM"]
+      },
+      "latlong": [40.085781, -74.039952]
+    },
+	{
+      "name": "Triumph Brewing Company",
+      "town": "Red Bank",
+      "link": "https://www.triumphbrewing.com/wp-content/uploads/RBHHHalfPage.pdf",
+      "reel": "",
+      "dayText": "Mon: All Day/Wed - Sun: 4PM - 6PM",
+		"location": "Bar Only",
+      "description": "$5 Drafts/$6 IPAs/$9 Select Wines/Food Menu",
+      "specials": "",
+      "dayFilter": {
+        "Monday": ["4:00PM", "9:00PM"],
+        "Wednesday": ["4:00PM", "6:00PM"],
+        "Thursday": ["4:00PM", "6:00PM"],
+        "Friday": ["4:00PM", "6:00PM"],
+        "Saturday": ["4:00PM", "6:00PM"],
+        "Sunday": ["4:00PM", "6:00PM"]
+      },
+      "latlong": [40.350739, -74.075045]
+    },
+    {
+      "name": "Watermark",
+      "town": "Asbury Park",
+      "link": "https://menu.thesafemenu.com/watermark/menus/happy-hour/",
+      "reel": "",
+      "dayText": "Thurs - Fri: 5PM - 7PM",
+      "description": "$5 Bottles/$10 Wines, Specialty Cocktails & Sangria/$12 Martinis/Food Menu",
+      "dayFilter": {
+		"Thursday": ["5:00PM", "7:00PM"],
+		"Friday": ["5:00PM", "7:00PM"]
+      },
+      "latlong": [40.2187, -74.00067]
+    },
+	{
+      "name": "Wave Resort - The Bar",
+      "town": "Long Branch",
+      "link": "https://www.waveresort.com/dining/the-bar",
+      "reel": "",
+      "dayText": "Mon - Thurs: 3PM - 6PM",
+      "dayFilter": {
+        "Monday": ["3:00PM", "6:00PM"],
+        "Tuesday": ["3:00PM", "6:00PM"],
+        "Wednesday": ["3:00PM", "6:00PM"],
+        "Thursday": ["3:00PM", "6:00PM"]
+      },
+      "latlong": [40.29942, -73.97932]
+    },
+    {
+      "name": "Wharfside Seafood and Patio Bar",
+      "town": "Point Pleasant",
+      "link": "https://www.wharfsidenj.com/happy-hour",
+      "reel": "",
+      "dayText": "Sun - Thurs: All Day/Fri - Sat: 11:30AM - 5PM",
+		"location": "Bar Only",
+      "description": "$3.50 Domestic Drafts/$4 Domestic Bottles/$5 Tito’s Drinks/$6 Select Wines/$7 Crafts & Imports/$8 Guinness/8 Sangria/$2 Off Cocktails/$12 Espresso Martinis/$9 Old Fashioned/Raw Bar & Food Menu",
+      "dayFilter": {
+		"Sunday": ["11:30AM", "9:00PM"],
+        "Monday": ["11:30AM", "9:00PM"],
+        "Tuesday": ["11:30AM", "9:00PM"],
+        "Wednesday": ["11:30AM", "9:00PM"],
+        "Thursday": ["11:30AM", "9:00PM"],
+        "Friday": ["11:30AM", "5:00PM"],
+		"Saturday": ["11:30AM", "5:00PM"]
+      },
+      "latlong": [40.1019, -74.0409]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-package com.jerseyshorehappyhours.app;
+package com.jerseyshorehappyhours.mobile;
 
 import com.getcapacitor.BridgeActivity;
 

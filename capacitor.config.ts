@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.jerseyshorehappyhours.app',
+  appId: 'com.jerseyshorehappyhours.mobile',
   appName: 'Jersey Shore Happy Hours',
   webDir: 'dist'
 };

@@ -11,10 +11,16 @@ import {
   ArrowTopRightOnSquareIcon,
   MapIcon,
 } from "@heroicons/react/24/outline";
+import { Clapperboard } from "lucide-react";
+import { Capacitor } from "@capacitor/core";
+import { getReelUrl, openExternalUrl } from "../data/helpers";
+
+const isNative = Capacitor.isNativePlatform();
 
 const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
   const { name, town, dayText, location, description, link, specials, events, latlong } =
     bar || "";
+  const reelUrl = getReelUrl(bar);
   const [latitude, longitude] = latlong || [0, 0];
   const [expanded, setExpanded] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
@@ -104,6 +110,29 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
               </a>
             ) : (
               <></>
+            )}
+            {reelUrl && (
+              <a
+                href={reelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Watch our Reel"
+                title={isNative ? undefined : "Watch our Reel"}
+                className={`text-blue hover-text-light-blue ${isNative ? "p-3 -my-3 -mx-1" : ""}`}
+                onClick={(e) => {
+                  posthog.capture("reel_tap", {
+                    restaurant: name,
+                    town,
+                    platform: Capacitor.getPlatform(),
+                  });
+                  if (isNative) {
+                    e.preventDefault();
+                    openExternalUrl(reelUrl);
+                  }
+                }}
+              >
+                <Clapperboard className="w-5 h-5" strokeWidth={1.5} />
+              </a>
             )}
             {link && (
               <a

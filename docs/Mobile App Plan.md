@@ -19,7 +19,7 @@ Phase checklist for shipping JSHH as iOS/Android apps with Capacitor 8. Branch: 
 
 ## Phase 2: Add Capacitor 8
 
-- [x] **You:** choose the bundle ID → `com.jerseyshorehappyhours.app`
+- [x] **You:** choose the bundle ID → `com.jerseyshorehappyhours.mobile` (`.app` was registered to a Personal Team by accident and can't move to STL)
 - [x] `npx cap init` ("Jersey Shore Happy Hours"), `webDir: "dist"`
 - [x] `npx cap add ios` (Swift Package Manager) and `npx cap add android`
 - [x] Tooling check: Node 24.13.1, Xcode 26.5, Android Studio + SDK, JDK 21
@@ -30,18 +30,30 @@ Phase checklist for shipping JSHH as iOS/Android apps with Capacitor 8. Branch: 
 
 ## Phase 3: Native layout
 
-- [ ] Layout branches on `isNativePlatform()`: native hides Header/Burger/Footer, web unchanged
-- [ ] `IslandNav.jsx`: blurred bottom pill (light + dark), safe-area padding, tabs for Home / Happy Hours / Map / Social, active tab via `useLocation()`
-- [ ] Small blurred logo strip at the top on native
-- [ ] Content clears the nav and the notch
-- [ ] Social page: Instagram + Facebook link cards (open native apps), Contact form moved here
-- [ ] **Decision:** how native users reach Events / Specials / Game Day (not in the 4 tabs)
-- [ ] Header spacer `vh` → `dvh`; touch fallback for hover-only effects (logo swap)
-- [ ] Simulator screenshots of each tab, light + dark
+- [x] Layout branches on `isNativePlatform()`: native hides Header/Burger/Footer, web unchanged
+- [x] `IslandNav.jsx`: blurred bottom pill (light + dark), safe-area padding, tabs for Home / Happy Hours / Map / Social, active tab via `useLocation()`
+- [x] Small blurred logo strip at the top on native (with the dark mode toggle)
+- [x] Content clears the nav and the notch
+- [x] Social page: Instagram + Facebook link cards (open native apps), Contact form moved here
+- [x] **Decision:** how native users reach Events / Specials / Game Day → buttons on Home where applicable. Only Game Day Specials is live, and Home already links to it.
+- [x] ~~Header spacer `vh` → `dvh`~~ not needed: the Header is hidden on native, and in the app's WebView `vh` and `dvh` are the same. Touch fallback for the logo swap: done (mouse pointers only).
+- [x] Screenshots: Android every tab, light + dark; iOS Home (safe area/notch)
+- [ ] Commit Phase 3 on `mobile-app`
+
+## Feature: Instagram Reel links (web + app)
+
+- [x] Optional `reel` field in the gist, validated by `getReelUrl`, Clapperboard icon on cards and map popup
+- [x] Native opens via `@capacitor/app-launcher` (Instagram app), falls back to `@capacitor/browser`; web opens a new tab
+- [x] PostHog `reel_tap` `{ restaurant, town, platform }`; README documents the field
+- [ ] **You:** check the card + tap on iOS (simulator can't be driven from here) and on a real phone with Instagram installed
+- [ ] **You:** add real Reel URLs to the gist
+- [ ] Commit on `mobile-app`
+- Later: "Has a Reel" filter, Reel badge on sponsored spots during their Spotlight week
 
 ## Phase 4: App behavior
 
-- [ ] Restaurant links via `@capacitor/browser`
+- [ ] Keep `reel` in the offline cache; light haptic on Reel tap
+- [ ] Restaurant links via `@capacitor/browser` (already installed for the Reel fallback)
 - [ ] Directions: Apple Maps on iOS, Google Maps on Android (`Capacitor.getPlatform()` replaces the user-agent check in Card.jsx)
 - [ ] **Review:** iOS location usage message wording; Android location permissions
 - [ ] Native Mapbox token from `VITE_MAPBOX_TOKEN_APP`. **You:** create the token (restrictions to be provided)
@@ -58,6 +70,7 @@ Phase checklist for shipping JSHH as iOS/Android apps with Capacitor 8. Branch: 
 
 - [ ] Write `docs/2026-10-30 Mobile App Store Checklist.md` (no submissions)
 - [ ] Accounts: Apple Developer ($99/yr), Google Play ($25), bundle ID, signing
+- [ ] **Decision:** App Store seller name. STL Technologies (current team) or an LLC organization account (needs D-U-N-S)
 - [ ] Icon and splash sizes, generated from the existing logo if possible
 - [ ] Privacy policy points and store privacy answers (PostHog, location, contact form)
 - [ ] Note for later: Capgo live updates, moving data off raw gists

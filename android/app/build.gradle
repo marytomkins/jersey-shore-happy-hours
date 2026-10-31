@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace = "com.jerseyshorehappyhours.app"
+    namespace = "com.jerseyshorehappyhours.mobile"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.jerseyshorehappyhours.app"
+        applicationId "com.jerseyshorehappyhours.mobile"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

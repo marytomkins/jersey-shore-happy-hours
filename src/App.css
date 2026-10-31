@@ -168,6 +168,60 @@ h1 {
   border-color: #46514d;
 }
 
+/* Native app (Capacitor) layout */
+.native-content {
+  padding-top: calc(env(safe-area-inset-top, 0px) + 4.5rem);
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 6rem);
+}
+
+.native-top-bar {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.native-glass {
+  background-color: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+}
+
+.theme-dark .native-glass {
+  background-color: rgba(30, 42, 59, 0.72);
+}
+
+.island-nav {
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem);
+  transform-origin: bottom center;
+  transition: transform 0.25s ease-out;
+}
+
+.island-nav.is-scrolling {
+  transform: scale(0.9);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .island-nav {
+    transition: none;
+  }
+}
+
+.island-tab {
+  color: #53615c;
+}
+
+.island-tab.is-active {
+  color: #3677cd;
+  background-color: rgba(54, 119, 205, 0.12);
+}
+
+.theme-dark .island-tab {
+  color: #aab5b0;
+}
+
+.theme-dark .island-tab.is-active {
+  color: #9ad8d1;
+  background-color: rgba(154, 216, 209, 0.15);
+}
+
 html.dark-mode,
 html.dark-mode body,
 html.dark-mode #root {

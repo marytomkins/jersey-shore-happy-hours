@@ -7,6 +7,9 @@ import Header from "../components/Header";
 import Specials from "./Specials";
 import Feedback from "./Contact";
 import Footer from "../components/Footer";
+import IslandNav from "../components/IslandNav";
+import NativeTopBar from "../components/NativeTopBar";
+import Social from "./Social";
 import { Analytics } from "@vercel/analytics/react";
 import { useEffect, useState } from "react";
 import { Capacitor } from "@capacitor/core";
@@ -43,15 +46,22 @@ function App() {
       <ScrollToTop />
       <div className={`App h-max flex flex-col ${isDarkMode ? "theme-dark" : ""}`}>
         {!isNative && <Analytics />}
-        <Header isDarkMode={isDarkMode} onToggleTheme={() => chooseTheme(!isDarkMode)} />
-        <div className="blank-space nav:h-[17vh] h-[12vh]"></div>
-        <div className="main-content flex-grow flex flex-col">
+        {isNative ? (
+          <NativeTopBar isDarkMode={isDarkMode} onToggleTheme={() => chooseTheme(!isDarkMode)} />
+        ) : (
+          <>
+            <Header isDarkMode={isDarkMode} onToggleTheme={() => chooseTheme(!isDarkMode)} />
+            <div className="blank-space nav:h-[17vh] h-[12vh]"></div>
+          </>
+        )}
+        <div className={`main-content flex-grow flex flex-col ${isNative ? "native-content" : ""}`}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/happyhours" element={<Page page={"happyhours"} />} />
             <Route path="/map" element={<Page page="map" />} />
             <Route path="/events" element={<Page page={"events"} />} />
             <Route path="/contact" element={<Feedback />} />
+            {isNative && <Route path="/social" element={<Social />} />}
             {/* SPECIALS */}
             <Route path="/specials" element={<Specials />} />
             <Route
@@ -151,7 +161,7 @@ function App() {
             />
           </Routes>
         </div>
-        <Footer />
+        {isNative ? <IslandNav /> : <Footer />}
       </div>
     </Router>
   );

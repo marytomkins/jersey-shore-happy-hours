@@ -1,4 +1,31 @@
 import { gists } from "./gists";
+import { AppLauncher } from "@capacitor/app-launcher";
+import { Browser } from "@capacitor/browser";
+
+// Returns a clean Instagram Reel/post URL (tracking params like ?igsh= dropped), or null.
+export const getReelUrl = (item) => {
+  if (typeof item?.reel !== "string" || !item.reel.trim()) return null;
+  try {
+    const url = new URL(item.reel.trim());
+    const isInstagram = ["instagram.com", "www.instagram.com"].includes(url.hostname);
+    const match = url.pathname.match(/^\/(reel|p)\/([\w-]+)\/?$/);
+    if (url.protocol !== "https:" || !isInstagram || !match) return null;
+    return `https://www.instagram.com/${match[1]}/${match[2]}/`;
+  } catch {
+    return null;
+  }
+};
+
+// Native only: hand the link to the OS so it opens in the matching app
+// (e.g. Instagram) when installed, otherwise fall back to an in-app browser.
+export const openExternalUrl = async (url) => {
+  try {
+    const { completed } = await AppLauncher.openUrl({ url });
+    if (!completed) await Browser.open({ url });
+  } catch {
+    await Browser.open({ url });
+  }
+};
 
 export const getColors = (town) => {
   switch (town) {

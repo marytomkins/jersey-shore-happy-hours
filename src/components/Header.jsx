@@ -37,8 +37,8 @@ const Header = ({ isDarkMode, onToggleTheme }) => {
           src={isHovered ? hoverLogo : logo}
           alt="Jersey Shore Happy Hours"
           className="h-[85%] object-contain transition-transform duration-300 ease-in-out cursor-pointer"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onPointerEnter={(e) => e.pointerType === "mouse" && setIsHovered(true)}
+          onPointerLeave={() => setIsHovered(false)}
         />
       </Link>
       <div className="burger min-[730px]:hidden flex justify-end">

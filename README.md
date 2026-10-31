@@ -68,3 +68,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Data: Instagram Reel links (`reel`)
+
+Each restaurant in the Happy Hours gist (`happyHours.json`) can have an optional `reel` field with the URL of the Instagram Reel we posted about it. When it's set, the card (and the map popup) shows a Reel icon. On the website it opens in a new tab; in the iOS/Android app it opens in the Instagram app when installed, otherwise the browser. Every tap sends a PostHog `reel_tap` event with `restaurant`, `town` and `platform` (`web`, `ios`, `android`).
+
+- One Reel per restaurant. To show a newer Reel, replace the URL.
+- Accepted: `https://www.instagram.com/reel/<id>/` or `https://www.instagram.com/p/<id>/` (`instagram.com` without `www` works too). Tracking params like `?igsh=...` are stripped automatically, so the "Copy link" URL from Instagram can be pasted as is.
+- Anything else (empty, `http://`, a profile link, another site) is ignored and no icon shows.
+- Restaurants without a Reel: leave the field out.
+- It's read at runtime from the gist, so adding a Reel needs no app update or store review.
+
+```json
+{
+  "name": "10th Ave Burrito",
+  "town": "Belmar",
+  "link": "https://tenthaveburrito.com/specials/",
+  "reel": "https://www.instagram.com/p/DfFS4hZxZNe/",
+  ...
+}
+```
