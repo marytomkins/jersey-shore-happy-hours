@@ -154,6 +154,15 @@ h1 {
   background-color: #1a3f49;
 }
 
+.theme-dark .home-featured-cta {
+  color: #3677cd;
+  background-color: #bad6da;
+}
+
+.theme-dark .home-featured-cta:hover {
+  background-color: #c5ec73;
+}
+
 .theme-dark .section-1,
 .theme-dark .feedback-page,
 .theme-dark .flex.flex-col.text-blue.bg-white {

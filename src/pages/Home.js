@@ -32,7 +32,7 @@ const Home = () => {
         <div className="flex flex-col nav:flex-row justify-center mt-8">
           <Link
             to={'/featured'}
-            className="flex items-center justify-center gap-2 text-center font-bold bg-light-blue text-blue hover:bg-[#c5ec73] text-sm w-48 py-2 rounded-3xl m-2 border-2 border-white shadow-lg shadow-blue-900/20 hover:shadow-xl hover:scale-105 transition duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue/40"
+            className="home-featured-cta flex items-center justify-center gap-2 text-center font-bold bg-light-blue text-blue hover:bg-[#c5ec73] text-sm w-48 py-2 rounded-3xl m-2 border-2 border-white shadow-lg shadow-blue-900/20 hover:shadow-xl hover:scale-105 transition duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue/40"
             onClick={() =>
               posthog.capture("home_cta_clicked", {
                 cta: "Featured Happy Hour",
