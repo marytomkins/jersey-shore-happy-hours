@@ -192,6 +192,22 @@ h1 {
   bottom: calc(env(safe-area-inset-bottom, 0px) + 0.5rem);
   transform-origin: bottom center;
   transition: transform 0.25s ease-out;
+  /* Frosted glass: see-through tint, strong blur, thin edge so it reads apart from the page */
+  background-color: rgba(255, 255, 255, 0.45);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.theme-dark .island-nav {
+  background-color: rgba(30, 42, 59, 0.45);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .island-nav.is-scrolling {

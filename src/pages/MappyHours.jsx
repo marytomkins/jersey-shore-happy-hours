@@ -3,9 +3,13 @@ import { createRoot } from "react-dom/client";
 import Card from "../components/Card";
 import mapboxgl from "mapbox-gl/dist/mapbox-gl-csp";
 import "mapbox-gl/dist/mapbox-gl.css";
+import { isNative, nativeGeolocation } from "../data/native";
 
 mapboxgl.workerUrl = `${import.meta.env.BASE_URL}mapbox-gl-csp-worker.js`;
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
+// The web token is URL-restricted to the website; the app has its own token.
+mapboxgl.accessToken = isNative
+  ? import.meta.env.VITE_MAPBOX_TOKEN_APP
+  : import.meta.env.VITE_MAPBOX_TOKEN;
 
 const MappyHours = ({ data, currently }) => {
   const mapContainer = useRef(null);
@@ -31,6 +35,7 @@ const MappyHours = ({ data, currently }) => {
         positionOptions: { enableHighAccuracy: true },
         trackUserLocation: true,
         showUserHeading: true,
+        ...(isNative && { geolocation: nativeGeolocation }),
       }),
       "top-right",
     );

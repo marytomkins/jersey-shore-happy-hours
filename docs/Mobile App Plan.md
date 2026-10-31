@@ -38,27 +38,31 @@ Phase checklist for shipping JSHH as iOS/Android apps with Capacitor 8. Branch: 
 - [x] **Decision:** how native users reach Events / Specials / Game Day → buttons on Home where applicable. Only Game Day Specials is live, and Home already links to it.
 - [x] ~~Header spacer `vh` → `dvh`~~ not needed: the Header is hidden on native, and in the app's WebView `vh` and `dvh` are the same. Touch fallback for the logo swap: done (mouse pointers only).
 - [x] Screenshots: Android every tab, light + dark; iOS Home (safe area/notch)
-- [ ] Commit Phase 3 on `mobile-app`
+- [x] Commit Phase 3 on `mobile-app`
+- [x] Island nav shrinks while scrolling
+- [x] iPhone layout checked on a real device
 
 ## Feature: Instagram Reel links (web + app)
 
 - [x] Optional `reel` field in the gist, validated by `getReelUrl`, Clapperboard icon on cards and map popup
 - [x] Native opens via `@capacitor/app-launcher` (Instagram app), falls back to `@capacitor/browser`; web opens a new tab
 - [x] PostHog `reel_tap` `{ restaurant, town, platform }`; README documents the field
-- [ ] **You:** check the card + tap on iOS (simulator can't be driven from here) and on a real phone with Instagram installed
-- [ ] **You:** add real Reel URLs to the gist
-- [ ] Commit on `mobile-app`
+- [ ] **You:** add real Reel URLs to the gist (`ref/happyHours.json` has empty `reel` keys ready), then check the tap on the iPhone with Instagram installed
+- [x] Commit on `mobile-app`
 - Later: "Has a Reel" filter, Reel badge on sponsored spots during their Spotlight week
 
 ## Phase 4: App behavior
 
-- [ ] Keep `reel` in the offline cache; light haptic on Reel tap
-- [ ] Restaurant links via `@capacitor/browser` (already installed for the Reel fallback)
-- [ ] Directions: Apple Maps on iOS, Google Maps on Android (`Capacitor.getPlatform()` replaces the user-agent check in Card.jsx)
-- [ ] **Review:** iOS location usage message wording; Android location permissions
-- [ ] Native Mapbox token from `VITE_MAPBOX_TOKEN_APP`. **You:** create the token (restrictions to be provided)
-- [ ] Offline cache of the last successful fetch + "last updated" note; never show an empty list when cached data exists
-- [ ] Plugins: status-bar (follows dark mode), splash-screen, haptics (tab change), keyboard (Contact form)
+- [x] Keep `reel` in the offline cache (whole gist JSON is cached); light haptic on Reel tap
+- [x] Restaurant links via `@capacitor/browser`
+- [x] Directions: Apple Maps on iOS, Google Maps on Android via `platform`, opened through the OS (Maps app)
+- [ ] **Review:** iOS location message: "Jersey Shore Happy Hours uses your location to show where you are on the map and to find happy hours near you." Android: coarse + fine location while in use
+- [x] Native Mapbox token from `VITE_MAPBOX_TOKEN_APP` (map tiles load in the app)
+- [x] Offline cache of the last successful fetch + "You're offline" note; never shows an empty list when cached data exists
+- [x] Plugins: status-bar (follows dark mode), splash-screen, haptics (tab change), keyboard (nav hides while typing)
+- [x] App icon + splash from `footer_logo.png` (white; dark splash `#171c1b`)
+- [ ] **You:** on the iPhone, check: Contact form keyboard, haptics, map location prompt, directions open Apple Maps, status bar in dark mode
+- [ ] Commit Phase 4 on `mobile-app`
 
 ## Phase 5: Native features for App Store review
 

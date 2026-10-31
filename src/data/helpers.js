@@ -1,6 +1,5 @@
 import { gists } from "./gists";
-import { AppLauncher } from "@capacitor/app-launcher";
-import { Browser } from "@capacitor/browser";
+import { loadCachedData, saveCachedData } from "./native";
 
 // Returns a clean Instagram Reel/post URL (tracking params like ?igsh= dropped), or null.
 export const getReelUrl = (item) => {
@@ -13,17 +12,6 @@ export const getReelUrl = (item) => {
     return `https://www.instagram.com/${match[1]}/${match[2]}/`;
   } catch {
     return null;
-  }
-};
-
-// Native only: hand the link to the OS so it opens in the matching app
-// (e.g. Instagram) when installed, otherwise fall back to an in-app browser.
-export const openExternalUrl = async (url) => {
-  try {
-    const { completed } = await AppLauncher.openUrl({ url });
-    if (!completed) await Browser.open({ url });
-  } catch {
-    await Browser.open({ url });
   }
 };
 
@@ -66,6 +54,7 @@ export const loadPageContent = async ({
   setVerifiedDate,
   setContent,
   setError,
+  setCachedAt,
 }) => {
   const { happyHours, events, specials, gameDaySpecials } = gists;
   let url = null;
@@ -83,10 +72,26 @@ export const loadPageContent = async ({
 
   if (!url) return;
 
+  let json;
   try {
     const res = await fetch(url + Date.now());
-    const json = await res.json();
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    json = await res.json();
+    saveCachedData(url, json);
+    setCachedAt?.(null);
+  } catch (error) {
+    // App only: fall back to the last successful fetch when offline.
+    const cached = await loadCachedData(url);
+    if (!cached?.json) {
+      setError?.(true);
+      console.error("Failed to load page content", error);
+      return;
+    }
+    json = cached.json;
+    setCachedAt?.(cached.savedAt);
+  }
 
+  try {
     if (json && Object.prototype.hasOwnProperty.call(json, "lastVerified")) {
       setVerifiedDate(json.lastVerified);
     }

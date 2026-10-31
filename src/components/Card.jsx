@@ -12,10 +12,14 @@ import {
   MapIcon,
 } from "@heroicons/react/24/outline";
 import { Clapperboard } from "lucide-react";
-import { Capacitor } from "@capacitor/core";
-import { getReelUrl, openExternalUrl } from "../data/helpers";
-
-const isNative = Capacitor.isNativePlatform();
+import { getReelUrl } from "../data/helpers";
+import {
+  isNative,
+  platform,
+  openExternalUrl,
+  openInAppBrowser,
+  tapHaptic,
+} from "../data/native";
 
 const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
   const { name, town, dayText, location, description, link, specials, events, latlong } =
@@ -25,7 +29,9 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
   const [expanded, setExpanded] = useState(false);
   const [showToggle, setShowToggle] = useState(false);
   const contentRef = useRef(null);
-  const isIOS = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent);
+  const isIOS = isNative
+    ? platform === "ios"
+    : /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent);
 
   const mapUrl = isIOS
     ? `https://maps.apple.com/?q=${encodeURIComponent(name)}&ll=${latitude},${longitude}`
@@ -99,12 +105,16 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue hover-text-light-blue"
-                onClick={() =>
+                onClick={(e) => {
                   posthog.capture("map_directions_clicked", {
                     restaurant_name: name,
                     town,
-                  })
-                }
+                  });
+                  if (isNative) {
+                    e.preventDefault();
+                    openExternalUrl(mapUrl);
+                  }
+                }}
               >
                 <MapIcon className="w-5 h-5" />
               </a>
@@ -123,10 +133,11 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
                   posthog.capture("reel_tap", {
                     restaurant: name,
                     town,
-                    platform: Capacitor.getPlatform(),
+                    platform,
                   });
                   if (isNative) {
                     e.preventDefault();
+                    tapHaptic();
                     openExternalUrl(reelUrl);
                   }
                 }}
@@ -140,12 +151,16 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue hover-text-light-blue"
-                onClick={() =>
+                onClick={(e) => {
                   posthog.capture("restaurant_link_clicked", {
                     restaurant_name: name,
                     town,
-                  })
-                }
+                  });
+                  if (isNative) {
+                    e.preventDefault();
+                    openInAppBrowser(link);
+                  }
+                }}
               >
                 <ArrowTopRightOnSquareIcon className="w-5 h-5" />
               </a>

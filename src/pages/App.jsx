@@ -12,9 +12,8 @@ import NativeTopBar from "../components/NativeTopBar";
 import Social from "./Social";
 import { Analytics } from "@vercel/analytics/react";
 import { useEffect, useState } from "react";
-import { Capacitor } from "@capacitor/core";
-
-const isNative = Capacitor.isNativePlatform();
+import { SplashScreen } from "@capacitor/splash-screen";
+import { isNative, applyStatusBarTheme } from "../data/native";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -23,7 +22,13 @@ function App() {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark-mode", isDarkMode);
+    applyStatusBarTheme(isDarkMode);
   }, [isDarkMode]);
+
+  // The splash stays up until the app has rendered once (launchAutoHide: false).
+  useEffect(() => {
+    if (isNative) SplashScreen.hide();
+  }, []);
 
   useEffect(() => {
     const handleThemePreferenceChange = (event) => {

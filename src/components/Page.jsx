@@ -13,6 +13,7 @@ const Page = ({ page, day = null, town = null, special = null }) => {
   const [currently, setCurrently] = useState([]);
   const [sortByState, setSortByState] = useState("");
   const [error, setError] = useState(false);
+  const [cachedAt, setCachedAt] = useState(null);
   const location = useLocation();
   const lastFetchedPath = useRef(null);
   const isMapPage = page === "map";
@@ -29,6 +30,7 @@ const Page = ({ page, day = null, town = null, special = null }) => {
       setVerifiedDate,
       setContent,
       setError,
+      setCachedAt,
     });
   }, [location.pathname, day, town, special, isMapPage]);
 
@@ -135,6 +137,18 @@ const Page = ({ page, day = null, town = null, special = null }) => {
 
   return (
     <div className={`${page}-page`}>
+      {cachedAt && (
+        <div className="offline-note text-center text-sm mx-6 mb-4 px-4 py-2 rounded-lg bg-gray-100 border border-gray-300">
+          You're offline. Showing data saved{" "}
+          {new Date(cachedAt).toLocaleString("en-US", {
+            month: "numeric",
+            day: "numeric",
+            hour: "numeric",
+            minute: "2-digit",
+          })}
+          .
+        </div>
+      )}
       <FilterBar
         page={page}
         onFilter={handleFilter}

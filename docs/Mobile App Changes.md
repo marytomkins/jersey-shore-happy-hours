@@ -78,3 +78,29 @@ Running log of codebase changes made to ship JSHH as iOS/Android apps (Capacitor
 ## Island nav scroll animation (2026-10-31, app only)
 
 `IslandNav.jsx` listens to window scroll (passive) and adds `is-scrolling` while the page moves; it clears 200ms after scrolling stops. `App.css`: `.island-nav.is-scrolling` scales to 0.9 from the bottom center with a 0.25s ease-out transition (no transition with Reduce Motion). Transform only, so the page layout doesn't move. Panning the map doesn't scroll the page, so the nav stays full size there.
+
+## Phase 4: App behavior (2026-10-31)
+
+**New dependencies** (all official, 8.x): `@capacitor/geolocation`, `status-bar`, `splash-screen`, `haptics`, `keyboard`, `preferences`.
+
+**`src/data/native.js`** (new): all native-only helpers in one place. `isNative`, `platform`, `openExternalUrl` (moved from helpers.js), `openInAppBrowser`, `tapHaptic`, `applyStatusBarTheme`, offline cache (`saveCachedData` / `loadCachedData` via Preferences), and `nativeGeolocation` (a `navigator.geolocation`-shaped wrapper around the Geolocation plugin).
+
+**Behavior**
+- Restaurant link icon: in-app browser on native (`Browser.open`). Web unchanged.
+- Directions: platform comes from Capacitor on native (Apple Maps on iOS, Google Maps on Android) and opens through the OS; web keeps the user-agent check.
+- Map: native uses `VITE_MAPBOX_TOKEN_APP`; web keeps `VITE_MAPBOX_TOKEN`. Mapbox's location button uses `nativeGeolocation` on native, so the OS permission prompt is the app's own.
+- Offline cache (native only): every successful gist fetch is saved; if a fetch fails, the last saved copy is shown with "You're offline. Showing data saved …" above the filters (`Page.jsx`). `loadPageContent` now also treats non-OK HTTP responses as failures.
+- Status bar follows the app's dark mode. Android WebViews older than Chrome 140 can't draw under the status bar (Capacitor leaves a white strip), so those keep dark icons.
+- Splash: `launchAutoHide: false`, hidden from `App.jsx` after the first render.
+- Haptics: light tap on tab change and Reel tap.
+- Keyboard: island nav hides while the keyboard is open.
+
+**Permissions**
+- iOS `Info.plist`: `NSLocationWhenInUseUsageDescription`.
+- Android manifest: `ACCESS_COARSE_LOCATION`, `ACCESS_FINE_LOCATION`, `uses-feature location.gps` (not required).
+
+**Icon + splash**: `assets/logo.png` and `assets/logo-dark.png` (copies of `src/images/footer_logo.png`), generated with `npx @capacitor/assets@3 generate --ios --android --logoSplashScale 0.45 --iconBackgroundColor '#ffffff' --iconBackgroundColorDark '#171c1b' --splashBackgroundColor '#ffffff' --splashBackgroundColorDark '#171c1b'`. Not added to package.json. Its web/PWA step deleted `public/browser_logo.png` and rewrote `public/manifest.json`, both restored. Always pass `--ios --android`. It also reformats `AndroidManifest.xml`, so check the permissions afterwards.
+
+## Island nav frosted glass (2026-10-31, app only)
+
+`.island-nav` has its own glass style instead of the shared `native-glass` (top strip unchanged): 45% tint (white / `#1e2a3b` in dark), `blur(24px) saturate(180%)`, 1px light border, top inner highlight, deeper shadow. Removed `native-glass` and `shadow-lg` from the nav's classes in `IslandNav.jsx`.
