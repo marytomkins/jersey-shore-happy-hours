@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import posthog from "posthog-js";
+import { Link } from "react-router-dom";
 import Tooltip from "./Tooltip";
 import {
   MapPinIcon,
@@ -186,6 +187,14 @@ const Card = ({ bar, index = 0, happeningNow = false, mapView = false }) => {
               <ListText text={specials} bullets={false} />
             </div>
           </div>
+        )}
+        {featured && (
+          <Link
+            to="/featured"
+            className="text-sm font-semibold text-blue hover-text-light-blue cursor-pointer m-auto"
+          >
+            See more
+          </Link>
         )}
       </div>
       {showToggle && (
