@@ -84,11 +84,13 @@ export const loadPageContent = async ({
         }
       }
 
-      const sortedContent = filteredContent?.sort((a, b) =>
-        a.name.replace(/^the\s+/i, '').localeCompare(
-          b.name.replace(/^the\s+/i, '')
-        )
-      );
+      const sortedContent = filteredContent?.sort((a, b) => {
+        if (a.featured === true && b.featured !== true) return -1;
+        if (b.featured === true && a.featured !== true) return 1;
+        return a.name.replace(/^the\s+/i, "").localeCompare(
+          b.name.replace(/^the\s+/i, ""),
+        );
+      });
       setContent(sortedContent);
     }
   } catch (error) {

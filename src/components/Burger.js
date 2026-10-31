@@ -10,6 +10,7 @@ const Burger = ({ isDarkMode, onToggleTheme }) => {
   const navItems = [
     { name: "Home", path: "/" },
     { name: "Happy Hours", path: "/happyhours" },
+    { name: "HH of the Week", path: "/featured" },
     { name: "Map", path: "/map" },
     // { name: "Events", path: "/events" },
     // { name: "Specials", path: "/specials" },
