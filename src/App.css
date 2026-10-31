@@ -169,6 +169,10 @@ h1 {
   color: #e5e7eb;
 }
 
+.theme-dark .featured-recommendations-title {
+  color: #bad6da;
+}
+
 @media (max-width: 639px) {
   .featured-page .featured-mobile-section {
     padding: 1rem 1.5rem;

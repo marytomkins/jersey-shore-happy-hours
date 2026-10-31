@@ -170,7 +170,7 @@ const Featured = () => {
                 </div>
 
                 <section className="mt-4 w-full rounded-2xl border-2 border-[#3677cd] bg-light-blue p-5 shadow-xl sm:p-8">
-                    <h1 className="text-center text-2xl font-bold tracking-wide text-blue sm:text-3xl">
+                    <h1 className="featured-recommendations-title text-center text-2xl font-bold tracking-wide text-blue sm:text-3xl">
                         jShH Recommendations
                     </h1>
                     <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-blue" />
