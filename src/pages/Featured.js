@@ -6,6 +6,7 @@ import image4 from "../images/featured/4.png";
 import image5 from "../images/featured/5.png";
 import image6 from "../images/featured/6.png";
 import { ClockIcon, MapPinIcon } from "@heroicons/react/20/solid";
+import { Utensils, Martini } from 'lucide-react';
 
 const featuredImages = [image1, image2, image3, image4, image5, image6];
 
@@ -122,7 +123,7 @@ const Featured = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="mb-4 mt-2 flex">
+                        <div className="address-section mb-4 mt-2 flex w-full">
                             <MapPinIcon className="mr-2 mt-1 inline-block h-5 w-5 shrink-0 text-[#ff7494]" />
                             <div>
                                 <p className="text-sm sm:text-lg font-semibold text-black">
@@ -137,7 +138,7 @@ const Featured = () => {
                             href={mapUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex min-h-8 w-full items-center justify-center rounded-3xl bg-blue px-4 py-2 text-center text-xs font-semibold text-white hover-bg-light-blue xs:w-fit xs:min-w-48"
+                            className="flex min-h-8 w-full items-center justify-center rounded-3xl bg-[#82cac5] px-4 py-2 text-center text-xs font-semibold text-white hover-bg-light-blue xs:w-fit xs:min-w-48"
                         >
                             VIEW MAP
                         </a>
@@ -153,7 +154,7 @@ const Featured = () => {
                             href={restaurant.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex min-h-8 w-full items-center justify-center rounded-3xl bg-blue px-4 py-2 text-center text-xs font-semibold text-white hover-bg-light-blue xs:w-fit xs:min-w-48"
+                            className="flex min-h-8 w-full items-center justify-center rounded-3xl bg-[#8da663] px-4 py-2 text-center text-xs font-semibold text-white hover-bg-light-blue xs:w-fit xs:min-w-48"
                         >
                             VIEW HAPPY HOUR MENU
                         </a>
@@ -167,6 +168,38 @@ const Featured = () => {
                         </div>
                     </div>
                 </div>
+
+                <section className="mt-4 w-full rounded-2xl border-2 border-[#3677cd] bg-light-blue p-5 shadow-xl sm:p-8">
+                    <h1 className="text-center text-2xl font-bold tracking-wide text-blue sm:text-3xl">
+                        jShH Recommendations
+                    </h1>
+                    <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-blue" />
+                    <div className="mx-auto mt-5 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
+                        <div className="flex items-center gap-3 rounded-xl border border-[#8da663]/25 bg-white p-4 shadow-md">
+                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#8da663]/15">
+                                <Utensils
+                                    aria-hidden="true"
+                                    className="h-6 w-6 text-[#71894d]"
+                                />
+                            </span>
+                            <p className="text-sm text-black sm:text-base">
+                                <span className="font-semibold">Food:</span> Grilled Chicken Nachos
+                            </p>
+                        </div>
+                        <div className="flex items-center gap-3 rounded-xl border border-[#ff9b64]/25 bg-white p-4 shadow-md">
+                            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#ff9b64]/15">
+                                <Martini
+                                    aria-hidden="true"
+                                    className="h-6 w-6 text-[#e77d42]"
+                                />
+                            </span>
+                            <p className="text-sm text-black sm:text-base">
+                                <span className="font-semibold">Drink:</span> Skinny Iguana Marg
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
                 <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 desktop:grid-cols-6">
                     {featuredImages.map((image, idx) => (
                         <img

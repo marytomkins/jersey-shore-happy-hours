@@ -3,7 +3,7 @@ import home from "../images/home.png";
 import { towns, days } from "../data/filters";
 import { getColors } from "../data/helpers";
 import posthog from "posthog-js";
-import { FaFootballBall } from "react-icons/fa";
+import { FaFootballBall, FaStar } from "react-icons/fa";
 import PopUp from "../components/PopUp";
 // import Specials from "./Specials";
 
@@ -32,14 +32,16 @@ const Home = () => {
         <div className="flex flex-col nav:flex-row justify-center mt-8">
           <Link
             to={'/featured'}
-            className="flex justify-center text-center font-semibold bg-blue hover-bg-light-blue text-sm text-white w-48 py-2 rounded-3xl m-2"
+            className="flex items-center justify-center gap-2 text-center font-bold bg-light-blue text-blue hover:bg-[#c5ec73] text-sm w-48 py-2 rounded-3xl m-2 border-2 border-white shadow-lg shadow-blue-900/20 hover:shadow-xl hover:scale-105 transition duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-blue/40"
             onClick={() =>
               posthog.capture("home_cta_clicked", {
                 cta: "Featured Happy Hour",
               })
             }
           >
-            Happy Hour of the Week
+            <FaStar aria-hidden="true" />
+            HH of the Week
+            <FaStar aria-hidden="true" />
           </Link>
           {/* <Link
             to={formatSearchLink(getToday())}
