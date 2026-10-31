@@ -20,12 +20,13 @@ Phase checklist for shipping JSHH as iOS/Android apps with Capacitor 8. Branch: 
 ## Phase 2: Add Capacitor 8
 
 - [x] **You:** choose the bundle ID → `com.jerseyshorehappyhours.app`
-- [ ] `npx cap init` ("Jersey Shore Happy Hours"), `webDir: "dist"`
-- [ ] `npx cap add ios` (Swift Package Manager) and `npx cap add android`
+- [x] `npx cap init` ("Jersey Shore Happy Hours"), `webDir: "dist"`
+- [x] `npx cap add ios` (Swift Package Manager) and `npx cap add android`
 - [x] Tooling check: Node 24.13.1, Xcode 26.5, Android Studio + SDK, JDK 21
-- [ ] Add `viewport-fit=cover` to the viewport meta tag
-- [ ] Disable Vercel Analytics on native, keep PostHog
-- [ ] Run in the iOS simulator and an Android emulator, all pages working
+- [x] Add `viewport-fit=cover` to the viewport meta tag
+- [x] Disable Vercel Analytics on native, keep PostHog
+- [x] Run in the iOS simulator and an Android emulator, all pages working (map tiles 403 on native until the Phase 4 app token; header under the notch until Phase 3)
+- [ ] Commit Phase 2 on `mobile-app`
 
 ## Phase 3: Native layout
 

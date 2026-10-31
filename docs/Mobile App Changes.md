@@ -25,3 +25,20 @@ Running log of codebase changes made to ship JSHH as iOS/Android apps (Capacitor
 **Fonts**: `App.css` font URL changed from `../public/fonts/…` to `/fonts/…`.
 
 **Lint/tests**: added `eslint-config-react-app` as an explicit dev dependency so `npm run lint` keeps working. Removed the `react-app/jest` config, the CRA placeholder test, `setupTests.js`, and the `@testing-library/*` packages.
+
+## Phase 2: Add Capacitor 8 (2026-10-31)
+
+**Capacitor**
+- Added `@capacitor/core`, `@capacitor/ios`, `@capacitor/android` (8.6.0) and dev dependency `@capacitor/cli` (8.6.0).
+- `capacitor.config.ts`: app ID `com.jerseyshorehappyhours.app`, name "Jersey Shore Happy Hours", `webDir: "dist"`.
+- Generated `ios/` (Swift Package Manager, no CocoaPods) and `android/` native projects. Each has its own `.gitignore` for build output.
+- Workflow: `npm run build && npx cap sync`, then `npx cap run ios` / `npx cap run android` (or open in Xcode / Android Studio with `npx cap open ios|android`).
+
+**Web changes**
+- `index.html`: viewport meta adds `viewport-fit=cover` so native can draw under the notch (safe-area padding comes in Phase 3).
+- `src/pages/App.jsx`: Vercel `<Analytics />` only renders when `!Capacitor.isNativePlatform()`. PostHog runs everywhere.
+
+**Known on native (fixed in later phases)**
+- Map tiles return 403: the web Mapbox token is URL-restricted and the app's origin is `https://localhost` (Android) / `capacitor://localhost` (iOS). Phase 4 adds `VITE_MAPBOX_TOKEN_APP`.
+- Header sits under the iOS notch/status bar until Phase 3.
+- Android logs a harmless "Error injecting safe area CSS" from Capacitor's SystemBars plugin at startup.

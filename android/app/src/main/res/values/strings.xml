@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Jersey Shore Happy Hours</string>
+    <string name="title_activity_main">Jersey Shore Happy Hours</string>
+    <string name="package_name">com.jerseyshorehappyhours.app</string>
+    <string name="custom_url_scheme">com.jerseyshorehappyhours.app</string>
+</resources>

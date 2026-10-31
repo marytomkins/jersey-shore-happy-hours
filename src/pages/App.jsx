@@ -9,6 +9,9 @@ import Feedback from "./Contact";
 import Footer from "../components/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { useEffect, useState } from "react";
+import { Capacitor } from "@capacitor/core";
+
+const isNative = Capacitor.isNativePlatform();
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -39,7 +42,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <div className={`App h-max flex flex-col ${isDarkMode ? "theme-dark" : ""}`}>
-        <Analytics />
+        {!isNative && <Analytics />}
         <Header isDarkMode={isDarkMode} onToggleTheme={() => chooseTheme(!isDarkMode)} />
         <div className="blank-space nav:h-[17vh] h-[12vh]"></div>
         <div className="main-content flex-grow flex flex-col">
